@@ -150,21 +150,14 @@ PlasmaCore.ToolTipArea {
     SequentialAnimation {
         id: entryAnim
         ParallelAnimation {
-            NumberAnimation { target: icon; property: "scale"; from: 0.5; to: 1.0; duration: 200; easing.type: Easing.OutCubic }
             NumberAnimation { target: task; property: "opacity"; from: 0.0; to: 1.0; duration: 200; easing.type: Easing.OutQuad }
             NumberAnimation { target: entrySlide; property: "y"; from: 30; to: 0; duration: 200; easing.type: Easing.OutCubic }
         }
     }
     SequentialAnimation {
         id: minimizeAnim
-        ParallelAnimation {
-            NumberAnimation { target: icon; property: "scale"; to: 0.85; duration: 80; easing.type: Easing.InQuad }
-            NumberAnimation { target: minimizeBounce; property: "y"; to: 10; duration: 80; easing.type: Easing.InQuad }
-        }
-        ParallelAnimation {
-            NumberAnimation { target: icon; property: "scale"; to: 1.0; duration: 150; easing.type: Easing.OutQuad }
-            NumberAnimation { target: minimizeBounce; property: "y"; to: 0; duration: 120; easing.type: Easing.OutQuad }
-        }
+        NumberAnimation { target: minimizeBounce; property: "y"; to: 10; duration: 80; easing.type: Easing.InQuad }
+        NumberAnimation { target: minimizeBounce; property: "y"; to: 0; duration: 120; easing.type: Easing.OutQuad }
     }
     NumberAnimation {
         id: pressDownAnim
@@ -739,9 +732,8 @@ PlasmaCore.ToolTipArea {
         if (!inPopup && !model.IsWindow) {
             taskInitComponent.createObject(task);
         }
-        // Entry animation only for new windows
-        if (model.IsWindow && !model.IsLauncher) {
-            icon.scale = 0.5;
+        // Entry animation only for truly new windows (skip windows spawned from pinned launchers)
+        if (model.IsWindow && !model.IsLauncher && !model.HasLauncher) {
             task.opacity = 0.0;
             entrySlide.y = 30;
             entryAnim.start();
