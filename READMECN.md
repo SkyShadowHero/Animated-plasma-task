@@ -29,6 +29,11 @@ sudo make uninstall
 
 面板右键 → 添加部件 → 搜索 **SkyAnimation**。
 
+## 致谢
+
+基于 KDE Plasma 原版插件，原作者 Eike Hein、Martin Graesslin、Mikel Johnson。
+
 ## 许可证
 
-GPL-2.0-or-later
+代码: GPL-2.0-or-later  
+动画: CC-BY 4.0 SkyShadowHero

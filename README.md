@@ -34,6 +34,11 @@ plasmashell --replace &
 
 Right-click panel → Add Widgets → search **SkyAnimation**.
 
+## Credits
+
+Based on KDE Plasma plasmoids by Eike Hein, Martin Graesslin, and Mikel Johnson.
+
 ## License
 
-GPL-2.0-or-later
+Code: GPL-2.0-or-later  
+Animations: CC-BY 4.0 SkyShadowHero
