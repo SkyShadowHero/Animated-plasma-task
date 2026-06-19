@@ -347,6 +347,7 @@ PlasmoidItem {
             Item {
                 id: ghost
                 property var iconSource
+                property real animMul: 1.0
 
                 Kirigami.Icon {
                     anchors.centerIn: parent
@@ -358,8 +359,8 @@ PlasmoidItem {
                 SequentialAnimation {
                     id: exitAnim
                     ParallelAnimation {
-                        NumberAnimation { target: ghost; property: "opacity"; to: 0; duration: 200; easing.type: Easing.InQuad }
-                        NumberAnimation { id: slideAnim; target: ghost; property: "y"; duration: 200; easing.type: Easing.InQuad }
+                        NumberAnimation { target: ghost; property: "opacity"; to: 0; duration: 150 * ghost.animMul; easing.type: Easing.InQuad }
+                        NumberAnimation { id: slideAnim; target: ghost; property: "y"; duration: 150 * ghost.animMul; easing.type: Easing.InQuad }
                     }
                     ScriptAction { script: ghost.destroy() }
                 }
@@ -385,7 +386,8 @@ PlasmoidItem {
                         y: pos.y,
                         width: taskItem.width,
                         height: taskItem.height,
-                        iconSource: taskItem.model.decoration
+                        iconSource: taskItem.model.decoration,
+                        animMul: taskItem.animMul
                     });
                 }
             }
