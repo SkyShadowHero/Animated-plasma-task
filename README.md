@@ -12,13 +12,24 @@ Forked KDE Plasma 6 plasmoids with press / entry / minimize animations.
 | Task Manager (SkyAnimation) | `org.kde.plasma.taskmanager.skyler` | press scale · entry slide-in · minimize bounce |
 | Application Launcher (SkyAnimation) | `org.kde.plasma.kickoff.skyler` | press scale |
 
-## Install
+## Build & Install
 
 ```bash
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make -j$(nproc)
 sudo make install
+```
+
+## Uninstall
+
+```bash
+sudo make uninstall
+```
+
+Restart plasmashell:
+```bash
+plasmashell --replace &
 ```
 
 Right-click panel → Add Widgets → search **SkyAnimation**.

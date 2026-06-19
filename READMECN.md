@@ -21,6 +21,12 @@ make -j$(nproc)
 sudo make install
 ```
 
+## 删除
+
+```bash
+sudo make uninstall
+```
+
 面板右键 → 添加部件 → 搜索 **SkyAnimation**。
 
 ## 许可证
