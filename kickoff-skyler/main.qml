@@ -262,8 +262,16 @@ PlasmoidItem {
          onCanceled: pressUp.start()
          onClicked: kickoff.expanded = !wasExpanded
 
-        NumberAnimation { id: pressDown; target: buttonIcon; property: "scale"; to: 0.85; duration: 80; easing.type: Easing.OutQuad }
-        NumberAnimation { id: pressUp; target: buttonIcon; property: "scale"; to: 1.0; duration: 150; easing.type: Easing.OutBack }
+        ParallelAnimation {
+            id: pressDown
+            NumberAnimation { target: pressScale; property: "xScale"; to: 0.85; duration: 80; easing.type: Easing.OutQuad }
+            NumberAnimation { target: pressScale; property: "yScale"; to: 0.85; duration: 80; easing.type: Easing.OutQuad }
+        }
+        ParallelAnimation {
+            id: pressUp
+            NumberAnimation { target: pressScale; property: "xScale"; to: 1.0; duration: 150; easing.type: Easing.OutBack }
+            NumberAnimation { target: pressScale; property: "yScale"; to: 1.0; duration: 150; easing.type: Easing.OutBack }
+        }
 
         DropArea {
             id: compactDragArea
@@ -290,6 +298,12 @@ PlasmoidItem {
 
              Kirigami.Icon {
                 id: buttonIcon
+
+                transform: Scale {
+                    id: pressScale
+                    origin.x: buttonIcon.width / 2
+                    origin.y: buttonIcon.height / 2
+                }
 
                 Layout.fillWidth: kickoff.vertical
                 Layout.fillHeight: !kickoff.vertical
