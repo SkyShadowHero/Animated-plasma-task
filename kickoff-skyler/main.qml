@@ -249,6 +249,12 @@ PlasmoidItem {
 
         hoverEnabled: true
 
+        transform: Scale {
+            id: pressScale
+            origin.x: compactRoot.width / 2
+            origin.y: compactRoot.height / 2
+        }
+
         property bool wasExpanded
 
         Accessible.name: Plasmoid.title
@@ -298,12 +304,6 @@ PlasmoidItem {
 
              Kirigami.Icon {
                 id: buttonIcon
-
-                transform: Scale {
-                    id: pressScale
-                    origin.x: buttonIcon.width / 2
-                    origin.y: buttonIcon.height / 2
-                }
 
                 Layout.fillWidth: kickoff.vertical
                 Layout.fillHeight: !kickoff.vertical
