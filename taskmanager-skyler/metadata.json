@@ -110,7 +110,7 @@
         "EnabledByDefault": true,
         "Icon": "preferences-system-windows",
         "License": "GPL-2.0+",
-        "Name": "Task Manager (Skyler)",
+        "Name": "Task Manager (SkyAnimation)",
         "Name[ar]": "مدير مهامّ بأيقونات ونص",
         "Name[az]": "Tapşırıq menecerinin nişanı və mətni",
         "Name[be]": "Выгляд кіраўніка задач",
@@ -157,7 +157,7 @@
         "Name[tr]": "Simgeli ve Etiketli Görev Yöneticisi",
         "Name[ug]": "سىنبەلگە ۋە تېكىست ۋەزىپە باشقۇرغۇچ",
         "Name[uk]": "Керування задачами з піктограмами і текстом",
-        "Name[zh_CN]": "任务管理器 (Skyler)",
+        "Name[zh_CN]": "任务管理器 (SkyAnimation)",
         "Name[zh_TW]": "僅圖示與文字的工作管理員",
         "Website": "https://userbase.kde.org/Plasma/Tasks"
     },
