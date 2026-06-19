@@ -51,7 +51,6 @@ install(CODE "
     set(SKYLER_DOMAINS
         plasma_applet_org.kde.plasma.icontasks.skyler
         plasma_applet_org.kde.plasma.taskmanager.skyler
-        plasma_applet_org.kde.plasma.kickoff.skyler
     )
     file(GLOB LOCALE_DIRS /usr/share/locale/*/LC_MESSAGES)
     foreach(LOCALE_DIR \${LOCALE_DIRS})

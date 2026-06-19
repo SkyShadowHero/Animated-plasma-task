@@ -256,7 +256,7 @@ PlasmoidItem {
 
          onPressed: {
             wasExpanded = kickoff.expanded;
-            buttonIcon.scale = 0.75;
+            buttonIcon.scale = 0.85;
          }
          onReleased: buttonIcon.scale = 1.0
          onCanceled: buttonIcon.scale = 1.0
