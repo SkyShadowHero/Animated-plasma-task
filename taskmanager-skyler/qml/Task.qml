@@ -85,50 +85,7 @@ PlasmaCore.ToolTipArea {
     location: Plasmoid.location
     mainItem: !Plasmoid.configuration.showToolTips || !model.IsWindow ? pinnedAppToolTipDelegate : openWindowToolTipDelegate
 
-    transform: [
-        Translate { id: translateTransform },
-        Translate { id: entrySlide; y: 0 }
-    ]
-
-    SmoothedAnimation {
-        id: smoothX
-        target: translateTransform
-        property: "x"
-        duration: 400
-        velocity: -1
-    }
-    SmoothedAnimation {
-        id: smoothY
-        target: translateTransform
-        property: "y"
-        duration: 400
-        velocity: -1
-    }
-    Timer {
-        id: posWatch
-        interval: 30
-        running: true
-        repeat: true
-        property real lastX: task.x
-        property real lastY: task.y
-        onTriggered: {
-            if (!completed) {
-                lastX = task.x; lastY = task.y; return;
-            }
-            if (task.x !== lastX) {
-                smoothX.from = 0;
-                smoothX.to = lastX - task.x;
-                smoothX.start();
-                lastX = task.x;
-            }
-            if (task.y !== lastY) {
-                smoothY.from = 0;
-                smoothY.to = lastY - task.y;
-                smoothY.start();
-                lastY = task.y;
-            }
-        }
-    }
+    transform: Translate { id: entrySlide; y: 0 }
 
     SequentialAnimation {
         id: entryAnim
