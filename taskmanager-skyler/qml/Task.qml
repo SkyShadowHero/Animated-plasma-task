@@ -95,8 +95,14 @@ PlasmaCore.ToolTipArea {
     SequentialAnimation {
         id: minimizeAnim
         PauseAnimation { duration: 50 }
-        NumberAnimation { target: minimizeBounce; property: "y"; to: 10; duration: 80; easing.type: Easing.InQuad }
-        NumberAnimation { target: minimizeBounce; property: "y"; to: 0; duration: 120; easing.type: Easing.OutQuad }
+        ParallelAnimation {
+            NumberAnimation { target: icon; property: "opacity"; to: 0.5; duration: 80; easing.type: Easing.InQuad }
+            NumberAnimation { target: minimizeBounce; property: "y"; to: 10; duration: 80; easing.type: Easing.InQuad }
+        }
+        ParallelAnimation {
+            NumberAnimation { target: icon; property: "opacity"; to: 1.0; duration: 120; easing.type: Easing.OutQuad }
+            NumberAnimation { target: minimizeBounce; property: "y"; to: 0; duration: 120; easing.type: Easing.OutQuad }
+        }
     }
     NumberAnimation {
         id: pressDownAnim
