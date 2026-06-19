@@ -480,16 +480,9 @@ PlasmoidItem {
                     }
                 }
 
-                flow: {
-                    if (tasks.vertical) {
-                        return Plasmoid.configuration.forceStripes ? Grid.LeftToRight : Grid.TopToBottom
-                    }
-                    return Plasmoid.configuration.forceStripes ? Grid.TopToBottom : Grid.LeftToRight
-                }
-
                 onAnimatingChanged: {
                     if (!animating) {
-                        tasks.publishIconGeometries(children, tasks);
+                        tasks.publishIconGeometries(taskList.rowLayout.children, tasks);
                     }
                 }
 
