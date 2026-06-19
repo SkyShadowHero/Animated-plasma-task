@@ -1,4 +1,4 @@
-[中文](READMECN.md)
+<div align="center">English | <a href="READMECN.md">中文</a></div>
 
 # SkyAnimation Plasma Plugins
 

@@ -1,4 +1,4 @@
-[English](README.md)
+<div align="center"><a href="README.md">English</a> | 中文</div>
 
 # SkyAnimation Plasma 插件
 
