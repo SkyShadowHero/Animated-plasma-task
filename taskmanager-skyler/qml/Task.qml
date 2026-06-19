@@ -159,6 +159,13 @@ PlasmaCore.ToolTipArea {
         NumberAnimation { target: minimizeBounce; property: "y"; to: 10; duration: 80; easing.type: Easing.InQuad }
         NumberAnimation { target: minimizeBounce; property: "y"; to: 0; duration: 120; easing.type: Easing.OutQuad }
     }
+    SequentialAnimation {
+        id: closeAnim
+        ParallelAnimation {
+            NumberAnimation { target: task; property: "opacity"; to: 0.0; duration: 180; easing.type: Easing.InQuad }
+            NumberAnimation { target: entrySlide; property: "y"; to: 20; duration: 180; easing.type: Easing.InCubic }
+        }
+    }
     NumberAnimation {
         id: pressDownAnim
         target: icon
@@ -244,6 +251,9 @@ PlasmaCore.ToolTipArea {
         if (model.IsWindow) {
             taskInitComponent.createObject(task);
             updateAudioStreams({delay: false});
+        } else if (!model.HasLauncher && !model.IsLauncher) {
+            // Window closed without a launcher: slide down + fade out
+            closeAnim.start();
         }
     }
 
