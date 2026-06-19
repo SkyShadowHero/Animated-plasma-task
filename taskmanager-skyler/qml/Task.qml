@@ -90,8 +90,8 @@ PlasmaCore.ToolTipArea {
     SequentialAnimation {
         id: entryAnim
         ParallelAnimation {
-            NumberAnimation { target: task; property: "opacity"; from: 0.0; to: 1.0; duration: 140; easing.type: Easing.OutQuad }
-            NumberAnimation { target: entrySlide; property: "y"; from: 30; to: 0; duration: 140; easing.type: Easing.OutCubic }
+            NumberAnimation { target: task; property: "opacity"; from: 0.0; to: 1.0; duration: 200; easing.type: Easing.OutQuad }
+            NumberAnimation { target: entrySlide; property: "y"; from: 30; to: 0; duration: 200; easing.type: Easing.OutBack }
         }
     }
     SequentialAnimation {
