@@ -750,6 +750,8 @@ PlasmaCore.ToolTipArea {
             entrySlide.y = 30;
             entryAnim.start();
         }
+        oldX = x;
+        oldY = y;
         completed = true;
     }
     Component.onDestruction: {
