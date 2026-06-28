@@ -841,11 +841,14 @@ PlasmaCore.ToolTipArea {
             }
             StateChangeScript {
                 script: {
-                    if (entryCooldown.running) return;  // just appeared
+                    // Always clear minimizeFromClick to prevent stale flag
+                    // from blocking future non-click minimize animations
+                    // (e.g. window clicked during entryCooldown → later Win+D).
                     if (task.minimizeFromClick) {
                         task.minimizeFromClick = false;
-                        return;  // skip animation on click
+                        return;  // skip animation on user click
                     }
+                    if (entryCooldown.running) return;  // just appeared
                     minimizeDelay.start();
                 }
             }
