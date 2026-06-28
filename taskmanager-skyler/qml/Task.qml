@@ -891,6 +891,12 @@ PlasmaCore.ToolTipArea {
             entrySlide.y = 30;
             entryAnim.start();
         }
+        // Bump feedback for windows opened from pinned launchers (first window)
+        if (model.IsWindow && model.HasLauncher) {
+            if (bumpAnim) {
+                bumpAnim.start();
+            }
+        }
         // Reappear animation for pinned launchers in icons-only mode
         // (e.g. after the last window closes and the launcher becomes visible again)
         // Uses launcherReappearAnim: 150ms delay + OutQuad (no bounce).
