@@ -163,6 +163,10 @@
       </choices>
       <default>1</default>
     </entry>
+    <entry name="miniTooltip" type="Bool">
+      <label>Whether to use compact mini tooltips. Off = default Plasma style, On = smaller compact style.</label>
+      <default>false</default>
+    </entry>
   </group>
 
 </kcfg>

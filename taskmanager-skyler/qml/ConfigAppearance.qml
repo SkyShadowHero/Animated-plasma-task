@@ -29,6 +29,7 @@ KCMUtils.SimpleKCM {
     property alias cfg_forceStripes: forceStripes.checked
     property alias cfg_taskMaxWidth: taskMaxWidth.currentIndex
     property int cfg_iconSpacing: 0
+    property alias cfg_miniTooltip: miniTooltip.checked
 
     Component.onCompleted: {
         /* Don't rely on bindings for checking the radiobuttons
@@ -183,6 +184,16 @@ KCMUtils.SimpleKCM {
             onActivated: index => {
                 root.cfg_iconSpacing = model[currentIndex]["spacing"];
             }
+        }
+
+        Item {
+            Kirigami.FormData.isSection: true
+        }
+
+        QQC2.CheckBox {
+            id: miniTooltip
+            Kirigami.FormData.label: i18nc("@label for checkbox", "Mini Tooltip:")
+            text: i18nc("@option:check section Mini Tooltip", "Use compact tooltip style")
         }
     }
 }

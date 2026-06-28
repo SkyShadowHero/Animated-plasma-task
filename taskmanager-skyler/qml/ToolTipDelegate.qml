@@ -52,7 +52,7 @@ Loader {
 
     readonly property bool isVerticalPanel: Plasmoid.formFactor === PlasmaCore.Types.Vertical
     // This number controls the overall size of the window tooltips
-    readonly property int tooltipInstanceMaximumWidth: Kirigami.Units.gridUnit * 16
+    readonly property int tooltipInstanceMaximumWidth: Plasmoid.configuration.miniTooltip ? Kirigami.Units.gridUnit * 12 : Kirigami.Units.gridUnit * 16
 
     // These properties are required to make tooltip interactive when there is a player but no window is present.
     readonly property Mpris.PlayerContainer playerData: mpris2Source.playerForLauncherUrl(launcherUrl, pidParent)
@@ -62,6 +62,14 @@ Loader {
 
     active: !blockingUpdates && rootIndex !== undefined && ((parentTask && parentTask.containsMouse) || Window.visibility !== Window.Hidden)
     asynchronous: true
+
+    // Shared max width for horizontal group delegates — all become the same width.
+    property real groupMaxWidth: 0
+    onActiveChanged: if (!active) groupMaxWidth = 0
+
+    function updateGroupMaxWidth(w: real): void {
+        if (w > groupMaxWidth) groupMaxWidth = w;
+    }
 
     sourceComponent: isGroup ? groupToolTip : singleTooltip
 
@@ -96,7 +104,14 @@ Loader {
                    ? toolTipDelegate.tooltipInstanceMaximumWidth + (toolTipDelegate.isWin && Plasmoid.configuration.showToolTips ? 0 : Kirigami.Units.gridUnit)
                    : groupToolTipListView.contentWidth
 
-                return leftPadding + rightPadding + Math.min(maximumWidth, Math.max(delegateModel.estimatedWidth, listContentWidth))
+                // Mini mode: use actual content width for horizontal groups to avoid huge blanks.
+                // Default mode: use estimatedWidth as floor (original KDE behaviour).
+                let targetWidth = Plasmoid.configuration.miniTooltip
+                    ? (groupToolTipListView.orientation == ListView.Vertical
+                        ? Math.max(delegateModel.estimatedWidth, listContentWidth)
+                        : (listContentWidth || delegateModel.estimatedWidth))
+                    : Math.max(delegateModel.estimatedWidth, listContentWidth)
+                return leftPadding + rightPadding + Math.min(maximumWidth, targetWidth)
             }
 
             implicitHeight: {

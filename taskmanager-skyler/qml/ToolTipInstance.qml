@@ -85,10 +85,16 @@ ColumnLayout {
 
         // This number controls the overall size of the window tooltips
         Layout.maximumWidth: toolTipDelegate.tooltipInstanceMaximumWidth
-        Layout.minimumWidth: (toolTipDelegate.isWin && Plasmoid.configuration.showToolTips) || toolTipDelegate.isGroup ? Layout.maximumWidth : 0
+        Layout.minimumWidth: Plasmoid.configuration.miniTooltip
+            ? (root.orientation === ListView.Horizontal
+                ? (toolTipDelegate.isWin && Plasmoid.configuration.showToolTips
+                    ? (toolTipDelegate.groupMaxWidth > 0 ? toolTipDelegate.groupMaxWidth : Layout.maximumWidth) : 0)
+                : ((toolTipDelegate.isWin && Plasmoid.configuration.showToolTips) || toolTipDelegate.isGroup)
+                    ? Math.min(Kirigami.Units.gridUnit * 8, Layout.maximumWidth) : 0)
+            : ((toolTipDelegate.isWin && Plasmoid.configuration.showToolTips) || toolTipDelegate.isGroup ? Layout.maximumWidth : 0)
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         // match margins of DefaultToolTip.qml in plasma-framework
-        Layout.margins: toolTipDelegate.isWin && Plasmoid.configuration.showToolTips ? 0 : Kirigami.Units.gridUnit / 2
+        Layout.margins: !Plasmoid.configuration.miniTooltip && !(toolTipDelegate.isWin && Plasmoid.configuration.showToolTips) ? Kirigami.Units.gridUnit / 2 : 0
 
         RowLayout {
             id: header
@@ -494,5 +500,15 @@ ColumnLayout {
         }
 
         return subTextEntries.join("\n");
+    }
+
+    Component.onCompleted: {
+        if (root.orientation === ListView.Horizontal) {
+            Qt.callLater(function() {
+                if (header.implicitWidth > 0) {
+                    toolTipDelegate.updateGroupMaxWidth(header.implicitWidth);
+                }
+            });
+        }
     }
 }
