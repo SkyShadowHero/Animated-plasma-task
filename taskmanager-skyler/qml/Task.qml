@@ -159,13 +159,23 @@ PlasmaCore.ToolTipArea {
             if (model) {
                 var remaining = model.ChildCount;
                 if (model.IsLauncher) {
-                    // Pinned last-close → reappear (the launcher reappears via Component.onCompleted)
-                    // Pin readded launcher animation seperately.
+                    // Pinned launcher: exitAnim leaves opacity=0. Component.onCompleted
+                    // triggers launcherReappearAnim when the launcher row is rebuilt.
+                    // Do nothing here — let onCompleted handle the reappear.
                 } else if (remaining > 0 || !model.IsGroupParent) {
-                    // remaining > 0: other windows remain in the group → scale popup
-                    // !IsGroupParent: group dissolved (2→1), delegate now a single window
-                    // Both cases need reappearAnim to undo exitAnim's opacity=0 / scale=0.5 / y=50
-                    reappearAnim.start();
+                    // remaining > 0: other windows remain in the group.
+                    // !IsGroupParent: group dissolved (2→1), delegate now a single window.
+                    // But if all remaining windows are minimized, the minimize state
+                    // will handle the visual — don't fight it with reappearAnim.
+                    if (model.IsMinimized) {
+                        // Just undo exitAnim's side effects silently.
+                        entrySlide.y = 0;
+                        minimizeBounce.y = 0;
+                        icon.scale = 1.0;
+                        icon.opacity = 1.0;
+                    } else {
+                        reappearAnim.start();
+                    }
                 }
                 // remaining == 0 && IsGroupParent → group was removed by model (ghost handles exit)
             }
@@ -854,6 +864,8 @@ PlasmaCore.ToolTipArea {
         interval: 50
         onTriggered: {
             if (entryCooldown.running) return;
+            // Don't fight exitAnim — it is already fading the icon out.
+            if (exitAnim.running || reappearAnim.running || launcherReappearAnim.running) return;
             if (task.parent && task.isWindow && task.model.IsMinimized)
                 minimizeAnim.start();
         }
