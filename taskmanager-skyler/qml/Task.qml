@@ -206,20 +206,6 @@ PlasmaCore.ToolTipArea {
         }
     }
 
-    // Pulse animation when one of multiple windows closes but icon stays
-    // Brief scale up + opacity dip, then return to normal
-    SequentialAnimation {
-        id: pulseAnim
-        ParallelAnimation {
-            NumberAnimation { target: icon; property: "scale"; from: 0.8; to: 1.15; duration: 200 * task.animMul; easing.type: Easing.OutQuad }
-            NumberAnimation { target: icon; property: "opacity"; from: 0.7; to: 1.0; duration: 200 * task.animMul; easing.type: Easing.OutQuad }
-        }
-        ParallelAnimation {
-            NumberAnimation { target: icon; property: "scale"; to: 1.0; duration: 300 * task.animMul; easing.type: Easing.OutBack }
-            NumberAnimation { target: icon; property: "opacity"; to: 1.0; duration: 300 * task.animMul; easing.type: Easing.OutQuad }
-        }
-    }
-
     // Move animation: smooth transition when task buttons are reordered via drag
     property real oldX: -1
     property real oldY: -1
