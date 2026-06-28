@@ -204,6 +204,70 @@ PlasmaCore.ToolTipArea {
         }
     }
 
+    // Move animation: smooth transition when task buttons are reordered via drag
+    property real oldX: -1
+    property real oldY: -1
+
+    onXChanged: {
+        if (!completed) {
+            return;
+        }
+        if (oldX < 0) {
+            oldX = x;
+            return;
+        }
+        moveAnim.x = oldX - x + translateTransform.x;
+        moveAnim.y = translateTransform.y;
+        oldX = x;
+        moveAnim.restart();
+    }
+    onYChanged: {
+        if (!completed) {
+            return;
+        }
+        if (oldY < 0) {
+            oldY = y;
+            return;
+        }
+        moveAnim.y = oldY - y + translateTransform.y;
+        moveAnim.x = translateTransform.x;
+        oldY = y;
+        moveAnim.restart();
+    }
+    SequentialAnimation {
+        id: moveAnim
+        property real x
+        property real y
+        onRunningChanged: {
+            if (running) {
+                ++task.parent.animationsRunning;
+            } else {
+                --task.parent.animationsRunning;
+            }
+        }
+        ParallelAnimation {
+            NumberAnimation {
+                target: translateTransform
+                properties: "x"
+                from: moveAnim.x
+                to: 0
+                easing.type: Easing.OutQuad
+                duration: Kirigami.Units.longDuration
+            }
+            NumberAnimation {
+                target: translateTransform
+                properties: "y"
+                from: moveAnim.y
+                to: 0
+                easing.type: Easing.OutQuad
+                duration: Kirigami.Units.longDuration
+            }
+        }
+    }
+    transform: Translate {
+        id: translateTransform
+    }
+
     Accessible.name: model.display
     Accessible.description: {
         if (!model.display) {
@@ -289,7 +353,10 @@ PlasmaCore.ToolTipArea {
     onWinIdListChanged: {
         var newLen = task.winIdList ? task.winIdList.length : 0;
         if (newLen < task.lastWinCount && newLen > 0) {
-            task.exitAnim.start();
+            // Guard: exitAnim may not be ready if the signal fires during construction
+            if (exitAnim) {
+                exitAnim.start();
+            }
             // exitAnim.onFinished triggers reappearAnim (see exitAnim definition)
         }
         task.lastWinCount = newLen;
