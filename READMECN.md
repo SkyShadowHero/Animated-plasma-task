@@ -8,8 +8,8 @@
 
 | 插件 | ID | 动画 |
 |------|-----|------|
-| 图标任务管理器 (SkyAnimation) | `org.kde.plasma.icontasks.skyler` | 按压缩放 · 入场滑入 · 最小化弹跳 |
-| 任务管理器 (SkyAnimation) | `org.kde.plasma.taskmanager.skyler` | 按压缩放 · 入场滑入 · 最小化弹跳 |
+| 图标任务管理器 (SkyAnimation) | `org.kde.plasma.icontasks.skyler` | 按压缩放 · 入场滑入 · 最小化弹跳 · 退出滑出 · 重显弹出 · 入场上弹 · 重排移动 |
+| 任务管理器 (SkyAnimation) | `org.kde.plasma.taskmanager.skyler` | 按压缩放 · 入场滑入 · 最小化弹跳 · 退出滑出 · 重显弹出 · 入场上弹 · 重排移动 |
 | 应用启动器 (SkyAnimation) | `org.kde.plasma.kickoff.skyler` | 按压缩放 |
 
 ## 安装
