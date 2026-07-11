@@ -56,10 +56,14 @@ install(CODE "
     foreach(LOCALE_DIR \${LOCALE_DIRS})
         set(ORIG_MO \"\${LOCALE_DIR}/\${ORIG_DOMAIN}.mo\")
         if(EXISTS \"\${ORIG_MO}\")
+            get_filename_component(LOCALE_PARENT_DIR \"\${LOCALE_DIR}\" DIRECTORY)
+            get_filename_component(LOCALE_NAME \"\${LOCALE_PARENT_DIR}\" NAME)
+            set(TARGET_LOCALE_DIR \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE_NAME}/LC_MESSAGES\")
+            file(MAKE_DIRECTORY \"\${TARGET_LOCALE_DIR}\")
             foreach(SKYLER_DOMAIN \${SKYLER_DOMAINS})
                 execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
                     \"\${ORIG_DOMAIN}.mo\"
-                    \"\${LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
+                    \"\${TARGET_LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
             endforeach()
         endif()
     endforeach()
@@ -73,9 +77,13 @@ install(CODE "
     foreach(LOCALE_DIR \${LOCALE_DIRS})
         set(ORIG_MO \"\${LOCALE_DIR}/\${ORIG_DOMAIN}.mo\")
         if(EXISTS \"\${ORIG_MO}\")
+            get_filename_component(LOCALE_PARENT_DIR \"\${LOCALE_DIR}\" DIRECTORY)
+            get_filename_component(LOCALE_NAME \"\${LOCALE_PARENT_DIR}\" NAME)
+            set(TARGET_LOCALE_DIR \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE_NAME}/LC_MESSAGES\")
+            file(MAKE_DIRECTORY \"\${TARGET_LOCALE_DIR}\")
             execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
                 \"\${ORIG_DOMAIN}.mo\"
-                \"\${LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
+                \"\${TARGET_LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
         endif()
     endforeach()
 ")
