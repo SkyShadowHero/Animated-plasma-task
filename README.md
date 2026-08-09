@@ -40,5 +40,5 @@ Based on KDE Plasma plasmoids by Eike Hein, Martin Graesslin, and Mikel Johnson.
 
 ## License
 
-Code: GPL-2.0
+Code: GPL-2.0  
 Animations: CC-BY 4.0 SkyShadowHero
