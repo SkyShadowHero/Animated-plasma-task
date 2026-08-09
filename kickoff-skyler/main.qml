@@ -58,7 +58,6 @@ PlasmoidItem {
         flat: true // have categories, but no subcategories
         sorted: Plasmoid.configuration.alphaSort
         showSeparators: !sorted && Plasmoid.configuration.applicationsDisplay != 0
-        showRootSeparator: true
         showTopLevelItems: true
 
         showAllApps: true

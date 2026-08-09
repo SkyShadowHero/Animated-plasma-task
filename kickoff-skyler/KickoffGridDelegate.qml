@@ -55,9 +55,21 @@ AbstractKickoffItemDelegate {
                 visible: active
                 active: (root.model?.isNewlyInstalled ?? false) && !root.removalPlaceholderActive
 
-                sourceComponent: Kirigami.Badge {
-                    text: i18nc("@label Newly-installed app, badge, keep short", "New!") // qmllint disable unqualified
-                    type: Kirigami.Badge.Type.Positive
+                // Kirigami.Badge (KF6) not available; inline replacement.
+                sourceComponent: Rectangle {
+                    implicitWidth: badgeLabel.implicitWidth + Kirigami.Units.smallSpacing
+                    implicitHeight: badgeLabel.implicitHeight + 2
+                    radius: 3
+                    color: Kirigami.Theme.positiveTextColor
+
+                    PC3.Label {
+                        id: badgeLabel
+                        anchors.centerIn: parent
+                        text: i18nc("@label Newly-installed app, badge, keep short", "New!") // qmllint disable unqualified
+                        color: Kirigami.Theme.backgroundColor
+                        font: Kirigami.Theme.smallFont
+                    }
+
                     Accessible.name: i18nc("@label Accessible name for badge", "Newly-installed application") // qmllint disable unqualified
                 }
             }

@@ -9,13 +9,9 @@ set(CMAKE_AUTOMOC ON)
 find_package(ECM REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-# Set KDE install dirs before any find_package that pulls in GNUInstallDirs
-if(NOT DEFINED KDE_INSTALL_PLUGINDIR)
-    set(KDE_INSTALL_PLUGINDIR "${CMAKE_INSTALL_PREFIX}/lib/qt6/plugins" CACHE PATH "KDE plugin install dir")
-endif()
-if(NOT DEFINED KDE_INSTALL_QMLDIR)
-    set(KDE_INSTALL_QMLDIR "${CMAKE_INSTALL_PREFIX}/lib/qt6/qml" CACHE PATH "QML install dir")
-endif()
+# KDE install dirs are auto-detected by ECM (KDEInstallDirs).
+# Do not override them here; the distro multiarch path
+# (e.g. x86_64-linux-gnu/qt6/plugins) is the correct default.
 
 # Plasma macros set LIBRARY_OUTPUT_DIRECTORY based on CMAKE_LIBRARY_OUTPUT_DIRECTORY
 if(NOT DEFINED CMAKE_LIBRARY_OUTPUT_DIRECTORY)
@@ -40,6 +36,21 @@ find_package(LibNotificationManager REQUIRED)  # → PW::LibNotificationManager
 # ── Build ────────────────────────────────────────────
 add_subdirectory(taskmanager-skyler)
 add_subdirectory(kickoff-skyler)
+
+# ── Install taskmanager QML as KPackage ──────────────
+# icontasks-skyler uses X-Plasma-RootPath to redirect to taskmanager-skyler,
+# so taskmanager-skyler needs its QML files installed as a KPackage too.
+install(
+    DIRECTORY taskmanager-skyler/qml/
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.plasma.taskmanager.skyler"
+    FILES_MATCHING
+    PATTERN "*.qml"
+    PATTERN "*.js"
+)
+install(
+    FILES taskmanager-skyler/metadata.json taskmanager-skyler/main.xml
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.plasma.taskmanager.skyler"
+)
 
 # ── Install wrapper packages ─────────────────────────
 plasma_install_package(icontasks-skyler org.kde.plasma.icontasks.skyler)

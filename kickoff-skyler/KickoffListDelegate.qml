@@ -116,10 +116,27 @@ AbstractKickoffItemDelegate {
             visible: active
             active: (root.model?.isNewlyInstalled ?? false) && !root.removalPlaceholderActive
 
-            sourceComponent: Kirigami.Badge {
-                text: root.isCategoryListItem ? "" : i18nc("Newly-installed app, badge, keep short", "New!")
+            // Kirigami.Badge (KF6) not available; inline replacement.
+            sourceComponent: Item {
+                implicitWidth: badgeBg.visible ? badgeBg.implicitWidth : 0
+                implicitHeight: badgeBg.visible ? badgeBg.implicitHeight : 0
 
-                type: Kirigami.Badge.Type.Positive
+                Rectangle {
+                    id: badgeBg
+                    visible: badgeText.text !== ""
+                    implicitWidth: badgeText.implicitWidth + Kirigami.Units.smallSpacing
+                    implicitHeight: badgeText.implicitHeight + 2
+                    radius: 3
+                    color: Kirigami.Theme.positiveTextColor
+                }
+
+                PC3.Label {
+                    id: badgeText
+                    anchors.centerIn: badgeBg
+                    text: root.isCategoryListItem ? "" : i18nc("Newly-installed app, badge, keep short", "New!")
+                    color: Kirigami.Theme.backgroundColor
+                    font: Kirigami.Theme.smallFont
+                }
 
                 Accessible.description: root.isCategoryListItem
                     ? i18n("There is a newly-installed application in this category")

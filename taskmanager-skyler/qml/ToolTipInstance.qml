@@ -181,9 +181,21 @@ ColumnLayout {
                 Layout.preferredWidth: closeButton.width
                 visible: root.index === 0 && toolTipDelegate.smartLauncherCountVisible
 
-                Kirigami.Badge {
+                // Kirigami.Badge (KF6) not available; inline replacement.
+                Rectangle {
                     anchors.centerIn: parent
-                    text: toolTipDelegate.smartLauncherCount
+                    implicitWidth: countLabel.implicitWidth + Kirigami.Units.smallSpacing
+                    implicitHeight: countLabel.implicitHeight + 2
+                    radius: height / 2
+                    color: Kirigami.Theme.positiveTextColor
+
+                    PlasmaComponents3.Label {
+                        id: countLabel
+                        anchors.centerIn: parent
+                        text: toolTipDelegate.smartLauncherCount
+                        color: Kirigami.Theme.backgroundColor
+                        font: Kirigami.Theme.smallFont
+                    }
                 }
             }
 

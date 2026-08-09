@@ -33,5 +33,5 @@ sudo make uninstall
 
 ## 许可证
 
-代码: GPL-2.0-or-later  
+代码: GPL-2.0
 动画: CC-BY 4.0 SkyShadowHero
