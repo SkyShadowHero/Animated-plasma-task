@@ -69,6 +69,10 @@
             <label>Whether to allow switching category items on hover</label>
             <default>false</default>
         </entry>
+        <entry name="hoverEffect" type="Bool">
+            <label>Whether to show hover animation on the panel icon.</label>
+            <default>false</default>
+        </entry>
         <entry name="highlightNewlyInstalledApps" type="Bool">
             <label>Whether to highlight newly-installed applications</label>
             <default>true</default>

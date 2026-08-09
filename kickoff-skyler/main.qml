@@ -248,11 +248,19 @@ PlasmoidItem {
 
         hoverEnabled: true
 
-        transform: Scale {
-            id: pressScale
-            origin.x: compactRoot.width / 2
-            origin.y: compactRoot.height / 2
-        }
+        transform: [
+            Scale {
+                id: pressScale
+                origin.x: compactRoot.width / 2
+                origin.y: compactRoot.height / 2
+            },
+            Translate {
+                y: (Plasmoid.configuration.hoverEffect && compactRoot.containsMouse) ? -3 : 0
+                Behavior on y {
+                    NumberAnimation { duration: 120; easing.type: Easing.OutQuad }
+                }
+            }
+        ]
 
         property bool wasExpanded
 

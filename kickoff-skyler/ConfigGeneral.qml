@@ -38,6 +38,7 @@ KCM.SimpleKCM {
     property alias cfg_showActionButtonCaptions: showActionButtonCaptions.checked
     property alias cfg_compactMode: compactModeCheckbox.checked
     property alias cfg_highlightNewlyInstalledApps: highlightNewlyInstalledAppsCheckbox.checked
+    property alias cfg_hoverEffect: hoverEffectCheckbox.checked
     property alias cfg_switchCategoryOnHover: switchCategoryOnHoverCheckbox.checked
 
     Kirigami.FormLayout {
