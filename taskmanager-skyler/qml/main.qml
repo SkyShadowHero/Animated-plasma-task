@@ -24,6 +24,8 @@ import org.kde.plasma.workspace.dbus as DBus
 PlasmoidItem {
     id: tasks
 
+    clip: false
+
     // For making a bottom to top layout since qml flow can't do that.
     // We just hang the task manager upside down to achieve that.
     // This mirrors the tasks and group dialog as well, so we un-rotate them

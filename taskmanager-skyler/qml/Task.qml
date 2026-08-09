@@ -706,7 +706,25 @@ PlasmaCore.ToolTipArea {
 
         transform: [
             Translate { id: entrySlide; y: 0 },
-            Translate { id: minimizeBounce; y: 0 }
+            Translate { id: minimizeBounce; y: 0 },
+            Translate {
+                y: (Plasmoid.configuration.hoverEffect && task.containsMouse) ? -5 : 0
+                Behavior on y {
+                    NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+                }
+            },
+            Scale {
+                origin.x: iconBox.width / 2
+                origin.y: iconBox.height / 2
+                xScale: (Plasmoid.configuration.hoverEffect && task.containsMouse) ? 1.10 : 1.0
+                yScale: (Plasmoid.configuration.hoverEffect && task.containsMouse) ? 1.10 : 1.0
+                Behavior on xScale {
+                    NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+                }
+                Behavior on yScale {
+                    NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+                }
+            }
         ]
 
         function adjustMargin(isVertical: bool, size: real, margin: real): real {

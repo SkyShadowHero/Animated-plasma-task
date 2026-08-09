@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 14:40+0800\n"
+"POT-Creation-Date: 2026-08-09 15:16+0800\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,13 +17,6 @@ msgstr ""
 "X-Crowdin-File: /kf6-stable/messages/plasma-desktop/"
 "plasma_applet_org.kde.plasma.taskmanager.pot\n"
 "X-Crowdin-File-ID: 50358\n"
-
-#: backend.cpp:288
-#, qt-format
-msgctxt "Show all user Places"
-msgid "%1 more Place…"
-msgid_plural "%1 more Places…"
-msgstr[0] "其他 %1 个位置…"
 
 #: backend.cpp:372
 msgid "Recent Downloads"
@@ -387,7 +380,7 @@ msgctxt "@option:check section Mini Tooltip"
 msgid "Use compact tooltip style"
 msgstr "使用紧凑工具提示样式"
 
-#: qml/ConfigBehavior.qml:51
+#: qml/ConfigBehavior.qml:52
 msgctxt "@info"
 msgid ""
 "If you're using this setting to work around an application that demands "
@@ -399,176 +392,176 @@ msgstr ""
 "中查找是否有相关设置来禁用弹出行为。如果没有找到，建议您将此问题作为程序缺陷"
 "报告给应用程序的开发者。"
 
-#: qml/ConfigBehavior.qml:67
+#: qml/ConfigBehavior.qml:68
 msgctxt "@label:listbox how to group tasks"
 msgid "Group:"
 msgstr "分组："
 
-#: qml/ConfigBehavior.qml:71
+#: qml/ConfigBehavior.qml:72
 msgctxt "@item:inlistbox how to group tasks"
 msgid "Do not group"
 msgstr "不分组"
 
-#: qml/ConfigBehavior.qml:72
+#: qml/ConfigBehavior.qml:73
 msgctxt "@item:inlistbox how to group tasks"
 msgid "By program name"
 msgstr "按程序名称"
 
-#: qml/ConfigBehavior.qml:78
+#: qml/ConfigBehavior.qml:79
 msgctxt "@label:listbox completes sentence like: … cycles through tasks"
 msgid "Clicking grouped task:"
 msgstr "点击分组任务时："
 
-#: qml/ConfigBehavior.qml:85
+#: qml/ConfigBehavior.qml:86
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
 "tasks' "
 msgid "Cycles through tasks"
 msgstr "循环切换任务"
 
-#: qml/ConfigBehavior.qml:86
+#: qml/ConfigBehavior.qml:87
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
 "window previews' "
 msgid "Shows small window previews"
 msgstr "显示窗口预览 (小)"
 
-#: qml/ConfigBehavior.qml:87
+#: qml/ConfigBehavior.qml:88
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
 "window previews' "
 msgid "Shows large window previews"
 msgstr "显示窗口预览 (大)"
 
-#: qml/ConfigBehavior.qml:88
+#: qml/ConfigBehavior.qml:89
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
 "list' "
 msgid "Shows textual list"
 msgstr "显示文本列表"
 
-#: qml/ConfigBehavior.qml:99
+#: qml/ConfigBehavior.qml:100
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "The compositor does not support displaying windows side by side, so a "
 "textual list will be displayed instead."
 msgstr "显示合成器不支持并排显示窗口，将改为显示文本式窗口列表"
 
-#: qml/ConfigBehavior.qml:109
+#: qml/ConfigBehavior.qml:110
 msgctxt "@option:check grouped task"
 msgid "Combine into single button"
 msgstr "合并为单个按钮"
 
-#: qml/ConfigBehavior.qml:116
+#: qml/ConfigBehavior.qml:117
 msgctxt "@option:check grouped task"
 msgid "Group only when the Task Manager is full"
 msgstr "仅在任务栏已满时分组"
 
-#: qml/ConfigBehavior.qml:128
+#: qml/ConfigBehavior.qml:129
 msgctxt "@label:listbox sort tasks in grouped task"
 msgid "Sort:"
 msgstr "排序："
 
-#: qml/ConfigBehavior.qml:135
+#: qml/ConfigBehavior.qml:136
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Do not sort"
 msgstr "不排序"
 
-#: qml/ConfigBehavior.qml:139
+#: qml/ConfigBehavior.qml:140
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Manually"
 msgstr "手动"
 
-#: qml/ConfigBehavior.qml:143
+#: qml/ConfigBehavior.qml:144
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Alphabetically"
 msgstr "按字母顺序"
 
-#: qml/ConfigBehavior.qml:147
+#: qml/ConfigBehavior.qml:148
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By desktop"
 msgstr "按桌面"
 
-#: qml/ConfigBehavior.qml:151
+#: qml/ConfigBehavior.qml:152
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By activity"
 msgstr "按活动"
 
-#: qml/ConfigBehavior.qml:155
+#: qml/ConfigBehavior.qml:156
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By horizontal window position"
 msgstr "按窗口水平位置"
 
-#: qml/ConfigBehavior.qml:166
+#: qml/ConfigBehavior.qml:167
 msgctxt "@option:check configure task sorting"
 msgid "Keep launchers separate"
 msgstr "保持启动器分隔放置"
 
-#: qml/ConfigBehavior.qml:173
+#: qml/ConfigBehavior.qml:174
 msgctxt "@option:check for icons-and-text task manager"
 msgid "Hide launchers after application startup"
 msgstr "应用程序启动后隐藏启动器"
 
-#: qml/ConfigBehavior.qml:183
+#: qml/ConfigBehavior.qml:184
 msgctxt ""
 "@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
 "task'"
 msgid "Clicking active task:"
 msgstr "点击活动任务时："
 
-#: qml/ConfigBehavior.qml:184
+#: qml/ConfigBehavior.qml:185
 msgctxt ""
 "@option:check Part of a sentence: 'Clicking active task minimizes the task'"
 msgid "Minimizes the task"
 msgstr "最小化任务"
 
-#: qml/ConfigBehavior.qml:189
+#: qml/ConfigBehavior.qml:190
 msgctxt "@label:listbox completes sentence like: … does nothing"
 msgid "Middle-clicking any task:"
 msgstr "中键点击任意任务："
 
-#: qml/ConfigBehavior.qml:193
+#: qml/ConfigBehavior.qml:194
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
 msgid "Does nothing"
 msgstr "无操作"
 
-#: qml/ConfigBehavior.qml:194
+#: qml/ConfigBehavior.qml:195
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
 "or group'"
 msgid "Closes window or group"
 msgstr "关闭窗口或分组"
 
-#: qml/ConfigBehavior.qml:195
+#: qml/ConfigBehavior.qml:196
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
 "window'"
 msgid "Opens a new window"
 msgstr "打开新窗口"
 
-#: qml/ConfigBehavior.qml:196
+#: qml/ConfigBehavior.qml:197
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task minimizes/"
 "restores window or group'"
 msgid "Minimizes/Restores window or group"
 msgstr "最小化/恢复窗口或分组"
 
-#: qml/ConfigBehavior.qml:197
+#: qml/ConfigBehavior.qml:198
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
 "grouping'"
 msgid "Toggles grouping"
 msgstr "切换任务分组"
 
-#: qml/ConfigBehavior.qml:198
+#: qml/ConfigBehavior.qml:199
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task brings it to "
 "the current virtual desktop'"
 msgid "Brings it to the current virtual desktop"
 msgstr "移动到当前虚拟桌面"
 
-#: qml/ConfigBehavior.qml:208
+#: qml/ConfigBehavior.qml:209
 msgctxt ""
 "@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
 "through tasks/cycles through the selected task's windows/adjusts the hovered "
@@ -576,122 +569,136 @@ msgctxt ""
 msgid "Scrolling behavior:"
 msgstr "滚动行为："
 
-#: qml/ConfigBehavior.qml:212
+#: qml/ConfigBehavior.qml:213
 msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
 msgid "Does nothing"
 msgstr "无操作"
 
-#: qml/ConfigBehavior.qml:213
+#: qml/ConfigBehavior.qml:214
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
 "tasks'"
 msgid "Cycles through all tasks"
 msgstr "循环切换所有任务"
 
-#: qml/ConfigBehavior.qml:214
+#: qml/ConfigBehavior.qml:215
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through the "
 "hovered task's windows'"
 msgid "Cycles through the hovered task’s windows"
 msgstr "循环切换悬停任务的窗口"
 
-#: qml/ConfigBehavior.qml:215
+#: qml/ConfigBehavior.qml:216
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
 "task’s volume'"
 msgid "Adjusts the hovered task’s volume"
 msgstr "调整光标悬停任务的音量"
 
-#: qml/ConfigBehavior.qml:223
+#: qml/ConfigBehavior.qml:224
 msgctxt "@option:check mouse wheel task cycling"
 msgid "Skip minimized tasks"
 msgstr "跳过最小化的任务"
 
-#: qml/ConfigBehavior.qml:233
+#: qml/ConfigBehavior.qml:234
 msgctxt ""
 "@label for checkbox group, completes sentence like: … from current screen"
 msgid "Show only tasks:"
 msgstr "显示的任务："
 
-#: qml/ConfigBehavior.qml:234
+#: qml/ConfigBehavior.qml:235
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current desktop"
 msgstr "当前桌面的任务"
 
-#: qml/ConfigBehavior.qml:239
+#: qml/ConfigBehavior.qml:240
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current activity"
 msgstr "当前活动的任务"
 
-#: qml/ConfigBehavior.qml:244
+#: qml/ConfigBehavior.qml:245
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current screen"
 msgstr "当前屏幕的任务"
 
-#: qml/ConfigBehavior.qml:249
+#: qml/ConfigBehavior.qml:250
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
 msgstr "最小化的任务"
 
-#: qml/ConfigBehavior.qml:258
+#: qml/ConfigBehavior.qml:259
 msgctxt ""
 "@label for checkbox, completes sentence: … unhide if window wants attention"
 msgid "When panel is hidden:"
 msgstr "面板隐藏时："
 
-#: qml/ConfigBehavior.qml:259
+#: qml/ConfigBehavior.qml:260
 msgctxt "@option:check completes sentence: When panel is hidden"
 msgid "Unhide when a window wants attention"
 msgstr "窗口请求注意时，取消隐藏"
 
-#: qml/ConfigBehavior.qml:274
+#: qml/ConfigBehavior.qml:275
 msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
 msgid "New tasks appear:"
 msgstr "新任务出现位置："
 
-#: qml/ConfigBehavior.qml:278
+#: qml/ConfigBehavior.qml:279
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "On the bottom"
 msgstr "在底部显示"
 
-#: qml/ConfigBehavior.qml:282 qml/ConfigBehavior.qml:301
+#: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:302
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "To the right"
 msgstr "右侧"
 
-#: qml/ConfigBehavior.qml:284 qml/ConfigBehavior.qml:299
+#: qml/ConfigBehavior.qml:285 qml/ConfigBehavior.qml:300
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "To the left"
 msgstr "左侧"
 
-#: qml/ConfigBehavior.qml:295
+#: qml/ConfigBehavior.qml:296
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "On the top"
 msgstr "在顶部显示"
 
-#: qml/ConfigBehavior.qml:308
+#: qml/ConfigBehavior.qml:309
 msgid "Animation"
 msgstr "动画"
 
-#: qml/ConfigBehavior.qml:315
+#: qml/ConfigBehavior.qml:316
 msgctxt "@label:listbox"
 msgid "Animation speed:"
 msgstr "动画速度："
 
-#: qml/ConfigBehavior.qml:318
+#: qml/ConfigBehavior.qml:319
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "极快"
+
+#: qml/ConfigBehavior.qml:320
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
 msgstr "快速"
 
-#: qml/ConfigBehavior.qml:319
+#: qml/ConfigBehavior.qml:321
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
 msgstr "正常"
 
-#: qml/ConfigBehavior.qml:320
+#: qml/ConfigBehavior.qml:322
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
 msgstr "慢速"
+
+#: qml/ConfigBehavior.qml:323
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "极慢"
+
+#: qml/ConfigBehavior.qml:329
+msgid "Icon hover effect"
+msgstr "图标悬停效果"
 
 #: qml/ToolTipInstance.qml:219
 msgctxt "@info:tooltip Close this window"
@@ -798,13 +805,6 @@ msgctxt "@info:usagetip %1 application name"
 msgid "Launch %1"
 msgstr "启动 %1"
 
-#: qml/Task.qml:289
-#, qt-format
-msgctxt "@info:tooltip"
-msgid "There is %1 new message."
-msgid_plural "There are %1 new messages."
-msgstr[0] "有 %1 条新消息。"
-
 #: qml/Task.qml:297
 #, qt-format
 msgctxt "@info:usagetip %1 task name"
@@ -828,6 +828,18 @@ msgstr "打开 %1 的文本窗口列表"
 msgctxt "@info:usagetip %1 task name"
 msgid "Activate %1"
 msgstr "激活 %1"
+
+#, qt-format
+#~ msgctxt "Show all user Places"
+#~ msgid "%1 more Place…"
+#~ msgid_plural "%1 more Places…"
+#~ msgstr[0] "其他 %1 个位置…"
+
+#, qt-format
+#~ msgctxt "@info:tooltip"
+#~ msgid "There is %1 new message."
+#~ msgid_plural "There are %1 new messages."
+#~ msgstr[0] "有 %1 条新消息。"
 
 #~ msgctxt "@info:usagetip under a set of radio buttons when Touch Mode is on"
 #~ msgid "Automatically set to Large when in Touch mode"

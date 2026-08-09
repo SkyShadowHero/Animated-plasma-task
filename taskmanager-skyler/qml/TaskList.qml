@@ -14,6 +14,7 @@ import plasma.applet.org.kde.plasma.taskmanager.skyler as TaskManagerApplet
 GridLayout {
     property bool animating: false
 
+    clip: false
     rowSpacing: 0
     columnSpacing: 0
 

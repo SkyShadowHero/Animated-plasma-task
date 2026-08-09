@@ -37,6 +37,7 @@ KCMUtils.SimpleKCM {
     property alias cfg_unhideOnAttention: unhideOnAttention.checked
     property alias cfg_reverseMode: reverseMode.checked
     property alias cfg_animationSpeed: animationSpeed.currentIndex
+    property alias cfg_hoverEffect: hoverEffect.checked
 
     headerPaddingEnabled: false
     header: ColumnLayout {
@@ -315,10 +316,18 @@ KCMUtils.SimpleKCM {
             Kirigami.FormData.label: i18nc("@label:listbox", "Animation speed:")
             Layout.fillWidth: true
             model: [
+                i18nc("@item:inlistbox animation speed", "Very Fast"),
                 i18nc("@item:inlistbox animation speed", "Fast"),
                 i18nc("@item:inlistbox animation speed", "Normal"),
-                i18nc("@item:inlistbox animation speed", "Slow")
+                i18nc("@item:inlistbox animation speed", "Slow"),
+                i18nc("@item:inlistbox animation speed", "Very Slow")
             ]
+        }
+
+        QQC2.CheckBox {
+            id: hoverEffect
+            text: i18n("Icon hover effect")
+            checked: true
         }
     }
 }

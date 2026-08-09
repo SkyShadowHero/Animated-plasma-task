@@ -155,13 +155,19 @@
       <default>1</default>
     </entry>
     <entry name="animationSpeed" type="Enum">
-      <label>Controls the speed of entry and minimize animations. 0=Fast, 1=Normal, 2=Slow.</label>
+      <label>Controls the speed of entry and minimize animations. 0=VeryFast, 1=Fast, 2=Normal, 3=Slow, 4=VerySlow.</label>
       <choices>
+        <choice name="VeryFast"/>
         <choice name="Fast"/>
         <choice name="Normal"/>
         <choice name="Slow"/>
+        <choice name="VerySlow"/>
       </choices>
-      <default>1</default>
+      <default>2</default>
+    </entry>
+    <entry name="hoverEffect" type="Bool">
+      <label>Whether to show hover animation (icon moves up and enlarges when mouse hovers over it).</label>
+      <default>true</default>
     </entry>
     <entry name="miniTooltip" type="Bool">
       <label>Whether to use compact mini tooltips. Off = default Plasma style, On = smaller compact style.</label>
