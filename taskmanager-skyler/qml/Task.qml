@@ -724,6 +724,13 @@ PlasmaCore.ToolTipArea {
                 Behavior on yScale {
                     NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
                 }
+            },
+            Scale {
+                origin.x: iconBox.width / 2
+                origin.y: iconBox.height / 2
+                readonly property real scale: Plasmoid.configuration.iconScale / 100.0
+                xScale: scale
+                yScale: scale
             }
         ]
 

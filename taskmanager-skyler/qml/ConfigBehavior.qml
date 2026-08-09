@@ -38,6 +38,7 @@ KCMUtils.SimpleKCM {
     property alias cfg_reverseMode: reverseMode.checked
     property alias cfg_animationSpeed: animationSpeed.currentIndex
     property alias cfg_hoverEffect: hoverEffect.checked
+    property alias cfg_iconScale: iconScale.value
 
     headerPaddingEnabled: false
     header: ColumnLayout {
@@ -328,6 +329,18 @@ KCMUtils.SimpleKCM {
             id: hoverEffect
             text: i18n("Icon hover effect")
             checked: true
+        }
+
+        QQC2.SpinBox {
+            id: iconScale
+            Kirigami.FormData.label: i18n("Icon scale:")
+            from: 20
+            to: 150
+            stepSize: 5
+            value: 100
+            editable: true
+            textFromValue: function(val) { return val + "%" }
+            valueFromText: function(txt) { return parseInt(txt) || 100 }
         }
     }
 }

@@ -169,6 +169,12 @@
       <label>Whether to show hover animation (icon moves up and enlarges when mouse hovers over it).</label>
       <default>true</default>
     </entry>
+    <entry name="iconScale" type="Int">
+      <label>Icon scale in percent (20-150).</label>
+      <default>100</default>
+      <min>20</min>
+      <max>150</max>
+    </entry>
     <entry name="miniTooltip" type="Bool">
       <label>Whether to use compact mini tooltips. Off = default Plasma style, On = smaller compact style.</label>
       <default>false</default>
