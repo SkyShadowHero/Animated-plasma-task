@@ -1,0 +1,846 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_tasks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 14:40+0800\n"
+"PO-Revision-Date: 2026-03-13 11:21+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.12.3\n"
+"X-Language: cs_CZ\n"
+"X-Source-Language: en_US\n"
+
+#: backend.cpp:288
+#, qt-format
+msgctxt "Show all user Places"
+msgid "%1 more Place…"
+msgid_plural "%1 more Places…"
+msgstr[0] "%1 další místo..."
+msgstr[1] "%1 další místa..."
+msgstr[2] "%1 dalších míst..."
+
+#: backend.cpp:372
+msgid "Recent Downloads"
+msgstr "Nedávná stahování"
+
+#: backend.cpp:374
+msgid "Recent Connections"
+msgstr "Nedávná spojení"
+
+#: backend.cpp:376
+msgid "Recent Places"
+msgstr "Nedávná místa"
+
+#: backend.cpp:385
+msgctxt "@action:inmenu"
+msgid "Forget Recent Downloads"
+msgstr "Zapomenout nedávná stahování"
+
+#: backend.cpp:387
+msgctxt "@action:inmenu"
+msgid "Forget Recent Connections"
+msgstr "Zapomenout nedávná spojení"
+
+#: backend.cpp:389
+msgctxt "@action:inmenu"
+msgid "Forget Recent Places"
+msgstr "Zapomenout nedávná místa"
+
+#: backend.cpp:391
+msgctxt "@action:inmenu"
+msgid "Forget Recent Files"
+msgstr "Zapomenout nedávné soubory"
+
+#: qml/ContextMenu.qml:100
+msgctxt "@title:group for section of menu items"
+msgid "Places"
+msgstr "Místa"
+
+#: qml/ContextMenu.qml:106
+msgctxt "@title:group for section of menu items"
+msgid "Recent Files"
+msgstr "Nedávné soubory"
+
+#: qml/ContextMenu.qml:116
+msgctxt "@title:group for section of menu items"
+msgid "Actions"
+msgstr "Činnosti"
+
+#: qml/ContextMenu.qml:163
+msgctxt "Play previous track"
+msgid "Previous Track"
+msgstr "Předchozí skladba"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Pause playback"
+msgid "Pause"
+msgstr "Pozastavit"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Start playback"
+msgid "Play"
+msgstr "Přehrát"
+
+#: qml/ContextMenu.qml:195
+msgctxt "Play next track"
+msgid "Next Track"
+msgstr "Následující skladba"
+
+#: qml/ContextMenu.qml:206
+msgctxt "Stop playback"
+msgid "Stop"
+msgstr "Zastavit"
+
+#: qml/ContextMenu.qml:226
+msgctxt "Quit media player app"
+msgid "Quit"
+msgstr "Ukončit"
+
+#: qml/ContextMenu.qml:241
+msgctxt "Open or bring to the front window of media player app"
+msgid "Restore"
+msgstr "Obnovit"
+
+#: qml/ContextMenu.qml:266
+msgctxt "@option:check inmenu, no separate unmute action"
+msgid "Mute"
+msgstr "Ztlumit"
+
+#: qml/ContextMenu.qml:277
+msgctxt "action:inmenu"
+msgid "Open New Window"
+msgstr "Otevřít nové okno"
+
+#: qml/ContextMenu.qml:293
+msgctxt "action:inmenu"
+msgid "Move to &Desktop"
+msgstr "Přesunout na &plochu"
+
+#: qml/ContextMenu.qml:323
+msgctxt "action:inmenu"
+msgid "Move &To Current Desktop"
+msgstr "Přesunou&t na současnou plochu"
+
+#: qml/ContextMenu.qml:345
+msgctxt "action:inmenu"
+msgid "&All Desktops"
+msgstr "Všechny pr&acovní plochy"
+
+#: qml/ContextMenu.qml:373
+msgctxt "action:inmenu"
+msgid "&New Desktop"
+msgstr "&Nová pracovní plocha"
+
+#: qml/ContextMenu.qml:393
+msgctxt "action:inmenu"
+msgid "Show in &Activities"
+msgstr "Zobrazit v aktivitách"
+
+#: qml/ContextMenu.qml:417
+msgctxt "action:inmenu"
+msgid "Add To Current Activity"
+msgstr "Přidat do současné aktivity"
+
+#: qml/ContextMenu.qml:427
+msgctxt "action:inmenu"
+msgid "All Activities"
+msgstr "Všechny aktivity"
+
+#: qml/ContextMenu.qml:483
+#, qt-format
+msgctxt "action:inmenu"
+msgid "Move to %1"
+msgstr "Přesunout na '%1'"
+
+#: qml/ContextMenu.qml:509 qml/ContextMenu.qml:525
+msgctxt "action:inmenu"
+msgid "&Pin to Task Manager"
+msgstr "&Připnout do Správce úloh"
+
+#: qml/ContextMenu.qml:577
+msgctxt "action:inmenu"
+msgid "On All Activities"
+msgstr "Ve všech aktivitách"
+
+#: qml/ContextMenu.qml:583
+msgctxt "action:inmenu"
+msgid "On The Current Activity"
+msgstr "V současné aktivitě"
+
+#: qml/ContextMenu.qml:607
+msgctxt "action:inmenu"
+msgid "Unpin from Task Manager"
+msgstr "Odepnout od Správce úloh"
+
+#: qml/ContextMenu.qml:622
+msgctxt "item:inmenu opens submenu"
+msgid "More"
+msgstr "Více"
+
+#: qml/ContextMenu.qml:631
+msgctxt "action:inmenu"
+msgid "&Move"
+msgstr "Pře&sunout"
+
+#: qml/ContextMenu.qml:640
+msgctxt "action:inmenu"
+msgid "Re&size"
+msgstr "Změnit v&elikost"
+
+#: qml/ContextMenu.qml:654
+msgctxt "action:inmenu"
+msgid "Ma&ximize"
+msgstr "Ma&ximalizovat"
+
+#: qml/ContextMenu.qml:668
+msgctxt "action:inmenu"
+msgid "Mi&nimize"
+msgstr "Mi&nimalizovat"
+
+#: qml/ContextMenu.qml:678
+msgctxt "action:inmenu"
+msgid "Keep &Above Others"
+msgstr "Ponechat n&ad ostatními"
+
+#: qml/ContextMenu.qml:688
+msgctxt "action:inmenu"
+msgid "Keep &Below Others"
+msgstr "Ponechat pod ostatní&mi"
+
+#: qml/ContextMenu.qml:700
+msgctxt "action:inmenu"
+msgid "&Fullscreen"
+msgstr "Na celou o&brazovku"
+
+#: qml/ContextMenu.qml:713
+msgctxt "action:inmenu"
+msgid "&Shade"
+msgstr "Z&asunout"
+
+#: qml/ContextMenu.qml:725
+msgctxt "@action:inmenu"
+msgid "&No Titlebar and Frame"
+msgstr "&Bez titulku a rámu"
+
+#: qml/ContextMenu.qml:738
+msgctxt "@action:inmenu"
+msgid "&Hide from Screencast"
+msgstr "S&krýt ze snímku obrazovky"
+
+#: qml/ContextMenu.qml:754
+msgctxt "@option:check inmenu"
+msgid "Allow this program to be grouped"
+msgstr "Povolit programu seskupování"
+
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close All"
+msgstr "&Zavřít vše"
+
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close"
+msgstr "&Zavřít"
+
+#: qml/config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: qml/config.qml:18
+msgctxt "@title:group for configuration dialog page"
+msgid "Behavior"
+msgstr "Chování"
+
+#: qml/ConfigAppearance.qml:50
+msgctxt "@label for several checkboxes"
+msgid "General:"
+msgstr "Obecné:"
+
+#: qml/ConfigAppearance.qml:51
+msgctxt "@option:check section General"
+msgid "Show small window previews when hovering over tasks"
+msgstr "Při přejezdu myší nad úlohami zobrazovat malé okno s náhledem"
+
+#: qml/ConfigAppearance.qml:56
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over previews"
+msgstr "Skrýt ostatní okna při přejetí přes náhledy"
+
+#: qml/ConfigAppearance.qml:56
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over tooltips"
+msgstr "Skrýt ostatní okna při najetí myší na popisky"
+
+#: qml/ConfigAppearance.qml:61
+msgctxt "@option:check section General"
+msgid "Show an indicator when a task is playing audio"
+msgstr "Zobrazit indikátor, když úkol přehrává zvuk"
+
+#: qml/ConfigAppearance.qml:71
+msgctxt "@option:check section General"
+msgid "Mute task when clicking indicator"
+msgstr "Ztlumit úkol při kliknutí na indikátor"
+
+#: qml/ConfigAppearance.qml:79
+msgctxt "@option:check section General"
+msgid "Show media and volume controls in tooltip"
+msgstr "Zobrazit média a ovládání hlasitosti v nástrojovém tipu"
+
+#: qml/ConfigAppearance.qml:87
+msgctxt "@option:check section General"
+msgid "Fill free space on panel"
+msgstr "Vyplnit na panelu volné místo"
+
+#: qml/ConfigAppearance.qml:99
+msgctxt "@label:listbox"
+msgid "Maximum task width:"
+msgstr "Maximální šířka úkolu:"
+
+#: qml/ConfigAppearance.qml:102
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Narrow"
+msgstr "Úzký"
+
+#: qml/ConfigAppearance.qml:103
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Medium"
+msgstr "Střední"
+
+#: qml/ConfigAppearance.qml:104
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Wide"
+msgstr "Široký"
+
+#: qml/ConfigAppearance.qml:115
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-column view:"
+msgstr "Použít vícesloupcový pohled:"
+
+#: qml/ConfigAppearance.qml:116
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-row view:"
+msgstr "Použít víceřádkový pohled:"
+
+#: qml/ConfigAppearance.qml:122
+msgctxt "@option:radio Never use multi-column view for Task Manager"
+msgid "Never"
+msgstr "Nikdy"
+
+#: qml/ConfigAppearance.qml:132
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "When panel is low on space and thick enough"
+msgstr "Pokud má panel málo místa ale je dostatečně široký"
+
+#: qml/ConfigAppearance.qml:142
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "Always when panel is thick enough"
+msgstr "Vždy když je panel dostatečně široký"
+
+#: qml/ConfigAppearance.qml:149
+msgctxt "@label:spinbox maximum number of columns for tasks"
+msgid "Maximum columns:"
+msgstr "Sloupců maximálně:"
+
+#: qml/ConfigAppearance.qml:150
+msgctxt "@label:spinbox maximum number of rows for tasks"
+msgid "Maximum rows:"
+msgstr "Řádků maximálně:"
+
+#: qml/ConfigAppearance.qml:160
+msgctxt "@label:listbox"
+msgid "Spacing between icons:"
+msgstr "Vzdálenosti mezi ikonami:"
+
+#: qml/ConfigAppearance.qml:164
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "Malé"
+
+#: qml/ConfigAppearance.qml:168
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "Normální"
+
+#: qml/ConfigAppearance.qml:172
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "Velké"
+
+#: qml/ConfigAppearance.qml:195
+msgctxt "@label for checkbox"
+msgid "Mini Tooltip:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:196
+msgctxt "@option:check section Mini Tooltip"
+msgid "Use compact tooltip style"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:51
+msgctxt "@info"
+msgid ""
+"If you're using this setting to work around an application that demands "
+"attention too often, first look for a setting in the app to disable that "
+"behavior. If you don't find one, consider reporting this as a bug to the "
+"app's developer."
+msgstr ""
+"Pokud používáte toto nastavení k obejití aplikace, která vyžaduje příliš "
+"častou pozornost, nejprve vyhledejte v aplikaci nastavení, které toto "
+"chování deaktivuje. Pokud žádné nenajdete, zvažte nahlášení této chyby "
+"vývojáři aplikace."
+
+#: qml/ConfigBehavior.qml:67
+msgctxt "@label:listbox how to group tasks"
+msgid "Group:"
+msgstr "Skupina:"
+
+#: qml/ConfigBehavior.qml:71
+msgctxt "@item:inlistbox how to group tasks"
+msgid "Do not group"
+msgstr "Neseskupovat"
+
+#: qml/ConfigBehavior.qml:72
+msgctxt "@item:inlistbox how to group tasks"
+msgid "By program name"
+msgstr "Podle názvu programu"
+
+#: qml/ConfigBehavior.qml:78
+msgctxt "@label:listbox completes sentence like: … cycles through tasks"
+msgid "Clicking grouped task:"
+msgstr "Kliknutí na seskupenou úlohu:"
+
+#: qml/ConfigBehavior.qml:85
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
+"tasks' "
+msgid "Cycles through tasks"
+msgstr "Postupně prochází mezi úlohami"
+
+#: qml/ConfigBehavior.qml:86
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
+"window previews' "
+msgid "Shows small window previews"
+msgstr "Zobrazí malé náhledy oken"
+
+#: qml/ConfigBehavior.qml:87
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
+"window previews' "
+msgid "Shows large window previews"
+msgstr "Zobrazí velké náhledy oken"
+
+#: qml/ConfigBehavior.qml:88
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
+"list' "
+msgid "Shows textual list"
+msgstr "Zobrazí textový seznam"
+
+#: qml/ConfigBehavior.qml:99
+msgctxt "@info displayed as InlineMessage"
+msgid ""
+"The compositor does not support displaying windows side by side, so a "
+"textual list will be displayed instead."
+msgstr ""
+"Kompozitor nepodporuje zobrazení oken vedle sebe, takže se místo toho "
+"zobrazí textový seznam."
+
+#: qml/ConfigBehavior.qml:109
+msgctxt "@option:check grouped task"
+msgid "Combine into single button"
+msgstr "Sloučit do jednoho tlačítka"
+
+#: qml/ConfigBehavior.qml:116
+msgctxt "@option:check grouped task"
+msgid "Group only when the Task Manager is full"
+msgstr "Seskupovat pouze pokud je správce úloh plný"
+
+#: qml/ConfigBehavior.qml:128
+msgctxt "@label:listbox sort tasks in grouped task"
+msgid "Sort:"
+msgstr "Seřadit:"
+
+#: qml/ConfigBehavior.qml:135
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Do not sort"
+msgstr "Neseřazovat"
+
+#: qml/ConfigBehavior.qml:139
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Manually"
+msgstr "Ručně"
+
+#: qml/ConfigBehavior.qml:143
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Alphabetically"
+msgstr "Podle abecedy"
+
+#: qml/ConfigBehavior.qml:147
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By desktop"
+msgstr "Podle plochy"
+
+#: qml/ConfigBehavior.qml:151
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By activity"
+msgstr "Podle aktivity"
+
+#: qml/ConfigBehavior.qml:155
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By horizontal window position"
+msgstr "Podle vodorovné polohy okna"
+
+#: qml/ConfigBehavior.qml:166
+msgctxt "@option:check configure task sorting"
+msgid "Keep launchers separate"
+msgstr "Nechat spouštěče oddělené"
+
+#: qml/ConfigBehavior.qml:173
+msgctxt "@option:check for icons-and-text task manager"
+msgid "Hide launchers after application startup"
+msgstr "Skrýt spouštěče po spuštění aplikace"
+
+#: qml/ConfigBehavior.qml:183
+msgctxt ""
+"@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
+"task'"
+msgid "Clicking active task:"
+msgstr "Kliknutí na aktivní úlohu:"
+
+#: qml/ConfigBehavior.qml:184
+msgctxt ""
+"@option:check Part of a sentence: 'Clicking active task minimizes the task'"
+msgid "Minimizes the task"
+msgstr "Minimalizuje úlohu"
+
+#: qml/ConfigBehavior.qml:189
+msgctxt "@label:listbox completes sentence like: … does nothing"
+msgid "Middle-clicking any task:"
+msgstr "Kliknutí prostředním tlačítkem na kteroukoliv úlohu:"
+
+#: qml/ConfigBehavior.qml:193
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
+msgid "Does nothing"
+msgstr "Nedělá nic"
+
+#: qml/ConfigBehavior.qml:194
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
+"or group'"
+msgid "Closes window or group"
+msgstr "Zavře okno nebo skupinu"
+
+#: qml/ConfigBehavior.qml:195
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
+"window'"
+msgid "Opens a new window"
+msgstr "Otevře nové okno"
+
+#: qml/ConfigBehavior.qml:196
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task minimizes/"
+"restores window or group'"
+msgid "Minimizes/Restores window or group"
+msgstr "Minimalizuje/Vrátí okno nebo skupinu"
+
+#: qml/ConfigBehavior.qml:197
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
+"grouping'"
+msgid "Toggles grouping"
+msgstr "Zapne seskupování"
+
+#: qml/ConfigBehavior.qml:198
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task brings it to "
+"the current virtual desktop'"
+msgid "Brings it to the current virtual desktop"
+msgstr "Přesune jej na současnou virtuální plochu"
+
+#: qml/ConfigBehavior.qml:208
+msgctxt ""
+"@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
+"through tasks/cycles through the selected task's windows/adjusts the hovered "
+"task’s volume''"
+msgid "Scrolling behavior:"
+msgstr "Chování při rolování:"
+
+#: qml/ConfigBehavior.qml:212
+msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
+msgid "Does nothing"
+msgstr "Nedělá nic"
+
+#: qml/ConfigBehavior.qml:213
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
+"tasks'"
+msgid "Cycles through all tasks"
+msgstr "Postupně prochází mezi všemi úlohami"
+
+#: qml/ConfigBehavior.qml:214
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through the "
+"hovered task's windows'"
+msgid "Cycles through the hovered task’s windows"
+msgstr "Postupně prochází okna úloh, nad kterými se nachází kurzor myši"
+
+#: qml/ConfigBehavior.qml:215
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
+"task’s volume'"
+msgid "Adjusts the hovered task’s volume"
+msgstr "Upravuje hlasitost úlohy, nad kterou se nachází kurzor myši."
+
+#: qml/ConfigBehavior.qml:223
+msgctxt "@option:check mouse wheel task cycling"
+msgid "Skip minimized tasks"
+msgstr "Přeskočit minimalizované úlohy"
+
+#: qml/ConfigBehavior.qml:233
+msgctxt ""
+"@label for checkbox group, completes sentence like: … from current screen"
+msgid "Show only tasks:"
+msgstr "Zobrazit pouze úlohy:"
+
+#: qml/ConfigBehavior.qml:234
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current desktop"
+msgstr "Ze současné plochy"
+
+#: qml/ConfigBehavior.qml:239
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current activity"
+msgstr "Ze současné aktivity"
+
+#: qml/ConfigBehavior.qml:244
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current screen"
+msgstr "Ze současné obrazovky"
+
+#: qml/ConfigBehavior.qml:249
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "That are minimized"
+msgstr "Které jsou minimalizované"
+
+#: qml/ConfigBehavior.qml:258
+msgctxt ""
+"@label for checkbox, completes sentence: … unhide if window wants attention"
+msgid "When panel is hidden:"
+msgstr "Pokud je panel skrytý:"
+
+#: qml/ConfigBehavior.qml:259
+msgctxt "@option:check completes sentence: When panel is hidden"
+msgid "Unhide when a window wants attention"
+msgstr "Zobrazit, když okno vyžaduje pozornost"
+
+#: qml/ConfigBehavior.qml:274
+msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
+msgid "New tasks appear:"
+msgstr "Objeví se nové úkoly:"
+
+#: qml/ConfigBehavior.qml:278
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the bottom"
+msgstr "Dole"
+
+#: qml/ConfigBehavior.qml:282 qml/ConfigBehavior.qml:301
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the right"
+msgstr "Doprava"
+
+#: qml/ConfigBehavior.qml:284 qml/ConfigBehavior.qml:299
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the left"
+msgstr "Doleva"
+
+#: qml/ConfigBehavior.qml:295
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the top"
+msgstr "Nahoře"
+
+#: qml/ConfigBehavior.qml:308
+msgid "Animation"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:315
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:318
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:319
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:320
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr ""
+
+#: qml/ToolTipInstance.qml:219
+msgctxt "@info:tooltip Close this window"
+msgid "Close window"
+msgstr "Zavřít okno"
+
+#: qml/ToolTipInstance.qml:432
+#, qt-format
+msgctxt "button to unmute app"
+msgid "Unmute %1"
+msgstr "Povolit zvuk %1"
+
+#: qml/ToolTipInstance.qml:433
+#, qt-format
+msgctxt "button to mute app"
+msgid "Mute %1"
+msgstr "Ztišit %1"
+
+#: qml/ToolTipInstance.qml:451
+#, qt-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Upravit hlasitost pro %1"
+
+#: qml/ToolTipInstance.qml:467
+#, qt-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: qml/ToolTipInstance.qml:471
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/ToolTipInstance.qml:487
+#, qt-format
+msgctxt "Comma-separated list of desktops"
+msgid "On %1"
+msgstr "Na %1"
+
+#: qml/ToolTipInstance.qml:490
+msgctxt "Comma-separated list of desktops"
+msgid "Pinned to all desktops"
+msgstr "Připnut ke všem pracovním plochám"
+
+#: qml/ToolTipInstance.qml:496
+msgctxt "Which virtual desktop a window is currently on"
+msgid "Available on all activities"
+msgstr "Dostupné ve všech aktivitách"
+
+#: qml/ToolTipInstance.qml:506
+#, qt-format
+msgctxt "Activities a window is currently on (apart from the current one)"
+msgid "Also available on %1"
+msgstr "Také dostupné na %1"
+
+#: qml/ToolTipInstance.qml:510
+#, qt-format
+msgctxt "Which activities a window is currently on"
+msgid "Available on %1"
+msgstr "Dostupné na %1"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "Povolit zvuk"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Ztlumit"
+
+#: qml/AudioStream.qml:95
+#, qt-format
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Unmute %1"
+msgstr "Povolit zvuk %1"
+
+#: qml/AudioStream.qml:95
+#, qt-format
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Mute %1"
+msgstr "Ztišit %1"
+
+#: qml/TaskBadgeOverlay.qml:101
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "9k+"
+msgstr ""
+
+#: qml/TaskBadgeOverlay.qml:104
+#, qt-format
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "%1k"
+msgstr ""
+
+#: qml/Task.qml:284
+#, qt-format
+msgctxt "@info:usagetip %1 application name"
+msgid "Launch %1"
+msgstr "Spustit %1"
+
+#: qml/Task.qml:289
+#, qt-format
+msgctxt "@info:tooltip"
+msgid "There is %1 new message."
+msgid_plural "There are %1 new messages."
+msgstr[0] "Je zde %1 nová zpráva."
+msgstr[1] "Jsou zde %1 nové zprávy."
+msgstr[2] "Je zde %1 nových zpráv."
+
+#: qml/Task.qml:297
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Show Task tooltip for %1"
+msgstr "Zobrazit nástrojový tip pro %1"
+
+#: qml/Task.qml:301
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Show windows side by side for %1"
+msgstr "Pro %1 zobrazit okna vedle sebe"
+
+#: qml/Task.qml:306
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Open textual list of windows for %1"
+msgstr "Pro %1 otevřít textový seznam oken"
+
+#: qml/Task.qml:310
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Activate %1"
+msgstr "Aktivovat %1"
+
+#~ msgctxt "@info:usagetip under a set of radio buttons when Touch Mode is on"
+#~ msgid "Automatically set to Large when in Touch mode"
+#~ msgstr "Automaticky přepnout na velké v dotykovém režimu"
+
+#~ msgctxt "Invalid number of new messages, overlay, keep short"
+#~ msgid "—"
+#~ msgstr "—"
+
+#~ msgctxt "Over 9999 new messages, overlay, keep short"
+#~ msgid "9,999+"
+#~ msgstr "9,999+"

@@ -1,0 +1,841 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_tasks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 14:40+0800\n"
+"PO-Revision-Date: 2026-01-31 18:05+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.1\n"
+
+#: backend.cpp:288
+#, qt-format
+msgctxt "Show all user Places"
+msgid "%1 more Place…"
+msgid_plural "%1 more Places…"
+msgstr[0] "இன்னும் %1 இடம்…"
+msgstr[1] "இன்னும் %1 இடங்கள்…"
+
+#: backend.cpp:372
+msgid "Recent Downloads"
+msgstr "சமீப பதிவிறக்கங்கள்"
+
+#: backend.cpp:374
+msgid "Recent Connections"
+msgstr "சமீப இணைப்புகள்"
+
+#: backend.cpp:376
+msgid "Recent Places"
+msgstr "சமீப இடங்கள்"
+
+#: backend.cpp:385
+msgctxt "@action:inmenu"
+msgid "Forget Recent Downloads"
+msgstr "சமீப பதிவிறக்கங்களை மறந்துவிடு"
+
+#: backend.cpp:387
+msgctxt "@action:inmenu"
+msgid "Forget Recent Connections"
+msgstr "சமீப இணைப்புகளை மறந்துவிடு"
+
+#: backend.cpp:389
+msgctxt "@action:inmenu"
+msgid "Forget Recent Places"
+msgstr "சமீப இடங்களை மறந்துவிடு"
+
+#: backend.cpp:391
+msgctxt "@action:inmenu"
+msgid "Forget Recent Files"
+msgstr "சமீப கோப்புகளை மறந்துவிடு"
+
+#: qml/ContextMenu.qml:100
+msgctxt "@title:group for section of menu items"
+msgid "Places"
+msgstr "இடங்கள்"
+
+#: qml/ContextMenu.qml:106
+msgctxt "@title:group for section of menu items"
+msgid "Recent Files"
+msgstr "சமீப கோப்புகள்"
+
+#: qml/ContextMenu.qml:116
+msgctxt "@title:group for section of menu items"
+msgid "Actions"
+msgstr "செயல்கள்"
+
+#: qml/ContextMenu.qml:163
+msgctxt "Play previous track"
+msgid "Previous Track"
+msgstr "முந்தைய பாடல்"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Pause playback"
+msgid "Pause"
+msgstr "பொறு"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Start playback"
+msgid "Play"
+msgstr "இயக்கு"
+
+#: qml/ContextMenu.qml:195
+msgctxt "Play next track"
+msgid "Next Track"
+msgstr "அடுத்த பாடல்"
+
+#: qml/ContextMenu.qml:206
+msgctxt "Stop playback"
+msgid "Stop"
+msgstr "நிறுத்து"
+
+#: qml/ContextMenu.qml:226
+msgctxt "Quit media player app"
+msgid "Quit"
+msgstr "வெளியேறு"
+
+#: qml/ContextMenu.qml:241
+msgctxt "Open or bring to the front window of media player app"
+msgid "Restore"
+msgstr "முன்னே கொண்டுவா"
+
+#: qml/ContextMenu.qml:266
+msgctxt "@option:check inmenu, no separate unmute action"
+msgid "Mute"
+msgstr "ஒலியை அடக்கு"
+
+#: qml/ContextMenu.qml:277
+msgctxt "action:inmenu"
+msgid "Open New Window"
+msgstr "புதிய சாளரத்தை திற"
+
+#: qml/ContextMenu.qml:293
+msgctxt "action:inmenu"
+msgid "Move to &Desktop"
+msgstr "பணிமேடைக்கு நகர்த்து"
+
+#: qml/ContextMenu.qml:323
+msgctxt "action:inmenu"
+msgid "Move &To Current Desktop"
+msgstr "தற்போதைய பணிமேடைக்கு நகர்த்து"
+
+#: qml/ContextMenu.qml:345
+msgctxt "action:inmenu"
+msgid "&All Desktops"
+msgstr "அனைத்து பணிமேடைகள்"
+
+#: qml/ContextMenu.qml:373
+msgctxt "action:inmenu"
+msgid "&New Desktop"
+msgstr "புதிய பணிமேடை"
+
+#: qml/ContextMenu.qml:393
+msgctxt "action:inmenu"
+msgid "Show in &Activities"
+msgstr "இச்செயல்பாடுகளில் காட்டு"
+
+#: qml/ContextMenu.qml:417
+msgctxt "action:inmenu"
+msgid "Add To Current Activity"
+msgstr "தற்போதைய செயல்பாட்டில் காட்டு"
+
+#: qml/ContextMenu.qml:427
+msgctxt "action:inmenu"
+msgid "All Activities"
+msgstr "அனைத்து செயல்பாடுகளிலும்"
+
+#: qml/ContextMenu.qml:483
+#, qt-format
+msgctxt "action:inmenu"
+msgid "Move to %1"
+msgstr "%1-க்கு நகர்த்து"
+
+#: qml/ContextMenu.qml:509 qml/ContextMenu.qml:525
+msgctxt "action:inmenu"
+msgid "&Pin to Task Manager"
+msgstr "பணி மேலாளியில் தக்கவை"
+
+#: qml/ContextMenu.qml:577
+msgctxt "action:inmenu"
+msgid "On All Activities"
+msgstr "அனைத்து செயல்பாடுகளிலும்"
+
+#: qml/ContextMenu.qml:583
+msgctxt "action:inmenu"
+msgid "On The Current Activity"
+msgstr "தற்போதைய செயல்பாட்டில்"
+
+#: qml/ContextMenu.qml:607
+msgctxt "action:inmenu"
+msgid "Unpin from Task Manager"
+msgstr "பணி மேலாளியில் தக்கவைக்க வேண்டாம்"
+
+#: qml/ContextMenu.qml:622
+msgctxt "item:inmenu opens submenu"
+msgid "More"
+msgstr "மேலும்"
+
+#: qml/ContextMenu.qml:631
+msgctxt "action:inmenu"
+msgid "&Move"
+msgstr "நகர்த்து"
+
+#: qml/ContextMenu.qml:640
+msgctxt "action:inmenu"
+msgid "Re&size"
+msgstr "அளவுமாற்று"
+
+#: qml/ContextMenu.qml:654
+msgctxt "action:inmenu"
+msgid "Ma&ximize"
+msgstr "அதிகபட்ச பெரிதாக்கு"
+
+#: qml/ContextMenu.qml:668
+msgctxt "action:inmenu"
+msgid "Mi&nimize"
+msgstr "ஒதுக்கு"
+
+#: qml/ContextMenu.qml:678
+msgctxt "action:inmenu"
+msgid "Keep &Above Others"
+msgstr "மற்றவற்றிற்கு மேலே வை"
+
+#: qml/ContextMenu.qml:688
+msgctxt "action:inmenu"
+msgid "Keep &Below Others"
+msgstr "மற்றவற்றிற்கு கீழே வை"
+
+#: qml/ContextMenu.qml:700
+msgctxt "action:inmenu"
+msgid "&Fullscreen"
+msgstr "முழுத்திரை"
+
+#: qml/ContextMenu.qml:713
+msgctxt "action:inmenu"
+msgid "&Shade"
+msgstr "நிழலிடு"
+
+#: qml/ContextMenu.qml:725
+msgctxt "@action:inmenu"
+msgid "&No Titlebar and Frame"
+msgstr "&விளிம்பும் தலைப்புப்பட்டையும் வேண்டாம்"
+
+#: qml/ContextMenu.qml:738
+msgctxt "@action:inmenu"
+msgid "&Hide from Screencast"
+msgstr "திரைப்பகிர்விலிருந்து மறை"
+
+#: qml/ContextMenu.qml:754
+msgctxt "@option:check inmenu"
+msgid "Allow this program to be grouped"
+msgstr "இச்செயலியை குழுப்படுத்த விடு"
+
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close All"
+msgstr "அனைத்தையும் மூடு"
+
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close"
+msgstr "மூடு"
+
+#: qml/config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "Appearance"
+msgstr "தோற்றம்"
+
+#: qml/config.qml:18
+msgctxt "@title:group for configuration dialog page"
+msgid "Behavior"
+msgstr "நடத்தை"
+
+#: qml/ConfigAppearance.qml:50
+msgctxt "@label for several checkboxes"
+msgid "General:"
+msgstr "பொதுவானவை:"
+
+#: qml/ConfigAppearance.qml:51
+msgctxt "@option:check section General"
+msgid "Show small window previews when hovering over tasks"
+msgstr "பணிகளின் மீது சுட்டியை வைக்கும்போது சாளரங்களின் சிறிய முன்னோட்டத்தைக் காட்டு"
+
+#: qml/ConfigAppearance.qml:56
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over previews"
+msgstr "முன்னோட்டங்களின் மீது சுட்டியை வைக்கும்போது மற்ற சாளரங்களை மறை"
+
+#: qml/ConfigAppearance.qml:56
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over tooltips"
+msgstr "கருவித்துப்புகளின் மீது சுட்டியை வைக்கும்போது மற்ற சாளரங்களை மறை"
+
+#: qml/ConfigAppearance.qml:61
+msgctxt "@option:check section General"
+msgid "Show an indicator when a task is playing audio"
+msgstr "ஒலிவிடும் பணிகளை குறி"
+
+#: qml/ConfigAppearance.qml:71
+msgctxt "@option:check section General"
+msgid "Mute task when clicking indicator"
+msgstr "குறியை கிளிக் செய்கையில் அப்பணியின் ஒலியை அடக்கு"
+
+#: qml/ConfigAppearance.qml:79
+msgctxt "@option:check section General"
+msgid "Show media and volume controls in tooltip"
+msgstr "கருவித்துப்பில் ஊடக மற்றும் ஒலி கட்டுப்படுத்திகளை காட்டு"
+
+#: qml/ConfigAppearance.qml:87
+msgctxt "@option:check section General"
+msgid "Fill free space on panel"
+msgstr "பலகையிலுள்ள காலியிடத்தை நிரப்பு"
+
+#: qml/ConfigAppearance.qml:99
+msgctxt "@label:listbox"
+msgid "Maximum task width:"
+msgstr "உருப்படியின் அதிகபட்ச அகலம்:"
+
+#: qml/ConfigAppearance.qml:102
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Narrow"
+msgstr "குறுகியது"
+
+#: qml/ConfigAppearance.qml:103
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Medium"
+msgstr "நடுத்தரமானது"
+
+#: qml/ConfigAppearance.qml:104
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Wide"
+msgstr "அகலமானது"
+
+#: qml/ConfigAppearance.qml:115
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-column view:"
+msgstr "பல நெடுவரிசைகளைப் பயன்படுத்துவது:"
+
+#: qml/ConfigAppearance.qml:116
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-row view:"
+msgstr "பல வரிசைகளைப் பயன்படுத்துவது:"
+
+#: qml/ConfigAppearance.qml:122
+msgctxt "@option:radio Never use multi-column view for Task Manager"
+msgid "Never"
+msgstr "ஒருபோதும் வேண்டாம்"
+
+#: qml/ConfigAppearance.qml:132
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "When panel is low on space and thick enough"
+msgstr "பலகையில் இடம் குறைவாக இருந்து அதன் அகலம் போதியதாக இருந்தால்"
+
+#: qml/ConfigAppearance.qml:142
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "Always when panel is thick enough"
+msgstr "பலகையின் அகலம் போதியதாக இருந்தால்"
+
+#: qml/ConfigAppearance.qml:149
+msgctxt "@label:spinbox maximum number of columns for tasks"
+msgid "Maximum columns:"
+msgstr "அதிகபட்ச நெடுவரிசைகள்:"
+
+#: qml/ConfigAppearance.qml:150
+msgctxt "@label:spinbox maximum number of rows for tasks"
+msgid "Maximum rows:"
+msgstr "அதிகபட்ச வரிசைகள்:"
+
+#: qml/ConfigAppearance.qml:160
+msgctxt "@label:listbox"
+msgid "Spacing between icons:"
+msgstr "சின்னங்களுக்கிடையேயான இடைவெளி:"
+
+#: qml/ConfigAppearance.qml:164
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "சிறியது"
+
+#: qml/ConfigAppearance.qml:168
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "நடுத்தரமானது"
+
+#: qml/ConfigAppearance.qml:172
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "பெரியது"
+
+#: qml/ConfigAppearance.qml:195
+msgctxt "@label for checkbox"
+msgid "Mini Tooltip:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:196
+msgctxt "@option:check section Mini Tooltip"
+msgid "Use compact tooltip style"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:51
+msgctxt "@info"
+msgid ""
+"If you're using this setting to work around an application that demands "
+"attention too often, first look for a setting in the app to disable that "
+"behavior. If you don't find one, consider reporting this as a bug to the "
+"app's developer."
+msgstr ""
+"அடிக்கடி கவனம் கோரும் செயலியை கட்டுப்படுத்த இவ்வமைப்பை பயன்படுத்துமுன், அச்செயலியில் "
+"இதற்குரிய விருப்பத்தேர்வு ஏதேனும் உள்ளதா என பார்க்கவும். அப்படியோர் விருப்பத்தேர்வு "
+"இல்லையேல், அச்செயலியின் நிரலாளரிடம் அப்படிப்பட்ட ஓர் விருப்பத்தேர்வை கோரலாம்."
+
+#: qml/ConfigBehavior.qml:67
+msgctxt "@label:listbox how to group tasks"
+msgid "Group:"
+msgstr "தொகுப்பது:"
+
+#: qml/ConfigBehavior.qml:71
+msgctxt "@item:inlistbox how to group tasks"
+msgid "Do not group"
+msgstr "தொகுக்காதே"
+
+#: qml/ConfigBehavior.qml:72
+msgctxt "@item:inlistbox how to group tasks"
+msgid "By program name"
+msgstr "செயலியின் பெயரை பொறுத்து"
+
+#: qml/ConfigBehavior.qml:78
+msgctxt "@label:listbox completes sentence like: … cycles through tasks"
+msgid "Clicking grouped task:"
+msgstr "தொகுக்கப்பட்ட பணிகளை க்ளிக் செய்வது:"
+
+#: qml/ConfigBehavior.qml:85
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
+"tasks' "
+msgid "Cycles through tasks"
+msgstr "பணிகளுக்கிடையே தாவும்"
+
+#: qml/ConfigBehavior.qml:86
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
+"window previews' "
+msgid "Shows small window previews"
+msgstr "சிறய சாளர முன்னோட்டங்களைக் காட்டும்"
+
+#: qml/ConfigBehavior.qml:87
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
+"window previews' "
+msgid "Shows large window previews"
+msgstr "பெரிய சாளர முன்னோட்டங்களைக் காட்டும்"
+
+#: qml/ConfigBehavior.qml:88
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
+"list' "
+msgid "Shows textual list"
+msgstr "உரைமுறை பட்டியலை காட்டும்"
+
+#: qml/ConfigBehavior.qml:99
+msgctxt "@info displayed as InlineMessage"
+msgid ""
+"The compositor does not support displaying windows side by side, so a "
+"textual list will be displayed instead."
+msgstr ""
+"சாளரங்களைப் பக்கத்துப் பக்கத்தில் காட்டுவதை சாளரநிரல் (compositor) ஆதரிக்காத‍தால், பதிலாக "
+"ஒரு உரைமுறைப் பட்டியல் காட்டப்படும்."
+
+#: qml/ConfigBehavior.qml:109
+msgctxt "@option:check grouped task"
+msgid "Combine into single button"
+msgstr "பலவற்றை ஒரே பட்டனாக தொகுத்து காட்டு"
+
+#: qml/ConfigBehavior.qml:116
+msgctxt "@option:check grouped task"
+msgid "Group only when the Task Manager is full"
+msgstr "பணி மேலாளியில் காலியிடம் இல்லாதபோது மட்டும் தொகு"
+
+#: qml/ConfigBehavior.qml:128
+msgctxt "@label:listbox sort tasks in grouped task"
+msgid "Sort:"
+msgstr "வரிசைப்படுத்துதல்:"
+
+#: qml/ConfigBehavior.qml:135
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Do not sort"
+msgstr "வரிசைப்படுத்தாதே"
+
+#: qml/ConfigBehavior.qml:139
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Manually"
+msgstr "கைமுறையாக"
+
+#: qml/ConfigBehavior.qml:143
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Alphabetically"
+msgstr "அகரவரிசையாக"
+
+#: qml/ConfigBehavior.qml:147
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By desktop"
+msgstr "பணிமேடை வாரியாக"
+
+#: qml/ConfigBehavior.qml:151
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By activity"
+msgstr "செயல்பாடு வாரியாக"
+
+#: qml/ConfigBehavior.qml:155
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By horizontal window position"
+msgstr "சாளரத்தின் கிடைமட்ட இருப்பிடத்தைப் பொறுத்து"
+
+#: qml/ConfigBehavior.qml:166
+msgctxt "@option:check configure task sorting"
+msgid "Keep launchers separate"
+msgstr "ஏவிகளை தனியாக காட்டு"
+
+#: qml/ConfigBehavior.qml:173
+msgctxt "@option:check for icons-and-text task manager"
+msgid "Hide launchers after application startup"
+msgstr "செயலி துவங்கியபின் அதன் ஏவியை மறை"
+
+#: qml/ConfigBehavior.qml:183
+msgctxt ""
+"@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
+"task'"
+msgid "Clicking active task:"
+msgstr "செயலில் உள்ள பணியை க்ளிக் செய்வது:"
+
+#: qml/ConfigBehavior.qml:184
+msgctxt ""
+"@option:check Part of a sentence: 'Clicking active task minimizes the task'"
+msgid "Minimizes the task"
+msgstr "பணியை ஒதுக்கும்"
+
+#: qml/ConfigBehavior.qml:189
+msgctxt "@label:listbox completes sentence like: … does nothing"
+msgid "Middle-clicking any task:"
+msgstr "எந்தவொரு பணியையும் நடு-கிளிக் செய்வது:"
+
+#: qml/ConfigBehavior.qml:193
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
+msgid "Does nothing"
+msgstr "ஒன்றும் செய்யாது"
+
+#: qml/ConfigBehavior.qml:194
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
+"or group'"
+msgid "Closes window or group"
+msgstr "தொகுப்பை அல்லது சாளரத்தை மூடும்"
+
+#: qml/ConfigBehavior.qml:195
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
+"window'"
+msgid "Opens a new window"
+msgstr "புதிய சாளரத்தை திறக்கும்"
+
+#: qml/ConfigBehavior.qml:196
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task minimizes/"
+"restores window or group'"
+msgid "Minimizes/Restores window or group"
+msgstr "சாளரத்தை அல்லது தொகுப்பை ஒதுக்கும்/மீட்டெடுக்கும்"
+
+#: qml/ConfigBehavior.qml:197
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
+"grouping'"
+msgid "Toggles grouping"
+msgstr "தொகுப்பதை நிலைமாற்றும்"
+
+#: qml/ConfigBehavior.qml:198
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task brings it to "
+"the current virtual desktop'"
+msgid "Brings it to the current virtual desktop"
+msgstr "தற்போதைய பணிமேடைக்கு அதை கொண்டுவரும்"
+
+#: qml/ConfigBehavior.qml:208
+msgctxt ""
+"@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
+"through tasks/cycles through the selected task's windows/adjusts the hovered "
+"task’s volume''"
+msgid "Scrolling behavior:"
+msgstr "உருள்வது:"
+
+#: qml/ConfigBehavior.qml:212
+msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
+msgid "Does nothing"
+msgstr "ஒன்றும் செய்யாது"
+
+#: qml/ConfigBehavior.qml:213
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
+"tasks'"
+msgid "Cycles through all tasks"
+msgstr "அடுத்த செயலிகளுக்கிடையே மாறும்"
+
+#: qml/ConfigBehavior.qml:214
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through the "
+"hovered task's windows'"
+msgid "Cycles through the hovered task’s windows"
+msgstr "தற்போதைய செயலியின் சாளரங்களுக்கிடையே மாறும்"
+
+#: qml/ConfigBehavior.qml:215
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
+"task’s volume'"
+msgid "Adjusts the hovered task’s volume"
+msgstr "சுட்டிக்குறிக்குக் கீழுள்ள பணியின் ஒலியளவை மாற்றும்"
+
+#: qml/ConfigBehavior.qml:223
+msgctxt "@option:check mouse wheel task cycling"
+msgid "Skip minimized tasks"
+msgstr "ஒதுக்கப்பட்டுள்ள பணிகளைத் தவிர்"
+
+#: qml/ConfigBehavior.qml:233
+msgctxt ""
+"@label for checkbox group, completes sentence like: … from current screen"
+msgid "Show only tasks:"
+msgstr "இதிலிருந்து மட்டும் பணிகளை காட்டு:"
+
+#: qml/ConfigBehavior.qml:234
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current desktop"
+msgstr "தற்போதைய பணிமேடை"
+
+#: qml/ConfigBehavior.qml:239
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current activity"
+msgstr "தற்போதைய செயல்பாடு"
+
+#: qml/ConfigBehavior.qml:244
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current screen"
+msgstr "தற்போதைய திரை"
+
+#: qml/ConfigBehavior.qml:249
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "That are minimized"
+msgstr "ஒதுக்கப்பட்டிருப்பவை"
+
+#: qml/ConfigBehavior.qml:258
+msgctxt ""
+"@label for checkbox, completes sentence: … unhide if window wants attention"
+msgid "When panel is hidden:"
+msgstr "பலகை மறைந்திருக்கும்போது:"
+
+#: qml/ConfigBehavior.qml:259
+msgctxt "@option:check completes sentence: When panel is hidden"
+msgid "Unhide when a window wants attention"
+msgstr "சாளரம் ஒன்று கவனம் கோரும்போது பலகையை காட்டு"
+
+#: qml/ConfigBehavior.qml:274
+msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
+msgid "New tasks appear:"
+msgstr "புதிய பணிகளை சேர்ப்பது:"
+
+#: qml/ConfigBehavior.qml:278
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the bottom"
+msgstr "கீழே"
+
+#: qml/ConfigBehavior.qml:282 qml/ConfigBehavior.qml:301
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the right"
+msgstr "வலதில்"
+
+#: qml/ConfigBehavior.qml:284 qml/ConfigBehavior.qml:299
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the left"
+msgstr "இடதில்"
+
+#: qml/ConfigBehavior.qml:295
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the top"
+msgstr "மேலே"
+
+#: qml/ConfigBehavior.qml:308
+msgid "Animation"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:315
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:318
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:319
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:320
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr ""
+
+#: qml/ToolTipInstance.qml:219
+msgctxt "@info:tooltip Close this window"
+msgid "Close window"
+msgstr "சாளரத்தை மூடும்"
+
+#: qml/ToolTipInstance.qml:432
+#, qt-format
+msgctxt "button to unmute app"
+msgid "Unmute %1"
+msgstr "%1-இன் ஒலியை அனுமதி"
+
+#: qml/ToolTipInstance.qml:433
+#, qt-format
+msgctxt "button to mute app"
+msgid "Mute %1"
+msgstr "%1-இன் ஒலியை அடக்கு"
+
+#: qml/ToolTipInstance.qml:451
+#, qt-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "%1-இன் ஒலியளவை மாற்று"
+
+#: qml/ToolTipInstance.qml:467
+#, qt-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: qml/ToolTipInstance.qml:471
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/ToolTipInstance.qml:487
+#, qt-format
+msgctxt "Comma-separated list of desktops"
+msgid "On %1"
+msgstr "%1 தனில்"
+
+#: qml/ToolTipInstance.qml:490
+msgctxt "Comma-separated list of desktops"
+msgid "Pinned to all desktops"
+msgstr "அனைத்து பணிமேடைகளிலும் தக்கவைத்த‍து"
+
+#: qml/ToolTipInstance.qml:496
+msgctxt "Which virtual desktop a window is currently on"
+msgid "Available on all activities"
+msgstr "அனைத்து செயல்பாடுகளிலும் உள்ளது"
+
+#: qml/ToolTipInstance.qml:506
+#, qt-format
+msgctxt "Activities a window is currently on (apart from the current one)"
+msgid "Also available on %1"
+msgstr "%1-இலும் உள்ளது"
+
+#: qml/ToolTipInstance.qml:510
+#, qt-format
+msgctxt "Which activities a window is currently on"
+msgid "Available on %1"
+msgstr "%1-இல் உள்ளது"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "ஒலிமுடக்கத்தை நீக்கு"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "ஒலியை அடக்கு"
+
+#: qml/AudioStream.qml:95
+#, qt-format
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Unmute %1"
+msgstr "%1-இன் ஒலியை அனுமதி"
+
+#: qml/AudioStream.qml:95
+#, qt-format
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Mute %1"
+msgstr "%1-இன் ஒலியை அடக்கு"
+
+#: qml/TaskBadgeOverlay.qml:101
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "9k+"
+msgstr ""
+
+#: qml/TaskBadgeOverlay.qml:104
+#, qt-format
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "%1k"
+msgstr ""
+
+#: qml/Task.qml:284
+#, qt-format
+msgctxt "@info:usagetip %1 application name"
+msgid "Launch %1"
+msgstr "%1 தனை இயக்கு"
+
+#: qml/Task.qml:289
+#, qt-format
+msgctxt "@info:tooltip"
+msgid "There is %1 new message."
+msgid_plural "There are %1 new messages."
+msgstr[0] "%1 புதிய செய்தி உள்ளது."
+msgstr[1] "%1 புதிய செய்திகள் உள்ளன."
+
+#: qml/Task.qml:297
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Show Task tooltip for %1"
+msgstr "%1 என்பதற்கான கருவித் துப்பைக் காட்டும்"
+
+#: qml/Task.qml:301
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Show windows side by side for %1"
+msgstr "%1 என்பதன் சாளரங்களை பக்கத்துப்பக்கத்தில் காட்டும்"
+
+#: qml/Task.qml:306
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Open textual list of windows for %1"
+msgstr "%1 என்பதன் சாளரங்களின் உரைப்பட்டியலைத் திறக்கும்"
+
+#: qml/Task.qml:310
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Activate %1"
+msgstr "%1-ஐ இயக்கு"
+
+#~ msgctxt "@info:usagetip under a set of radio buttons when Touch Mode is on"
+#~ msgid "Automatically set to Large when in Touch mode"
+#~ msgstr "தொடுதல் பயன்முறையில் இருக்கும்போது தானாக பெரிதாக்கு"
+
+#~ msgctxt "Invalid number of new messages, overlay, keep short"
+#~ msgid "—"
+#~ msgstr "—"
+
+#~ msgctxt "Over 9999 new messages, overlay, keep short"
+#~ msgid "9,999+"
+#~ msgstr "9,999+"

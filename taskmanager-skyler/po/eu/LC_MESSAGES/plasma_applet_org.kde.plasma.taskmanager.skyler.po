@@ -1,0 +1,842 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-desktop\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 14:40+0800\n"
+"PO-Revision-Date: 2026-02-16 14:14+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 25.12.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: backend.cpp:288
+#, qt-format
+msgctxt "Show all user Places"
+msgid "%1 more Place…"
+msgid_plural "%1 more Places…"
+msgstr[0] "Leku %1 gehiago…"
+msgstr[1] "%1 leku gehiago…"
+
+#: backend.cpp:372
+msgid "Recent Downloads"
+msgstr "Azkenaldiko zama-jaitsierak"
+
+#: backend.cpp:374
+msgid "Recent Connections"
+msgstr "Azkenaldiko konexioak"
+
+#: backend.cpp:376
+msgid "Recent Places"
+msgstr "Azkenaldiko lekuak"
+
+#: backend.cpp:385
+msgctxt "@action:inmenu"
+msgid "Forget Recent Downloads"
+msgstr "Ahaztu azkenaldiko zama-jaitsierak"
+
+#: backend.cpp:387
+msgctxt "@action:inmenu"
+msgid "Forget Recent Connections"
+msgstr "Ahaztu azkenaldiko konexioak"
+
+#: backend.cpp:389
+msgctxt "@action:inmenu"
+msgid "Forget Recent Places"
+msgstr "Ahaztu azkenaldiko lekuak"
+
+#: backend.cpp:391
+msgctxt "@action:inmenu"
+msgid "Forget Recent Files"
+msgstr "Ahaztu azkenaldiko fitxategiak"
+
+#: qml/ContextMenu.qml:100
+msgctxt "@title:group for section of menu items"
+msgid "Places"
+msgstr "Lekuak"
+
+#: qml/ContextMenu.qml:106
+msgctxt "@title:group for section of menu items"
+msgid "Recent Files"
+msgstr "Azkenaldiko fitxategiak"
+
+#: qml/ContextMenu.qml:116
+msgctxt "@title:group for section of menu items"
+msgid "Actions"
+msgstr "Ekintzak"
+
+#: qml/ContextMenu.qml:163
+msgctxt "Play previous track"
+msgid "Previous Track"
+msgstr "Aurreko pista"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Pause playback"
+msgid "Pause"
+msgstr "Eten"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Start playback"
+msgid "Play"
+msgstr "Jo"
+
+#: qml/ContextMenu.qml:195
+msgctxt "Play next track"
+msgid "Next Track"
+msgstr "Hurrengo pista"
+
+#: qml/ContextMenu.qml:206
+msgctxt "Stop playback"
+msgid "Stop"
+msgstr "Gelditu"
+
+#: qml/ContextMenu.qml:226
+msgctxt "Quit media player app"
+msgid "Quit"
+msgstr "Irten"
+
+#: qml/ContextMenu.qml:241
+msgctxt "Open or bring to the front window of media player app"
+msgid "Restore"
+msgstr "Leheneratu"
+
+#: qml/ContextMenu.qml:266
+msgctxt "@option:check inmenu, no separate unmute action"
+msgid "Mute"
+msgstr "Isilarazi"
+
+#: qml/ContextMenu.qml:277
+msgctxt "action:inmenu"
+msgid "Open New Window"
+msgstr "Ireki leiho berria"
+
+#: qml/ContextMenu.qml:293
+msgctxt "action:inmenu"
+msgid "Move to &Desktop"
+msgstr "Eraman &mahaigainera"
+
+#: qml/ContextMenu.qml:323
+msgctxt "action:inmenu"
+msgid "Move &To Current Desktop"
+msgstr "Eraman &uneko mahaigainera"
+
+#: qml/ContextMenu.qml:345
+msgctxt "action:inmenu"
+msgid "&All Desktops"
+msgstr "Mahaigain &guztietan"
+
+#: qml/ContextMenu.qml:373
+msgctxt "action:inmenu"
+msgid "&New Desktop"
+msgstr "Mahaigain &berria"
+
+#: qml/ContextMenu.qml:393
+msgctxt "action:inmenu"
+msgid "Show in &Activities"
+msgstr "Erakutsi &Jardueretan"
+
+#: qml/ContextMenu.qml:417
+msgctxt "action:inmenu"
+msgid "Add To Current Activity"
+msgstr "Gehitu uneko jardueran"
+
+#: qml/ContextMenu.qml:427
+msgctxt "action:inmenu"
+msgid "All Activities"
+msgstr "Jarduera guztietan"
+
+#: qml/ContextMenu.qml:483
+#, qt-format
+msgctxt "action:inmenu"
+msgid "Move to %1"
+msgstr "Mugitu %1(e)ra"
+
+#: qml/ContextMenu.qml:509 qml/ContextMenu.qml:525
+msgctxt "action:inmenu"
+msgid "&Pin to Task Manager"
+msgstr "&Iltzatu Ataza Kudeatzailean"
+
+#: qml/ContextMenu.qml:577
+msgctxt "action:inmenu"
+msgid "On All Activities"
+msgstr "Jarduera guztietan"
+
+#: qml/ContextMenu.qml:583
+msgctxt "action:inmenu"
+msgid "On The Current Activity"
+msgstr "Uneko jardueran"
+
+#: qml/ContextMenu.qml:607
+msgctxt "action:inmenu"
+msgid "Unpin from Task Manager"
+msgstr "Iltzagetu ataza kudeatzailean"
+
+#: qml/ContextMenu.qml:622
+msgctxt "item:inmenu opens submenu"
+msgid "More"
+msgstr "Gehiago"
+
+#: qml/ContextMenu.qml:631
+msgctxt "action:inmenu"
+msgid "&Move"
+msgstr "&Mugitu"
+
+#: qml/ContextMenu.qml:640
+msgctxt "action:inmenu"
+msgid "Re&size"
+msgstr "&Handiera aldatu"
+
+#: qml/ContextMenu.qml:654
+msgctxt "action:inmenu"
+msgid "Ma&ximize"
+msgstr "Ma&ximizatu"
+
+#: qml/ContextMenu.qml:668
+msgctxt "action:inmenu"
+msgid "Mi&nimize"
+msgstr "I&konotu"
+
+#: qml/ContextMenu.qml:678
+msgctxt "action:inmenu"
+msgid "Keep &Above Others"
+msgstr "M&antendu besteen gainean"
+
+#: qml/ContextMenu.qml:688
+msgctxt "action:inmenu"
+msgid "Keep &Below Others"
+msgstr "Mantendu &besteen azpian"
+
+#: qml/ContextMenu.qml:700
+msgctxt "action:inmenu"
+msgid "&Fullscreen"
+msgstr "&Pantaila-osoa"
+
+#: qml/ContextMenu.qml:713
+msgctxt "action:inmenu"
+msgid "&Shade"
+msgstr "&Bildu"
+
+#: qml/ContextMenu.qml:725
+msgctxt "@action:inmenu"
+msgid "&No Titlebar and Frame"
+msgstr "E&z titulu-barrarik ez markorik"
+
+#: qml/ContextMenu.qml:738
+msgctxt "@action:inmenu"
+msgid "&Hide from Screencast"
+msgstr "E&zkutatu pantaila-grabaziotik"
+
+#: qml/ContextMenu.qml:754
+msgctxt "@option:check inmenu"
+msgid "Allow this program to be grouped"
+msgstr "Baimendu programa hau taldekatzea"
+
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close All"
+msgstr "&Itxi dena"
+
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close"
+msgstr "It&xi"
+
+#: qml/config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "Appearance"
+msgstr "Itxura"
+
+#: qml/config.qml:18
+msgctxt "@title:group for configuration dialog page"
+msgid "Behavior"
+msgstr "Jokabidea"
+
+#: qml/ConfigAppearance.qml:50
+msgctxt "@label for several checkboxes"
+msgid "General:"
+msgstr "Orokorra:"
+
+#: qml/ConfigAppearance.qml:51
+msgctxt "@option:check section General"
+msgid "Show small window previews when hovering over tasks"
+msgstr "Erakutsi leihoen aurreikuspegi txikiak atazen gainetik igarotzean"
+
+#: qml/ConfigAppearance.qml:56
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over previews"
+msgstr "Ezkutatu gainerako leihoak aurreikuspegien gainetik igarotzean"
+
+#: qml/ConfigAppearance.qml:56
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over tooltips"
+msgstr "Ezkutatu gainerako leihoak tresna-iradokizunen gainetik igarotzean"
+
+#: qml/ConfigAppearance.qml:61
+msgctxt "@option:check section General"
+msgid "Show an indicator when a task is playing audio"
+msgstr "Erakutsi adierazle bat ataza bat audioa jotzen ari denean"
+
+#: qml/ConfigAppearance.qml:71
+msgctxt "@option:check section General"
+msgid "Mute task when clicking indicator"
+msgstr "Isilarazi ataza adierazlean klik egitean"
+
+#: qml/ConfigAppearance.qml:79
+msgctxt "@option:check section General"
+msgid "Show media and volume controls in tooltip"
+msgstr "Erakutsi hedabide- eta bolumen-aginteak tresna-iradokizunean"
+
+#: qml/ConfigAppearance.qml:87
+msgctxt "@option:check section General"
+msgid "Fill free space on panel"
+msgstr "Bete paneleko espazio hutsa"
+
+#: qml/ConfigAppearance.qml:99
+msgctxt "@label:listbox"
+msgid "Maximum task width:"
+msgstr "Atazaren gehienezko zabalera:"
+
+#: qml/ConfigAppearance.qml:102
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Narrow"
+msgstr "Estua"
+
+#: qml/ConfigAppearance.qml:103
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Medium"
+msgstr "Ertaina"
+
+#: qml/ConfigAppearance.qml:104
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Wide"
+msgstr "Zabala"
+
+#: qml/ConfigAppearance.qml:115
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-column view:"
+msgstr "Zutabe anitzeko ikuspegia erabili:"
+
+#: qml/ConfigAppearance.qml:116
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-row view:"
+msgstr "Errenkada anitzeko ikuspegia erabili:"
+
+#: qml/ConfigAppearance.qml:122
+msgctxt "@option:radio Never use multi-column view for Task Manager"
+msgid "Never"
+msgstr "Inoiz ez"
+
+#: qml/ConfigAppearance.qml:132
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "When panel is low on space and thick enough"
+msgstr "Panelak leku gutxi duenean eta lodiera nahikoa duenean"
+
+#: qml/ConfigAppearance.qml:142
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "Always when panel is thick enough"
+msgstr "Beti, panela lodiera nahikoa duenean"
+
+#: qml/ConfigAppearance.qml:149
+msgctxt "@label:spinbox maximum number of columns for tasks"
+msgid "Maximum columns:"
+msgstr "Zutabe kopurua gehienez:"
+
+#: qml/ConfigAppearance.qml:150
+msgctxt "@label:spinbox maximum number of rows for tasks"
+msgid "Maximum rows:"
+msgstr "Errenkada kopurua gehienez:"
+
+#: qml/ConfigAppearance.qml:160
+msgctxt "@label:listbox"
+msgid "Spacing between icons:"
+msgstr "Ikonoen arteko tartea:"
+
+#: qml/ConfigAppearance.qml:164
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "Txikia"
+
+#: qml/ConfigAppearance.qml:168
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "Arrunta"
+
+#: qml/ConfigAppearance.qml:172
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "Handia"
+
+#: qml/ConfigAppearance.qml:195
+msgctxt "@label for checkbox"
+msgid "Mini Tooltip:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:196
+msgctxt "@option:check section Mini Tooltip"
+msgid "Use compact tooltip style"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:51
+msgctxt "@info"
+msgid ""
+"If you're using this setting to work around an application that demands "
+"attention too often, first look for a setting in the app to disable that "
+"behavior. If you don't find one, consider reporting this as a bug to the "
+"app's developer."
+msgstr ""
+"Ezarpen hau arreta maizegi eskatzen duen aplikazio baten jokabidea "
+"saihesteko erabiltzen ari bazara, lehenik bilatu aplikazioan jokabide hori "
+"desgaitzeko ezarpenik ba ote dagoen. Aurkitzen ez baduzu, kontuan hartu "
+"aplikazioaren garatzaileari hau akats gisa jakinaraztea."
+
+#: qml/ConfigBehavior.qml:67
+msgctxt "@label:listbox how to group tasks"
+msgid "Group:"
+msgstr "Taldekatu:"
+
+#: qml/ConfigBehavior.qml:71
+msgctxt "@item:inlistbox how to group tasks"
+msgid "Do not group"
+msgstr "Ez taldekatu"
+
+#: qml/ConfigBehavior.qml:72
+msgctxt "@item:inlistbox how to group tasks"
+msgid "By program name"
+msgstr "Programa-izenaren arabera"
+
+#: qml/ConfigBehavior.qml:78
+msgctxt "@label:listbox completes sentence like: … cycles through tasks"
+msgid "Clicking grouped task:"
+msgstr "Taldekatutako atazei klik egitea:"
+
+#: qml/ConfigBehavior.qml:85
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
+"tasks' "
+msgid "Cycles through tasks"
+msgstr "Atazen arteko zikloa egiten du"
+
+#: qml/ConfigBehavior.qml:86
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
+"window previews' "
+msgid "Shows small window previews"
+msgstr "Leiho aurreikuspegi txikiak erakusten ditu"
+
+#: qml/ConfigBehavior.qml:87
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
+"window previews' "
+msgid "Shows large window previews"
+msgstr "Leiho aurreikuspegi handiak erakusten ditu"
+
+#: qml/ConfigBehavior.qml:88
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
+"list' "
+msgid "Shows textual list"
+msgstr "Testu-zerrenda erakusten du"
+
+#: qml/ConfigBehavior.qml:99
+msgctxt "@info displayed as InlineMessage"
+msgid ""
+"The compositor does not support displaying windows side by side, so a "
+"textual list will be displayed instead."
+msgstr ""
+"Konposatzaileak ez du onartzen leihoak aurrez-aurre aurkeztea, beraz, horren "
+"ordez, testu-zerrenda bat azalduko da."
+
+#: qml/ConfigBehavior.qml:109
+msgctxt "@option:check grouped task"
+msgid "Combine into single button"
+msgstr "Konbinatu botoi bakarrean"
+
+#: qml/ConfigBehavior.qml:116
+msgctxt "@option:check grouped task"
+msgid "Group only when the Task Manager is full"
+msgstr "Taldekatu ataza-kudeatzailea betea dagoenean bakarrik"
+
+#: qml/ConfigBehavior.qml:128
+msgctxt "@label:listbox sort tasks in grouped task"
+msgid "Sort:"
+msgstr "Ordenatu:"
+
+#: qml/ConfigBehavior.qml:135
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Do not sort"
+msgstr "Ez ordenatu"
+
+#: qml/ConfigBehavior.qml:139
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Manually"
+msgstr "Eskuz"
+
+#: qml/ConfigBehavior.qml:143
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Alphabetically"
+msgstr "Alfabetikoki"
+
+#: qml/ConfigBehavior.qml:147
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By desktop"
+msgstr "Mahaigainaren arabera"
+
+#: qml/ConfigBehavior.qml:151
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By activity"
+msgstr "Jardueraren arabera"
+
+#: qml/ConfigBehavior.qml:155
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By horizontal window position"
+msgstr "Leihoaren kokapen horizontalaren arabera"
+
+#: qml/ConfigBehavior.qml:166
+msgctxt "@option:check configure task sorting"
+msgid "Keep launchers separate"
+msgstr "Mantendu abiarazleak bereizita"
+
+#: qml/ConfigBehavior.qml:173
+msgctxt "@option:check for icons-and-text task manager"
+msgid "Hide launchers after application startup"
+msgstr "Ezkutatu abiarazleak aplikazioa abiarazi ondoren"
+
+#: qml/ConfigBehavior.qml:183
+msgctxt ""
+"@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
+"task'"
+msgid "Clicking active task:"
+msgstr "Ataza aktiboari klik egitea:"
+
+#: qml/ConfigBehavior.qml:184
+msgctxt ""
+"@option:check Part of a sentence: 'Clicking active task minimizes the task'"
+msgid "Minimizes the task"
+msgstr "Ataza ikonotzen du"
+
+#: qml/ConfigBehavior.qml:189
+msgctxt "@label:listbox completes sentence like: … does nothing"
+msgid "Middle-clicking any task:"
+msgstr "Edozein atazari erdiko-klik egitea:"
+
+#: qml/ConfigBehavior.qml:193
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
+msgid "Does nothing"
+msgstr "Ez du ezer egiten"
+
+#: qml/ConfigBehavior.qml:194
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
+"or group'"
+msgid "Closes window or group"
+msgstr "Leihoa edo taldea ixten du"
+
+#: qml/ConfigBehavior.qml:195
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
+"window'"
+msgid "Opens a new window"
+msgstr "Leiho berri bat irekitzen du"
+
+#: qml/ConfigBehavior.qml:196
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task minimizes/"
+"restores window or group'"
+msgid "Minimizes/Restores window or group"
+msgstr "Leihoa edo taldea ikonotzen/lehengoratzen du"
+
+#: qml/ConfigBehavior.qml:197
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
+"grouping'"
+msgid "Toggles grouping"
+msgstr "Taldekatzea txandakatzen du"
+
+#: qml/ConfigBehavior.qml:198
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task brings it to "
+"the current virtual desktop'"
+msgid "Brings it to the current virtual desktop"
+msgstr "Uneko alegiazko mahaigainera ekartzen du"
+
+#: qml/ConfigBehavior.qml:208
+msgctxt ""
+"@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
+"through tasks/cycles through the selected task's windows/adjusts the hovered "
+"task’s volume''"
+msgid "Scrolling behavior:"
+msgstr "Kiribiltze-jokabidea:"
+
+#: qml/ConfigBehavior.qml:212
+msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
+msgid "Does nothing"
+msgstr "Ez du ezer egiten"
+
+#: qml/ConfigBehavior.qml:213
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
+"tasks'"
+msgid "Cycles through all tasks"
+msgstr "Ataza guztien arteko zikloa egiten du"
+
+#: qml/ConfigBehavior.qml:214
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through the "
+"hovered task's windows'"
+msgid "Cycles through the hovered task’s windows"
+msgstr "Gainetik igarotako atazaren leihoen arteko zikloa egiten du"
+
+#: qml/ConfigBehavior.qml:215
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
+"task’s volume'"
+msgid "Adjusts the hovered task’s volume"
+msgstr "Gainetik igarotako atazaren bolumena doitzen du"
+
+#: qml/ConfigBehavior.qml:223
+msgctxt "@option:check mouse wheel task cycling"
+msgid "Skip minimized tasks"
+msgstr "Saihestu ikonotutako atazak"
+
+#: qml/ConfigBehavior.qml:233
+msgctxt ""
+"@label for checkbox group, completes sentence like: … from current screen"
+msgid "Show only tasks:"
+msgstr "Atazak bakarrik erakutsi:"
+
+#: qml/ConfigBehavior.qml:234
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current desktop"
+msgstr "Uneko mahaigainekoak"
+
+#: qml/ConfigBehavior.qml:239
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current activity"
+msgstr "Uneko jarduerakoak"
+
+#: qml/ConfigBehavior.qml:244
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current screen"
+msgstr "Uneko pantailakoak"
+
+#: qml/ConfigBehavior.qml:249
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "That are minimized"
+msgstr "Ikonotuta daudenak"
+
+#: qml/ConfigBehavior.qml:258
+msgctxt ""
+"@label for checkbox, completes sentence: … unhide if window wants attention"
+msgid "When panel is hidden:"
+msgstr "Panela ezkutuan dagoenean:"
+
+#: qml/ConfigBehavior.qml:259
+msgctxt "@option:check completes sentence: When panel is hidden"
+msgid "Unhide when a window wants attention"
+msgstr "Erakutsi leiho batek arreta nahi duenean"
+
+#: qml/ConfigBehavior.qml:274
+msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
+msgid "New tasks appear:"
+msgstr "Ataza berriak non agertzen diren:"
+
+#: qml/ConfigBehavior.qml:278
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the bottom"
+msgstr "Beheko aldean"
+
+#: qml/ConfigBehavior.qml:282 qml/ConfigBehavior.qml:301
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the right"
+msgstr "Eskuinean"
+
+#: qml/ConfigBehavior.qml:284 qml/ConfigBehavior.qml:299
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the left"
+msgstr "Ezkerrean"
+
+#: qml/ConfigBehavior.qml:295
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the top"
+msgstr "Goiko aldean"
+
+#: qml/ConfigBehavior.qml:308
+msgid "Animation"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:315
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:318
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:319
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr ""
+
+#: qml/ConfigBehavior.qml:320
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr ""
+
+#: qml/ToolTipInstance.qml:219
+msgctxt "@info:tooltip Close this window"
+msgid "Close window"
+msgstr "Itxi leihoa"
+
+#: qml/ToolTipInstance.qml:432
+#, qt-format
+msgctxt "button to unmute app"
+msgid "Unmute %1"
+msgstr "Ozendu %1"
+
+#: qml/ToolTipInstance.qml:433
+#, qt-format
+msgctxt "button to mute app"
+msgid "Mute %1"
+msgstr "Isilarazi %1"
+
+#: qml/ToolTipInstance.qml:451
+#, qt-format
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "Doitu %1(e)ren bolumena"
+
+#: qml/ToolTipInstance.qml:467
+#, qt-format
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%%1"
+
+#: qml/ToolTipInstance.qml:471
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "% 100"
+
+#: qml/ToolTipInstance.qml:487
+#, qt-format
+msgctxt "Comma-separated list of desktops"
+msgid "On %1"
+msgstr "%1(e)(a)n"
+
+#: qml/ToolTipInstance.qml:490
+msgctxt "Comma-separated list of desktops"
+msgid "Pinned to all desktops"
+msgstr "Mahaigain guztietan iltzatuta"
+
+#: qml/ToolTipInstance.qml:496
+msgctxt "Which virtual desktop a window is currently on"
+msgid "Available on all activities"
+msgstr "Jarduera guztietan erabilgarri"
+
+#: qml/ToolTipInstance.qml:506
+#, qt-format
+msgctxt "Activities a window is currently on (apart from the current one)"
+msgid "Also available on %1"
+msgstr "%1(e)(a)n ere erabilgarri"
+
+#: qml/ToolTipInstance.qml:510
+#, qt-format
+msgctxt "Which activities a window is currently on"
+msgid "Available on %1"
+msgstr "%1(e)(a)n erabilgarri"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "Ozendu"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Isilarazi"
+
+#: qml/AudioStream.qml:95
+#, qt-format
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Unmute %1"
+msgstr "Ozendu %1"
+
+#: qml/AudioStream.qml:95
+#, qt-format
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Mute %1"
+msgstr "Isilarazi %1"
+
+#: qml/TaskBadgeOverlay.qml:101
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "9k+"
+msgstr ""
+
+#: qml/TaskBadgeOverlay.qml:104
+#, qt-format
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "%1k"
+msgstr ""
+
+#: qml/Task.qml:284
+#, qt-format
+msgctxt "@info:usagetip %1 application name"
+msgid "Launch %1"
+msgstr "Abiarazi %1"
+
+#: qml/Task.qml:289
+#, qt-format
+msgctxt "@info:tooltip"
+msgid "There is %1 new message."
+msgid_plural "There are %1 new messages."
+msgstr[0] "Mezu berri %1 dago."
+msgstr[1] "%1 mezu berri daude."
+
+#: qml/Task.qml:297
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Show Task tooltip for %1"
+msgstr "Erakutsi %1 atazaren argibidea"
+
+#: qml/Task.qml:301
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Show windows side by side for %1"
+msgstr "Leihoak aurrez-aurre erakutsi, %1(e)rako"
+
+#: qml/Task.qml:306
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Open textual list of windows for %1"
+msgstr "Ireki leihoen testuzko zerrenda, %1(e)rako"
+
+#: qml/Task.qml:310
+#, qt-format
+msgctxt "@info:usagetip %1 task name"
+msgid "Activate %1"
+msgstr "Aktibatu %1"
+
+#~ msgctxt "@info:usagetip under a set of radio buttons when Touch Mode is on"
+#~ msgid "Automatically set to Large when in Touch mode"
+#~ msgstr "Ukimen moduan automatikoki Handia ezarri"
+
+#~ msgctxt "Invalid number of new messages, overlay, keep short"
+#~ msgid "—"
+#~ msgstr "—"
+
+#~ msgctxt "Over 9999 new messages, overlay, keep short"
+#~ msgid "9,999+"
+#~ msgstr "9,999+"

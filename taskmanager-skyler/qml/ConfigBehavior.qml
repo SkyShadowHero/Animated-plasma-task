@@ -304,8 +304,10 @@ KCMUtils.SimpleKCM {
             QQC2.ButtonGroup.group: reverseModeRadioButtonGroup
         }
 
-        Item {
-            Kirigami.FormData.isSection: true
+        QQC2.Label {
+            text: i18n("Animation")
+            font.bold: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
         }
 
         QQC2.ComboBox {

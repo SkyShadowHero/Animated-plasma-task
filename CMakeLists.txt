@@ -56,26 +56,41 @@ install(
 plasma_install_package(icontasks-skyler org.kde.plasma.icontasks.skyler)
 plasma_install_package(kickoff-skyler org.kde.plasma.kickoff.skyler)
 
-# ── Reuse original taskmanager translations ──────────
+# ── Install taskmanager-skyler translations ───────────
+# taskmanager-skyler now uses its own TRANSLATION_DOMAIN
+# (plasma_applet_org.kde.plasma.taskmanager.skyler).
+# Remove old symlinks first — CMake's install(DIRECTORY) won't overwrite them.
 install(CODE "
-    set(ORIG_DOMAIN plasma_applet_org.kde.plasma.taskmanager)
-    set(SKYLER_DOMAINS
-        plasma_applet_org.kde.plasma.icontasks.skyler
-        plasma_applet_org.kde.plasma.taskmanager.skyler
-    )
+    set(DOMAIN plasma_applet_org.kde.plasma.taskmanager.skyler)
+    file(GLOB OLD_LINKS /usr/share/locale/*/LC_MESSAGES/\${DOMAIN}.mo)
+    foreach(LINK \${OLD_LINKS})
+        if(IS_SYMLINK \"\${LINK}\")
+            file(REMOVE \"\${LINK}\")
+        endif()
+    endforeach()
+")
+install(
+    DIRECTORY taskmanager-skyler/po/
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/locale"
+    FILES_MATCHING
+    PATTERN "*.mo"
+    PATTERN "*.pot"
+)
+
+# ── icontasks-skyler → taskmanager-skyler translation ─
+install(CODE "
+    set(SKYLER_DOMAIN plasma_applet_org.kde.plasma.taskmanager.skyler)
+    set(ICON_DOMAIN   plasma_applet_org.kde.plasma.icontasks.skyler)
     file(GLOB LOCALE_DIRS /usr/share/locale/*/LC_MESSAGES)
     foreach(LOCALE_DIR \${LOCALE_DIRS})
-        set(ORIG_MO \"\${LOCALE_DIR}/\${ORIG_DOMAIN}.mo\")
-        if(EXISTS \"\${ORIG_MO}\")
-            get_filename_component(LOCALE_PARENT_DIR \"\${LOCALE_DIR}\" DIRECTORY)
-            get_filename_component(LOCALE_NAME \"\${LOCALE_PARENT_DIR}\" NAME)
-            set(TARGET_LOCALE_DIR \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE_NAME}/LC_MESSAGES\")
-            file(MAKE_DIRECTORY \"\${TARGET_LOCALE_DIR}\")
-            foreach(SKYLER_DOMAIN \${SKYLER_DOMAINS})
-                execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
-                    \"\${ORIG_DOMAIN}.mo\"
-                    \"\${TARGET_LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
-            endforeach()
+        set(MO_FILE \"\${LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
+        if(EXISTS \"\${MO_FILE}\")
+            get_filename_component(PARENT \"\${LOCALE_DIR}\" DIRECTORY)
+            get_filename_component(LOCALE \"\${PARENT}\" NAME)
+            set(TARGET \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE}/LC_MESSAGES/\${ICON_DOMAIN}.mo\")
+            file(MAKE_DIRECTORY \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE}/LC_MESSAGES\")
+            execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
+                \"\${SKYLER_DOMAIN}.mo\" \"\${TARGET}\")
         endif()
     endforeach()
 ")
