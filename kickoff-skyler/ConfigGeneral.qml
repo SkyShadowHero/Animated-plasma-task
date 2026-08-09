@@ -189,6 +189,12 @@ KCM.SimpleKCM {
         }
 
         QQC2.CheckBox {
+            id: hoverEffectCheckbox
+            text: i18n("Icon hover effect")
+            checked: false
+        }
+
+        QQC2.CheckBox {
             id: switchCategoryOnHoverCheckbox
             text: i18nc("@option:check", "Switch sidebar categories when hovering over them") // qmllint disable unqualified
         }
