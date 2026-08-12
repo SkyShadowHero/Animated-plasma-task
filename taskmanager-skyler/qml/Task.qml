@@ -67,6 +67,8 @@ PlasmaCore.ToolTipArea {
 
     property Item audioStreamIcon: null
     property var audioStreams: []
+    // Exposed to the taskbar-level shared hover highlight (main.qml)
+    property Item iconBoxItem: iconBox
     property bool delayAudioStreamIndicator: false
     property bool completed: false
     // Store decoration QVariant for ghost icon creation (model.decoration
@@ -327,6 +329,10 @@ PlasmaCore.ToolTipArea {
             task.updateMainItemBindings();
         } else {
             tasksRoot.toolTipOpenedByClick = null;
+        }
+        // Notify the taskbar-level shared hover highlight
+        if (task.tasksRoot) {
+            task.tasksRoot.taskHoverChanged(task, task.containsMouse);
         }
     }
 
@@ -685,6 +691,7 @@ PlasmaCore.ToolTipArea {
         source: "TaskProgressOverlay.qml"
     }
 
+
     Loader {
         id: iconBox
 
@@ -796,12 +803,53 @@ PlasmaCore.ToolTipArea {
         }
     }
 
+    // ── Active highlight background behind the icon (per-task, only when the
+    //    app is active; hover highlight lives on the taskbar level in main.qml
+    //    so it can slide between icons). Anchored to iconBox so it tracks the
+    //    icon layout without inheriting its hover transforms. ──
+    Rectangle {
+        id: highlightBg
+        // z:-1 so it renders behind the icon (it is declared after iconBox
+        // because anchors.fill: iconBox needs the target to already exist)
+        z: -1
+        // Visibility is switch-controlled only; the active state is expressed
+        // through opacity so it can fade in/out smoothly.
+        visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
+            && !task.inPopup
+        anchors.fill: iconBox
+        radius: {
+            switch (Plasmoid.configuration.highlightShape) {
+            case 1: return 0; // Rectangle
+            case 2: return width / 2; // Circle
+            default: return Kirigami.Units.smallSpacing; // Rounded Rectangle
+            }
+        }
+
+        opacity: task.model.IsActive ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 150 * task.animMul; easing.type: Easing.OutQuad }
+        }
+
+        // Active uses the more opaque variant; color: White (default), Black or Theme highlight
+        readonly property int hColor: Plasmoid.configuration.highlightColor
+        readonly property real activeOpacity: hColor === 0 ? 0.65 : hColor === 1 ? 0.55 : 0.4
+        color: hColor === 2
+            ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g,
+                      Kirigami.Theme.highlightColor.b, activeOpacity)
+            : hColor === 1
+                ? Qt.rgba(0, 0, 0, activeOpacity)
+                : Qt.rgba(1, 1, 1, activeOpacity)
+        Behavior on color {
+            ColorAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+        }
+    }
+
     // ── Custom indicator bar (Task level; positioned by iconBox geometry so it
     //    does not inherit the icon hover scale/translate transforms) ──
     Rectangle {
         id: customIndicator
         // Only show for actual windows (not for pinned launchers without an open window)
-        visible: Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
+        visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
         z: 5
         // Fixed colors: theme highlight when hovered/active, gray otherwise
         color: (task.model.IsActive || task.containsMouse)
@@ -838,8 +886,10 @@ PlasmaCore.ToolTipArea {
         }
 
         // Position: 0 bottom, 1 top, 2 left, 3 right (inside the icon area)
-        // Pure x/y placement — no anchors, so switching positions is stable.
-        // When a dot is present, shift the bar so bar+dot as a unit is centered.
+        // Tracks iconBox layout without inheriting its hover transforms.
+        // When a dot is present the bar shifts so bar+dot as a unit stays
+        // centered. Only width/height animate (length change); position is
+        // instant like the original version.
         readonly property int pos: Plasmoid.configuration.indicatorPosition
         x: pos === 2 ? iconBox.x + 1
          : pos === 3 ? iconBox.x + iconBox.width - width - 1

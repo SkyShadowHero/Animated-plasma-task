@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 21:05+0800\n"
+"POT-Creation-Date: 2026-08-12 21:16+0800\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -251,244 +251,298 @@ msgctxt "@title:group for configuration dialog page"
 msgid "Behavior"
 msgstr "行为设置"
 
-#: qml/ConfigAppearance.qml:58
+#: qml/ConfigAppearance.qml:62
 msgctxt "@label for several checkboxes"
 msgid "General:"
 msgstr "常规："
 
-#: qml/ConfigAppearance.qml:59
+#: qml/ConfigAppearance.qml:63
 msgctxt "@option:check section General"
 msgid "Show small window previews when hovering over tasks"
 msgstr "光标悬停在任务图标上时显示窗口预览"
 
-#: qml/ConfigAppearance.qml:64
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over previews"
 msgstr "光标悬停在窗口预览上时隐藏其他窗口"
 
-#: qml/ConfigAppearance.qml:64
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over tooltips"
 msgstr "光标悬停在悬停信息 (工具提示) 上时隐藏其他窗口"
 
-#: qml/ConfigAppearance.qml:69
+#: qml/ConfigAppearance.qml:73
 msgctxt "@option:check section General"
 msgid "Show an indicator when a task is playing audio"
 msgstr "任务播放音频时显示指示角标"
 
-#: qml/ConfigAppearance.qml:79
+#: qml/ConfigAppearance.qml:83
 msgctxt "@option:check section General"
 msgid "Mute task when clicking indicator"
 msgstr "点击指示角标时静音任务"
 
-#: qml/ConfigAppearance.qml:87
+#: qml/ConfigAppearance.qml:91
 msgctxt "@option:check section General"
 msgid "Show media and volume controls in tooltip"
 msgstr "在悬停信息中显示媒体和音量控制"
 
-#: qml/ConfigAppearance.qml:95
+#: qml/ConfigAppearance.qml:99
 msgctxt "@option:check section General"
 msgid "Fill free space on panel"
 msgstr "填满面板的可用空间"
 
-#: qml/ConfigAppearance.qml:107
+#: qml/ConfigAppearance.qml:111
 msgctxt "@label:listbox"
 msgid "Maximum task width:"
 msgstr "最大任务宽度："
 
-#: qml/ConfigAppearance.qml:110
+#: qml/ConfigAppearance.qml:114
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Narrow"
 msgstr "窄"
 
-#: qml/ConfigAppearance.qml:111
+#: qml/ConfigAppearance.qml:115
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Medium"
 msgstr "中"
 
-#: qml/ConfigAppearance.qml:112
+#: qml/ConfigAppearance.qml:116
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Wide"
 msgstr "宽"
 
-#: qml/ConfigAppearance.qml:123
+#: qml/ConfigAppearance.qml:127
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-column view:"
 msgstr "使用多列视图："
 
-#: qml/ConfigAppearance.qml:124
+#: qml/ConfigAppearance.qml:128
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-row view:"
 msgstr "使用多行视图："
 
-#: qml/ConfigAppearance.qml:130
+#: qml/ConfigAppearance.qml:134
 msgctxt "@option:radio Never use multi-column view for Task Manager"
 msgid "Never"
 msgstr "不使用"
 
-#: qml/ConfigAppearance.qml:140
+#: qml/ConfigAppearance.qml:144
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "When panel is low on space and thick enough"
 msgstr "当面板高度足够而空间不足时"
 
-#: qml/ConfigAppearance.qml:150
+#: qml/ConfigAppearance.qml:154
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "Always when panel is thick enough"
 msgstr "当面板高度足够时总是使用"
 
-#: qml/ConfigAppearance.qml:157
+#: qml/ConfigAppearance.qml:161
 msgctxt "@label:spinbox maximum number of columns for tasks"
 msgid "Maximum columns:"
 msgstr "最大列数："
 
-#: qml/ConfigAppearance.qml:158
+#: qml/ConfigAppearance.qml:162
 msgctxt "@label:spinbox maximum number of rows for tasks"
 msgid "Maximum rows:"
 msgstr "最大行数："
 
-#: qml/ConfigAppearance.qml:168
+#: qml/ConfigAppearance.qml:172
 msgctxt "@label:listbox"
 msgid "Spacing between icons:"
 msgstr "图标间距："
 
-#: qml/ConfigAppearance.qml:172
+#: qml/ConfigAppearance.qml:176
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Small"
 msgstr "小"
 
-#: qml/ConfigAppearance.qml:176
+#: qml/ConfigAppearance.qml:180
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Normal"
 msgstr "正常"
 
-#: qml/ConfigAppearance.qml:180
+#: qml/ConfigAppearance.qml:184
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Large"
 msgstr "大"
 
-#: qml/ConfigAppearance.qml:203
+#: qml/ConfigAppearance.qml:207
 msgctxt "@label for checkbox"
 msgid "Mini Tooltip:"
 msgstr "迷你工具提示："
 
-#: qml/ConfigAppearance.qml:204
+#: qml/ConfigAppearance.qml:208
 msgctxt "@option:check section Mini Tooltip"
 msgid "Use compact tooltip style"
 msgstr "使用紧凑工具提示样式"
 
-#: qml/ConfigAppearance.qml:209
+#: qml/ConfigAppearance.qml:213
+msgctxt "@label for checkbox"
+msgid "Custom Decorations:"
+msgstr "自定义装饰："
+
+#: qml/ConfigAppearance.qml:214
+msgctxt "@option:check"
+msgid "Use custom task decorations (highlight, indicator)"
+msgstr "使用自定义任务装饰（高光、指示器）"
+
+#: qml/ConfigAppearance.qml:219
 msgctxt "@label for checkbox"
 msgid "Theme Decorations:"
 msgstr "主题装饰："
 
-#: qml/ConfigAppearance.qml:210
+#: qml/ConfigAppearance.qml:220
 msgctxt "@option:check"
 msgid "Use KDE theme hover/active decorations"
 msgstr "使用 KDE 主题悬停/激活装饰"
 
-#: qml/ConfigAppearance.qml:219
+#: qml/ConfigAppearance.qml:230
 msgctxt "@label for checkbox"
 msgid "Indicator:"
 msgstr "指示器："
 
-#: qml/ConfigAppearance.qml:220
+#: qml/ConfigAppearance.qml:231
 msgctxt "@option:check"
 msgid "Show custom indicator bar"
 msgstr "显示自定义指示器条"
 
-#: qml/ConfigAppearance.qml:225
+#: qml/ConfigAppearance.qml:237
 msgctxt "@label:listbox"
 msgid "Indicator position:"
 msgstr "指示器位置："
 
-#: qml/ConfigAppearance.qml:229
+#: qml/ConfigAppearance.qml:241
 msgctxt "@item:inlistbox indicator position"
 msgid "Bottom"
 msgstr "底部"
 
-#: qml/ConfigAppearance.qml:230
+#: qml/ConfigAppearance.qml:242
 msgctxt "@item:inlistbox indicator position"
 msgid "Top"
 msgstr "顶部"
 
-#: qml/ConfigAppearance.qml:231
+#: qml/ConfigAppearance.qml:243
 msgctxt "@item:inlistbox indicator position"
 msgid "Left"
 msgstr "左侧"
 
-#: qml/ConfigAppearance.qml:232
+#: qml/ConfigAppearance.qml:244
 msgctxt "@item:inlistbox indicator position"
 msgid "Right"
 msgstr "右侧"
 
-#: qml/ConfigAppearance.qml:241
+#: qml/ConfigAppearance.qml:253
 msgid "Animation"
 msgstr "动画"
 
-#: qml/ConfigAppearance.qml:247
+#: qml/ConfigAppearance.qml:259
 msgctxt "@label:listbox"
 msgid "Animation speed:"
 msgstr "动画速度："
 
-#: qml/ConfigAppearance.qml:250
+#: qml/ConfigAppearance.qml:262
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
 msgstr "极快"
 
-#: qml/ConfigAppearance.qml:251
+#: qml/ConfigAppearance.qml:263
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
 msgstr "快速"
 
-#: qml/ConfigAppearance.qml:252
+#: qml/ConfigAppearance.qml:264
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
 msgstr "正常"
 
-#: qml/ConfigAppearance.qml:253
+#: qml/ConfigAppearance.qml:265
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
 msgstr "慢速"
 
-#: qml/ConfigAppearance.qml:254
+#: qml/ConfigAppearance.qml:266
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Slow"
 msgstr "极慢"
 
-#: qml/ConfigAppearance.qml:260
+#: qml/ConfigAppearance.qml:272
 msgid "Icon hover effect"
 msgstr "图标悬停效果"
 
-#: qml/ConfigAppearance.qml:266
+#: qml/ConfigAppearance.qml:278
 msgctxt "@label:listbox"
 msgid "Hover direction:"
 msgstr "悬停方向："
 
-#: qml/ConfigAppearance.qml:270
+#: qml/ConfigAppearance.qml:282
 msgctxt "@item:inlistbox hover direction"
 msgid "Up"
 msgstr "向上"
 
-#: qml/ConfigAppearance.qml:271
+#: qml/ConfigAppearance.qml:283
 msgctxt "@item:inlistbox hover direction"
 msgid "Down"
 msgstr "向下"
 
-#: qml/ConfigAppearance.qml:272
+#: qml/ConfigAppearance.qml:284
 msgctxt "@item:inlistbox hover direction"
 msgid "Left"
 msgstr "向左"
 
-#: qml/ConfigAppearance.qml:273
+#: qml/ConfigAppearance.qml:285
 msgctxt "@item:inlistbox hover direction"
 msgid "Right"
 msgstr "向右"
 
-#: qml/ConfigAppearance.qml:279
+#: qml/ConfigAppearance.qml:291
+msgid "Show highlight background on hover/active"
+msgstr "hover/激活时显示高光背景"
+
+#: qml/ConfigAppearance.qml:298
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "高光形状："
+
+#: qml/ConfigAppearance.qml:302
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded Rectangle"
+msgstr "圆角矩形"
+
+#: qml/ConfigAppearance.qml:303
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "直角矩形"
+
+#: qml/ConfigAppearance.qml:304
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "圆形"
+
+#: qml/ConfigAppearance.qml:310
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "高光颜色："
+
+#: qml/ConfigAppearance.qml:314
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "白色"
+
+#: qml/ConfigAppearance.qml:315
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "黑色"
+
+#: qml/ConfigAppearance.qml:316
+msgctxt "@item:inlistbox highlight color"
+msgid "Theme Highlight"
+msgstr "主题高亮"
+
+#: qml/ConfigAppearance.qml:322
 msgid "Icon scale:"
 msgstr "图标缩放："
 

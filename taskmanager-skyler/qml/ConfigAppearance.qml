@@ -31,12 +31,16 @@ KCMUtils.SimpleKCM {
     property alias cfg_taskMaxWidth: taskMaxWidth.currentIndex
     property int cfg_iconSpacing: 0
     property alias cfg_miniTooltip: miniTooltip.checked
+    property alias cfg_useCustomDecorations: useCustomDecorations.checked
     property alias cfg_useThemeDecorations: useThemeDecorations.checked
     property alias cfg_useCustomIndicator: useCustomIndicator.checked
     property alias cfg_indicatorPosition: indicatorPosition.currentIndex
     property alias cfg_animationSpeed: animationSpeed.currentIndex
     property alias cfg_hoverEffect: hoverEffect.checked
     property alias cfg_hoverDirection: hoverDirection.currentIndex
+    property alias cfg_useHighlight: useHighlight.checked
+    property alias cfg_highlightShape: highlightShape.currentIndex
+    property alias cfg_highlightColor: highlightColor.currentIndex
     property alias cfg_iconScale: iconScale.value
 
     Component.onCompleted: {
@@ -205,9 +209,25 @@ KCMUtils.SimpleKCM {
         }
 
         QQC2.CheckBox {
+            id: useCustomDecorations
+            Kirigami.FormData.label: i18nc("@label for checkbox", "Custom Decorations:")
+            text: i18nc("@option:check", "Use custom task decorations (highlight, indicator)")
+            onToggled: {
+                if (checked) {
+                    useThemeDecorations.checked = false;
+                }
+            }
+        }
+
+        QQC2.CheckBox {
             id: useThemeDecorations
             Kirigami.FormData.label: i18nc("@label for checkbox", "Theme Decorations:")
             text: i18nc("@option:check", "Use KDE theme hover/active decorations")
+            onToggled: {
+                if (checked) {
+                    useCustomDecorations.checked = false;
+                }
+            }
         }
 
         Item {
@@ -218,13 +238,14 @@ KCMUtils.SimpleKCM {
             id: useCustomIndicator
             Kirigami.FormData.label: i18nc("@label for checkbox", "Indicator:")
             text: i18nc("@option:check", "Show custom indicator bar")
+            enabled: useCustomDecorations.checked
         }
 
         QQC2.ComboBox {
             id: indicatorPosition
             Kirigami.FormData.label: i18nc("@label:listbox", "Indicator position:")
             Layout.fillWidth: true
-            enabled: useCustomIndicator.checked
+            enabled: useCustomDecorations.checked && useCustomIndicator.checked
             model: [
                 i18nc("@item:inlistbox indicator position", "Bottom"),
                 i18nc("@item:inlistbox indicator position", "Top"),
@@ -271,6 +292,37 @@ KCMUtils.SimpleKCM {
                 i18nc("@item:inlistbox hover direction", "Down"),
                 i18nc("@item:inlistbox hover direction", "Left"),
                 i18nc("@item:inlistbox hover direction", "Right")
+            ]
+        }
+
+        QQC2.CheckBox {
+            id: useHighlight
+            text: i18n("Show highlight background on hover/active")
+            checked: true
+            enabled: useCustomDecorations.checked
+        }
+
+        QQC2.ComboBox {
+            id: highlightShape
+            Kirigami.FormData.label: i18nc("@label:listbox", "Highlight shape:")
+            Layout.fillWidth: true
+            enabled: useCustomDecorations.checked && useHighlight.checked
+            model: [
+                i18nc("@item:inlistbox highlight shape", "Rounded Rectangle"),
+                i18nc("@item:inlistbox highlight shape", "Rectangle"),
+                i18nc("@item:inlistbox highlight shape", "Circle")
+            ]
+        }
+
+        QQC2.ComboBox {
+            id: highlightColor
+            Kirigami.FormData.label: i18nc("@label:listbox", "Highlight color:")
+            Layout.fillWidth: true
+            enabled: useCustomDecorations.checked && useHighlight.checked
+            model: [
+                i18nc("@item:inlistbox highlight color", "White"),
+                i18nc("@item:inlistbox highlight color", "Black"),
+                i18nc("@item:inlistbox highlight color", "Theme Highlight")
             ]
         }
 

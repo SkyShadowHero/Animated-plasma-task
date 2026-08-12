@@ -179,6 +179,32 @@
       </choices>
       <default>0</default>
     </entry>
+    <entry name="useCustomDecorations" type="Bool">
+      <label>Master switch for all custom task decorations (highlight background, indicator bar, etc.).</label>
+      <default>true</default>
+    </entry>
+    <entry name="useHighlight" type="Bool">
+      <label>Whether to show a custom highlight background behind the icon when hovered or active.</label>
+      <default>true</default>
+    </entry>
+    <entry name="highlightShape" type="Enum">
+      <label>Shape of the hover/active highlight background. 0=Rounded rectangle, 1=Rectangle, 2=Circle.</label>
+      <choices>
+        <choice name="RoundedRectangle"/>
+        <choice name="Rectangle"/>
+        <choice name="Circle"/>
+      </choices>
+      <default>0</default>
+    </entry>
+    <entry name="highlightColor" type="Enum">
+      <label>Color of the hover/active highlight background. 0=White, 1=Black, 2=Theme highlight color.</label>
+      <choices>
+        <choice name="White"/>
+        <choice name="Black"/>
+        <choice name="ThemeHighlight"/>
+      </choices>
+      <default>0</default>
+    </entry>
     <entry name="iconScale" type="Int">
       <label>Icon scale in percent (20-150).</label>
       <default>100</default>

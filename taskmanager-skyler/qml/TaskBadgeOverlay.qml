@@ -11,6 +11,10 @@ import org.kde.plasma.plasmoid
 
 Item {
     id: root
+    // Fill the Loader (iconBox) so the ShaderEffectSource snapshot and badge
+    // geometry match the icon area exactly; without this the content item is
+    // placed at (0,0) with its own implicit size, shifting the icon.
+    anchors.fill: parent
 
     readonly property bool verySmallIcon:
         icon.width < Kirigami.Units.iconSizes.smallMedium ||
@@ -56,6 +60,10 @@ Item {
 
     ShaderEffectSource {
         id: iconShaderSource
+        // Fill the whole overlay so the captured icon texture is rendered
+        // 1:1 aligned with the iconBox geometry (prevents the icon appearing
+        // shifted relative to the highlight/indicator which use iconBox coords).
+        anchors.fill: parent
         sourceItem: icon
         hideSource: GraphicsInfo.api !== GraphicsInfo.Software
     }

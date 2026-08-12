@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 21:05+0800\n"
+"POT-Creation-Date: 2026-08-12 21:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,244 +250,298 @@ msgctxt "@title:group for configuration dialog page"
 msgid "Behavior"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:58
+#: qml/ConfigAppearance.qml:62
 msgctxt "@label for several checkboxes"
 msgid "General:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:59
+#: qml/ConfigAppearance.qml:63
 msgctxt "@option:check section General"
 msgid "Show small window previews when hovering over tasks"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:64
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over previews"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:64
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over tooltips"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:69
+#: qml/ConfigAppearance.qml:73
 msgctxt "@option:check section General"
 msgid "Show an indicator when a task is playing audio"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:79
+#: qml/ConfigAppearance.qml:83
 msgctxt "@option:check section General"
 msgid "Mute task when clicking indicator"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:87
+#: qml/ConfigAppearance.qml:91
 msgctxt "@option:check section General"
 msgid "Show media and volume controls in tooltip"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:95
+#: qml/ConfigAppearance.qml:99
 msgctxt "@option:check section General"
 msgid "Fill free space on panel"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:107
+#: qml/ConfigAppearance.qml:111
 msgctxt "@label:listbox"
 msgid "Maximum task width:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:110
+#: qml/ConfigAppearance.qml:114
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Narrow"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:111
+#: qml/ConfigAppearance.qml:115
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Medium"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:112
+#: qml/ConfigAppearance.qml:116
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Wide"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:123
+#: qml/ConfigAppearance.qml:127
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-column view:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:124
+#: qml/ConfigAppearance.qml:128
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-row view:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:130
+#: qml/ConfigAppearance.qml:134
 msgctxt "@option:radio Never use multi-column view for Task Manager"
 msgid "Never"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:140
+#: qml/ConfigAppearance.qml:144
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "When panel is low on space and thick enough"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:150
+#: qml/ConfigAppearance.qml:154
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "Always when panel is thick enough"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:157
+#: qml/ConfigAppearance.qml:161
 msgctxt "@label:spinbox maximum number of columns for tasks"
 msgid "Maximum columns:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:158
+#: qml/ConfigAppearance.qml:162
 msgctxt "@label:spinbox maximum number of rows for tasks"
 msgid "Maximum rows:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:168
+#: qml/ConfigAppearance.qml:172
 msgctxt "@label:listbox"
 msgid "Spacing between icons:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:172
+#: qml/ConfigAppearance.qml:176
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Small"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:176
+#: qml/ConfigAppearance.qml:180
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Normal"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:180
+#: qml/ConfigAppearance.qml:184
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Large"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:203
+#: qml/ConfigAppearance.qml:207
 msgctxt "@label for checkbox"
 msgid "Mini Tooltip:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:204
+#: qml/ConfigAppearance.qml:208
 msgctxt "@option:check section Mini Tooltip"
 msgid "Use compact tooltip style"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:209
+#: qml/ConfigAppearance.qml:213
 msgctxt "@label for checkbox"
-msgid "Theme Decorations:"
+msgid "Custom Decorations:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:210
+#: qml/ConfigAppearance.qml:214
 msgctxt "@option:check"
-msgid "Use KDE theme hover/active decorations"
+msgid "Use custom task decorations (highlight, indicator)"
 msgstr ""
 
 #: qml/ConfigAppearance.qml:219
 msgctxt "@label for checkbox"
-msgid "Indicator:"
+msgid "Theme Decorations:"
 msgstr ""
 
 #: qml/ConfigAppearance.qml:220
 msgctxt "@option:check"
+msgid "Use KDE theme hover/active decorations"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:230
+msgctxt "@label for checkbox"
+msgid "Indicator:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:231
+msgctxt "@option:check"
 msgid "Show custom indicator bar"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:225
+#: qml/ConfigAppearance.qml:237
 msgctxt "@label:listbox"
 msgid "Indicator position:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:229
+#: qml/ConfigAppearance.qml:241
 msgctxt "@item:inlistbox indicator position"
 msgid "Bottom"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:230
+#: qml/ConfigAppearance.qml:242
 msgctxt "@item:inlistbox indicator position"
 msgid "Top"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:231
+#: qml/ConfigAppearance.qml:243
 msgctxt "@item:inlistbox indicator position"
 msgid "Left"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:232
+#: qml/ConfigAppearance.qml:244
 msgctxt "@item:inlistbox indicator position"
 msgid "Right"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:241
+#: qml/ConfigAppearance.qml:253
 msgid "Animation"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:247
+#: qml/ConfigAppearance.qml:259
 msgctxt "@label:listbox"
 msgid "Animation speed:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:250
+#: qml/ConfigAppearance.qml:262
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:251
+#: qml/ConfigAppearance.qml:263
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:252
+#: qml/ConfigAppearance.qml:264
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:253
+#: qml/ConfigAppearance.qml:265
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:254
+#: qml/ConfigAppearance.qml:266
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Slow"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:260
+#: qml/ConfigAppearance.qml:272
 msgid "Icon hover effect"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:266
+#: qml/ConfigAppearance.qml:278
 msgctxt "@label:listbox"
 msgid "Hover direction:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:270
+#: qml/ConfigAppearance.qml:282
 msgctxt "@item:inlistbox hover direction"
 msgid "Up"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:271
+#: qml/ConfigAppearance.qml:283
 msgctxt "@item:inlistbox hover direction"
 msgid "Down"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:272
+#: qml/ConfigAppearance.qml:284
 msgctxt "@item:inlistbox hover direction"
 msgid "Left"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:273
+#: qml/ConfigAppearance.qml:285
 msgctxt "@item:inlistbox hover direction"
 msgid "Right"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:279
+#: qml/ConfigAppearance.qml:291
+msgid "Show highlight background on hover/active"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:298
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:302
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded Rectangle"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:303
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:304
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:310
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:314
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:315
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:316
+msgctxt "@item:inlistbox highlight color"
+msgid "Theme Highlight"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:322
 msgid "Icon scale:"
 msgstr ""
 

@@ -18,7 +18,7 @@ KSvg.SvgItem {
         horizontalCenter: iconBox.horizontalCenter
     }
 
-    visible: parent.model.IsGroupParent && !Plasmoid.configuration.useCustomIndicator
+    visible: parent.model.IsGroupParent && !(Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useCustomIndicator)
 
     states: [
         State {
