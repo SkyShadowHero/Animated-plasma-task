@@ -794,29 +794,35 @@ PlasmaCore.ToolTipArea {
     //    does not inherit the icon hover scale/translate transforms) ──
     Rectangle {
         id: customIndicator
-        visible: Plasmoid.configuration.useCustomIndicator && !task.inPopup
+        // Only show for actual windows (not for pinned launchers without an open window)
+        visible: Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
         z: 5
-        color: task.model.IsActive
-            ? (Plasmoid.configuration.activeIndicatorColor
-               ? Plasmoid.configuration.activeIndicatorColor
-               : Kirigami.Theme.highlightColor)
-            : (task.containsMouse
-               ? (Plasmoid.configuration.indicatorHoverColor
-                  ? Plasmoid.configuration.indicatorHoverColor
-                  : Kirigami.Theme.highlightColor)
-               : (Plasmoid.configuration.indicatorColor ? Plasmoid.configuration.indicatorColor : "#ffffff"))
+        // Fixed colors: theme highlight when hovered/active, gray otherwise
+        color: (task.model.IsActive || task.containsMouse)
+            ? Kirigami.Theme.highlightColor
+            : "#888888"
 
         // Horizontal bar (bottom/top): width animates
         // Vertical bar (left/right): height animates
         readonly property bool isVertical: Plasmoid.configuration.indicatorPosition >= 2
-        readonly property real barThickness: 3
-        readonly property real shortExtent: Math.max(8, (isVertical ? iconBox.height : iconBox.width) * 0.3)
-        readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * 0.75
+        readonly property bool isHighlighted: task.model.IsActive || task.containsMouse
+        // Thicker while hovered only (not when merely active)
+        readonly property real barThickness: task.containsMouse ? 5 : 3
+        readonly property real shortExtent: Math.max(6, (isVertical ? iconBox.height : iconBox.width) * 0.2)
+        readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * 0.4
 
         // Set both dims; one stays fixed (thickness), the other animates
         width: isVertical ? barThickness : (task.model.IsActive ? longExtent : shortExtent)
         height: isVertical ? (task.model.IsActive ? longExtent : shortExtent) : barThickness
         radius: Math.min(width, height) / 2
+
+        // Dot presence shortens the bar just a little and shifts the combo to be centered
+        readonly property bool hasDot: task.model.IsGroupParent
+        // Dot diameter matches the bar thickness (3 normally, 5 on hover)
+        readonly property real dotExtent: barThickness
+        readonly property real dotSpacing: 2
+        // Actual extra width the dot occupies (used for precise centering)
+        readonly property real comboExtent: hasDot ? dotExtent + dotSpacing : 0
 
         Behavior on width {
             NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutBack }
@@ -826,13 +832,31 @@ PlasmaCore.ToolTipArea {
         }
 
         // Position: 0 bottom, 1 top, 2 left, 3 right (inside the icon area)
+        // Pure x/y placement — no anchors, so switching positions is stable.
+        // When a dot is present, shift the bar so bar+dot as a unit is centered.
         readonly property int pos: Plasmoid.configuration.indicatorPosition
-        x: pos === 2 ? iconBox.x + 2
-         : pos === 3 ? iconBox.x + iconBox.width - width - 2
-         : iconBox.x + (iconBox.width - width) / 2
-        y: pos === 0 ? iconBox.y + iconBox.height - height - 2
-         : pos === 1 ? iconBox.y + 2
-         : iconBox.y + (iconBox.height - height) / 2
+        x: pos === 2 ? iconBox.x + 1
+         : pos === 3 ? iconBox.x + iconBox.width - width - 1
+         : iconBox.x + (iconBox.width - width - comboExtent) / 2
+        y: pos === 0 ? iconBox.y + iconBox.height - height - 1
+         : pos === 1 ? iconBox.y + 1
+         : iconBox.y + (iconBox.height - height - comboExtent) / 2
+
+        // Dot for multi-window groups (at the end of the bar)
+        Rectangle {
+            id: groupDot
+            visible: customIndicator.hasDot
+            width: customIndicator.dotExtent
+            height: customIndicator.dotExtent
+            radius: customIndicator.dotExtent / 2
+            color: customIndicator.color
+            x: customIndicator.isVertical
+                ? (customIndicator.width - width) / 2
+                : customIndicator.width + customIndicator.dotSpacing
+            y: customIndicator.isVertical
+                ? customIndicator.height + customIndicator.dotSpacing
+                : (customIndicator.height - height) / 2
+        }
     }
 
     PlasmaComponents3.Label {

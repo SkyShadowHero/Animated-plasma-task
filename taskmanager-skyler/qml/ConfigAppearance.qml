@@ -10,7 +10,6 @@ import QtQuick.Layouts
 
 import org.kde.kcmutils as KCMUtils
 import org.kde.kirigami as Kirigami
-import org.kde.kquickcontrols
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasmoid
 
@@ -34,9 +33,6 @@ KCMUtils.SimpleKCM {
     property alias cfg_miniTooltip: miniTooltip.checked
     property alias cfg_useThemeDecorations: useThemeDecorations.checked
     property alias cfg_useCustomIndicator: useCustomIndicator.checked
-    property string cfg_indicatorColor
-    property string cfg_activeIndicatorColor
-    property string cfg_indicatorHoverColor
     property alias cfg_indicatorPosition: indicatorPosition.currentIndex
 
     Component.onCompleted: {
@@ -218,27 +214,6 @@ KCMUtils.SimpleKCM {
             id: useCustomIndicator
             Kirigami.FormData.label: i18nc("@label for checkbox", "Indicator:")
             text: i18nc("@option:check", "Show custom indicator bar")
-        }
-
-        ColorButton {
-            Kirigami.FormData.label: i18nc("@label for color button", "Indicator color:")
-            enabled: useCustomIndicator.checked
-            color: root.cfg_indicatorColor
-            onAccepted: root.cfg_indicatorColor = color
-        }
-
-        ColorButton {
-            Kirigami.FormData.label: i18nc("@label for color button", "Active indicator color:")
-            enabled: useCustomIndicator.checked
-            color: root.cfg_activeIndicatorColor ? root.cfg_activeIndicatorColor : Kirigami.Theme.highlightColor
-            onAccepted: root.cfg_activeIndicatorColor = color
-        }
-
-        ColorButton {
-            Kirigami.FormData.label: i18nc("@label for color button", "Hover indicator color:")
-            enabled: useCustomIndicator.checked
-            color: root.cfg_indicatorHoverColor ? root.cfg_indicatorHoverColor : Kirigami.Theme.highlightColor
-            onAccepted: root.cfg_indicatorHoverColor = color
         }
 
         QQC2.ComboBox {

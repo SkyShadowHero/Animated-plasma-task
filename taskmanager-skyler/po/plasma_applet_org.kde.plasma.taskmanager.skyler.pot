@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 15:40+0800\n"
+"POT-Creation-Date: 2026-08-12 20:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,133 +250,188 @@ msgctxt "@title:group for configuration dialog page"
 msgid "Behavior"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:50
+#: qml/ConfigAppearance.qml:57
 msgctxt "@label for several checkboxes"
 msgid "General:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:51
+#: qml/ConfigAppearance.qml:58
 msgctxt "@option:check section General"
 msgid "Show small window previews when hovering over tasks"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:56
+#: qml/ConfigAppearance.qml:63
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over previews"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:56
+#: qml/ConfigAppearance.qml:63
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over tooltips"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:61
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Show an indicator when a task is playing audio"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:71
+#: qml/ConfigAppearance.qml:78
 msgctxt "@option:check section General"
 msgid "Mute task when clicking indicator"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:79
+#: qml/ConfigAppearance.qml:86
 msgctxt "@option:check section General"
 msgid "Show media and volume controls in tooltip"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:87
+#: qml/ConfigAppearance.qml:94
 msgctxt "@option:check section General"
 msgid "Fill free space on panel"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:99
+#: qml/ConfigAppearance.qml:106
 msgctxt "@label:listbox"
 msgid "Maximum task width:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:102
+#: qml/ConfigAppearance.qml:109
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Narrow"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:103
+#: qml/ConfigAppearance.qml:110
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Medium"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:104
+#: qml/ConfigAppearance.qml:111
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Wide"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:115
+#: qml/ConfigAppearance.qml:122
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-column view:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:116
+#: qml/ConfigAppearance.qml:123
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-row view:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:122
+#: qml/ConfigAppearance.qml:129
 msgctxt "@option:radio Never use multi-column view for Task Manager"
 msgid "Never"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:132
+#: qml/ConfigAppearance.qml:139
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "When panel is low on space and thick enough"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:142
+#: qml/ConfigAppearance.qml:149
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "Always when panel is thick enough"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:149
+#: qml/ConfigAppearance.qml:156
 msgctxt "@label:spinbox maximum number of columns for tasks"
 msgid "Maximum columns:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:150
+#: qml/ConfigAppearance.qml:157
 msgctxt "@label:spinbox maximum number of rows for tasks"
 msgid "Maximum rows:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:160
+#: qml/ConfigAppearance.qml:167
 msgctxt "@label:listbox"
 msgid "Spacing between icons:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:164
+#: qml/ConfigAppearance.qml:171
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Small"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:168
+#: qml/ConfigAppearance.qml:175
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Normal"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:172
+#: qml/ConfigAppearance.qml:179
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Large"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:195
+#: qml/ConfigAppearance.qml:202
 msgctxt "@label for checkbox"
 msgid "Mini Tooltip:"
 msgstr ""
 
-#: qml/ConfigAppearance.qml:196
+#: qml/ConfigAppearance.qml:203
 msgctxt "@option:check section Mini Tooltip"
 msgid "Use compact tooltip style"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:208
+msgctxt "@label for checkbox"
+msgid "Theme Decorations:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:209
+msgctxt "@option:check"
+msgid "Use KDE theme hover/active decorations"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:218
+msgctxt "@label for checkbox"
+msgid "Indicator:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:219
+msgctxt "@option:check"
+msgid "Show custom indicator bar"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:223
+msgctxt "@label for color button"
+msgid "Indicator color:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:230
+msgctxt "@label for color button"
+msgid "Active/Hover indicator color:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:238
+msgctxt "@label:listbox"
+msgid "Indicator position:"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:242
+msgctxt "@item:inlistbox indicator position"
+msgid "Bottom"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:243
+msgctxt "@item:inlistbox indicator position"
+msgid "Top"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:244
+msgctxt "@item:inlistbox indicator position"
+msgid "Left"
+msgstr ""
+
+#: qml/ConfigAppearance.qml:245
+msgctxt "@item:inlistbox indicator position"
+msgid "Right"
 msgstr ""
 
 #: qml/ConfigBehavior.qml:53

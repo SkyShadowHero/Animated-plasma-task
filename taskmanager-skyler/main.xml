@@ -187,18 +187,6 @@
       <label>Whether to show a custom indicator bar below the icon.</label>
       <default>true</default>
     </entry>
-    <entry name="indicatorColor" type="String">
-      <label>Color of the indicator bar for running (non-active) apps.</label>
-      <default>#ffffff</default>
-    </entry>
-    <entry name="activeIndicatorColor" type="String">
-      <label>Color of the indicator bar for the active app. Empty = KDE theme highlight color.</label>
-      <default></default>
-    </entry>
-    <entry name="indicatorHoverColor" type="String">
-      <label>Color of the indicator bar when hovered. Empty = KDE theme highlight color.</label>
-      <default></default>
-    </entry>
     <entry name="indicatorPosition" type="Enum">
       <label>Position of the indicator bar around the icon: 0 = bottom, 1 = top, 2 = left, 3 = right.</label>
       <choices>
