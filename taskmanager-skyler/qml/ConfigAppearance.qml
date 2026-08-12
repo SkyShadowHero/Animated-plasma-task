@@ -6,9 +6,11 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 
 import org.kde.kcmutils as KCMUtils
 import org.kde.kirigami as Kirigami
+import org.kde.kquickcontrols
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasmoid
 
@@ -30,6 +32,12 @@ KCMUtils.SimpleKCM {
     property alias cfg_taskMaxWidth: taskMaxWidth.currentIndex
     property int cfg_iconSpacing: 0
     property alias cfg_miniTooltip: miniTooltip.checked
+    property alias cfg_useThemeDecorations: useThemeDecorations.checked
+    property alias cfg_useCustomIndicator: useCustomIndicator.checked
+    property string cfg_indicatorColor
+    property string cfg_activeIndicatorColor
+    property string cfg_indicatorHoverColor
+    property alias cfg_indicatorPosition: indicatorPosition.currentIndex
 
     Component.onCompleted: {
         /* Don't rely on bindings for checking the radiobuttons
@@ -194,6 +202,56 @@ KCMUtils.SimpleKCM {
             id: miniTooltip
             Kirigami.FormData.label: i18nc("@label for checkbox", "Mini Tooltip:")
             text: i18nc("@option:check section Mini Tooltip", "Use compact tooltip style")
+        }
+
+        QQC2.CheckBox {
+            id: useThemeDecorations
+            Kirigami.FormData.label: i18nc("@label for checkbox", "Theme Decorations:")
+            text: i18nc("@option:check", "Use KDE theme hover/active decorations")
+        }
+
+        Item {
+            Kirigami.FormData.isSection: true
+        }
+
+        QQC2.CheckBox {
+            id: useCustomIndicator
+            Kirigami.FormData.label: i18nc("@label for checkbox", "Indicator:")
+            text: i18nc("@option:check", "Show custom indicator bar")
+        }
+
+        ColorButton {
+            Kirigami.FormData.label: i18nc("@label for color button", "Indicator color:")
+            enabled: useCustomIndicator.checked
+            color: root.cfg_indicatorColor
+            onAccepted: root.cfg_indicatorColor = color
+        }
+
+        ColorButton {
+            Kirigami.FormData.label: i18nc("@label for color button", "Active indicator color:")
+            enabled: useCustomIndicator.checked
+            color: root.cfg_activeIndicatorColor ? root.cfg_activeIndicatorColor : Kirigami.Theme.highlightColor
+            onAccepted: root.cfg_activeIndicatorColor = color
+        }
+
+        ColorButton {
+            Kirigami.FormData.label: i18nc("@label for color button", "Hover indicator color:")
+            enabled: useCustomIndicator.checked
+            color: root.cfg_indicatorHoverColor ? root.cfg_indicatorHoverColor : Kirigami.Theme.highlightColor
+            onAccepted: root.cfg_indicatorHoverColor = color
+        }
+
+        QQC2.ComboBox {
+            id: indicatorPosition
+            Kirigami.FormData.label: i18nc("@label:listbox", "Indicator position:")
+            Layout.fillWidth: true
+            enabled: useCustomIndicator.checked
+            model: [
+                i18nc("@item:inlistbox indicator position", "Bottom"),
+                i18nc("@item:inlistbox indicator position", "Top"),
+                i18nc("@item:inlistbox indicator position", "Left"),
+                i18nc("@item:inlistbox indicator position", "Right")
+            ]
         }
     }
 }

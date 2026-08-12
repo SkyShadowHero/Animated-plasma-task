@@ -627,8 +627,8 @@ PlasmaCore.ToolTipArea {
         }
 
         imagePath: "widgets/tasks"
-        property bool isHovered: task.highlighted && Plasmoid.configuration.taskHoverEffect
-        property string basePrefix: "normal"
+        property bool isHovered: task.highlighted && Plasmoid.configuration.taskHoverEffect && Plasmoid.configuration.useThemeDecorations
+        property string basePrefix: Plasmoid.configuration.useThemeDecorations ? "normal" : ""
         prefix: isHovered ? TaskManagerApplet.TaskTools.taskPrefixHovered(basePrefix, Plasmoid.location) : TaskManagerApplet.TaskTools.taskPrefix(basePrefix, Plasmoid.location)
 
         // Avoid repositioning delegate item after dragFinished
@@ -753,7 +753,7 @@ PlasmaCore.ToolTipArea {
 
             anchors.fill: parent
 
-            active: task.highlighted
+            active: task.highlighted && Plasmoid.configuration.useThemeDecorations
             enabled: true
 
             source: task.model.decoration
@@ -788,6 +788,51 @@ PlasmaCore.ToolTipArea {
             active: task.model.IsStartup
             sourceComponent: busyIndicator
         }
+    }
+
+    // ── Custom indicator bar (Task level; positioned by iconBox geometry so it
+    //    does not inherit the icon hover scale/translate transforms) ──
+    Rectangle {
+        id: customIndicator
+        visible: Plasmoid.configuration.useCustomIndicator && !task.inPopup
+        z: 5
+        color: task.model.IsActive
+            ? (Plasmoid.configuration.activeIndicatorColor
+               ? Plasmoid.configuration.activeIndicatorColor
+               : Kirigami.Theme.highlightColor)
+            : (task.containsMouse
+               ? (Plasmoid.configuration.indicatorHoverColor
+                  ? Plasmoid.configuration.indicatorHoverColor
+                  : Kirigami.Theme.highlightColor)
+               : (Plasmoid.configuration.indicatorColor ? Plasmoid.configuration.indicatorColor : "#ffffff"))
+
+        // Horizontal bar (bottom/top): width animates
+        // Vertical bar (left/right): height animates
+        readonly property bool isVertical: Plasmoid.configuration.indicatorPosition >= 2
+        readonly property real barThickness: 3
+        readonly property real shortExtent: Math.max(8, (isVertical ? iconBox.height : iconBox.width) * 0.3)
+        readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * 0.75
+
+        // Set both dims; one stays fixed (thickness), the other animates
+        width: isVertical ? barThickness : (task.model.IsActive ? longExtent : shortExtent)
+        height: isVertical ? (task.model.IsActive ? longExtent : shortExtent) : barThickness
+        radius: Math.min(width, height) / 2
+
+        Behavior on width {
+            NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutBack }
+        }
+        Behavior on height {
+            NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutBack }
+        }
+
+        // Position: 0 bottom, 1 top, 2 left, 3 right (inside the icon area)
+        readonly property int pos: Plasmoid.configuration.indicatorPosition
+        x: pos === 2 ? iconBox.x + 2
+         : pos === 3 ? iconBox.x + iconBox.width - width - 2
+         : iconBox.x + (iconBox.width - width) / 2
+        y: pos === 0 ? iconBox.y + iconBox.height - height - 2
+         : pos === 1 ? iconBox.y + 2
+         : iconBox.y + (iconBox.height - height) / 2
     }
 
     PlasmaComponents3.Label {
@@ -841,7 +886,7 @@ PlasmaCore.ToolTipArea {
             when: task.model.IsDemandingAttention || (task.smartLauncherItem && task.smartLauncherItem.urgent)
 
             PropertyChanges {
-                frame.basePrefix: "attention"
+                frame.basePrefix: Plasmoid.configuration.useThemeDecorations ? "attention" : ""
             }
         },
         State {
@@ -849,7 +894,7 @@ PlasmaCore.ToolTipArea {
             when: task.model.IsMinimized
 
             PropertyChanges {
-                frame.basePrefix: "minimized"
+                frame.basePrefix: Plasmoid.configuration.useThemeDecorations ? "minimized" : ""
             }
             StateChangeScript {
                 script: {
@@ -863,7 +908,7 @@ PlasmaCore.ToolTipArea {
             when: task.model.IsActive
 
             PropertyChanges {
-                frame.basePrefix: "focus"
+                frame.basePrefix: Plasmoid.configuration.useThemeDecorations ? "focus" : ""
             }
         }
     ]
