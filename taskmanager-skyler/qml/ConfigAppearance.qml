@@ -36,6 +36,7 @@ KCMUtils.SimpleKCM {
     property alias cfg_indicatorPosition: indicatorPosition.currentIndex
     property alias cfg_animationSpeed: animationSpeed.currentIndex
     property alias cfg_hoverEffect: hoverEffect.checked
+    property alias cfg_hoverDirection: hoverDirection.currentIndex
     property alias cfg_iconScale: iconScale.value
 
     Component.onCompleted: {
@@ -258,6 +259,19 @@ KCMUtils.SimpleKCM {
             id: hoverEffect
             text: i18n("Icon hover effect")
             checked: true
+        }
+
+        QQC2.ComboBox {
+            id: hoverDirection
+            Kirigami.FormData.label: i18nc("@label:listbox", "Hover direction:")
+            Layout.fillWidth: true
+            enabled: hoverEffect.checked
+            model: [
+                i18nc("@item:inlistbox hover direction", "Up"),
+                i18nc("@item:inlistbox hover direction", "Down"),
+                i18nc("@item:inlistbox hover direction", "Left"),
+                i18nc("@item:inlistbox hover direction", "Right")
+            ]
         }
 
         QQC2.SpinBox {

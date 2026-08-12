@@ -708,7 +708,13 @@ PlasmaCore.ToolTipArea {
             Translate { id: entrySlide; y: 0 },
             Translate { id: minimizeBounce; y: 0 },
             Translate {
-                y: (Plasmoid.configuration.hoverEffect && task.containsMouse) ? -5 : 0
+                // Hover lift: direction from config (0=Up, 1=Down, 2=Left, 3=Right)
+                readonly property int dir: Plasmoid.configuration.hoverDirection
+                x: (Plasmoid.configuration.hoverEffect && task.containsMouse && (dir === 2 || dir === 3)) ? (dir === 2 ? -5 : 5) : 0
+                y: (Plasmoid.configuration.hoverEffect && task.containsMouse && (dir === 0 || dir === 1)) ? (dir === 0 ? -5 : 5) : 0
+                Behavior on x {
+                    NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+                }
                 Behavior on y {
                     NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
                 }

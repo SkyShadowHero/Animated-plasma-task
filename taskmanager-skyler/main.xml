@@ -166,8 +166,18 @@
       <default>2</default>
     </entry>
     <entry name="hoverEffect" type="Bool">
-      <label>Whether to show hover animation (icon moves up and enlarges when mouse hovers over it).</label>
+      <label>Whether to show hover animation (icon moves and enlarges when mouse hovers over it).</label>
       <default>true</default>
+    </entry>
+    <entry name="hoverDirection" type="Enum">
+      <label>Direction of the hover lift animation. 0=Up, 1=Down, 2=Left, 3=Right.</label>
+      <choices>
+        <choice name="Up"/>
+        <choice name="Down"/>
+        <choice name="Left"/>
+        <choice name="Right"/>
+      </choices>
+      <default>0</default>
     </entry>
     <entry name="iconScale" type="Int">
       <label>Icon scale in percent (20-150).</label>
