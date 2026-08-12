@@ -36,9 +36,6 @@ KCMUtils.SimpleKCM {
     property alias cfg_minimizeActiveTaskOnClick: minimizeActive.checked
     property alias cfg_unhideOnAttention: unhideOnAttention.checked
     property alias cfg_reverseMode: reverseMode.checked
-    property alias cfg_animationSpeed: animationSpeed.currentIndex
-    property alias cfg_hoverEffect: hoverEffect.checked
-    property alias cfg_iconScale: iconScale.value
 
     headerPaddingEnabled: false
     header: ColumnLayout {
@@ -304,43 +301,6 @@ KCMUtils.SimpleKCM {
                 }
             }
             QQC2.ButtonGroup.group: reverseModeRadioButtonGroup
-        }
-
-        QQC2.Label {
-            text: i18n("Animation")
-            font.bold: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
-        }
-
-        QQC2.ComboBox {
-            id: animationSpeed
-            Kirigami.FormData.label: i18nc("@label:listbox", "Animation speed:")
-            Layout.fillWidth: true
-            model: [
-                i18nc("@item:inlistbox animation speed", "Very Fast"),
-                i18nc("@item:inlistbox animation speed", "Fast"),
-                i18nc("@item:inlistbox animation speed", "Normal"),
-                i18nc("@item:inlistbox animation speed", "Slow"),
-                i18nc("@item:inlistbox animation speed", "Very Slow")
-            ]
-        }
-
-        QQC2.CheckBox {
-            id: hoverEffect
-            text: i18n("Icon hover effect")
-            checked: true
-        }
-
-        QQC2.SpinBox {
-            id: iconScale
-            Kirigami.FormData.label: i18n("Icon scale:")
-            from: 20
-            to: 150
-            stepSize: 5
-            value: 100
-            editable: true
-            textFromValue: function(val) { return val + "%" }
-            valueFromText: function(txt) { return parseInt(txt) || 100 }
         }
     }
 }

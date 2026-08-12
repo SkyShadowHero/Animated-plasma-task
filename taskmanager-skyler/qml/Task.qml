@@ -809,7 +809,7 @@ PlasmaCore.ToolTipArea {
         // Thicker while hovered only (not when merely active)
         readonly property real barThickness: task.containsMouse ? 5 : 3
         readonly property real shortExtent: Math.max(6, (isVertical ? iconBox.height : iconBox.width) * 0.2)
-        readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * 0.4
+        readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * (task.model.IsGroupParent ? 0.3 : 0.4)
 
         // Set both dims; one stays fixed (thickness), the other animates
         width: isVertical ? barThickness : (task.model.IsActive ? longExtent : shortExtent)
