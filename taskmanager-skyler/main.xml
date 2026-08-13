@@ -181,11 +181,11 @@
     </entry>
     <entry name="useCustomDecorations" type="Bool">
       <label>Master switch for all custom task decorations (highlight background, indicator bar, etc.).</label>
-      <default>true</default>
+      <default>false</default>
     </entry>
     <entry name="useHighlight" type="Bool">
       <label>Whether to show a custom highlight background behind the icon when hovered or active.</label>
-      <default>true</default>
+      <default>false</default>
     </entry>
     <entry name="highlightShape" type="Enum">
       <label>Shape of the hover/active highlight background. 0=Rounded rectangle, 1=Rectangle, 2=Circle.</label>
