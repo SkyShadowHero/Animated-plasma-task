@@ -7,6 +7,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 
 import org.kde.plasma.plasmoid
 import org.kde.plasma.components as PlasmaComponents3
@@ -140,48 +141,6 @@ PlasmoidItem {
             case 2: return 1.5;
             default: return 1.0;
         }
-    }
-
-    // Taskbar-level shared hover highlight: slides between task icons.
-    property Task hoveredTask: null
-
-    function taskHoverChanged(taskItem: Task, hovered: bool): void {
-        if (hovered) {
-            hoveredTask = taskItem;
-            hoverHighlightHideTimer.stop();
-            updateSharedHoverHighlight();
-        } else if (hoveredTask === taskItem) {
-            hoveredTask = null;
-            hoverHighlightHideTimer.restart();
-        }
-    }
-
-    function updateSharedHoverHighlight(): void {
-        if (!hoveredTask || !hoveredTask.iconBoxItem) {
-            return;
-        }
-        // Map the icon's layout geometry (excluding its hover transform) into
-        // the shared highlight's parent coordinate space. iconBox.x/y are
-        // layout coords, so this intentionally ignores hover scale/translate.
-        const pos = hoveredTask.mapToItem(sharedHoverHighlight.parent,
-            hoveredTask.iconBoxItem.x, hoveredTask.iconBoxItem.y);
-        sharedHoverHighlight.x = pos.x;
-        sharedHoverHighlight.y = pos.y;
-        sharedHoverHighlight.width = hoveredTask.iconBoxItem.width;
-        sharedHoverHighlight.height = hoveredTask.iconBoxItem.height;
-        // Respect the master decoration switch AND the highlight switch:
-        // when either is off, the shared hover highlight must not show.
-        sharedHoverHighlight.visible = Plasmoid.configuration.useCustomDecorations
-            && Plasmoid.configuration.useHighlight;
-        if (Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight) {
-            sharedHoverHighlight.opacity = 1;
-        }
-    }
-
-    Timer {
-        id: hoverHighlightHideTimer
-        interval: 500
-        onTriggered: sharedHoverHighlight.opacity = 0
     }
 
     readonly property TaskManager.TasksModel tasksModel: TaskManager.TasksModel {
@@ -510,45 +469,6 @@ PlasmoidItem {
 
             height: taskList.height
             width: taskList.width
-
-            // ── Taskbar-level shared hover highlight (slides between icons) ──
-            Rectangle {
-                id: sharedHoverHighlight
-                visible: false
-                z: 0
-                opacity: 0
-                // Hover uses the lighter opacity; color: White (default), Black or Theme highlight
-                readonly property int hColor: Plasmoid.configuration.highlightColor
-                readonly property real hoverOpacity: hColor === 0 ? 0.45 : hColor === 1 ? 0.35 : 0.22
-                color: hColor === 2
-                    ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g,
-                              Kirigami.Theme.highlightColor.b, hoverOpacity)
-                    : hColor === 1
-                        ? Qt.rgba(0, 0, 0, hoverOpacity)
-                        : Qt.rgba(1, 1, 1, hoverOpacity)
-                radius: {
-                    switch (Plasmoid.configuration.highlightShape) {
-                    case 1: return 0; // Rectangle
-                    case 2: return width / 2; // Circle
-                    default: return Kirigami.Units.smallSpacing; // Rounded Rectangle
-                    }
-                }
-                Behavior on x {
-                    NumberAnimation { duration: 200 * tasks.animMul; easing.type: Easing.OutCubic }
-                }
-                Behavior on y {
-                    NumberAnimation { duration: 200 * tasks.animMul; easing.type: Easing.OutCubic }
-                }
-                Behavior on width {
-                    NumberAnimation { duration: 200 * tasks.animMul; easing.type: Easing.OutCubic }
-                }
-                Behavior on height {
-                    NumberAnimation { duration: 200 * tasks.animMul; easing.type: Easing.OutCubic }
-                }
-                Behavior on opacity {
-                    NumberAnimation { duration: 150 * tasks.animMul; easing.type: Easing.OutQuad }
-                }
-            }
 
             TaskList {
                 id: taskList

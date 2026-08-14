@@ -321,8 +321,7 @@ KCMUtils.SimpleKCM {
             enabled: useCustomDecorations.checked && useHighlight.checked
             model: [
                 i18nc("@item:inlistbox highlight color", "White"),
-                i18nc("@item:inlistbox highlight color", "Black"),
-                i18nc("@item:inlistbox highlight color", "Theme Highlight")
+                i18nc("@item:inlistbox highlight color", "Black")
             ]
         }
 

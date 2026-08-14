@@ -197,11 +197,10 @@
       <default>0</default>
     </entry>
     <entry name="highlightColor" type="Enum">
-      <label>Color of the hover/active highlight background. 0=White, 1=Black, 2=Theme highlight color.</label>
+      <label>Color of the hover/active highlight background. 0=White, 1=Black.</label>
       <choices>
         <choice name="White"/>
         <choice name="Black"/>
-        <choice name="ThemeHighlight"/>
       </choices>
       <default>0</default>
     </entry>

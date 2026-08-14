@@ -9,6 +9,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 
 import org.kde.plasma.core as PlasmaCore
 import org.kde.ksvg as KSvg
@@ -329,10 +330,6 @@ PlasmaCore.ToolTipArea {
             task.updateMainItemBindings();
         } else {
             tasksRoot.toolTipOpenedByClick = null;
-        }
-        // Notify the taskbar-level shared hover highlight
-        if (task.tasksRoot) {
-            task.tasksRoot.taskHoverChanged(task, task.containsMouse);
         }
     }
 
@@ -782,10 +779,14 @@ PlasmaCore.ToolTipArea {
                 AnchorChanges {
                     target: iconBox
                     anchors.left: undefined
-                    anchors.horizontalCenter: parent.horizontalCenter
                 }
 
                 PropertyChanges {
+                    // Center via an explicit x binding instead of
+                    // anchors.horizontalCenter: readers of iconBox.x (the
+                    // indicator) get the exact layout value with no anchor
+                    // chain lag.
+                    iconBox.x: (iconBox.parent.width - iconBox.width) / 2
                     iconBox.anchors.leftMargin: 0
                     iconBox.width: Math.min(task.parent.minimumWidth, tasksRoot.height)
                         - iconBox.adjustMargin(true, task.width, taskFrame.margins.left)
@@ -816,7 +817,20 @@ PlasmaCore.ToolTipArea {
         // through opacity so it can fade in/out smoothly.
         visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
             && !task.inPopup
-        anchors.fill: iconBox
+        // Slightly smaller than the icon, centered (Windows-style highlight)
+        anchors.centerIn: iconBox
+        width: iconBox.width * 0.9
+        height: iconBox.height * 0.9
+        // Soft shadow like the Windows taskbar highlight
+        layer.enabled: true
+        layer.effect: MultiEffect {
+            shadowEnabled: true
+            shadowColor: "black"
+            shadowOpacity: 0.4
+            shadowBlur: 0.35
+            shadowVerticalOffset: 1
+            shadowHorizontalOffset: 0
+        }
         radius: {
             switch (Plasmoid.configuration.highlightShape) {
             case 1: return 0; // Rectangle
@@ -825,95 +839,147 @@ PlasmaCore.ToolTipArea {
             }
         }
 
+        // Active uses the more opaque variant; color: White (default) or Black
+        readonly property int hColor: Plasmoid.configuration.highlightColor
+        readonly property real activeOpacity: hColor === 0 ? 0.85 : 0.75
+        color: hColor === 1
+            ? Qt.rgba(0, 0, 0, activeOpacity)
+            : Qt.rgba(1, 1, 1, activeOpacity)
+        Behavior on color {
+            ColorAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+        }
+
         opacity: task.model.IsActive ? 1 : 0
         Behavior on opacity {
             NumberAnimation { duration: 150 * task.animMul; easing.type: Easing.OutQuad }
         }
+    }
 
-        // Active uses the more opaque variant; color: White (default), Black or Theme highlight
+    // ── Hover highlight background (per-task, anchored the same way as the
+    //    active highlight so they always line up perfectly) ──
+    Rectangle {
+        id: hoverHighlightBg
+        z: -1
+        visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
+            && !task.inPopup && !task.model.IsActive
+        // Same size as the active highlight
+        anchors.centerIn: iconBox
+        width: iconBox.width * 0.9
+        height: iconBox.height * 0.9
+        // Slightly stronger opacity than before; color: White (default) or Black
         readonly property int hColor: Plasmoid.configuration.highlightColor
-        readonly property real activeOpacity: hColor === 0 ? 0.65 : hColor === 1 ? 0.55 : 0.4
-        color: hColor === 2
-            ? Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g,
-                      Kirigami.Theme.highlightColor.b, activeOpacity)
-            : hColor === 1
-                ? Qt.rgba(0, 0, 0, activeOpacity)
-                : Qt.rgba(1, 1, 1, activeOpacity)
-        Behavior on color {
-            ColorAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
+        readonly property real hoverOpacity: hColor === 0 ? 0.95 : 0.85
+        color: hColor === 1
+            ? Qt.rgba(0, 0, 0, hoverOpacity)
+            : Qt.rgba(1, 1, 1, hoverOpacity)
+        radius: {
+            switch (Plasmoid.configuration.highlightShape) {
+            case 1: return 0; // Rectangle
+            case 2: return width / 2; // Circle
+            default: return Kirigami.Units.smallSpacing; // Rounded Rectangle
+            }
+        }
+        // Softer shadow than the active highlight
+        layer.enabled: true
+        layer.effect: MultiEffect {
+            shadowEnabled: true
+            shadowColor: "black"
+            shadowOpacity: 0.15
+            shadowBlur: 0.15
+            shadowVerticalOffset: 1
+            shadowHorizontalOffset: 0
+        }
+        // No delayed hide, no slide animation: appears/disappears with hover,
+        // fading out smoothly.
+        opacity: task.containsMouse ? 1 : 0
+        Behavior on opacity {
+            NumberAnimation { duration: 150 * task.animMul; easing.type: Easing.OutQuad }
         }
     }
 
-    // ── Custom indicator bar (Task level; positioned by iconBox geometry so it
-    //    does not inherit the icon hover scale/translate transforms) ──
+    // ── Custom indicator bar (Task level) ──
+    // Positioned by deriving its center from highlightBg (which is anchored
+    // to the icon center via anchors.centerIn), so the bar and the highlight
+    // share the exact same center — no manual iconBox.x reading, no drift.
     Rectangle {
         id: customIndicator
-        // Only show for actual windows (not for pinned launchers without an open window)
-        visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
-        z: 5
-        // Fixed colors: theme highlight when hovered/active, gray otherwise
-        color: (task.model.IsActive || task.containsMouse)
-            ? Kirigami.Theme.highlightColor
-            : "#888888"
+            // Only show for actual windows (not for pinned launchers without an open window)
+            visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
+            z: 5
+            // Fixed colors: theme highlight when hovered/active, gray otherwise
+            color: (task.model.IsActive || task.containsMouse)
+                ? Kirigami.Theme.highlightColor
+                : "#888888"
 
-        // Horizontal bar (bottom/top): width animates
-        // Vertical bar (left/right): height animates
-        readonly property bool isVertical: Plasmoid.configuration.indicatorPosition >= 2
-        readonly property bool isHighlighted: task.model.IsActive || task.containsMouse
-        // Thicker while hovered only (not when merely active)
-        readonly property real barThickness: task.containsMouse ? 5 : 3
-        readonly property real shortExtent: Math.max(6, (isVertical ? iconBox.height : iconBox.width) * 0.2)
-        readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * (task.model.IsGroupParent ? 0.3 : 0.4)
+            // Horizontal bar (bottom/top): width animates
+            // Vertical bar (left/right): height animates
+            readonly property bool isVertical: Plasmoid.configuration.indicatorPosition >= 2
+            readonly property bool isHighlighted: task.model.IsActive || task.containsMouse
+            // Thicker while hovered only (not when merely active)
+            readonly property real barThickness: task.containsMouse ? 5 : 3
+            readonly property real shortExtent: Math.max(6, (isVertical ? iconBox.height : iconBox.width) * 0.2)
+            readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * (task.model.IsGroupParent ? 0.3 : 0.4)
 
-        // Set both dims; one stays fixed (thickness), the other animates
-        width: isVertical ? barThickness : (task.model.IsActive ? longExtent : shortExtent)
-        height: isVertical ? (task.model.IsActive ? longExtent : shortExtent) : barThickness
-        radius: Math.min(width, height) / 2
+            // Set both dims; one stays fixed (thickness), the other animates
+            width: isVertical ? barThickness : (task.model.IsActive ? longExtent : shortExtent)
+            height: isVertical ? (task.model.IsActive ? longExtent : shortExtent) : barThickness
+            radius: Math.min(width, height) / 2
 
-        // Dot presence shortens the bar just a little and shifts the combo to be centered
-        readonly property bool hasDot: task.model.IsGroupParent
-        // Dot diameter matches the bar thickness (3 normally, 5 on hover)
-        readonly property real dotExtent: barThickness
-        readonly property real dotSpacing: 2
-        // Actual extra width the dot occupies (used for precise centering)
-        readonly property real comboExtent: hasDot ? dotExtent + dotSpacing : 0
+            // Dot presence shortens the bar just a little and shifts the combo to be centered
+            readonly property bool hasDot: task.model.IsGroupParent
+            // Dot diameter fixed (does not grow with hover thickness) so the
+            // bar+dot combo centering stays stable and the bar does not drift
+            // left when the bar thickens on hover.
+            readonly property real dotExtent: 3
+            readonly property real dotSpacing: 2
+            // Actual extra width the dot occupies (used for precise centering)
+            readonly property real comboExtent: hasDot ? dotExtent + dotSpacing : 0
 
-        Behavior on width {
-            NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutBack }
+            // Thickness changes (hover 3->5) must be smooth, not bouncy;
+            // only the length change (active short->long) gets the OutBack bounce.
+            Behavior on width {
+                NumberAnimation { duration: 250 * task.animMul; easing.type: customIndicator.isVertical ? Easing.OutQuad : Easing.OutBack }
+            }
+            Behavior on height {
+                NumberAnimation { duration: 250 * task.animMul; easing.type: customIndicator.isVertical ? Easing.OutBack : Easing.OutQuad }
+            }
+
+            // Position: 0 bottom, 1 top, 2 left, 3 right (inside the icon area)
+            // Offset relative to the container (which is centered on the icon),
+            // so the bar's center stays at a fixed distance from the chosen edge
+            // and it thickens symmetrically (not upward-only).
+            readonly property int pos: Plasmoid.configuration.indicatorPosition
+            // Center is derived from highlightBg (anchors.centerIn: iconBox)
+            // for the axis parallel to the bar's length, so it can never
+            // drift relative to the highlight/icon. The cross axis is manual
+            // (fixed distance from the edge) so it stays symmetric when
+            // thickening and follows the size animation smoothly.
+            x: pos === 2 ? iconBox.x + 2.5 - width / 2
+             : pos === 3 ? iconBox.x + iconBox.width - 2.5 - width / 2
+             // When a dot is present, shift the bar left so the bar+dot
+             // combo (not just the bar) is visually centered on the icon.
+             : highlightBg.x + highlightBg.width / 2 - (width + (hasDot ? comboExtent : 0)) / 2
+            y: pos === 0 ? iconBox.y + iconBox.height - 2.5 - height / 2
+             : pos === 1 ? iconBox.y + 2.5 - height / 2
+             // Vertical bars: same combo-centering when the dot is present.
+             : highlightBg.y + highlightBg.height / 2 - (height + (hasDot ? comboExtent : 0)) / 2
+
+            // Dot for multi-window groups (at the end of the bar)
+            Rectangle {
+                id: groupDot
+                visible: customIndicator.hasDot
+                width: customIndicator.dotExtent
+                height: customIndicator.dotExtent
+                radius: customIndicator.dotExtent / 2
+                color: customIndicator.color
+                x: customIndicator.isVertical
+                    ? (customIndicator.width - width) / 2
+                    : customIndicator.width + customIndicator.dotSpacing
+                y: customIndicator.isVertical
+                    ? customIndicator.height + customIndicator.dotSpacing
+                    : (customIndicator.height - height) / 2
+            }
         }
-        Behavior on height {
-            NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutBack }
-        }
-
-        // Position: 0 bottom, 1 top, 2 left, 3 right (inside the icon area)
-        // Tracks iconBox layout without inheriting its hover transforms.
-        // When a dot is present the bar shifts so bar+dot as a unit stays
-        // centered. Only width/height animate (length change); position is
-        // instant like the original version.
-        readonly property int pos: Plasmoid.configuration.indicatorPosition
-        x: pos === 2 ? iconBox.x + 1
-         : pos === 3 ? iconBox.x + iconBox.width - width - 1
-         : iconBox.x + (iconBox.width - width - comboExtent) / 2
-        y: pos === 0 ? iconBox.y + iconBox.height - height - 1
-         : pos === 1 ? iconBox.y + 1
-         : iconBox.y + (iconBox.height - height - comboExtent) / 2
-
-        // Dot for multi-window groups (at the end of the bar)
-        Rectangle {
-            id: groupDot
-            visible: customIndicator.hasDot
-            width: customIndicator.dotExtent
-            height: customIndicator.dotExtent
-            radius: customIndicator.dotExtent / 2
-            color: customIndicator.color
-            x: customIndicator.isVertical
-                ? (customIndicator.width - width) / 2
-                : customIndicator.width + customIndicator.dotSpacing
-            y: customIndicator.isVertical
-                ? customIndicator.height + customIndicator.dotSpacing
-                : (customIndicator.height - height) / 2
-        }
-    }
 
     PlasmaComponents3.Label {
         id: label
