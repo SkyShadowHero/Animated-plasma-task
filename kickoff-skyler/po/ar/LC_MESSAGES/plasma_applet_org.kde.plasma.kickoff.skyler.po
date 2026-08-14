@@ -62,29 +62,24 @@ msgid "Session and Power"
 msgstr "الجلسة والطاقة"
 
 #: KickoffListDelegate.qml:136
-#, fuzzy
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "جديد!"
 
 #: KickoffListDelegate.qml:142
-#, fuzzy
 msgid "There is a newly-installed application in this category"
 msgstr "يوجد تطبيق مثبت حديثًا في هذه الفئة"
 
 #: KickoffListDelegate.qml:143
-#, fuzzy
 msgid "Newly-installed application"
 msgstr "تطبيق مثبتًا حديثًا"
 
 #: KickoffGridDelegate.qml:68
-#, fuzzy
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "جديد!"
 
 #: KickoffGridDelegate.qml:73
-#, fuzzy
 msgctxt "@label Accessible name for badge"
 msgid "Newly-installed application"
 msgstr "تطبيق مثبتًا حديثًا"
@@ -201,7 +196,6 @@ msgid "Use compact list item style"
 msgstr "استخدم قائمة العناصر المتراصة"
 
 #: ConfigGeneral.qml:193
-#, fuzzy
 msgctxt "@option:check"
 msgid "Highlight newly-installed applications"
 msgstr "أبرز التطبيقات المثبتة حديثًا"

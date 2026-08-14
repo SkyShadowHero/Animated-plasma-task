@@ -62,29 +62,24 @@ msgid "Session and Power"
 msgstr "Сеанс і живлення"
 
 #: KickoffListDelegate.qml:136
-#, fuzzy
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Нове!"
 
 #: KickoffListDelegate.qml:142
-#, fuzzy
 msgid "There is a newly-installed application in this category"
 msgstr "У цій категорії є нововстановлена програма"
 
 #: KickoffListDelegate.qml:143
-#, fuzzy
 msgid "Newly-installed application"
 msgstr "Нововстановлена програма"
 
 #: KickoffGridDelegate.qml:68
-#, fuzzy
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Нове!"
 
 #: KickoffGridDelegate.qml:73
-#, fuzzy
 msgctxt "@label Accessible name for badge"
 msgid "Newly-installed application"
 msgstr "Нововстановлена програма"
@@ -203,7 +198,6 @@ msgid "Use compact list item style"
 msgstr "Компактний стиль пунктів списку"
 
 #: ConfigGeneral.qml:193
-#, fuzzy
 msgctxt "@option:check"
 msgid "Highlight newly-installed applications"
 msgstr "Підсвічувати нововстановлені програми"

@@ -61,29 +61,24 @@ msgid "Session and Power"
 msgstr "Seta og frágangur"
 
 #: KickoffListDelegate.qml:136
-#, fuzzy
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Nýtt!"
 
 #: KickoffListDelegate.qml:142
-#, fuzzy
 msgid "There is a newly-installed application in this category"
 msgstr "Það eru nýlega uppsett forrit í þessum flokki"
 
 #: KickoffListDelegate.qml:143
-#, fuzzy
 msgid "Newly-installed application"
 msgstr "Nýlega uppsett forrit"
 
 #: KickoffGridDelegate.qml:68
-#, fuzzy
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Nýtt!"
 
 #: KickoffGridDelegate.qml:73
-#, fuzzy
 msgctxt "@label Accessible name for badge"
 msgid "Newly-installed application"
 msgstr "Nýlega uppsett forrit"
@@ -202,7 +197,6 @@ msgid "Use compact list item style"
 msgstr "Nota þéttan listastíl"
 
 #: ConfigGeneral.qml:193
-#, fuzzy
 msgctxt "@option:check"
 msgid "Highlight newly-installed applications"
 msgstr "Auðkenna nýlega uppsett forrit"

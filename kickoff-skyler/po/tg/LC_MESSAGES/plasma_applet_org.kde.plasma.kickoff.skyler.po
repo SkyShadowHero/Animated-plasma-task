@@ -282,7 +282,6 @@ msgid "Left"
 msgstr ""
 
 #: ConfigGeneral.qml:283
-#, fuzzy
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
 msgstr "Намоиш додан дар баргузидаҳо"

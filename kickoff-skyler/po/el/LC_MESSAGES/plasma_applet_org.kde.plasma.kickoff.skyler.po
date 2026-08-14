@@ -26,7 +26,6 @@ msgid "Keep Open"
 msgstr ""
 
 #: config.qml:13
-#, fuzzy
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
 msgstr "Γενικά:"
@@ -286,7 +285,6 @@ msgid "Left"
 msgstr ""
 
 #: ConfigGeneral.qml:283
-#, fuzzy
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
 msgstr "Εμφάνιση στα αγαπημένα"

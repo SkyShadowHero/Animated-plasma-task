@@ -281,7 +281,6 @@ msgid "Left"
 msgstr ""
 
 #: ConfigGeneral.qml:283
-#, fuzzy
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
 msgstr "ഇഷ്ടപെട്ടവയിലേക്ക് ചേർക്കുക"
@@ -383,6 +382,5 @@ msgid "On the Current Activity"
 msgstr ""
 
 #: code/tools.js:124
-#, fuzzy
 msgid "Show in Favorites"
 msgstr "ഇഷ്ടപെട്ടവയിലേക്ക് ചേർക്കുക"

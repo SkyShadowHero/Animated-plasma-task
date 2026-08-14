@@ -26,7 +26,6 @@ msgid "Keep Open"
 msgstr ""
 
 #: config.qml:13
-#, fuzzy
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
 msgstr "Umum:"
@@ -149,7 +148,6 @@ msgid "A text label cannot be set when the Panel is vertical."
 msgstr "Teks tidak dapat ditetapkan ketika Panel berada di posisi vertikal."
 
 #: ConfigGeneral.qml:163
-#, fuzzy
 msgctxt "@label:listbox"
 msgid "Show applications as:"
 msgstr "Urutkan aplikasi secara alfabet"
@@ -288,7 +286,6 @@ msgid "Left"
 msgstr ""
 
 #: ConfigGeneral.qml:283
-#, fuzzy
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
 msgstr "Tampilkan di Favorit"

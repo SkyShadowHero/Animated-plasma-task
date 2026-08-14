@@ -61,29 +61,24 @@ msgid "Session and Power"
 msgstr "სესია და კვება"
 
 #: KickoffListDelegate.qml:136
-#, fuzzy
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "ახალი!"
 
 #: KickoffListDelegate.qml:142
-#, fuzzy
 msgid "There is a newly-installed application in this category"
 msgstr "ამ კატეგორიაში ახლად დაყენებული აპლიკაციები არაა"
 
 #: KickoffListDelegate.qml:143
-#, fuzzy
 msgid "Newly-installed application"
 msgstr "ახლად დაყენებული აპლიკაცია"
 
 #: KickoffGridDelegate.qml:68
-#, fuzzy
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "ახალი!"
 
 #: KickoffGridDelegate.qml:73
-#, fuzzy
 msgctxt "@label Accessible name for badge"
 msgid "Newly-installed application"
 msgstr "ახლად დაყენებული აპლიკაცია"
@@ -202,7 +197,6 @@ msgid "Use compact list item style"
 msgstr "ელემენტის კომპაქტური ჩამონათვალის სტილის გამოყენება"
 
 #: ConfigGeneral.qml:193
-#, fuzzy
 msgctxt "@option:check"
 msgid "Highlight newly-installed applications"
 msgstr "ახლად დაყენებული აპლიკაციების გამოკვეთა"

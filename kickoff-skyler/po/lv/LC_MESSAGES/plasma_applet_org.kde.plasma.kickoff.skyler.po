@@ -27,7 +27,6 @@ msgid "Keep Open"
 msgstr ""
 
 #: config.qml:13
-#, fuzzy
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
 msgstr "Pamata:"
@@ -63,7 +62,6 @@ msgid "Session and Power"
 msgstr ""
 
 #: KickoffListDelegate.qml:136
-#, fuzzy
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Jauna!"
@@ -77,7 +75,6 @@ msgid "Newly-installed application"
 msgstr ""
 
 #: KickoffGridDelegate.qml:68
-#, fuzzy
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Jauna!"
@@ -152,7 +149,6 @@ msgid "A text label cannot be set when the Panel is vertical."
 msgstr "Teksta etiķeti nevar uzlikt, panelim atrodoties vertikāli."
 
 #: ConfigGeneral.qml:163
-#, fuzzy
 msgctxt "@label:listbox"
 msgid "Show applications as:"
 msgstr "Programmas kārtot alfabētiski"
@@ -291,7 +287,6 @@ msgid "Left"
 msgstr ""
 
 #: ConfigGeneral.qml:283
-#, fuzzy
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
 msgstr "Rādīt iecienītajās"
