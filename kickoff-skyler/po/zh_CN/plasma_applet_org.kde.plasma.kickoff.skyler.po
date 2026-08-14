@@ -1,0 +1,420 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"PO-Revision-Date: 2024-04-22 15:58\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf6-stable/messages/plasma-desktop/"
+"plasma_applet_org.kde.plasma.kickoff.pot\n"
+"X-Crowdin-File-ID: 51556\n"
+
+#: Header.qml:86
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "打开用户设置"
+
+#: Header.qml:276
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "保持展开状态"
+
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "常规"
+
+#: main.qml:427
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "编辑应用程序…"
+
+#: FullRepresentation.qml:136
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "没有匹配的内容"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "会话"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "电源"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "更多"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "会话和电源"
+
+#: KickoffListDelegate.qml:136
+msgctxt "Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr ""
+
+#: KickoffListDelegate.qml:142
+msgid "There is a newly-installed application in this category"
+msgstr ""
+
+#: KickoffListDelegate.qml:143
+msgid "Newly-installed application"
+msgstr ""
+
+#: KickoffGridDelegate.qml:68
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr ""
+
+#: KickoffGridDelegate.qml:73
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr ""
+
+#: ConfigGeneral.qml:53
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "图标："
+
+#: ConfigGeneral.qml:59
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "更改应用程序启动器图标"
+
+#: ConfigGeneral.qml:60
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr "当前图标是 %1。点击打开菜单更改当前图标或重置为默认图标。"
+
+#: ConfigGeneral.qml:64
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "图标名称是“%1”"
+
+#: ConfigGeneral.qml:99
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "选择…"
+
+#: ConfigGeneral.qml:101
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "选择应用程序启动器的图标"
+
+#: ConfigGeneral.qml:105
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "重置为默认值图标"
+
+#: ConfigGeneral.qml:111
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "移除图标"
+
+#: ConfigGeneral.qml:122
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "文本标签："
+
+#: ConfigGeneral.qml:124
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "在此输入要添加的文本标签"
+
+#: ConfigGeneral.qml:138
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "重置菜单标签"
+
+#: ConfigGeneral.qml:151
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "面板垂直时无法设置文本标签。"
+
+#: ConfigGeneral.qml:163
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "应用程序显示方式："
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "仅名称"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "仅描述"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "名称 (描述)"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "描述 (名称)"
+
+#: ConfigGeneral.qml:173
+msgctxt "General options"
+msgid "General:"
+msgstr "常规："
+
+#: ConfigGeneral.qml:177
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "按字母顺序排列应用程序"
+
+#: ConfigGeneral.qml:181
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr "这不会影响应用程序在搜索结果或常用程序页面中的排序方式。"
+
+#: ConfigGeneral.qml:187
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "列表项目使用紧凑样式"
+
+#: ConfigGeneral.qml:193
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr ""
+
+#: ConfigGeneral.qml:198
+msgid "Icon hover effect"
+msgstr ""
+
+#: ConfigGeneral.qml:208
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:214
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:220
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr ""
+
+#: ConfigGeneral.qml:227
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr ""
+
+#: ConfigGeneral.qml:231
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:232
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:233
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr ""
+
+#: ConfigGeneral.qml:239
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr ""
+
+#: ConfigGeneral.qml:243
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr ""
+
+#: ConfigGeneral.qml:244
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr ""
+
+#: ConfigGeneral.qml:250
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "悬停时切换侧边栏类别"
+
+#: ConfigGeneral.qml:256
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "配置搜索插件…"
+
+#: ConfigGeneral.qml:266
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "侧边栏位置："
+
+#: ConfigGeneral.qml:267 ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "右"
+
+#: ConfigGeneral.qml:267
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "左"
+
+#: ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "左"
+
+#: ConfigGeneral.qml:283
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "常用程序显示方式："
+
+#: ConfigGeneral.qml:284
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "网格"
+
+#: ConfigGeneral.qml:292
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "列表"
+
+#: ConfigGeneral.qml:300
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "显示其他应用程序："
+
+#: ConfigGeneral.qml:301
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "网格"
+
+#: ConfigGeneral.qml:309
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "列表"
+
+#: ConfigGeneral.qml:321
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "显示按钮："
+
+#: ConfigGeneral.qml:322
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "电源"
+
+#: ConfigGeneral.qml:331
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "会话"
+
+#: ConfigGeneral.qml:340
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "电源和会话"
+
+#: ConfigGeneral.qml:349
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "显示操作按钮的文本标签"
+
+#: PlacesPage.qml:64
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "电脑"
+
+#: PlacesPage.qml:65
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "历史"
+
+#: PlacesPage.qml:66
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "常用"
+
+#: Footer.qml:101
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "应用程序"
+
+#: Footer.qml:117
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "常用位置"
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "%1 行 %2 列的网格"
+
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "从常用程序中移除"
+
+#: code/tools.js:36
+msgid "Add to Favorites"
+msgstr "添加到常用程序"
+
+#: code/tools.js:60
+msgid "On All Activities"
+msgstr "在全部活动中"
+
+#: code/tools.js:110
+msgid "On the Current Activity"
+msgstr "在当前活动中"
+
+#: code/tools.js:124
+msgid "Show in Favorites"
+msgstr "显示到常用程序"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "在触摸模式下自动禁用"
+
+#~ msgctxt "@info:whatsthis Accessible description for badge"
+#~ msgid "Newly installed application"
+#~ msgstr "新安装的应用程序"
+
+#~ msgctxt "@info:whatsthis Accessible description for badge"
+#~ msgid "There is a newly installed application in this category"
+#~ msgstr "此类别中有一个新安装的应用程序"
+
+#~ msgctxt "@label Accessible name for badge"
+#~ msgid "Newly installed application"
+#~ msgstr "新安装的应用程序"
+
+#~ msgctxt "@label Newly installed app, badge, keep short"
+#~ msgid "New!"
+#~ msgstr "新！"
+
+#~ msgctxt "@option:check"
+#~ msgid "Highlight newly installed applications"
+#~ msgstr "突出显示新安装的应用程序"
+
+#~ msgctxt "Newly installed app, badge, keep short"
+#~ msgid "New!"
+#~ msgstr "新！"

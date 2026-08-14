@@ -1,0 +1,406 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"PO-Revision-Date: 2026-01-29 14:39+0200\n"
+"Last-Translator: Viorel-Cătălin Răpițeanu <rapiteanu.catalin@gmail.com>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.08.1\n"
+
+#: Header.qml:86
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Deschide configurările utilizatorului"
+
+#: Header.qml:276
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Ține deschis"
+
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Generale"
+
+#: main.qml:427
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Modifică aplicații…"
+
+#: FullRepresentation.qml:136
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Nicio potrivire"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Sesiune"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Alimentare"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Mai multe"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Sesiune și alimentare"
+
+#: KickoffListDelegate.qml:136
+#, fuzzy
+msgctxt "Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Nouă!"
+
+#: KickoffListDelegate.qml:142
+#, fuzzy
+msgid "There is a newly-installed application in this category"
+msgstr "În această categorie este o aplicație instalată recent"
+
+#: KickoffListDelegate.qml:143
+#, fuzzy
+msgid "Newly-installed application"
+msgstr "Aplicație instalată recent"
+
+#: KickoffGridDelegate.qml:68
+#, fuzzy
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Nouă!"
+
+#: KickoffGridDelegate.qml:73
+#, fuzzy
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Aplicație instalată recent"
+
+#: ConfigGeneral.qml:53
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Pictogramă:"
+
+#: ConfigGeneral.qml:59
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "Schimbă pictograma lansatorului aplicației"
+
+#: ConfigGeneral.qml:60
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr ""
+"Pictograma actuală e %1. Apăsați pentru a deschide meniul pentru schimbarea "
+"pictogramei actuale sau reinițializarea la cea implicită."
+
+#: ConfigGeneral.qml:64
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Denumirea pictogramei e „%1”"
+
+#: ConfigGeneral.qml:99
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Alege…"
+
+#: ConfigGeneral.qml:101
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Alege o pictogramă pentru lansatorul de aplicații"
+
+#: ConfigGeneral.qml:105
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Reinițializează la pictograma implicită"
+
+#: ConfigGeneral.qml:111
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Elimină pictograma"
+
+#: ConfigGeneral.qml:122
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Etichetă textuală:"
+
+#: ConfigGeneral.qml:124
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Tastați aici pentru a adăuga o etichetă textuală"
+
+#: ConfigGeneral.qml:138
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Reinițializează eticheta meniului"
+
+#: ConfigGeneral.qml:151
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "Eticheta textuală nu poate fi adăugată când panoul e vertical."
+
+#: ConfigGeneral.qml:163
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Arată aplicațiile ca:"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Doar denumirea"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Doar descrierea"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Denumire (descriere)"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Descriere (denumire)"
+
+#: ConfigGeneral.qml:173
+msgctxt "General options"
+msgid "General:"
+msgstr "Generale:"
+
+#: ConfigGeneral.qml:177
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Sortează aplicațiile alfabetic"
+
+#: ConfigGeneral.qml:181
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr ""
+"Aceasta nu afectează sortarea aplicațiilor în rezultatele căutării sau "
+"pagina cu favorite."
+
+#: ConfigGeneral.qml:187
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Folosește stil compact pentru elementele listei"
+
+#: ConfigGeneral.qml:193
+#, fuzzy
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Evidențiază aplicațiile instalate recent"
+
+#: ConfigGeneral.qml:198
+msgid "Icon hover effect"
+msgstr ""
+
+#: ConfigGeneral.qml:208
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:214
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:220
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr ""
+
+#: ConfigGeneral.qml:227
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr ""
+
+#: ConfigGeneral.qml:231
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:232
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:233
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr ""
+
+#: ConfigGeneral.qml:239
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr ""
+
+#: ConfigGeneral.qml:243
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr ""
+
+#: ConfigGeneral.qml:244
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr ""
+
+#: ConfigGeneral.qml:250
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "Schimbă categoriile barei laterale la planarea deasupra lor"
+
+#: ConfigGeneral.qml:256
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Configurează extensiile de căutare…"
+
+#: ConfigGeneral.qml:266
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Poziția barei laterale:"
+
+#: ConfigGeneral.qml:267 ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Dreapta"
+
+#: ConfigGeneral.qml:267
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Stânga"
+
+#: ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Stânga"
+
+#: ConfigGeneral.qml:283
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Arată favoritele:"
+
+#: ConfigGeneral.qml:284
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "într-o grilă"
+
+#: ConfigGeneral.qml:292
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "într-o listă"
+
+#: ConfigGeneral.qml:300
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Arată alte aplicații:"
+
+#: ConfigGeneral.qml:301
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "într-o grilă"
+
+#: ConfigGeneral.qml:309
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "într-o listă"
+
+#: ConfigGeneral.qml:321
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Arată butoane pentru:"
+
+#: ConfigGeneral.qml:322
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Alimentare"
+
+#: ConfigGeneral.qml:331
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Sesiune"
+
+#: ConfigGeneral.qml:340
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Alimentare și sesiune"
+
+#: ConfigGeneral.qml:349
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Arată etichete pentru butoane de acțiune"
+
+#: PlacesPage.qml:64
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "Calculator"
+
+#: PlacesPage.qml:65
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "Istoric"
+
+#: PlacesPage.qml:66
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Folosite frecvent"
+
+#: Footer.qml:101
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Aplicații"
+
+#: Footer.qml:117
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Locuri"
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Grilă cu %1 rânduri, %2 coloane"
+
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Elimină din favorite"
+
+#: code/tools.js:36
+msgid "Add to Favorites"
+msgstr "Adaugă la favorite"
+
+#: code/tools.js:60
+msgid "On All Activities"
+msgstr "Pe toate activitățile"
+
+#: code/tools.js:110
+msgid "On the Current Activity"
+msgstr "Pe activitatea curentă"
+
+#: code/tools.js:124
+msgid "Show in Favorites"
+msgstr "Arată în favorite"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "Dezactivată automat în regim tactil"
+
+#~ msgctxt "Newly installed app, badge, keep short"
+#~ msgid "New!"
+#~ msgstr "Nouă!"

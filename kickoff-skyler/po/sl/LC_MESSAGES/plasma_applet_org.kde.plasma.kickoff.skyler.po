@@ -1,0 +1,408 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"PO-Revision-Date: 2026-01-08 18:37+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: LUGOS\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
+"Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"X-Generator: Poedit 3.8\n"
+
+#: Header.qml:86
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Odpri nastavitve uporabnika"
+
+#: Header.qml:276
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Ohranjaj odprte"
+
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Splošno"
+
+#: main.qml:427
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Uredi aplikacije…"
+
+#: FullRepresentation.qml:136
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Ni zadetkov"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Seja"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Napajanje"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Več"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Seja in napajanje"
+
+#: KickoffListDelegate.qml:136
+#, fuzzy
+msgctxt "Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Nova!"
+
+#: KickoffListDelegate.qml:142
+#, fuzzy
+msgid "There is a newly-installed application in this category"
+msgstr "V tej kategoriji je na novo nameščena aplikacija"
+
+#: KickoffListDelegate.qml:143
+#, fuzzy
+msgid "Newly-installed application"
+msgstr "Novo nameščena aplikacija"
+
+#: KickoffGridDelegate.qml:68
+#, fuzzy
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Nova!"
+
+#: KickoffGridDelegate.qml:73
+#, fuzzy
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Novo nameščena aplikacija"
+
+#: ConfigGeneral.qml:53
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Ikona:"
+
+#: ConfigGeneral.qml:59
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "Spremeni ikono zaganjalnika aplikacij"
+
+#: ConfigGeneral.qml:60
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr ""
+"Trenutna ikona je %1. Kliknite, da bi odprli menu za zamenjavo trenutne "
+"ikone ali ponovno nastavitev na privzeto ikono."
+
+#: ConfigGeneral.qml:64
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Ime ikone je \"%1\""
+
+#: ConfigGeneral.qml:99
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Izberi…"
+
+#: ConfigGeneral.qml:101
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Izberite ikono zaganjalnika aplikacij"
+
+#: ConfigGeneral.qml:105
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Ponovno nastavi na privzeto ikono"
+
+#: ConfigGeneral.qml:111
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Odstrani ikono"
+
+#: ConfigGeneral.qml:122
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Besedilna oznaka:"
+
+#: ConfigGeneral.qml:124
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Tu vtipkajte za dodajanje besedilne oznake"
+
+#: ConfigGeneral.qml:138
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Ponovno nastavi oznako menija"
+
+#: ConfigGeneral.qml:151
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "Besedilne oznake ni mogoče nastaviti, kadar je plošča navpična."
+
+#: ConfigGeneral.qml:163
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Prikaži aplikacije kot:"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Samo ime"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Samo opis"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Ime (Opis)"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Opis (Ime)"
+
+#: ConfigGeneral.qml:173
+msgctxt "General options"
+msgid "General:"
+msgstr "Splošno:"
+
+#: ConfigGeneral.qml:177
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Razvrsti aplikacije po abecedi"
+
+#: ConfigGeneral.qml:181
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr ""
+"To ne vpliva na razvrščanje aplikacij v rezultatih iskanja ali na strani s "
+"priljubljenimi."
+
+#: ConfigGeneral.qml:187
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Uporabi slog kompaktnega seznama"
+
+#: ConfigGeneral.qml:193
+#, fuzzy
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Označi novo nameščene aplikacije"
+
+#: ConfigGeneral.qml:198
+msgid "Icon hover effect"
+msgstr ""
+
+#: ConfigGeneral.qml:208
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:214
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:220
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr ""
+
+#: ConfigGeneral.qml:227
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr ""
+
+#: ConfigGeneral.qml:231
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:232
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:233
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr ""
+
+#: ConfigGeneral.qml:239
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr ""
+
+#: ConfigGeneral.qml:243
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr ""
+
+#: ConfigGeneral.qml:244
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr ""
+
+#: ConfigGeneral.qml:250
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr ""
+"Preklapljaj kategorije stranske vrstice, ko je miškin kazalec nad njimi"
+
+#: ConfigGeneral.qml:256
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Konfiguriraj vtičnike iskanja…"
+
+#: ConfigGeneral.qml:266
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Pozicija stranske vrstice:"
+
+#: ConfigGeneral.qml:267 ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Desno"
+
+#: ConfigGeneral.qml:267
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Levo"
+
+#: ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Levo"
+
+#: ConfigGeneral.qml:283
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Pokaži priljubljene:"
+
+#: ConfigGeneral.qml:284
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "V mreži"
+
+#: ConfigGeneral.qml:292
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "V seznamu"
+
+#: ConfigGeneral.qml:300
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Prikaži ostale aplikacije:"
+
+#: ConfigGeneral.qml:301
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "V mreži"
+
+#: ConfigGeneral.qml:309
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "V seznamu"
+
+#: ConfigGeneral.qml:321
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Prikaži gumbe za:"
+
+#: ConfigGeneral.qml:322
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Napajanje"
+
+#: ConfigGeneral.qml:331
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Sejo"
+
+#: ConfigGeneral.qml:340
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Napajanje in sejo"
+
+#: ConfigGeneral.qml:349
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Prikaži napise gumbov dejanj"
+
+#: PlacesPage.qml:64
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "Računalnik"
+
+#: PlacesPage.qml:65
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "Zgodovina"
+
+#: PlacesPage.qml:66
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Pogosto uporabljeno"
+
+#: Footer.qml:101
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Aplikacije"
+
+#: Footer.qml:117
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Mesta"
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Mreža z %1 vrsticami %2 stolpci"
+
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Odstrani iz priljubljenih"
+
+#: code/tools.js:36
+msgid "Add to Favorites"
+msgstr "Dodaj med priljubljene"
+
+#: code/tools.js:60
+msgid "On All Activities"
+msgstr "Na vseh dejavnostih"
+
+#: code/tools.js:110
+msgid "On the Current Activity"
+msgstr "Na trenutni dejavnosti"
+
+#: code/tools.js:124
+msgid "Show in Favorites"
+msgstr "Pokaži v priljubljenih"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "Samodejno onemogočeno v načinu dotikanja"
+
+#~ msgctxt "Newly installed app, badge, keep short"
+#~ msgid "New!"
+#~ msgstr "Nova!"

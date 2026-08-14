@@ -77,5 +77,34 @@
             <label>Whether to highlight newly-installed applications</label>
             <default>true</default>
         </entry>
+        <entry name="useThemeDecorations" type="Bool">
+            <label>Whether to use the KDE theme decorations on the panel icon.</label>
+            <default>true</default>
+        </entry>
+        <entry name="useCustomDecorations" type="Bool">
+            <label>Master switch for all custom launcher decorations (highlight background).</label>
+            <default>false</default>
+        </entry>
+        <entry name="useHighlight" type="Bool">
+            <label>Whether to show a custom highlight background behind the icon when hovered.</label>
+            <default>false</default>
+        </entry>
+        <entry name="highlightShape" type="Enum">
+            <label>Shape of the hover highlight background. 0=Rounded rectangle, 1=Rectangle, 2=Circle.</label>
+            <choices>
+                <choice name="RoundedRectangle"/>
+                <choice name="Rectangle"/>
+                <choice name="Circle"/>
+            </choices>
+            <default>0</default>
+        </entry>
+        <entry name="highlightColor" type="Enum">
+            <label>Color of the hover highlight background. 0=White, 1=Black.</label>
+            <choices>
+                <choice name="White"/>
+                <choice name="Black"/>
+            </choices>
+            <default>0</default>
+        </entry>
     </group>
 </kcfg>

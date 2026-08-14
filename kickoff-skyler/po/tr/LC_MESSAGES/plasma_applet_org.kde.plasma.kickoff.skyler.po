@@ -1,0 +1,405 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"PO-Revision-Date: 2026-01-08 17:13+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.12.0\n"
+
+#: Header.qml:86
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Kullanıcı ayarlarını aç"
+
+#: Header.qml:276
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Açık tut"
+
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Genel"
+
+#: main.qml:427
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Uygulamaları Düzenle…"
+
+#: FullRepresentation.qml:136
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Eşleşme yok"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Oturum"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Güç"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Daha Fazla"
+
+#: LeaveButtons.qml:171
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Oturum ve Güç"
+
+#: KickoffListDelegate.qml:136
+#, fuzzy
+msgctxt "Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Yeni!"
+
+#: KickoffListDelegate.qml:142
+#, fuzzy
+msgid "There is a newly-installed application in this category"
+msgstr "Bu kategoride yeni kurulmuş bir uygulama var"
+
+#: KickoffListDelegate.qml:143
+#, fuzzy
+msgid "Newly-installed application"
+msgstr "Yeni kurulmuş uygulama"
+
+#: KickoffGridDelegate.qml:68
+#, fuzzy
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Yeni!"
+
+#: KickoffGridDelegate.qml:73
+#, fuzzy
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Yeni kurulmuş uygulama"
+
+#: ConfigGeneral.qml:53
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Simge:"
+
+#: ConfigGeneral.qml:59
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "Uygulama Başlatıcısı Simgesini Değiştir"
+
+#: ConfigGeneral.qml:60
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr ""
+"Geçerli simge %1. Menüyü açıp geçerli simgeyi değiştirmek veya öntanımlı "
+"simgeye geri dönmek için tıklayın."
+
+#: ConfigGeneral.qml:64
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Simge adı “%1”"
+
+#: ConfigGeneral.qml:99
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Seç…"
+
+#: ConfigGeneral.qml:101
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Uygulama Başlatıcısı için bir simge seç"
+
+#: ConfigGeneral.qml:105
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Öntanımlı Simgeye Dön"
+
+#: ConfigGeneral.qml:111
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Simgeyi Kaldır"
+
+#: ConfigGeneral.qml:122
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Metin etiketi:"
+
+#: ConfigGeneral.qml:124
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Metin etiketi eklemek için yaz…"
+
+#: ConfigGeneral.qml:138
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Menü etiketini sıfırla"
+
+#: ConfigGeneral.qml:151
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "Panel dikeyken bir metin etiketi ayarlanamaz."
+
+#: ConfigGeneral.qml:163
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Uygulamaları şöyle göster:"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Yalnızca ad"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Yalnızca açıklama"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Ad (açıklama)"
+
+#: ConfigGeneral.qml:165
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Açıklama (ad)"
+
+#: ConfigGeneral.qml:173
+msgctxt "General options"
+msgid "General:"
+msgstr "Genel:"
+
+#: ConfigGeneral.qml:177
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Uygulamaları abecesel olarak sırala"
+
+#: ConfigGeneral.qml:181
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr ""
+"Bu, uygulamaların arama sonuçlarında veya sık kullanılanlar sayfasında nasıl "
+"sıralandığını etkilemez."
+
+#: ConfigGeneral.qml:187
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Sıkışık liste ögesi biçemini kullan"
+
+#: ConfigGeneral.qml:193
+#, fuzzy
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Yeni kurulan uygulamaları vurgula"
+
+#: ConfigGeneral.qml:198
+msgid "Icon hover effect"
+msgstr ""
+
+#: ConfigGeneral.qml:208
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:214
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr ""
+
+#: ConfigGeneral.qml:220
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr ""
+
+#: ConfigGeneral.qml:227
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr ""
+
+#: ConfigGeneral.qml:231
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:232
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr ""
+
+#: ConfigGeneral.qml:233
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr ""
+
+#: ConfigGeneral.qml:239
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr ""
+
+#: ConfigGeneral.qml:243
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr ""
+
+#: ConfigGeneral.qml:244
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr ""
+
+#: ConfigGeneral.qml:250
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "Üzerine gelindiğinde kenar çubuğu kategorisine geç"
+
+#: ConfigGeneral.qml:256
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Arama Eklentilerini Yapılandır…"
+
+#: ConfigGeneral.qml:266
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Kenar çubuğu konumu:"
+
+#: ConfigGeneral.qml:267 ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Sağ"
+
+#: ConfigGeneral.qml:267
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Sol"
+
+#: ConfigGeneral.qml:275
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Sol"
+
+#: ConfigGeneral.qml:283
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Sık kullanılanları göster:"
+
+#: ConfigGeneral.qml:284
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "Izgara içinde"
+
+#: ConfigGeneral.qml:292
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "Liste olarak"
+
+#: ConfigGeneral.qml:300
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Diğer uygulamaları göster:"
+
+#: ConfigGeneral.qml:301
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "Izgara içinde"
+
+#: ConfigGeneral.qml:309
+msgctxt "@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "Liste olarak"
+
+#: ConfigGeneral.qml:321
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Şunlar için düğmeleri göster:"
+
+#: ConfigGeneral.qml:322
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Güç"
+
+#: ConfigGeneral.qml:331
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Oturum"
+
+#: ConfigGeneral.qml:340
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Güç ve oturum"
+
+#: ConfigGeneral.qml:349
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Eylem düğmesi başlıklarını göster"
+
+#: PlacesPage.qml:64
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: PlacesPage.qml:65
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "Geçmiş"
+
+#: PlacesPage.qml:66
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Sık Kullanılan"
+
+#: Footer.qml:101
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#: Footer.qml:117
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Yerler"
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "%1 satırlı, %2 sütunlu ızgara"
+
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Sık Kullanılanlardan Kaldır"
+
+#: code/tools.js:36
+msgid "Add to Favorites"
+msgstr "Sık Kullanılanlara Ekle"
+
+#: code/tools.js:60
+msgid "On All Activities"
+msgstr "Tüm Etkinliklerde"
+
+#: code/tools.js:110
+msgid "On the Current Activity"
+msgstr "Yalnızca Geçerli Etkinlikte"
+
+#: code/tools.js:124
+msgid "Show in Favorites"
+msgstr "Sık Kullanılanlarda Göster"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "Dokunmatik Kip’teyken kendiliğinden devre dışıdır"
+
+#~ msgctxt "Newly installed app, badge, keep short"
+#~ msgid "New!"
+#~ msgstr "Yeni!"

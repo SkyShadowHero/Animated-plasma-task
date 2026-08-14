@@ -826,8 +826,8 @@ PlasmaCore.ToolTipArea {
         layer.effect: MultiEffect {
             shadowEnabled: true
             shadowColor: "black"
-            shadowOpacity: 0.4
-            shadowBlur: 0.35
+            shadowOpacity: 0.15
+            shadowBlur: 0.15
             shadowVerticalOffset: 1
             shadowHorizontalOffset: 0
         }
@@ -841,7 +841,7 @@ PlasmaCore.ToolTipArea {
 
         // Active uses the more opaque variant; color: White (default) or Black
         readonly property int hColor: Plasmoid.configuration.highlightColor
-        readonly property real activeOpacity: hColor === 0 ? 0.85 : 0.75
+        readonly property real activeOpacity: hColor === 0 ? 0.9 : 0.8
         color: hColor === 1
             ? Qt.rgba(0, 0, 0, activeOpacity)
             : Qt.rgba(1, 1, 1, activeOpacity)
@@ -851,7 +851,7 @@ PlasmaCore.ToolTipArea {
 
         opacity: task.model.IsActive ? 1 : 0
         Behavior on opacity {
-            NumberAnimation { duration: 150 * task.animMul; easing.type: Easing.OutQuad }
+            NumberAnimation { duration: 80 * task.animMul; easing.type: Easing.OutQuad }
         }
     }
 
@@ -893,7 +893,7 @@ PlasmaCore.ToolTipArea {
         // fading out smoothly.
         opacity: task.containsMouse ? 1 : 0
         Behavior on opacity {
-            NumberAnimation { duration: 150 * task.animMul; easing.type: Easing.OutQuad }
+            NumberAnimation { duration: 80 * task.animMul; easing.type: Easing.OutQuad }
         }
     }
 
@@ -930,7 +930,9 @@ PlasmaCore.ToolTipArea {
             // Dot diameter fixed (does not grow with hover thickness) so the
             // bar+dot combo centering stays stable and the bar does not drift
             // left when the bar thickens on hover.
+            // Dot width stays fixed; only its height thickens with the bar.
             readonly property real dotExtent: 3
+            readonly property real dotHeight: task.containsMouse ? 5 : 3
             readonly property real dotSpacing: 2
             // Actual extra width the dot occupies (used for precise centering)
             readonly property real comboExtent: hasDot ? dotExtent + dotSpacing : 0
@@ -969,8 +971,8 @@ PlasmaCore.ToolTipArea {
                 id: groupDot
                 visible: customIndicator.hasDot
                 width: customIndicator.dotExtent
-                height: customIndicator.dotExtent
-                radius: customIndicator.dotExtent / 2
+                height: customIndicator.dotHeight
+                radius: Math.min(width, height) / 2
                 color: customIndicator.color
                 x: customIndicator.isVertical
                     ? (customIndicator.width - width) / 2
@@ -978,6 +980,9 @@ PlasmaCore.ToolTipArea {
                 y: customIndicator.isVertical
                     ? customIndicator.height + customIndicator.dotSpacing
                     : (customIndicator.height - height) / 2
+                Behavior on height {
+                    NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutQuad }
+                }
             }
         }
 

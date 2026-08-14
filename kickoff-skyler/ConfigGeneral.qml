@@ -40,6 +40,11 @@ KCM.SimpleKCM {
     property alias cfg_highlightNewlyInstalledApps: highlightNewlyInstalledAppsCheckbox.checked
     property alias cfg_hoverEffect: hoverEffectCheckbox.checked
     property alias cfg_switchCategoryOnHover: switchCategoryOnHoverCheckbox.checked
+    property alias cfg_useThemeDecorations: useThemeDecorationsCheckbox.checked
+    property alias cfg_useCustomDecorations: useCustomDecorationsCheckbox.checked
+    property alias cfg_useHighlight: useHighlightCheckbox.checked
+    property alias cfg_highlightShape: highlightShapeCombo.currentIndex
+    property alias cfg_highlightColor: highlightColorCombo.currentIndex
 
     Kirigami.FormLayout {
         QQC2.Button {
@@ -192,6 +197,52 @@ KCM.SimpleKCM {
             id: hoverEffectCheckbox
             text: i18n("Icon hover effect")
             checked: false
+        }
+
+        Item {
+            Kirigami.FormData.isSection: true
+        }
+
+        QQC2.CheckBox {
+            id: useThemeDecorationsCheckbox
+            text: i18nc("@option:check", "Use KDE theme decorations")
+            checked: true
+        }
+
+        QQC2.CheckBox {
+            id: useCustomDecorationsCheckbox
+            text: i18nc("@option:check", "Use custom launcher decorations")
+            checked: false
+        }
+
+        QQC2.CheckBox {
+            id: useHighlightCheckbox
+            text: i18nc("@option:check", "Show highlight background on hover")
+            enabled: useCustomDecorationsCheckbox.checked
+            checked: false
+        }
+
+        QQC2.ComboBox {
+            id: highlightShapeCombo
+            Kirigami.FormData.label: i18nc("@label:listbox", "Highlight shape:")
+            Layout.fillWidth: true
+            enabled: useCustomDecorationsCheckbox.checked && useHighlightCheckbox.checked
+            model: [
+                i18nc("@item:inlistbox highlight shape", "Rounded rectangle"),
+                i18nc("@item:inlistbox highlight shape", "Rectangle"),
+                i18nc("@item:inlistbox highlight shape", "Circle")
+            ]
+        }
+
+        QQC2.ComboBox {
+            id: highlightColorCombo
+            Kirigami.FormData.label: i18nc("@label:listbox", "Highlight color:")
+            Layout.fillWidth: true
+            enabled: useCustomDecorationsCheckbox.checked && useHighlightCheckbox.checked
+            model: [
+                i18nc("@item:inlistbox highlight color", "White"),
+                i18nc("@item:inlistbox highlight color", "Black")
+            ]
         }
 
         QQC2.CheckBox {

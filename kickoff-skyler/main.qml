@@ -14,6 +14,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.ksvg as KSvg
@@ -25,6 +26,10 @@ import "code/tools.js" as Tools
 
 PlasmoidItem {
     id: kickoff
+
+    // Hide the KDE theme applet background (hover/expanded highlight) when
+    // theme decorations are disabled.
+    Plasmoid.backgroundHints: Plasmoid.configuration.useThemeDecorations ? PlasmaCore.Types.DefaultBackground : PlasmaCore.Types.NoBackground
 
     width: Kirigami.Units.iconSizes.huge
     height: Kirigami.Units.iconSizes.huge
@@ -194,11 +199,22 @@ PlasmoidItem {
     // - allow defining a custom drop handler
     // - expose the ability to show text below or beside the icon
     // TODO remove once it gains those features
-    compactRepresentation: MouseArea {
-        id: compactRoot
+    compactRepresentation: Item {
+        id: compactRep
 
-        // Taken from DigitalClock to ensure uniform sizing when next to each other
-        readonly property bool tooSmall: Plasmoid.formFactor === PlasmaCore.Types.Horizontal && Math.round(2 * (compactRoot.height / 5)) <= Kirigami.Theme.smallFont.pixelSize
+        implicitWidth: compactRoot.iconSize
+        implicitHeight: compactRoot.iconSize
+        Layout.preferredWidth: compactRoot.sizing.preferredWidth
+        Layout.preferredHeight: compactRoot.sizing.preferredHeight
+        Layout.minimumWidth: Layout.preferredWidth
+        Layout.minimumHeight: Layout.preferredHeight
+
+        MouseArea {
+            id: compactRoot
+            anchors.fill: compactRep
+
+            // Taken from DigitalClock to ensure uniform sizing when next to each other
+            readonly property bool tooSmall: Plasmoid.formFactor === PlasmaCore.Types.Horizontal && Math.round(2 * (compactRoot.height / 5)) <= Kirigami.Theme.smallFont.pixelSize
 
         readonly property bool shouldHaveIcon: Plasmoid.formFactor === PlasmaCore.Types.Vertical || Plasmoid.icon !== ""
         readonly property bool shouldHaveLabel: Plasmoid.formFactor !== PlasmaCore.Types.Vertical && Plasmoid.configuration.menuLabel !== ""
@@ -237,14 +253,6 @@ PlasmoidItem {
                 };
             }
         }
-
-        implicitWidth: iconSize
-        implicitHeight: iconSize
-
-        Layout.preferredWidth: sizing.preferredWidth
-        Layout.preferredHeight: sizing.preferredHeight
-        Layout.minimumWidth: Layout.preferredWidth
-        Layout.minimumHeight: Layout.preferredHeight
 
         hoverEnabled: true
 
@@ -320,7 +328,7 @@ PlasmoidItem {
                 Layout.maximumWidth: Kirigami.Units.iconSizes.huge
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 source: Tools.iconOrDefault(Plasmoid.formFactor, Plasmoid.icon)
-                active: compactRoot.containsMouse || compactDragArea.containsDrag
+                active: Plasmoid.configuration.useThemeDecorations && (compactRoot.containsMouse || compactDragArea.containsDrag)
                 roundToIconSize: implicitHeight === implicitWidth
                 visible: valid && !imageFallback.visible
             }
@@ -335,7 +343,7 @@ PlasmoidItem {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 
                 source: buttonIcon.valid ? null : Tools.defaultIconName
-                active: compactRoot.containsMouse || compactDragArea.containsDrag
+                active: Plasmoid.configuration.useThemeDecorations && (compactRoot.containsMouse || compactDragArea.containsDrag)
                 visible: !buttonIcon.valid && Plasmoid.icon !== "" && !imageFallback.visible
             }
 
@@ -374,6 +382,51 @@ PlasmoidItem {
                 font.pixelSize: compactRoot.tooSmall ? Kirigami.Theme.defaultFont.pixelSize : Kirigami.Units.iconSizes.roundedIconSize(Kirigami.Units.gridUnit * 2)
                 minimumPointSize: Kirigami.Theme.smallFont.pointSize
                 visible: compactRoot.shouldHaveLabel
+            }
+        }
+        }
+
+        // Custom highlight background (declared AFTER compactRoot so its
+        // width/height bindings resolve reliably; does not inherit the
+        // icon's hover/press transforms).
+        Rectangle {
+            id: launcherHighlight
+            z: -1
+            anchors.centerIn: compactRep
+            // Use the container (parent) size — the most reliable binding —
+            // and scale up slightly so it reads at least as large as the
+            // taskbar highlight.
+            width: Math.min(compactRep.width, compactRep.height) * 1.05
+            height: width
+            visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
+            readonly property int hColor: Plasmoid.configuration.highlightColor
+            readonly property real hoverOpacity: hColor === 0 ? 0.95 : 0.85
+            readonly property real activeOpacity: hColor === 0 ? 0.9 : 0.8
+            color: hColor === 1
+                ? Qt.rgba(0, 0, 0, kickoff.expanded ? activeOpacity : hoverOpacity)
+                : Qt.rgba(1, 1, 1, kickoff.expanded ? activeOpacity : hoverOpacity)
+            Behavior on color {
+                ColorAnimation { duration: 120; easing.type: Easing.OutQuad }
+            }
+            radius: {
+                switch (Plasmoid.configuration.highlightShape) {
+                case 1: return 0; // Rectangle
+                case 2: return width / 2; // Circle
+                default: return Kirigami.Units.smallSpacing; // Rounded Rectangle
+                }
+            }
+            layer.enabled: true
+            layer.effect: MultiEffect {
+                shadowEnabled: true
+                shadowColor: "black"
+                shadowOpacity: 0.15
+                shadowBlur: 0.15
+                shadowVerticalOffset: 1
+                shadowHorizontalOffset: 0
+            }
+            opacity: (compactRoot.containsMouse || kickoff.expanded) ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation { duration: 80; easing.type: Easing.OutQuad }
             }
         }
     }

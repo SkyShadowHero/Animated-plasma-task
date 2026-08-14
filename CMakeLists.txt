@@ -95,24 +95,25 @@ install(CODE "
     endforeach()
 ")
 
-# ── Reuse original kickoff translations ─────────────
+# ── Install kickoff-skyler translations ─────────────
+# kickoff-skyler now ships its own translations (merged from the original
+# kickoff domain). Remove any old symlinks first — install(DIRECTORY) won't
+# overwrite them.
 install(CODE "
-    set(ORIG_DOMAIN plasma_applet_org.kde.plasma.kickoff)
-    set(SKYLER_DOMAIN plasma_applet_org.kde.plasma.kickoff.skyler)
-    file(GLOB LOCALE_DIRS /usr/share/locale/*/LC_MESSAGES)
-    foreach(LOCALE_DIR \${LOCALE_DIRS})
-        set(ORIG_MO \"\${LOCALE_DIR}/\${ORIG_DOMAIN}.mo\")
-        if(EXISTS \"\${ORIG_MO}\")
-            get_filename_component(LOCALE_PARENT_DIR \"\${LOCALE_DIR}\" DIRECTORY)
-            get_filename_component(LOCALE_NAME \"\${LOCALE_PARENT_DIR}\" NAME)
-            set(TARGET_LOCALE_DIR \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE_NAME}/LC_MESSAGES\")
-            file(MAKE_DIRECTORY \"\${TARGET_LOCALE_DIR}\")
-            execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
-                \"\${ORIG_DOMAIN}.mo\"
-                \"\${TARGET_LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
+    set(DOMAIN plasma_applet_org.kde.plasma.kickoff.skyler)
+    file(GLOB OLD_LINKS /usr/share/locale/*/LC_MESSAGES/\${DOMAIN}.mo)
+    foreach(LINK \${OLD_LINKS})
+        if(IS_SYMLINK \"\${LINK}\")
+            file(REMOVE \"\${LINK}\")
         endif()
     endforeach()
 ")
+install(
+    DIRECTORY kickoff-skyler/po/
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/locale"
+    FILES_MATCHING
+    PATTERN "*.mo"
+)
 
 # ── Uninstall ────────────────────────────────────────
 if(NOT TARGET uninstall)
