@@ -912,9 +912,12 @@ PlasmaCore.ToolTipArea {
             // Only show for actual windows (not for pinned launchers without an open window)
             visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
             z: 5
-            // Fixed colors: theme highlight when hovered/active, gray otherwise
+            // Fixed colors: accent color when hovered/active, gray otherwise.
+            // The backend reads kdeglobals [General] AccentColor directly, so
+            // it follows the user's KDE accent color. Fall back to Kirigami's
+            // highlight color when no accent color is configured.
             color: (task.model.IsActive || task.containsMouse)
-                ? Kirigami.Theme.highlightColor
+                ? (tasksRoot.backend.accentColor.a > 0 ? tasksRoot.backend.accentColor : Kirigami.Theme.highlightColor)
                 : "#888888"
 
             // Horizontal bar (bottom/top): width animates

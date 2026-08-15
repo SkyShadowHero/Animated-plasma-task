@@ -8,6 +8,7 @@
 
 #include <KConfigWatcher>
 
+#include <QColor>
 #include <QObject>
 #include <QRect>
 
@@ -32,6 +33,11 @@ class Backend : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
+    // The user's KDE accent color from kdeglobals [General] AccentColor.
+    // PlasmaCore.Theme.highlightColor is not exposed as a Q_PROPERTY and
+    // Plasmoid.accentColor is walled off from the user setting, so read it
+    // directly here and expose it with change notification.
+    Q_PROPERTY(QColor accentColor READ accentColor NOTIFY accentColorChanged)
 
 public:
     enum MiddleClickAction {
@@ -59,6 +65,8 @@ public:
 
     Q_INVOKABLE qint64 parentPid(qint64 pid) const;
 
+    QColor accentColor() const;
+
     Q_INVOKABLE static QUrl tryDecodeApplicationsUrl(const QUrl &launcherUrl);
     Q_INVOKABLE static QStringList applicationCategories(const QUrl &launcherUrl);
 
@@ -66,6 +74,8 @@ Q_SIGNALS:
     void addLauncher(const QUrl &url) const;
 
     void showAllPlaces();
+
+    void accentColorChanged();
 
 private Q_SLOTS:
     void handleRecentDocumentAction() const;
@@ -78,4 +88,5 @@ private:
 
     KActivityManagerdPluginsSettings m_activityManagerPluginsSettings;
     KConfigWatcher::Ptr m_activityManagerPluginsSettingsWatcher;
+    KConfigWatcher::Ptr m_accentColorWatcher;
 };

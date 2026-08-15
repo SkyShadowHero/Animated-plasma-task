@@ -8,6 +8,7 @@
 
 #include "log_settings_skyler.h"
 #include <KConfigGroup>
+#include <KSharedConfig>
 #include <KDesktopFile>
 #include <KFileItem>
 #include <KFilePlacesModel>
@@ -25,6 +26,7 @@
 #include <QAction>
 #include <QActionGroup>
 #include <QApplication>
+#include <QColor>
 #include <QJsonArray>
 #include <QMenu>
 #include <QQuickItem>
@@ -52,6 +54,7 @@ Backend::Backend(QObject *parent)
     : QObject(parent)
     , m_actionGroup(new QActionGroup(this))
     , m_activityManagerPluginsSettingsWatcher(KConfigWatcher::create(m_activityManagerPluginsSettings.sharedConfig()))
+    , m_accentColorWatcher(KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals)))
 {
     connect(m_activityManagerPluginsSettingsWatcher.get(),
             &KConfigWatcher::configChanged,
@@ -62,6 +65,42 @@ Backend::Backend(QObject *parent)
                     m_activityManagerPluginsSettings.load();
                 }
             });
+
+    connect(m_accentColorWatcher.get(),
+            &KConfigWatcher::configChanged,
+            this,
+            [this](const KConfigGroup &group, const QByteArrayList &names) {
+                if (group.name() == QLatin1String("General")
+                    && names.contains(QByteArrayLiteral("AccentColor"))) {
+                    Q_EMIT accentColorChanged();
+                }
+            });
+}
+
+QColor Backend::accentColor() const
+{
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
+    const QString value = config->group(QStringLiteral("General")).readEntry(QStringLiteral("AccentColor"), QString());
+    if (value.isEmpty()) {
+        return QColor();
+    }
+
+    const QStringList rgb = value.split(QLatin1Char(','));
+    if (rgb.size() < 3) {
+        return QColor();
+    }
+
+    bool okR = false;
+    bool okG = false;
+    bool okB = false;
+    const int r = rgb.at(0).trimmed().toInt(&okR);
+    const int g = rgb.at(1).trimmed().toInt(&okG);
+    const int b = rgb.at(2).trimmed().toInt(&okB);
+    if (!okR || !okG || !okB) {
+        return QColor();
+    }
+
+    return QColor(r, g, b);
 }
 
 Backend::~Backend()
