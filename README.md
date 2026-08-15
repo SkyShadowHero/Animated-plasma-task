@@ -2,6 +2,10 @@
 
 # Animated Plasma Task Plugins
 
+<div align="center">
+    <img src="demo.gif" alt="Animated Plasma Task Demo" />
+</div>
+
 Forked KDE Plasma 6 plasmoids with press / entry / minimize animations.
 
 ## Plugins

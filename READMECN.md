@@ -2,6 +2,10 @@
 
 # Animated Plasma Task 插件
 
+<div align="center">
+    <img src="demo.gif" alt="Animated Plasma Task 演示" />
+</div>
+
 基于 KDE Plasma 6 的 Fork 插件，添加了按压 / 入场 / 最小化动画。
 
 ## 插件列表
