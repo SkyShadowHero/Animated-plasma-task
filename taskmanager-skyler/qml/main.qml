@@ -564,6 +564,10 @@ PlasmoidItem {
         id: ghostComponent
         Item {
             property var iconValue: null
+            // Matches the visual scale applied to the live icon in Task.qml
+            // (iconScale config × hover enlargement), so the ghost does not
+            // appear larger/smaller than the icon it replaces.
+            property real iconScaleMul: 1.0
             Kirigami.Icon {
                 anchors.fill: parent
                 source: parent.iconValue
@@ -571,6 +575,12 @@ PlasmoidItem {
                 enabled: true
                 opacity: 1.0
                 z: 999
+            }
+            transform: Scale {
+                origin.x: width / 2
+                origin.y: height / 2
+                xScale: iconScaleMul
+                yScale: iconScaleMul
             }
         }
     }
@@ -659,15 +669,27 @@ PlasmoidItem {
             return;
         }
         var isLauncher = originItem && originItem.closingIsLauncher;
-        var pos = originItem.mapToItem(_exitAnimationLayer, 0, 0);
+        // Use iconBox's real geometry when available (Task.qml exposes it);
+        // otherwise fall back to the delegate size passed by the caller.
+        var localX = originItem.closingX !== undefined ? originItem.closingX : 0;
+        var localY = originItem.closingY !== undefined ? originItem.closingY : 0;
+        var w = originItem.closingWidth !== undefined ? originItem.closingWidth : ghostW;
+        var h = originItem.closingHeight !== undefined ? originItem.closingHeight : ghostH;
+        var pos = originItem.mapToItem(_exitAnimationLayer, localX, localY);
+        // Reproduce the live icon's visual scale so the ghost matches its size.
+        var iconScaleMul = Plasmoid.configuration.iconScale / 100.0;
+        if (Plasmoid.configuration.hoverEffect && originItem && originItem.containsMouse) {
+            iconScaleMul *= 1.10;
+        }
         // Pass iconSource as iconValue to the ghost Item; the internal
         // Kirigami.Icon uses source: parent.iconValue binding to resolve it.
         var ghost = ghostComponent.createObject(_exitAnimationLayer, {
             iconValue: iconSource,
             x: pos.x,
             y: pos.y,
-            width: ghostW,
-            height: ghostH
+            width: w,
+            height: h,
+            iconScaleMul: iconScaleMul
         });
 
         if (isLauncher) {

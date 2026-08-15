@@ -77,6 +77,12 @@ PlasmaCore.ToolTipArea {
     property var closingDecoration: null
     // Store IsLauncher for ghost creation (model becomes unreliable during removal).
     property bool closingIsLauncher: false
+    // Expose iconBox's real geometry so the closing ghost matches the icon
+    // exactly (iconBox includes margins and is centered in the delegate).
+    readonly property real closingX: iconBox.x
+    readonly property real closingY: iconBox.y
+    readonly property real closingWidth: iconBox.width
+    readonly property real closingHeight: iconBox.height
     // Track WinIdList length to detect child window removals from a group.
     property var winIdList: model.WinIdList
     property int lastWinCount: winIdList ? winIdList.length : 0
