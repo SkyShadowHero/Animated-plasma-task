@@ -7,6 +7,7 @@
 </div>
 
 基于 KDE Plasma 6 的 Fork 插件，添加了按压 / 入场 / 最小化动画。
+~~我修复了Linux(kde)下无法使用Windows任务栏动画的bug~~
 
 ## 插件列表
 
