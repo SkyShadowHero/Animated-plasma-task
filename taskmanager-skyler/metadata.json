@@ -1,4 +1,5 @@
 {
+    "KPackageStructure": "Plasma/Applet",
     "KPlugin": {
         "Authors": [
             {
@@ -109,6 +110,7 @@
         "Description[zh_TW]": "顯示圖示與文字的視窗列",
         "EnabledByDefault": true,
         "Icon": "preferences-system-windows",
+        "Id": "org.kde.plasma.taskmanager.skyler",
         "License": "GPL-2.0+",
         "Name": "Task Manager (SkyAnimation)",
         "Name[ar]": "مدير مهامّ بأيقونات ونص (SkyAnimation)",

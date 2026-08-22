@@ -1,4 +1,5 @@
 build/
+.probe/
 *.o
 *.so
 *.so.*
