@@ -830,10 +830,19 @@ PlasmaCore.ToolTipArea {
         // through opacity so it can fade in/out smoothly.
         visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
             && !task.inPopup
-        // Slightly smaller than the icon, centered (Windows-style highlight)
-        anchors.centerIn: iconBox
-        width: iconBox.width * 0.9
-        height: iconBox.height * 0.9
+        // Icon-only: slightly smaller than the icon, centered (Windows-style
+        // highlight). Icon+text: the highlight spans the whole icon+text block
+        // horizontally (icon left edge → text right edge) so both stay inside;
+        // vertically it keeps the same 0.9 proportion as icon-only.
+        // Anchored to layout geometry (not to the icon's transforms), so the
+        // hover / entry / minimize / press animations never move it.
+        readonly property bool wholeHighlight: !task.tasksRoot.iconsOnly
+        readonly property real contentW: task.width - taskFrame.margins.left - taskFrame.margins.right
+        readonly property real contentH: task.height - taskFrame.margins.top - taskFrame.margins.bottom
+        x: wholeHighlight ? taskFrame.margins.left : iconBox.x + (iconBox.width - width) / 2
+        y: wholeHighlight ? taskFrame.margins.top + (contentH - height) / 2 : iconBox.y + (iconBox.height - height) / 2
+        width: wholeHighlight ? contentW : iconBox.width * 0.9
+        height: wholeHighlight ? contentH * 0.9 : iconBox.height * 0.9
         // Soft shadow like the Windows taskbar highlight
         layer.enabled: true
         layer.effect: MultiEffect {
@@ -875,10 +884,14 @@ PlasmaCore.ToolTipArea {
         z: -1
         visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
             && !task.inPopup && !task.model.IsActive
-        // Same size as the active highlight
-        anchors.centerIn: iconBox
-        width: iconBox.width * 0.9
-        height: iconBox.height * 0.9
+        // Same geometry as the active highlight (whole icon+text block or icon)
+        readonly property bool wholeHighlight: !task.tasksRoot.iconsOnly
+        readonly property real contentW: task.width - taskFrame.margins.left - taskFrame.margins.right
+        readonly property real contentH: task.height - taskFrame.margins.top - taskFrame.margins.bottom
+        x: wholeHighlight ? taskFrame.margins.left : iconBox.x + (iconBox.width - width) / 2
+        y: wholeHighlight ? taskFrame.margins.top + (contentH - height) / 2 : iconBox.y + (iconBox.height - height) / 2
+        width: wholeHighlight ? contentW : iconBox.width * 0.9
+        height: wholeHighlight ? contentH * 0.9 : iconBox.height * 0.9
         // Slightly stronger opacity than before; color: White (default) or Black
         readonly property int hColor: Plasmoid.configuration.highlightColor
         readonly property real hoverOpacity: hColor === 0 ? 0.95 : 0.85
@@ -967,20 +980,18 @@ PlasmaCore.ToolTipArea {
             // so the bar's center stays at a fixed distance from the chosen edge
             // and it thickens symmetrically (not upward-only).
             readonly property int pos: Plasmoid.configuration.indicatorPosition
-            // Center is derived from highlightBg (anchors.centerIn: iconBox)
-            // for the axis parallel to the bar's length, so it can never
-            // drift relative to the highlight/icon. The cross axis is manual
-            // (fixed distance from the edge) so it stays symmetric when
-            // thickening and follows the size animation smoothly.
+            // Center is derived from iconBox directly, so the bar always stays
+            // centered under the icon — even when the highlight background is
+            // enlarged to cover the whole icon+text button.
             x: pos === 2 ? iconBox.x + 2.5 - width / 2
              : pos === 3 ? iconBox.x + iconBox.width - 2.5 - width / 2
              // When a dot is present, shift the bar left so the bar+dot
              // combo (not just the bar) is visually centered on the icon.
-             : highlightBg.x + highlightBg.width / 2 - (width + (hasDot ? comboExtent : 0)) / 2
+             : iconBox.x + iconBox.width / 2 - (width + (hasDot ? comboExtent : 0)) / 2
             y: pos === 0 ? iconBox.y + iconBox.height - 2.5 - height / 2
              : pos === 1 ? iconBox.y + 2.5 - height / 2
              // Vertical bars: same combo-centering when the dot is present.
-             : highlightBg.y + highlightBg.height / 2 - (height + (hasDot ? comboExtent : 0)) / 2
+             : iconBox.y + iconBox.height / 2 - (height + (hasDot ? comboExtent : 0)) / 2
 
             // Dot for multi-window groups (at the end of the bar)
             Rectangle {
