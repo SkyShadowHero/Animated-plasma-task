@@ -108,7 +108,10 @@ BasePage {
                     hoverHideTimer.stop();
                     sideBar.hoverShowing = true;
                     sideBar.hoveredIndex = sideBarDelegate.index;
-                    sideBar.hoveredY = sideBarDelegate.y;
+                    // Map the delegate's origin to the highlight's parent
+                    // coordinate space, so the highlight stays aligned even
+                    // when the list is scrolled.
+                    sideBar.hoveredY = sideBarDelegate.mapToItem(hoverHighlight.parent, 0, 0).y;
                     sideBar.hoveredHeight = sideBarDelegate.height;
                 }
                 function onExited() {
