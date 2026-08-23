@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(SkylerPlasmaTaskManager VERSION 1.0.8)
+project(SkylerPlasmaTaskManager VERSION 1.1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -37,45 +37,12 @@ find_package(LibNotificationManager REQUIRED)  # → PW::LibNotificationManager
 add_subdirectory(taskmanager-skyler)
 add_subdirectory(kickoff-skyler)
 
-# ── Install taskmanager QML as KPackage ──────────────
-# icontasks-skyler uses X-Plasma-RootPath to redirect to taskmanager-skyler,
-# so taskmanager-skyler needs its QML files installed as a KPackage too.
-install(
-    DIRECTORY taskmanager-skyler/qml/
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.plasma.taskmanager.skyler"
-    FILES_MATCHING
-    PATTERN "*.qml"
-    PATTERN "*.js"
-)
-install(
-    FILES taskmanager-skyler/metadata.json taskmanager-skyler/main.xml
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.plasma.taskmanager.skyler"
-)
-
 # ── Install wrapper packages ─────────────────────────
+# icontasks-skyler uses X-Plasma-RootPath to redirect to the
+# org.kde.plasma.taskmanager.skyler package (installed by the
+# taskmanager-skyler subdirectory above).
 plasma_install_package(icontasks-skyler org.kde.plasma.icontasks.skyler)
 plasma_install_package(kickoff-skyler org.kde.plasma.kickoff.skyler)
-
-# ── Install taskmanager-skyler translations ───────────
-# taskmanager-skyler now uses its own TRANSLATION_DOMAIN
-# (plasma_applet_org.kde.plasma.taskmanager.skyler).
-# Remove old symlinks first — CMake's install(DIRECTORY) won't overwrite them.
-install(CODE "
-    set(DOMAIN plasma_applet_org.kde.plasma.taskmanager.skyler)
-    file(GLOB OLD_LINKS /usr/share/locale/*/LC_MESSAGES/\${DOMAIN}.mo)
-    foreach(LINK \${OLD_LINKS})
-        if(IS_SYMLINK \"\${LINK}\")
-            file(REMOVE \"\${LINK}\")
-        endif()
-    endforeach()
-")
-install(
-    DIRECTORY taskmanager-skyler/po/
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/locale"
-    FILES_MATCHING
-    PATTERN "*.mo"
-    PATTERN "*.pot"
-)
 
 # ── icontasks-skyler → taskmanager-skyler translation ─
 install(CODE "
@@ -129,5 +96,8 @@ endif()
 message(STATUS "")
 message(STATUS "Skyler Plasma Task Manager ${PROJECT_VERSION}")
 message(STATUS "  Install prefix: ${CMAKE_INSTALL_PREFIX}")
-message(STATUS "  Plugin ID:      org.kde.plasma.icontasks.skyler")
+message(STATUS "  Plugin IDs:")
+message(STATUS "    - org.kde.plasma.icontasks.skyler   (Icons-Only Task Manager)")
+message(STATUS "    - org.kde.plasma.taskmanager.skyler (Task Manager)")
+message(STATUS "    - org.kde.plasma.kickoff.skyler     (Application Launcher)")
 message(STATUS "")

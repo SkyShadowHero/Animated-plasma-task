@@ -23,6 +23,13 @@
   - 图标缩放
   - 五档动画速率
   - 自定义装饰:高亮背景、指示条
+- **任务管理器 (SkyAnimation)** — `org.kde.plasma.taskmanager.skyler`
+  - 窗口栏显示图标和文字
+  - 与图标版相同的全套动画
+  - 悬停动画
+  - 图标缩放
+  - 五档动画速率
+  - 自定义装饰:高亮背景、指示条
 - **应用启动器 (SkyAnimation)** — `org.kde.plasma.kickoff.skyler`
   - 按压缩放
   - 悬停动画

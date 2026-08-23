@@ -62,3 +62,47 @@ target_link_libraries(org.kde.plasma.taskmanager.skyler PRIVATE
     KF6::WindowSystem
     PW::LibNotificationManager
 )
+
+# ── Install the QML as a KPackage ─────────────────────
+# This plasmoid is used in two ways:
+#   1. Standalone: "Task Manager (SkyAnimation)" —
+#      org.kde.plasma.taskmanager.skyler loads its QML from the
+#      embedded resources of the plugin built above (ecm_add_qml_module),
+#      and the KPackage below provides the metadata the applet loader
+#      needs to resolve the plugin (KPackageStructure + KPlugin.Id).
+#   2. As the root path of "Icons-Only Task Manager (SkyAnimation)" —
+#      org.kde.plasma.icontasks.skyler redirects here via
+#      X-Plasma-RootPath, so this package must also be installed as a
+#      KPackage for the redirect to resolve.
+# The directory also contains C++ sources, so a plain
+# plasma_install_package() would copy build artifacts into the package;
+# install only the runtime files instead.
+install(
+    DIRECTORY qml/
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.plasma.taskmanager.skyler"
+    FILES_MATCHING
+    PATTERN "*.qml"
+    PATTERN "*.js"
+)
+install(
+    FILES metadata.json main.xml
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.plasma.taskmanager.skyler"
+)
+
+# ── Install translations ──────────────────────────────
+install(CODE "
+    set(DOMAIN plasma_applet_org.kde.plasma.taskmanager.skyler)
+    file(GLOB OLD_LINKS /usr/share/locale/*/LC_MESSAGES/\${DOMAIN}.mo)
+    foreach(LINK \${OLD_LINKS})
+        if(IS_SYMLINK \"\${LINK}\")
+            file(REMOVE \"\${LINK}\")
+        endif()
+    endforeach()
+")
+install(
+    DIRECTORY po/
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/locale"
+    FILES_MATCHING
+    PATTERN "*.mo"
+    PATTERN "*.pot"
+)
