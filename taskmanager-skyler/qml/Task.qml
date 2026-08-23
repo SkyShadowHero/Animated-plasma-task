@@ -96,6 +96,13 @@ PlasmaCore.ToolTipArea {
         }
     }
 
+    // Whether the plasma theme's "Widgets/Tasks" frame decoration is used.
+    // Null-safe: reading Plasmoid.configuration lazily inside
+    // State/PropertyChanges can hit an undefined applet context when a state
+    // is entered (TypeError: Cannot read property 'useThemeDecorations' of
+    // undefined); the ternary guards that and keeps following config changes.
+    property bool useThemeDecorations: Plasmoid.configuration ? Plasmoid.configuration.useThemeDecorations : false
+
     // Suppress minimise animation for newly-appeared tasks
     // (e.g. virtual-desktop switch where IsMinimized arrives set).
     Timer { id: entryCooldown; interval: 300 }
@@ -636,8 +643,8 @@ PlasmaCore.ToolTipArea {
         }
 
         imagePath: "widgets/tasks"
-        property bool isHovered: task.highlighted && Plasmoid.configuration.taskHoverEffect && Plasmoid.configuration.useThemeDecorations
-        property string basePrefix: Plasmoid.configuration.useThemeDecorations ? "normal" : ""
+        property bool isHovered: task.highlighted && Plasmoid.configuration.taskHoverEffect && task.useThemeDecorations
+        property string basePrefix: task.useThemeDecorations ? "normal" : ""
         prefix: isHovered ? TaskManagerApplet.TaskTools.taskPrefixHovered(basePrefix, Plasmoid.location) : TaskManagerApplet.TaskTools.taskPrefix(basePrefix, Plasmoid.location)
 
         // Avoid repositioning delegate item after dragFinished
@@ -769,7 +776,7 @@ PlasmaCore.ToolTipArea {
 
             anchors.fill: parent
 
-            active: task.highlighted && Plasmoid.configuration.useThemeDecorations
+            active: task.highlighted && task.useThemeDecorations
             enabled: true
 
             source: task.model.decoration
@@ -1046,7 +1053,7 @@ PlasmaCore.ToolTipArea {
             when: task.model.IsDemandingAttention || (task.smartLauncherItem && task.smartLauncherItem.urgent)
 
             PropertyChanges {
-                frame.basePrefix: Plasmoid.configuration.useThemeDecorations ? "attention" : ""
+                frame.basePrefix: task.useThemeDecorations ? "attention" : ""
             }
         },
         State {
@@ -1054,7 +1061,7 @@ PlasmaCore.ToolTipArea {
             when: task.model.IsMinimized
 
             PropertyChanges {
-                frame.basePrefix: Plasmoid.configuration.useThemeDecorations ? "minimized" : ""
+                frame.basePrefix: task.useThemeDecorations ? "minimized" : ""
             }
             StateChangeScript {
                 script: {
@@ -1068,7 +1075,7 @@ PlasmaCore.ToolTipArea {
             when: task.model.IsActive
 
             PropertyChanges {
-                frame.basePrefix: Plasmoid.configuration.useThemeDecorations ? "focus" : ""
+                frame.basePrefix: task.useThemeDecorations ? "focus" : ""
             }
         }
     ]

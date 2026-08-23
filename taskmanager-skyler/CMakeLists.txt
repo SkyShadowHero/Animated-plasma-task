@@ -63,6 +63,16 @@ target_link_libraries(org.kde.plasma.taskmanager.skyler PRIVATE
     PW::LibNotificationManager
 )
 
+# ── Plugin embedded metadata (no KPlugin.Id) ──────────
+# The generated plugin source embeds "metadata.json" via
+# K_PLUGIN_CLASS_WITH_JSON(..., "metadata.json"); moc resolves it relative to
+# the generated .cpp in the build dir. The KPackage metadata.json must keep
+# KPlugin.Id (otherwise KPluginMetaData falls back to the "metadata" file
+# basename), but KPluginFactory derives the pluginId from the .so file name
+# and warns if Id is present in the embedded metadata, so embed a variant
+# without Id here.
+configure_file(plugin-metadata.json ${CMAKE_CURRENT_BINARY_DIR}/metadata.json COPYONLY)
+
 # ── Install the QML as a KPackage ─────────────────────
 # This plasmoid is used in two ways:
 #   1. Standalone: "Task Manager (SkyAnimation)" —

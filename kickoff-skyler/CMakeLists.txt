@@ -36,3 +36,10 @@ GENERATE_APPLET_CLASS
 )
 
 ecm_target_qml_sources(org.kde.plasma.kickoff.skyler SOURCES code/tools.js PATH code)
+
+# ── Plugin embedded metadata (no KPlugin.Id) ──────────
+# See taskmanager-skyler/CMakeLists.txt: the generated plugin source embeds
+# "metadata.json" (resolved by moc relative to the build dir); the KPackage
+# keeps KPlugin.Id in metadata.json, but the embedded variant must not contain
+# it or KPluginFactory warns that the plugin "explicitly states an 'Id'".
+configure_file(plugin-metadata.json ${CMAKE_CURRENT_BINARY_DIR}/metadata.json COPYONLY)
