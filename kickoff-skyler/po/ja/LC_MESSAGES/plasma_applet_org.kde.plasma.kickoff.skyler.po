@@ -203,57 +203,57 @@ msgstr "新しくインストールしたアプリを強調"
 
 #: ConfigGeneral.qml:198
 msgid "Icon hover effect"
-msgstr ""
+msgstr "アイコンのホバー効果"
 
 #: ConfigGeneral.qml:208
 msgctxt "@option:check"
 msgid "Use KDE theme decorations"
-msgstr ""
+msgstr "KDE テーマの装飾を使用"
 
 #: ConfigGeneral.qml:214
 msgctxt "@option:check"
 msgid "Use custom launcher decorations"
-msgstr ""
+msgstr "カスタムランチャーの装飾を使用"
 
 #: ConfigGeneral.qml:220
 msgctxt "@option:check"
 msgid "Show highlight background on hover"
-msgstr ""
+msgstr "ホバー時にハイライトの背景を表示"
 
 #: ConfigGeneral.qml:227
 msgctxt "@label:listbox"
 msgid "Highlight shape:"
-msgstr ""
+msgstr "ハイライトの形状:"
 
 #: ConfigGeneral.qml:231
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
-msgstr ""
+msgstr "角丸長方形"
 
 #: ConfigGeneral.qml:232
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rectangle"
-msgstr ""
+msgstr "長方形"
 
 #: ConfigGeneral.qml:233
 msgctxt "@item:inlistbox highlight shape"
 msgid "Circle"
-msgstr ""
+msgstr "円"
 
 #: ConfigGeneral.qml:239
 msgctxt "@label:listbox"
 msgid "Highlight color:"
-msgstr ""
+msgstr "ハイライトの色:"
 
 #: ConfigGeneral.qml:243
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr ""
+msgstr "白"
 
 #: ConfigGeneral.qml:244
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
-msgstr ""
+msgstr "黒"
 
 #: ConfigGeneral.qml:250
 msgctxt "@option:check"

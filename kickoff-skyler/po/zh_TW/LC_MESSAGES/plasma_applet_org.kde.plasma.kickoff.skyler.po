@@ -199,57 +199,57 @@ msgstr "突顯新安裝的應用程式"
 
 #: ConfigGeneral.qml:198
 msgid "Icon hover effect"
-msgstr ""
+msgstr "圖示懸停效果"
 
 #: ConfigGeneral.qml:208
 msgctxt "@option:check"
 msgid "Use KDE theme decorations"
-msgstr ""
+msgstr "使用 KDE 主題裝飾"
 
 #: ConfigGeneral.qml:214
 msgctxt "@option:check"
 msgid "Use custom launcher decorations"
-msgstr ""
+msgstr "使用自訂啟動器裝飾"
 
 #: ConfigGeneral.qml:220
 msgctxt "@option:check"
 msgid "Show highlight background on hover"
-msgstr ""
+msgstr "懸停時顯示高光背景"
 
 #: ConfigGeneral.qml:227
 msgctxt "@label:listbox"
 msgid "Highlight shape:"
-msgstr ""
+msgstr "高光形狀："
 
 #: ConfigGeneral.qml:231
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
-msgstr ""
+msgstr "圓角矩形"
 
 #: ConfigGeneral.qml:232
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rectangle"
-msgstr ""
+msgstr "直角矩形"
 
 #: ConfigGeneral.qml:233
 msgctxt "@item:inlistbox highlight shape"
 msgid "Circle"
-msgstr ""
+msgstr "圓形"
 
 #: ConfigGeneral.qml:239
 msgctxt "@label:listbox"
 msgid "Highlight color:"
-msgstr ""
+msgstr "高光顏色："
 
 #: ConfigGeneral.qml:243
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr ""
+msgstr "白色"
 
 #: ConfigGeneral.qml:244
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
-msgstr ""
+msgstr "黑色"
 
 #: ConfigGeneral.qml:250
 msgctxt "@option:check"
