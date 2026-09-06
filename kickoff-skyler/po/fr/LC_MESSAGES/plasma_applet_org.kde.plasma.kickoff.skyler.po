@@ -208,57 +208,57 @@ msgstr "Mettre en évidence les applications nouvellement installées"
 
 #: ConfigGeneral.qml:198
 msgid "Icon hover effect"
-msgstr ""
+msgstr "Effet de survol de l'icône"
 
 #: ConfigGeneral.qml:208
 msgctxt "@option:check"
 msgid "Use KDE theme decorations"
-msgstr ""
+msgstr "Utiliser les décorations du thème KDE"
 
 #: ConfigGeneral.qml:214
 msgctxt "@option:check"
 msgid "Use custom launcher decorations"
-msgstr ""
+msgstr "Utiliser des décorations personnalisées du lanceur"
 
 #: ConfigGeneral.qml:220
 msgctxt "@option:check"
 msgid "Show highlight background on hover"
-msgstr ""
+msgstr "Afficher le fond de surbrillance au survol"
 
 #: ConfigGeneral.qml:227
 msgctxt "@label:listbox"
 msgid "Highlight shape:"
-msgstr ""
+msgstr "Forme de surbrillance :"
 
 #: ConfigGeneral.qml:231
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
-msgstr ""
+msgstr "Rectangle arrondi"
 
 #: ConfigGeneral.qml:232
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rectangle"
-msgstr ""
+msgstr "Rectangle"
 
 #: ConfigGeneral.qml:233
 msgctxt "@item:inlistbox highlight shape"
 msgid "Circle"
-msgstr ""
+msgstr "Cercle"
 
 #: ConfigGeneral.qml:239
 msgctxt "@label:listbox"
 msgid "Highlight color:"
-msgstr ""
+msgstr "Couleur de surbrillance :"
 
 #: ConfigGeneral.qml:243
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr ""
+msgstr "Blanc"
 
 #: ConfigGeneral.qml:244
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
-msgstr ""
+msgstr "Noir"
 
 #: ConfigGeneral.qml:250
 msgctxt "@option:check"

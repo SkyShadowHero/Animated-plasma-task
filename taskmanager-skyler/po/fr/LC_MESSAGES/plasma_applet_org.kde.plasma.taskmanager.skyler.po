@@ -1,28 +1,20 @@
+# French translations for the Task Manager Skyler plasmoid.
+# Copyright (C) 2026 The Task Manager Skyler authors
+# This file is distributed under the same license as the PACKAGE package.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma_applet_tasks\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 14:40+0800\n"
-"PO-Revision-Date: 2026-01-09 18:54+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2026-08-12 21:16+0800\n"
+"PO-Revision-Date: 2026-09-06 00:00+0800\n"
+"Last-Translator: \n"
+"Language-Team: KairikiFedora <13278297951@sina.cn>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Accelerator-Marker: &\n"
-"X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.0\n"
-"X-Text-Markup: kde4\n"
-
-#: backend.cpp:288
-#, qt-format
-msgctxt "Show all user Places"
-msgid "%1 more Place…"
-msgid_plural "%1 more Places…"
-msgstr[0] "Emplacement supplémentaire %1..."
-msgstr[1] "%1 emplacements supplémentaires..."
 
 #: backend.cpp:372
 msgid "Recent Downloads"
@@ -109,7 +101,7 @@ msgstr "Restaurer"
 #: qml/ContextMenu.qml:266
 msgctxt "@option:check inmenu, no separate unmute action"
 msgid "Mute"
-msgstr "Mettre en sourdine"
+msgstr "Couper le son"
 
 #: qml/ContextMenu.qml:277
 msgctxt "action:inmenu"
@@ -119,12 +111,12 @@ msgstr "Ouvrir une nouvelle fenêtre"
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"
 msgid "Move to &Desktop"
-msgstr "&Déplacer vers le bureau"
+msgstr "Déplacer vers le &bureau"
 
 #: qml/ContextMenu.qml:323
 msgctxt "action:inmenu"
 msgid "Move &To Current Desktop"
-msgstr "Déplacer vers le bureau couran&t"
+msgstr "Déplacer vers le bureau &actuel"
 
 #: qml/ContextMenu.qml:345
 msgctxt "action:inmenu"
@@ -144,7 +136,7 @@ msgstr "Afficher dans les &activités"
 #: qml/ContextMenu.qml:417
 msgctxt "action:inmenu"
 msgid "Add To Current Activity"
-msgstr "Ajouter à l'activité courante"
+msgstr "Ajouter à l'activité actuelle"
 
 #: qml/ContextMenu.qml:427
 msgctxt "action:inmenu"
@@ -160,7 +152,7 @@ msgstr "Déplacer vers %1"
 #: qml/ContextMenu.qml:509 qml/ContextMenu.qml:525
 msgctxt "action:inmenu"
 msgid "&Pin to Task Manager"
-msgstr "É&pingler au gestionnaire de tâches"
+msgstr "&Épingler au gestionnaire de tâches"
 
 #: qml/ContextMenu.qml:577
 msgctxt "action:inmenu"
@@ -170,7 +162,7 @@ msgstr "Sur toutes les activités"
 #: qml/ContextMenu.qml:583
 msgctxt "action:inmenu"
 msgid "On The Current Activity"
-msgstr "Sur l'activité courante"
+msgstr "Sur l'activité actuelle"
 
 #: qml/ContextMenu.qml:607
 msgctxt "action:inmenu"
@@ -190,27 +182,27 @@ msgstr "&Déplacer"
 #: qml/ContextMenu.qml:640
 msgctxt "action:inmenu"
 msgid "Re&size"
-msgstr "Re&dimensionner"
+msgstr "&Redimensionner"
 
 #: qml/ContextMenu.qml:654
 msgctxt "action:inmenu"
 msgid "Ma&ximize"
-msgstr "Ma&ximiser"
+msgstr "A&grandir"
 
 #: qml/ContextMenu.qml:668
 msgctxt "action:inmenu"
 msgid "Mi&nimize"
-msgstr "Mi&nimiser"
+msgstr "&Réduire"
 
 #: qml/ContextMenu.qml:678
 msgctxt "action:inmenu"
 msgid "Keep &Above Others"
-msgstr "Conserver &au-dessus des autres"
+msgstr "Garder &au-dessus des autres"
 
 #: qml/ContextMenu.qml:688
 msgctxt "action:inmenu"
 msgid "Keep &Below Others"
-msgstr "Conserver en-des&sous des autres"
+msgstr "Garder &en dessous des autres"
 
 #: qml/ContextMenu.qml:700
 msgctxt "action:inmenu"
@@ -220,22 +212,22 @@ msgstr "&Plein écran"
 #: qml/ContextMenu.qml:713
 msgctxt "action:inmenu"
 msgid "&Shade"
-msgstr "&Ombrer"
+msgstr "&Ombrager"
 
 #: qml/ContextMenu.qml:725
 msgctxt "@action:inmenu"
 msgid "&No Titlebar and Frame"
-msgstr "Aucu&ne barre de titre et aucun cadre"
+msgstr "&Sans barre de titre ni cadre"
 
 #: qml/ContextMenu.qml:738
 msgctxt "@action:inmenu"
 msgid "&Hide from Screencast"
-msgstr "&Masquer dans l'enregistrement de l'écran"
+msgstr "&Masquer de l'enregistrement d'écran"
 
 #: qml/ContextMenu.qml:754
 msgctxt "@option:check inmenu"
 msgid "Allow this program to be grouped"
-msgstr "Autoriser ce programme à être regroupé"
+msgstr "Autoriser le regroupement de ce programme"
 
 #: qml/ContextMenu.qml:800
 msgctxt "@action:inmenu"
@@ -257,136 +249,302 @@ msgctxt "@title:group for configuration dialog page"
 msgid "Behavior"
 msgstr "Comportement"
 
-#: qml/ConfigAppearance.qml:50
+#: qml/ConfigAppearance.qml:62
 msgctxt "@label for several checkboxes"
 msgid "General:"
-msgstr "Général :"
+msgstr "Général :"
 
-#: qml/ConfigAppearance.qml:51
+#: qml/ConfigAppearance.qml:63
 msgctxt "@option:check section General"
 msgid "Show small window previews when hovering over tasks"
-msgstr "Afficher des aperçus des petites fenêtres lors d'un survol des tâches"
+msgstr "Afficher de petits aperçus de fenêtres au survol des tâches"
 
-#: qml/ConfigAppearance.qml:56
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over previews"
-msgstr "Masquer les autres fenêtres lors d'un survol des aperçus"
+msgstr "Masquer les autres fenêtres lors du survol des aperçus"
 
-#: qml/ConfigAppearance.qml:56
+#: qml/ConfigAppearance.qml:68
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over tooltips"
-msgstr "Masquer les autres fenêtres lors d'un survol des infobulles"
+msgstr "Masquer les autres fenêtres lors du survol des info-bulles"
 
-#: qml/ConfigAppearance.qml:61
+#: qml/ConfigAppearance.qml:73
 msgctxt "@option:check section General"
 msgid "Show an indicator when a task is playing audio"
-msgstr "Afficher un indicateur lorsqu'une tâche est en cours de lecture audio"
+msgstr "Afficher un indicateur lorsqu'une tâche joue de l'audio"
 
-#: qml/ConfigAppearance.qml:71
+#: qml/ConfigAppearance.qml:83
 msgctxt "@option:check section General"
 msgid "Mute task when clicking indicator"
-msgstr "Mettre la tâche en pause par un clic sur l'indicateur"
+msgstr "Couper le son de la tâche lors d'un clic sur l'indicateur"
 
-#: qml/ConfigAppearance.qml:79
+#: qml/ConfigAppearance.qml:91
 msgctxt "@option:check section General"
 msgid "Show media and volume controls in tooltip"
-msgstr "Afficher les contrôles de média et de volume dans l'info-bulle"
-
-#: qml/ConfigAppearance.qml:87
-msgctxt "@option:check section General"
-msgid "Fill free space on panel"
-msgstr "Saisir un espace libre sur le panneau"
+msgstr "Afficher les commandes multimédia et de volume dans l'info-bulle"
 
 #: qml/ConfigAppearance.qml:99
+msgctxt "@option:check section General"
+msgid "Fill free space on panel"
+msgstr "Remplir l'espace libre du panneau"
+
+#: qml/ConfigAppearance.qml:111
 msgctxt "@label:listbox"
 msgid "Maximum task width:"
-msgstr "Largeur maximale des tâches :"
+msgstr "Largeur maximale des tâches :"
 
-#: qml/ConfigAppearance.qml:102
+#: qml/ConfigAppearance.qml:114
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Narrow"
 msgstr "Étroit"
 
-#: qml/ConfigAppearance.qml:103
+#: qml/ConfigAppearance.qml:115
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Medium"
 msgstr "Moyen"
 
-#: qml/ConfigAppearance.qml:104
+#: qml/ConfigAppearance.qml:116
 msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Wide"
 msgstr "Large"
 
-#: qml/ConfigAppearance.qml:115
+#: qml/ConfigAppearance.qml:127
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-column view:"
-msgstr "Utiliser une vue multi-colonne :"
+msgstr "Utiliser l'affichage multi-colonnes :"
 
-#: qml/ConfigAppearance.qml:116
+#: qml/ConfigAppearance.qml:128
 msgctxt ""
 "@label for radio button group, completes sentence: … when panel is low on "
 "space etc."
 msgid "Use multi-row view:"
-msgstr "Utiliser une vue en multi-ligne :"
+msgstr "Utiliser l'affichage multi-lignes :"
 
-#: qml/ConfigAppearance.qml:122
+#: qml/ConfigAppearance.qml:134
 msgctxt "@option:radio Never use multi-column view for Task Manager"
 msgid "Never"
 msgstr "Jamais"
 
-#: qml/ConfigAppearance.qml:132
+#: qml/ConfigAppearance.qml:144
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "When panel is low on space and thick enough"
-msgstr "Lorsque le panneau manque d'espace mais est suffisamment épais"
+msgstr "Lorsque le panneau manque d'espace et est assez épais"
 
-#: qml/ConfigAppearance.qml:142
+#: qml/ConfigAppearance.qml:154
 msgctxt "@option:radio completes sentence: Use multi-column/row view"
 msgid "Always when panel is thick enough"
 msgstr "Toujours lorsque le panneau est assez épais"
 
-#: qml/ConfigAppearance.qml:149
+#: qml/ConfigAppearance.qml:161
 msgctxt "@label:spinbox maximum number of columns for tasks"
 msgid "Maximum columns:"
-msgstr "Nombre maximal de colonnes :"
+msgstr "Nombre maximal de colonnes :"
 
-#: qml/ConfigAppearance.qml:150
+#: qml/ConfigAppearance.qml:162
 msgctxt "@label:spinbox maximum number of rows for tasks"
 msgid "Maximum rows:"
-msgstr "Nombre maximal de lignes :"
+msgstr "Nombre maximal de lignes :"
 
-#: qml/ConfigAppearance.qml:160
+#: qml/ConfigAppearance.qml:172
 msgctxt "@label:listbox"
 msgid "Spacing between icons:"
-msgstr "Espacement entre icônes :"
+msgstr "Espacement entre les icônes :"
 
-#: qml/ConfigAppearance.qml:164
+#: qml/ConfigAppearance.qml:176
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Small"
 msgstr "Petit"
 
-#: qml/ConfigAppearance.qml:168
+#: qml/ConfigAppearance.qml:180
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Normal"
 msgstr "Normal"
 
-#: qml/ConfigAppearance.qml:172
+#: qml/ConfigAppearance.qml:184
 msgctxt "@item:inlistbox Icon spacing"
 msgid "Large"
-msgstr "Important"
+msgstr "Grand"
 
-#: qml/ConfigAppearance.qml:195
+#: qml/ConfigAppearance.qml:207
 msgctxt "@label for checkbox"
 msgid "Mini Tooltip:"
-msgstr ""
+msgstr "Info-bulle miniature :"
 
-#: qml/ConfigAppearance.qml:196
+#: qml/ConfigAppearance.qml:208
 msgctxt "@option:check section Mini Tooltip"
 msgid "Use compact tooltip style"
-msgstr ""
+msgstr "Utiliser un style d'info-bulle compact"
 
-#: qml/ConfigBehavior.qml:51
+#: qml/ConfigAppearance.qml:213
+msgctxt "@label for checkbox"
+msgid "Custom Decorations:"
+msgstr "Décorations personnalisées :"
+
+#: qml/ConfigAppearance.qml:214
+msgctxt "@option:check"
+msgid "Use custom task decorations (highlight, indicator)"
+msgstr "Utiliser des décorations personnalisées pour les tâches (surlignage, indicateur)"
+
+#: qml/ConfigAppearance.qml:219
+msgctxt "@label for checkbox"
+msgid "Theme Decorations:"
+msgstr "Décorations du thème :"
+
+#: qml/ConfigAppearance.qml:220
+msgctxt "@option:check"
+msgid "Use KDE theme hover/active decorations"
+msgstr "Utiliser les décorations de survol/activation du thème KDE"
+
+#: qml/ConfigAppearance.qml:230
+msgctxt "@label for checkbox"
+msgid "Indicator:"
+msgstr "Indicateur :"
+
+#: qml/ConfigAppearance.qml:231
+msgctxt "@option:check"
+msgid "Show custom indicator bar"
+msgstr "Afficher la barre d'indicateur personnalisée"
+
+#: qml/ConfigAppearance.qml:237
+msgctxt "@label:listbox"
+msgid "Indicator position:"
+msgstr "Position de l'indicateur :"
+
+#: qml/ConfigAppearance.qml:241
+msgctxt "@item:inlistbox indicator position"
+msgid "Bottom"
+msgstr "Bas"
+
+#: qml/ConfigAppearance.qml:242
+msgctxt "@item:inlistbox indicator position"
+msgid "Top"
+msgstr "Haut"
+
+#: qml/ConfigAppearance.qml:243
+msgctxt "@item:inlistbox indicator position"
+msgid "Left"
+msgstr "Gauche"
+
+#: qml/ConfigAppearance.qml:244
+msgctxt "@item:inlistbox indicator position"
+msgid "Right"
+msgstr "Droite"
+
+#: qml/ConfigAppearance.qml:253
+msgid "Animation"
+msgstr "Animation"
+
+#: qml/ConfigAppearance.qml:259
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "Vitesse d'animation :"
+
+#: qml/ConfigAppearance.qml:262
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "Très rapide"
+
+#: qml/ConfigAppearance.qml:263
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "Rapide"
+
+#: qml/ConfigAppearance.qml:264
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "Normal"
+
+#: qml/ConfigAppearance.qml:265
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "Lent"
+
+#: qml/ConfigAppearance.qml:266
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "Très lent"
+
+#: qml/ConfigAppearance.qml:272
+msgid "Icon hover effect"
+msgstr "Effet de survol de l'icône"
+
+#: qml/ConfigAppearance.qml:278
+msgctxt "@label:listbox"
+msgid "Hover direction:"
+msgstr "Direction du survol :"
+
+#: qml/ConfigAppearance.qml:282
+msgctxt "@item:inlistbox hover direction"
+msgid "Up"
+msgstr "Haut"
+
+#: qml/ConfigAppearance.qml:283
+msgctxt "@item:inlistbox hover direction"
+msgid "Down"
+msgstr "Bas"
+
+#: qml/ConfigAppearance.qml:284
+msgctxt "@item:inlistbox hover direction"
+msgid "Left"
+msgstr "Gauche"
+
+#: qml/ConfigAppearance.qml:285
+msgctxt "@item:inlistbox hover direction"
+msgid "Right"
+msgstr "Droite"
+
+#: qml/ConfigAppearance.qml:291
+msgid "Show highlight background on hover/active"
+msgstr "Afficher le fond de surlignage au survol/à l'activation"
+
+#: qml/ConfigAppearance.qml:298
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Forme du surlignage :"
+
+#: qml/ConfigAppearance.qml:302
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded Rectangle"
+msgstr "Rectangle arrondi"
+
+#: qml/ConfigAppearance.qml:303
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: qml/ConfigAppearance.qml:304
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Cercle"
+
+#: qml/ConfigAppearance.qml:310
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Couleur du surlignage :"
+
+#: qml/ConfigAppearance.qml:314
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "Blanc"
+
+#: qml/ConfigAppearance.qml:315
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "Noir"
+
+#: qml/ConfigAppearance.qml:316
+msgctxt "@item:inlistbox highlight color"
+msgid "Theme Highlight"
+msgstr "Surlignage du thème"
+
+#: qml/ConfigAppearance.qml:322
+msgid "Icon scale:"
+msgstr "Échelle des icônes :"
+
+#: qml/ConfigBehavior.qml:50
 msgctxt "@info"
 msgid ""
 "If you're using this setting to work around an application that demands "
@@ -394,307 +552,282 @@ msgid ""
 "behavior. If you don't find one, consider reporting this as a bug to the "
 "app's developer."
 msgstr ""
-"Si vous utilisez ce paramètre pour contourner une application demandant trop "
-"souvent de l'attention, veuillez d'abord rechercher un paramètre dans "
-"l'application pour désactiver ce comportement. Si vous n'en trouvez aucun, "
-"veuillez envisager de signaler cette situation comme un bogue à l'équipe de "
-"développement de l'application."
+"Si vous utilisez ce paramètre pour contourner une application qui demande "
+"trop souvent l'attention, cherchez d'abord dans l'application un paramètre "
+"permettant de désactiver ce comportement. Si vous n'en trouvez pas, "
+"envisagez de le signaler comme un bug au développeur de l'application."
 
-#: qml/ConfigBehavior.qml:67
+#: qml/ConfigBehavior.qml:66
 msgctxt "@label:listbox how to group tasks"
 msgid "Group:"
-msgstr "Groupe :"
+msgstr "Grouper :"
 
-#: qml/ConfigBehavior.qml:71
+#: qml/ConfigBehavior.qml:70
 msgctxt "@item:inlistbox how to group tasks"
 msgid "Do not group"
-msgstr "Ne pas regrouper"
+msgstr "Ne pas grouper"
 
-#: qml/ConfigBehavior.qml:72
+#: qml/ConfigBehavior.qml:71
 msgctxt "@item:inlistbox how to group tasks"
 msgid "By program name"
 msgstr "Par nom de programme"
 
-#: qml/ConfigBehavior.qml:78
+#: qml/ConfigBehavior.qml:77
 msgctxt "@label:listbox completes sentence like: … cycles through tasks"
 msgid "Clicking grouped task:"
-msgstr "Un clic sur une tâche groupée :"
+msgstr "Clic sur une tâche groupée :"
 
-#: qml/ConfigBehavior.qml:85
+#: qml/ConfigBehavior.qml:84
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
 "tasks' "
 msgid "Cycles through tasks"
-msgstr "Basculer de tâche en tâche"
+msgstr "Fait défiler les tâches"
 
-#: qml/ConfigBehavior.qml:86
+#: qml/ConfigBehavior.qml:85
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
 "window previews' "
 msgid "Shows small window previews"
-msgstr "Affiche les aperçus des petites fenêtres"
+msgstr "Affiche de petits aperçus de fenêtres"
 
-#: qml/ConfigBehavior.qml:87
+#: qml/ConfigBehavior.qml:86
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
 "window previews' "
 msgid "Shows large window previews"
-msgstr "Affiche les aperçus des fenêtres de grande taille"
+msgstr "Affiche de grands aperçus de fenêtres"
 
-#: qml/ConfigBehavior.qml:88
+#: qml/ConfigBehavior.qml:87
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
 "list' "
 msgid "Shows textual list"
 msgstr "Affiche une liste textuelle"
 
-#: qml/ConfigBehavior.qml:99
+#: qml/ConfigBehavior.qml:98
 msgctxt "@info displayed as InlineMessage"
 msgid ""
 "The compositor does not support displaying windows side by side, so a "
 "textual list will be displayed instead."
 msgstr ""
-"Le compositeur ne prend pas en charge l'affichage des fenêtres côte à côte. "
-"Ainsi, une liste textuelle sera affichée à la place."
+"Le compositeur ne prend pas en charge l'affichage côte à côte des fenêtres ; "
+"une liste textuelle sera donc affichée à la place."
 
-#: qml/ConfigBehavior.qml:109
+#: qml/ConfigBehavior.qml:108
 msgctxt "@option:check grouped task"
 msgid "Combine into single button"
 msgstr "Combiner en un seul bouton"
 
-#: qml/ConfigBehavior.qml:116
+#: qml/ConfigBehavior.qml:115
 msgctxt "@option:check grouped task"
 msgid "Group only when the Task Manager is full"
 msgstr "Grouper uniquement lorsque le gestionnaire de tâches est plein"
 
-#: qml/ConfigBehavior.qml:128
+#: qml/ConfigBehavior.qml:127
 msgctxt "@label:listbox sort tasks in grouped task"
 msgid "Sort:"
-msgstr "Trier : "
+msgstr "Trier :"
 
-#: qml/ConfigBehavior.qml:135
+#: qml/ConfigBehavior.qml:134
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Do not sort"
 msgstr "Ne pas trier"
 
-#: qml/ConfigBehavior.qml:139
+#: qml/ConfigBehavior.qml:138
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Manually"
 msgstr "Manuellement"
 
-#: qml/ConfigBehavior.qml:143
+#: qml/ConfigBehavior.qml:142
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Alphabetically"
-msgstr "Par ordre alphabétique"
+msgstr "Alphabétiquement"
 
-#: qml/ConfigBehavior.qml:147
+#: qml/ConfigBehavior.qml:146
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By desktop"
 msgstr "Par bureau"
 
-#: qml/ConfigBehavior.qml:151
+#: qml/ConfigBehavior.qml:150
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By activity"
 msgstr "Par activité"
 
-#: qml/ConfigBehavior.qml:155
+#: qml/ConfigBehavior.qml:154
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By horizontal window position"
-msgstr "Par position horizontale de fenêtre"
+msgstr "Par position horizontale de la fenêtre"
 
-#: qml/ConfigBehavior.qml:166
+#: qml/ConfigBehavior.qml:165
 msgctxt "@option:check configure task sorting"
 msgid "Keep launchers separate"
-msgstr "Conserver des lanceurs séparés"
+msgstr "Garder les lanceurs séparés"
 
-#: qml/ConfigBehavior.qml:173
+#: qml/ConfigBehavior.qml:172
 msgctxt "@option:check for icons-and-text task manager"
 msgid "Hide launchers after application startup"
 msgstr "Masquer les lanceurs après le démarrage de l'application"
 
-#: qml/ConfigBehavior.qml:183
+#: qml/ConfigBehavior.qml:182
 msgctxt ""
 "@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
 "task'"
 msgid "Clicking active task:"
-msgstr "Un clic sur une tâche active :"
+msgstr "Clic sur une tâche active :"
 
-#: qml/ConfigBehavior.qml:184
+#: qml/ConfigBehavior.qml:183
 msgctxt ""
 "@option:check Part of a sentence: 'Clicking active task minimizes the task'"
 msgid "Minimizes the task"
-msgstr "Minimise la tâche"
+msgstr "Réduit la tâche"
 
-#: qml/ConfigBehavior.qml:189
+#: qml/ConfigBehavior.qml:188
 msgctxt "@label:listbox completes sentence like: … does nothing"
 msgid "Middle-clicking any task:"
-msgstr "Un clic du bouton central sur n'importe quelle tâche :"
+msgstr "Clic du milieu sur une tâche :"
 
-#: qml/ConfigBehavior.qml:193
+#: qml/ConfigBehavior.qml:192
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
 msgid "Does nothing"
 msgstr "Ne fait rien"
 
-#: qml/ConfigBehavior.qml:194
+#: qml/ConfigBehavior.qml:193
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
 "or group'"
 msgid "Closes window or group"
 msgstr "Ferme la fenêtre ou le groupe"
 
-#: qml/ConfigBehavior.qml:195
+#: qml/ConfigBehavior.qml:194
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
 "window'"
 msgid "Opens a new window"
 msgstr "Ouvre une nouvelle fenêtre"
 
-#: qml/ConfigBehavior.qml:196
+#: qml/ConfigBehavior.qml:195
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task minimizes/"
 "restores window or group'"
 msgid "Minimizes/Restores window or group"
-msgstr "Minimise / restaure une fenêtre ou un groupe"
+msgstr "Réduit/restaure la fenêtre ou le groupe"
 
-#: qml/ConfigBehavior.qml:197
+#: qml/ConfigBehavior.qml:196
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
 "grouping'"
 msgid "Toggles grouping"
-msgstr "Bascule en mode de regroupement"
+msgstr "Active ou désactive le regroupement"
 
-#: qml/ConfigBehavior.qml:198
+#: qml/ConfigBehavior.qml:197
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task brings it to "
 "the current virtual desktop'"
 msgid "Brings it to the current virtual desktop"
-msgstr "Le transfère sur le bureau virtuel courant"
+msgstr "L'amène sur le bureau virtuel actuel"
 
-#: qml/ConfigBehavior.qml:208
+#: qml/ConfigBehavior.qml:207
 msgctxt ""
 "@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
 "through tasks/cycles through the selected task's windows/adjusts the hovered "
 "task’s volume''"
 msgid "Scrolling behavior:"
-msgstr "Comportement du défilement :"
+msgstr "Comportement au défilement :"
 
-#: qml/ConfigBehavior.qml:212
+#: qml/ConfigBehavior.qml:211
 msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
 msgid "Does nothing"
 msgstr "Ne fait rien"
 
-#: qml/ConfigBehavior.qml:213
+#: qml/ConfigBehavior.qml:212
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
 "tasks'"
 msgid "Cycles through all tasks"
-msgstr "Navigue entre toutes les tâches"
+msgstr "Fait défiler toutes les tâches"
 
-#: qml/ConfigBehavior.qml:214
+#: qml/ConfigBehavior.qml:213
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through the "
 "hovered task's windows'"
 msgid "Cycles through the hovered task’s windows"
-msgstr "Navigue entre toutes fenêtres de la tâche survolée"
+msgstr "Fait défiler les fenêtres de la tâche survolée"
 
-#: qml/ConfigBehavior.qml:215
+#: qml/ConfigBehavior.qml:214
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
 "task’s volume'"
 msgid "Adjusts the hovered task’s volume"
-msgstr "Ajuste le volume des tâches survolées"
+msgstr "Ajuste le volume de la tâche survolée"
 
-#: qml/ConfigBehavior.qml:223
+#: qml/ConfigBehavior.qml:222
 msgctxt "@option:check mouse wheel task cycling"
 msgid "Skip minimized tasks"
-msgstr "Ignorer les tâches minimisées"
+msgstr "Ignorer les tâches réduites"
 
-#: qml/ConfigBehavior.qml:233
+#: qml/ConfigBehavior.qml:232
 msgctxt ""
 "@label for checkbox group, completes sentence like: … from current screen"
 msgid "Show only tasks:"
-msgstr "Afficher uniquement les tâches :"
+msgstr "Afficher uniquement les tâches :"
 
-#: qml/ConfigBehavior.qml:234
+#: qml/ConfigBehavior.qml:233
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current desktop"
-msgstr "Sur le bureau actuel"
+msgstr "Du bureau actuel"
 
-#: qml/ConfigBehavior.qml:239
+#: qml/ConfigBehavior.qml:238
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current activity"
-msgstr "Sur l'activité actuelle"
+msgstr "De l'activité actuelle"
 
-#: qml/ConfigBehavior.qml:244
+#: qml/ConfigBehavior.qml:243
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current screen"
-msgstr "Sur l'écran courant"
+msgstr "De l'écran actuel"
 
-#: qml/ConfigBehavior.qml:249
+#: qml/ConfigBehavior.qml:248
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
-msgstr "Qui sont minimisées"
+msgstr "Qui sont réduites"
 
-#: qml/ConfigBehavior.qml:258
+#: qml/ConfigBehavior.qml:257
 msgctxt ""
 "@label for checkbox, completes sentence: … unhide if window wants attention"
 msgid "When panel is hidden:"
-msgstr "Lorsque le panneau est masqué :"
+msgstr "Lorsque le panneau est masqué :"
 
-#: qml/ConfigBehavior.qml:259
+#: qml/ConfigBehavior.qml:258
 msgctxt "@option:check completes sentence: When panel is hidden"
 msgid "Unhide when a window wants attention"
-msgstr "Démasquer lorsqu'une fenêtre demande de l'attention"
+msgstr "Réafficher lorsqu'une fenêtre demande l'attention"
 
-#: qml/ConfigBehavior.qml:274
+#: qml/ConfigBehavior.qml:273
 msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
 msgid "New tasks appear:"
-msgstr "De nouvelles tâches apparaissent :"
+msgstr "Les nouvelles tâches apparaissent :"
 
-#: qml/ConfigBehavior.qml:278
+#: qml/ConfigBehavior.qml:277
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "On the bottom"
-msgstr "Sur le bas"
+msgstr "En bas"
 
-#: qml/ConfigBehavior.qml:282 qml/ConfigBehavior.qml:301
+#: qml/ConfigBehavior.qml:281 qml/ConfigBehavior.qml:300
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "To the right"
-msgstr "Sur la droite"
+msgstr "À droite"
 
-#: qml/ConfigBehavior.qml:284 qml/ConfigBehavior.qml:299
+#: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:298
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "To the left"
-msgstr "Sur la gauche"
+msgstr "À gauche"
 
-#: qml/ConfigBehavior.qml:295
+#: qml/ConfigBehavior.qml:294
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "On the top"
-msgstr "Sur le haut"
-
-#: qml/ConfigBehavior.qml:308
-msgid "Animation"
-msgstr ""
-
-#: qml/ConfigBehavior.qml:315
-msgctxt "@label:listbox"
-msgid "Animation speed:"
-msgstr ""
-
-#: qml/ConfigBehavior.qml:318
-msgctxt "@item:inlistbox animation speed"
-msgid "Fast"
-msgstr ""
-
-#: qml/ConfigBehavior.qml:319
-msgctxt "@item:inlistbox animation speed"
-msgid "Normal"
-msgstr ""
-
-#: qml/ConfigBehavior.qml:320
-msgctxt "@item:inlistbox animation speed"
-msgid "Slow"
-msgstr ""
+msgstr "En haut"
 
 #: qml/ToolTipInstance.qml:219
 msgctxt "@info:tooltip Close this window"
@@ -705,30 +838,30 @@ msgstr "Fermer la fenêtre"
 #, qt-format
 msgctxt "button to unmute app"
 msgid "Unmute %1"
-msgstr "Remettre le son pour %1"
+msgstr "Réactiver le son de %1"
 
 #: qml/ToolTipInstance.qml:433
 #, qt-format
 msgctxt "button to mute app"
 msgid "Mute %1"
-msgstr "Couper le son pour %1"
+msgstr "Couper le son de %1"
 
 #: qml/ToolTipInstance.qml:451
 #, qt-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
-msgstr "Ajuster le volume pour %1"
+msgstr "Régler le volume de %1"
 
 #: qml/ToolTipInstance.qml:467
 #, qt-format
 msgctxt "volume percentage"
 msgid "%1%"
-msgstr "%1 %"
+msgstr "%1%"
 
 #: qml/ToolTipInstance.qml:471
 msgctxt "only used for sizing, should be widest possible string"
 msgid "100%"
-msgstr "100 %"
+msgstr "100%"
 
 #: qml/ToolTipInstance.qml:487
 #, qt-format
@@ -739,7 +872,7 @@ msgstr "Sur %1"
 #: qml/ToolTipInstance.qml:490
 msgctxt "Comma-separated list of desktops"
 msgid "Pinned to all desktops"
-msgstr "Épinglé sur tous les bureaux"
+msgstr "Épinglé à tous les bureaux"
 
 #: qml/ToolTipInstance.qml:496
 msgctxt "Which virtual desktop a window is currently on"
@@ -761,7 +894,7 @@ msgstr "Disponible sur %1"
 #: qml/AudioStream.qml:94
 msgctxt "@action:button"
 msgid "Unmute"
-msgstr "Remettre le son"
+msgstr "Réactiver le son"
 
 #: qml/AudioStream.qml:94
 msgctxt "@action:button"
@@ -772,20 +905,20 @@ msgstr "Couper le son"
 #, qt-format
 msgctxt "@info:tooltip %1 is the window title"
 msgid "Unmute %1"
-msgstr "Remettre le son pour %1"
+msgstr "Réactiver le son de %1"
 
 #: qml/AudioStream.qml:95
 #, qt-format
 msgctxt "@info:tooltip %1 is the window title"
 msgid "Mute %1"
-msgstr "Couper le son pour %1"
+msgstr "Couper le son de %1"
 
 #: qml/TaskBadgeOverlay.qml:101
 msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "9k+"
-msgstr ""
+msgstr "9k+"
 
 #: qml/TaskBadgeOverlay.qml:104
 #, qt-format
@@ -793,7 +926,7 @@ msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "%1k"
-msgstr ""
+msgstr "%1k"
 
 #: qml/Task.qml:284
 #, qt-format
@@ -801,46 +934,26 @@ msgctxt "@info:usagetip %1 application name"
 msgid "Launch %1"
 msgstr "Lancer %1"
 
-#: qml/Task.qml:289
-#, qt-format
-msgctxt "@info:tooltip"
-msgid "There is %1 new message."
-msgid_plural "There are %1 new messages."
-msgstr[0] "Il y a un nouveau message %1."
-msgstr[1] "Il y a %1 nouveaux messages."
-
 #: qml/Task.qml:297
 #, qt-format
 msgctxt "@info:usagetip %1 task name"
 msgid "Show Task tooltip for %1"
-msgstr "Afficher les infobulles de tâches pour %1"
+msgstr "Afficher l'info-bulle de tâche pour %1"
 
 #: qml/Task.qml:301
 #, qt-format
 msgctxt "@info:usagetip %1 task name"
 msgid "Show windows side by side for %1"
-msgstr "Afficher les fenêtres côte à côte pour %1"
+msgstr "Afficher les fenêtres de %1 côte à côte"
 
 #: qml/Task.qml:306
 #, qt-format
 msgctxt "@info:usagetip %1 task name"
 msgid "Open textual list of windows for %1"
-msgstr "Ouvrir une liste textuelle des fenêtres pour %1"
+msgstr "Ouvrir la liste textuelle des fenêtres de %1"
 
 #: qml/Task.qml:310
 #, qt-format
 msgctxt "@info:usagetip %1 task name"
 msgid "Activate %1"
 msgstr "Activer %1"
-
-#~ msgctxt "@info:usagetip under a set of radio buttons when Touch Mode is on"
-#~ msgid "Automatically set to Large when in Touch mode"
-#~ msgstr "Définir automatiquement à « Important » lorsqu'en mode « Tablette »"
-
-#~ msgctxt "Invalid number of new messages, overlay, keep short"
-#~ msgid "—"
-#~ msgstr "—"
-
-#~ msgctxt "Over 9999 new messages, overlay, keep short"
-#~ msgid "9,999+"
-#~ msgstr "9,999+"
