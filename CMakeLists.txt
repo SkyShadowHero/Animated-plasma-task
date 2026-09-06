@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(SkylerPlasmaTaskManager VERSION 1.1.0)
+project(SkylerPlasmaTaskManager VERSION 1.1.1)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -45,19 +45,22 @@ plasma_install_package(icontasks-skyler org.kde.plasma.icontasks.skyler)
 plasma_install_package(kickoff-skyler org.kde.plasma.kickoff.skyler)
 
 # ── icontasks-skyler → taskmanager-skyler translation ─
+# Icons-Only Task Manager is a redirector package (X-Plasma-RootPath) and its
+# QML runs under the plasma_applet_org.kde.plasma.icontasks.skyler domain, so
+# each locale gets a relative symlink to the taskmanager catalog. The glob is
+# prefix- and DESTDIR-aware so custom prefixes and staged packaging work too.
 install(CODE "
     set(SKYLER_DOMAIN plasma_applet_org.kde.plasma.taskmanager.skyler)
     set(ICON_DOMAIN   plasma_applet_org.kde.plasma.icontasks.skyler)
-    file(GLOB LOCALE_DIRS /usr/share/locale/*/LC_MESSAGES)
+    set(LOCALE_ROOT   \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale\")
+    file(GLOB LOCALE_DIRS \"\${LOCALE_ROOT}/*/LC_MESSAGES\")
     foreach(LOCALE_DIR \${LOCALE_DIRS})
         set(MO_FILE \"\${LOCALE_DIR}/\${SKYLER_DOMAIN}.mo\")
         if(EXISTS \"\${MO_FILE}\")
-            get_filename_component(PARENT \"\${LOCALE_DIR}\" DIRECTORY)
-            get_filename_component(LOCALE \"\${PARENT}\" NAME)
-            set(TARGET \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE}/LC_MESSAGES/\${ICON_DOMAIN}.mo\")
-            file(MAKE_DIRECTORY \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/locale/\${LOCALE}/LC_MESSAGES\")
+            set(LINK \"\${LOCALE_DIR}/\${ICON_DOMAIN}.mo\")
+            file(REMOVE \"\${LINK}\")
             execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
-                \"\${SKYLER_DOMAIN}.mo\" \"\${TARGET}\")
+                \"\${SKYLER_DOMAIN}.mo\" \"\${LINK}\")
         endif()
     endforeach()
 ")

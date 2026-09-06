@@ -114,5 +114,4 @@ install(
     DESTINATION "${CMAKE_INSTALL_PREFIX}/share/locale"
     FILES_MATCHING
     PATTERN "*.mo"
-    PATTERN "*.pot"
 )

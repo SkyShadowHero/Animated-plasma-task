@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"POT-Creation-Date: 2026-09-06 13:18\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,19 +22,12 @@ msgctxt "@action:button icon-only, for tooltip/Accessible"
 msgid "Open user settings"
 msgstr ""
 
-#: Header.qml:276
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr ""
-
 #: config.qml:13
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
 msgstr ""
 
-#: main.qml:427
+#: main.qml:440
 msgctxt "@action:inmenu launches kmenuedit"
 msgid "Edit Applications…"
 msgstr ""
@@ -99,14 +92,7 @@ msgstr ""
 
 #: ConfigGeneral.qml:60
 msgctxt "@info:whatsthis"
-msgid ""
-"Current icon is %1. Click to open menu to change the current icon or reset "
-"to the default icon."
-msgstr ""
-
-#: ConfigGeneral.qml:64
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
+msgid "Current icon is %1. Click to open menu to change the current icon or reset to the default icon."
 msgstr ""
 
 #: ConfigGeneral.qml:99
@@ -186,9 +172,7 @@ msgstr ""
 
 #: ConfigGeneral.qml:181
 msgctxt "@info:whatsthis"
-msgid ""
-"This doesn't affect how applications are sorted in either search results or "
-"the favorites page."
+msgid "This doesn't affect how applications are sorted in either search results or the favorites page."
 msgstr ""
 
 #: ConfigGeneral.qml:187
@@ -386,6 +370,17 @@ msgstr ""
 msgid "On the Current Activity"
 msgstr ""
 
+#: ConfigGeneral.qml:64
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr ""
+
+#: Header.qml:276
+msgctxt "@action:button Pin widget open if it loses focus, icon-only button, for tooltip/Accessible"
+msgid "Keep Open"
+msgstr ""
+
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr ""
+

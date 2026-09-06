@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 21:16+0800\n"
+"POT-Creation-Date: 2026-09-06 13:18\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,34 +18,34 @@ msgstr ""
 "plasma_applet_org.kde.plasma.taskmanager.pot\n"
 "X-Crowdin-File-ID: 50358\n"
 
-#: backend.cpp:372
+#: backend.cpp:411
 msgid "Recent Downloads"
 msgstr "最近下载"
 
-#: backend.cpp:374
+#: backend.cpp:413
 msgid "Recent Connections"
 msgstr "最近连接"
 
-#: backend.cpp:376
+#: backend.cpp:415
 msgid "Recent Places"
 msgstr "最近位置"
 
-#: backend.cpp:385
+#: backend.cpp:424
 msgctxt "@action:inmenu"
 msgid "Forget Recent Downloads"
 msgstr "忘记最近下载"
 
-#: backend.cpp:387
+#: backend.cpp:426
 msgctxt "@action:inmenu"
 msgid "Forget Recent Connections"
 msgstr "忘记最近连接"
 
-#: backend.cpp:389
+#: backend.cpp:428
 msgctxt "@action:inmenu"
 msgid "Forget Recent Places"
 msgstr "忘记最近位置"
 
-#: backend.cpp:391
+#: backend.cpp:430
 msgctxt "@action:inmenu"
 msgid "Forget Recent Files"
 msgstr "清除最近文件"
@@ -146,7 +146,6 @@ msgid "All Activities"
 msgstr "全部活动"
 
 #: qml/ContextMenu.qml:483
-#, qt-format
 msgctxt "action:inmenu"
 msgid "Move to %1"
 msgstr "移动到 %1"
@@ -311,20 +310,6 @@ msgctxt "@item:inlistbox how wide a task item should be"
 msgid "Wide"
 msgstr "宽"
 
-#: qml/ConfigAppearance.qml:127
-msgctxt ""
-"@label for radio button group, completes sentence: … when panel is low on "
-"space etc."
-msgid "Use multi-column view:"
-msgstr "使用多列视图："
-
-#: qml/ConfigAppearance.qml:128
-msgctxt ""
-"@label for radio button group, completes sentence: … when panel is low on "
-"space etc."
-msgid "Use multi-row view:"
-msgstr "使用多行视图："
-
 #: qml/ConfigAppearance.qml:134
 msgctxt "@option:radio Never use multi-column view for Task Manager"
 msgid "Never"
@@ -390,159 +375,154 @@ msgctxt "@option:check"
 msgid "Use custom task decorations (highlight, indicator)"
 msgstr "使用自定义任务装饰（高光、指示器）"
 
-#: qml/ConfigAppearance.qml:219
+#: qml/ConfigAppearance.qml:224
 msgctxt "@label for checkbox"
 msgid "Theme Decorations:"
 msgstr "主题装饰："
 
-#: qml/ConfigAppearance.qml:220
+#: qml/ConfigAppearance.qml:225
 msgctxt "@option:check"
 msgid "Use KDE theme hover/active decorations"
 msgstr "使用 KDE 主题悬停/激活装饰"
 
-#: qml/ConfigAppearance.qml:230
+#: qml/ConfigAppearance.qml:239
 msgctxt "@label for checkbox"
 msgid "Indicator:"
 msgstr "指示器："
 
-#: qml/ConfigAppearance.qml:231
+#: qml/ConfigAppearance.qml:240
 msgctxt "@option:check"
 msgid "Show custom indicator bar"
 msgstr "显示自定义指示器条"
 
-#: qml/ConfigAppearance.qml:237
+#: qml/ConfigAppearance.qml:246
 msgctxt "@label:listbox"
 msgid "Indicator position:"
 msgstr "指示器位置："
 
-#: qml/ConfigAppearance.qml:241
+#: qml/ConfigAppearance.qml:250
 msgctxt "@item:inlistbox indicator position"
 msgid "Bottom"
 msgstr "底部"
 
-#: qml/ConfigAppearance.qml:242
+#: qml/ConfigAppearance.qml:251
 msgctxt "@item:inlistbox indicator position"
 msgid "Top"
 msgstr "顶部"
 
-#: qml/ConfigAppearance.qml:243
+#: qml/ConfigAppearance.qml:252
 msgctxt "@item:inlistbox indicator position"
 msgid "Left"
 msgstr "左侧"
 
-#: qml/ConfigAppearance.qml:244
+#: qml/ConfigAppearance.qml:253
 msgctxt "@item:inlistbox indicator position"
 msgid "Right"
 msgstr "右侧"
 
-#: qml/ConfigAppearance.qml:253
+#: qml/ConfigAppearance.qml:262
 msgid "Animation"
 msgstr "动画"
 
-#: qml/ConfigAppearance.qml:259
+#: qml/ConfigAppearance.qml:268
 msgctxt "@label:listbox"
 msgid "Animation speed:"
 msgstr "动画速度："
 
-#: qml/ConfigAppearance.qml:262
+#: qml/ConfigAppearance.qml:271
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
 msgstr "极快"
 
-#: qml/ConfigAppearance.qml:263
+#: qml/ConfigAppearance.qml:272
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
 msgstr "快速"
 
-#: qml/ConfigAppearance.qml:264
+#: qml/ConfigAppearance.qml:273
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
 msgstr "正常"
 
-#: qml/ConfigAppearance.qml:265
+#: qml/ConfigAppearance.qml:274
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
 msgstr "慢速"
 
-#: qml/ConfigAppearance.qml:266
+#: qml/ConfigAppearance.qml:275
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Slow"
 msgstr "极慢"
 
-#: qml/ConfigAppearance.qml:272
+#: qml/ConfigAppearance.qml:281
 msgid "Icon hover effect"
 msgstr "图标悬停效果"
 
-#: qml/ConfigAppearance.qml:278
+#: qml/ConfigAppearance.qml:287
 msgctxt "@label:listbox"
 msgid "Hover direction:"
 msgstr "悬停方向："
 
-#: qml/ConfigAppearance.qml:282
+#: qml/ConfigAppearance.qml:291
 msgctxt "@item:inlistbox hover direction"
 msgid "Up"
 msgstr "向上"
 
-#: qml/ConfigAppearance.qml:283
+#: qml/ConfigAppearance.qml:292
 msgctxt "@item:inlistbox hover direction"
 msgid "Down"
 msgstr "向下"
 
-#: qml/ConfigAppearance.qml:284
+#: qml/ConfigAppearance.qml:293
 msgctxt "@item:inlistbox hover direction"
 msgid "Left"
 msgstr "向左"
 
-#: qml/ConfigAppearance.qml:285
+#: qml/ConfigAppearance.qml:294
 msgctxt "@item:inlistbox hover direction"
 msgid "Right"
 msgstr "向右"
 
-#: qml/ConfigAppearance.qml:291
+#: qml/ConfigAppearance.qml:300
 msgid "Show highlight background on hover/active"
 msgstr "hover/激活时显示高光背景"
 
-#: qml/ConfigAppearance.qml:298
+#: qml/ConfigAppearance.qml:307
 msgctxt "@label:listbox"
 msgid "Highlight shape:"
 msgstr "高光形状："
 
-#: qml/ConfigAppearance.qml:302
+#: qml/ConfigAppearance.qml:311
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded Rectangle"
 msgstr "圆角矩形"
 
-#: qml/ConfigAppearance.qml:303
+#: qml/ConfigAppearance.qml:312
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rectangle"
 msgstr "直角矩形"
 
-#: qml/ConfigAppearance.qml:304
+#: qml/ConfigAppearance.qml:313
 msgctxt "@item:inlistbox highlight shape"
 msgid "Circle"
 msgstr "圆形"
 
-#: qml/ConfigAppearance.qml:310
+#: qml/ConfigAppearance.qml:319
 msgctxt "@label:listbox"
 msgid "Highlight color:"
 msgstr "高光颜色："
 
-#: qml/ConfigAppearance.qml:314
+#: qml/ConfigAppearance.qml:323
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
 msgstr "白色"
 
-#: qml/ConfigAppearance.qml:315
+#: qml/ConfigAppearance.qml:324
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
 msgstr "黑色"
 
-#: qml/ConfigAppearance.qml:316
-msgctxt "@item:inlistbox highlight color"
-msgid "Theme Highlight"
-msgstr "主题高亮"
-
-#: qml/ConfigAppearance.qml:322
+#: qml/ConfigAppearance.qml:330
 msgid "Icon scale:"
 msgstr "图标缩放："
 
@@ -577,34 +557,6 @@ msgstr "按程序名称"
 msgctxt "@label:listbox completes sentence like: … cycles through tasks"
 msgid "Clicking grouped task:"
 msgstr "点击分组任务时："
-
-#: qml/ConfigBehavior.qml:84
-msgctxt ""
-"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
-"tasks' "
-msgid "Cycles through tasks"
-msgstr "循环切换任务"
-
-#: qml/ConfigBehavior.qml:85
-msgctxt ""
-"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
-"window previews' "
-msgid "Shows small window previews"
-msgstr "显示窗口预览 (小)"
-
-#: qml/ConfigBehavior.qml:86
-msgctxt ""
-"@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
-"window previews' "
-msgid "Shows large window previews"
-msgstr "显示窗口预览 (大)"
-
-#: qml/ConfigBehavior.qml:87
-msgctxt ""
-"@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
-"list' "
-msgid "Shows textual list"
-msgstr "显示文本列表"
 
 #: qml/ConfigBehavior.qml:98
 msgctxt "@info displayed as InlineMessage"
@@ -668,6 +620,208 @@ msgctxt "@option:check for icons-and-text task manager"
 msgid "Hide launchers after application startup"
 msgstr "应用程序启动后隐藏启动器"
 
+#: qml/ConfigBehavior.qml:188
+msgctxt "@label:listbox completes sentence like: … does nothing"
+msgid "Middle-clicking any task:"
+msgstr "中键点击任意任务："
+
+#: qml/ConfigBehavior.qml:211
+msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
+msgid "Does nothing"
+msgstr "无操作"
+
+#: qml/ConfigBehavior.qml:222
+msgctxt "@option:check mouse wheel task cycling"
+msgid "Skip minimized tasks"
+msgstr "跳过最小化的任务"
+
+#: qml/ConfigBehavior.qml:233
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current desktop"
+msgstr "当前桌面的任务"
+
+#: qml/ConfigBehavior.qml:238
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current activity"
+msgstr "当前活动的任务"
+
+#: qml/ConfigBehavior.qml:243
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current screen"
+msgstr "当前屏幕的任务"
+
+#: qml/ConfigBehavior.qml:248
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "That are minimized"
+msgstr "最小化的任务"
+
+#: qml/ConfigBehavior.qml:258
+msgctxt "@option:check completes sentence: When panel is hidden"
+msgid "Unhide when a window wants attention"
+msgstr "窗口请求注意时，取消隐藏"
+
+#: qml/ConfigBehavior.qml:273
+msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
+msgid "New tasks appear:"
+msgstr "新任务出现位置："
+
+#: qml/ConfigBehavior.qml:277
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the bottom"
+msgstr "在底部显示"
+
+#: qml/ConfigBehavior.qml:281 qml/ConfigBehavior.qml:300
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the right"
+msgstr "右侧"
+
+#: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:298
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the left"
+msgstr "左侧"
+
+#: qml/ConfigBehavior.qml:294
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the top"
+msgstr "在顶部显示"
+
+#: qml/ToolTipInstance.qml:219
+msgctxt "@info:tooltip Close this window"
+msgid "Close window"
+msgstr "关闭窗口"
+
+#: qml/ToolTipInstance.qml:432
+msgctxt "button to unmute app"
+msgid "Unmute %1"
+msgstr "取消静音 %1"
+
+#: qml/ToolTipInstance.qml:433
+msgctxt "button to mute app"
+msgid "Mute %1"
+msgstr "静音 %1"
+
+#: qml/ToolTipInstance.qml:451
+msgctxt "Accessibility data on volume slider"
+msgid "Adjust volume for %1"
+msgstr "调整 %1 音量"
+
+#: qml/ToolTipInstance.qml:467
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: qml/ToolTipInstance.qml:471
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
+
+#: qml/ToolTipInstance.qml:487
+msgctxt "Comma-separated list of desktops"
+msgid "On %1"
+msgstr "位于 %1"
+
+#: qml/ToolTipInstance.qml:490
+msgctxt "Comma-separated list of desktops"
+msgid "Pinned to all desktops"
+msgstr "固定到所有桌面"
+
+#: qml/ToolTipInstance.qml:495
+msgctxt "Which virtual desktop a window is currently on"
+msgid "Available on all activities"
+msgstr "位于全部活动中"
+
+#: qml/ToolTipInstance.qml:505
+msgctxt "Activities a window is currently on (apart from the current one)"
+msgid "Also available on %1"
+msgstr "同时位于 %1"
+
+#: qml/ToolTipInstance.qml:509
+msgctxt "Which activities a window is currently on"
+msgid "Available on %1"
+msgstr "位于 %1"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "取消静音"
+
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "静音"
+
+#: qml/AudioStream.qml:95
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Unmute %1"
+msgstr "取消静音 %1"
+
+#: qml/AudioStream.qml:95
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Mute %1"
+msgstr "静音 %1"
+
+#: qml/Task.qml:300
+msgctxt "@info:usagetip %1 application name"
+msgid "Launch %1"
+msgstr "启动 %1"
+
+#: qml/Task.qml:313
+msgctxt "@info:usagetip %1 task name"
+msgid "Show Task tooltip for %1"
+msgstr "显示 %1 的悬停信息"
+
+#: qml/Task.qml:317
+msgctxt "@info:usagetip %1 task name"
+msgid "Show windows side by side for %1"
+msgstr "并排显示 %1 的窗口"
+
+#: qml/Task.qml:322
+msgctxt "@info:usagetip %1 task name"
+msgid "Open textual list of windows for %1"
+msgstr "打开 %1 的文本窗口列表"
+
+#: qml/ConfigAppearance.qml:127
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-column view:"
+msgstr "使用多列视图："
+
+#: qml/ConfigAppearance.qml:128
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-row view:"
+msgstr "使用多行视图："
+
+#: qml/ConfigBehavior.qml:84
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
+"tasks' "
+msgid "Cycles through tasks"
+msgstr "循环切换任务"
+
+#: qml/ConfigBehavior.qml:85
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
+"window previews' "
+msgid "Shows small window previews"
+msgstr "显示窗口预览 (小)"
+
+#: qml/ConfigBehavior.qml:86
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows large "
+"window previews' "
+msgid "Shows large window previews"
+msgstr "显示窗口预览 (大)"
+
+#: qml/ConfigBehavior.qml:87
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
+"list' "
+msgid "Shows textual list"
+msgstr "显示文本列表"
+
 #: qml/ConfigBehavior.qml:182
 msgctxt ""
 "@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
@@ -680,11 +834,6 @@ msgctxt ""
 "@option:check Part of a sentence: 'Clicking active task minimizes the task'"
 msgid "Minimizes the task"
 msgstr "最小化任务"
-
-#: qml/ConfigBehavior.qml:188
-msgctxt "@label:listbox completes sentence like: … does nothing"
-msgid "Middle-clicking any task:"
-msgstr "中键点击任意任务："
 
 #: qml/ConfigBehavior.qml:192
 msgctxt ""
@@ -735,11 +884,6 @@ msgctxt ""
 msgid "Scrolling behavior:"
 msgstr "滚动行为："
 
-#: qml/ConfigBehavior.qml:211
-msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
-msgid "Does nothing"
-msgstr "无操作"
-
 #: qml/ConfigBehavior.qml:212
 msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
@@ -761,36 +905,11 @@ msgctxt ""
 msgid "Adjusts the hovered task’s volume"
 msgstr "调整光标悬停任务的音量"
 
-#: qml/ConfigBehavior.qml:222
-msgctxt "@option:check mouse wheel task cycling"
-msgid "Skip minimized tasks"
-msgstr "跳过最小化的任务"
-
 #: qml/ConfigBehavior.qml:232
 msgctxt ""
 "@label for checkbox group, completes sentence like: … from current screen"
 msgid "Show only tasks:"
 msgstr "显示的任务："
-
-#: qml/ConfigBehavior.qml:233
-msgctxt "@option:check completes sentence: show only tasks"
-msgid "From the current desktop"
-msgstr "当前桌面的任务"
-
-#: qml/ConfigBehavior.qml:238
-msgctxt "@option:check completes sentence: show only tasks"
-msgid "From the current activity"
-msgstr "当前活动的任务"
-
-#: qml/ConfigBehavior.qml:243
-msgctxt "@option:check completes sentence: show only tasks"
-msgid "From the current screen"
-msgstr "当前屏幕的任务"
-
-#: qml/ConfigBehavior.qml:248
-msgctxt "@option:check completes sentence: show only tasks"
-msgid "That are minimized"
-msgstr "最小化的任务"
 
 #: qml/ConfigBehavior.qml:257
 msgctxt ""
@@ -798,164 +917,40 @@ msgctxt ""
 msgid "When panel is hidden:"
 msgstr "面板隐藏时："
 
-#: qml/ConfigBehavior.qml:258
-msgctxt "@option:check completes sentence: When panel is hidden"
-msgid "Unhide when a window wants attention"
-msgstr "窗口请求注意时，取消隐藏"
+#: qml/Task.qml:305
+msgctxt "@info:tooltip"
+msgid "There is %1 new message."
+msgid_plural "There are %1 new messages."
+msgstr[0] "有 %1 条新消息。"
 
-#: qml/ConfigBehavior.qml:273
-msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
-msgid "New tasks appear:"
-msgstr "新任务出现位置："
+#: qml/Task.qml:326
+msgctxt "@info:usagetip %1 task name"
+msgid "Activate %1"
+msgstr "激活 %1"
 
-#: qml/ConfigBehavior.qml:277
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "On the bottom"
-msgstr "在底部显示"
-
-#: qml/ConfigBehavior.qml:281 qml/ConfigBehavior.qml:300
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "To the right"
-msgstr "右侧"
-
-#: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:298
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "To the left"
-msgstr "左侧"
-
-#: qml/ConfigBehavior.qml:294
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "On the top"
-msgstr "在顶部显示"
-
-#: qml/ToolTipInstance.qml:219
-msgctxt "@info:tooltip Close this window"
-msgid "Close window"
-msgstr "关闭窗口"
-
-#: qml/ToolTipInstance.qml:432
-#, qt-format
-msgctxt "button to unmute app"
-msgid "Unmute %1"
-msgstr "取消静音 %1"
-
-#: qml/ToolTipInstance.qml:433
-#, qt-format
-msgctxt "button to mute app"
-msgid "Mute %1"
-msgstr "静音 %1"
-
-#: qml/ToolTipInstance.qml:451
-#, qt-format
-msgctxt "Accessibility data on volume slider"
-msgid "Adjust volume for %1"
-msgstr "调整 %1 音量"
-
-#: qml/ToolTipInstance.qml:467
-#, qt-format
-msgctxt "volume percentage"
-msgid "%1%"
-msgstr "%1%"
-
-#: qml/ToolTipInstance.qml:471
-msgctxt "only used for sizing, should be widest possible string"
-msgid "100%"
-msgstr "100%"
-
-#: qml/ToolTipInstance.qml:487
-#, qt-format
-msgctxt "Comma-separated list of desktops"
-msgid "On %1"
-msgstr "位于 %1"
-
-#: qml/ToolTipInstance.qml:490
-msgctxt "Comma-separated list of desktops"
-msgid "Pinned to all desktops"
-msgstr "固定到所有桌面"
-
-#: qml/ToolTipInstance.qml:496
-msgctxt "Which virtual desktop a window is currently on"
-msgid "Available on all activities"
-msgstr "位于全部活动中"
-
-#: qml/ToolTipInstance.qml:506
-#, qt-format
-msgctxt "Activities a window is currently on (apart from the current one)"
-msgid "Also available on %1"
-msgstr "同时位于 %1"
-
-#: qml/ToolTipInstance.qml:510
-#, qt-format
-msgctxt "Which activities a window is currently on"
-msgid "Available on %1"
-msgstr "位于 %1"
-
-#: qml/AudioStream.qml:94
-msgctxt "@action:button"
-msgid "Unmute"
-msgstr "取消静音"
-
-#: qml/AudioStream.qml:94
-msgctxt "@action:button"
-msgid "Mute"
-msgstr "静音"
-
-#: qml/AudioStream.qml:95
-#, qt-format
-msgctxt "@info:tooltip %1 is the window title"
-msgid "Unmute %1"
-msgstr "取消静音 %1"
-
-#: qml/AudioStream.qml:95
-#, qt-format
-msgctxt "@info:tooltip %1 is the window title"
-msgid "Mute %1"
-msgstr "静音 %1"
-
-#: qml/TaskBadgeOverlay.qml:101
+#: qml/TaskBadgeOverlay.qml:109
 msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "9k+"
 msgstr "9k+"
 
-#: qml/TaskBadgeOverlay.qml:104
-#, qt-format
+#: qml/TaskBadgeOverlay.qml:112
 msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "%1k"
 msgstr "%1k"
 
-#: qml/Task.qml:284
-#, qt-format
-msgctxt "@info:usagetip %1 application name"
-msgid "Launch %1"
-msgstr "启动 %1"
+#: backend.cpp:327
+msgctxt "Show all user Places"
+msgid "%1 more Place…"
+msgid_plural "%1 more Places…"
+msgstr[0] "其他 %1 个位置…"
 
-#: qml/Task.qml:297
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Show Task tooltip for %1"
-msgstr "显示 %1 的悬停信息"
-
-#: qml/Task.qml:301
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Show windows side by side for %1"
-msgstr "并排显示 %1 的窗口"
-
-#: qml/Task.qml:306
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Open textual list of windows for %1"
-msgstr "打开 %1 的文本窗口列表"
-
-#: qml/Task.qml:310
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Activate %1"
-msgstr "激活 %1"
+#~ msgctxt "@item:inlistbox highlight color"
+#~ msgid "Theme Highlight"
+#~ msgstr "主题高亮"
 
 #~ msgctxt "@label for color button"
 #~ msgid "Indicator color:"
@@ -964,18 +959,6 @@ msgstr "激活 %1"
 #~ msgctxt "@label for color button"
 #~ msgid "Active/Hover indicator color:"
 #~ msgstr "激活/悬停指示器颜色："
-
-#, qt-format
-#~ msgctxt "Show all user Places"
-#~ msgid "%1 more Place…"
-#~ msgid_plural "%1 more Places…"
-#~ msgstr[0] "其他 %1 个位置…"
-
-#, qt-format
-#~ msgctxt "@info:tooltip"
-#~ msgid "There is %1 new message."
-#~ msgid_plural "There are %1 new messages."
-#~ msgstr[0] "有 %1 条新消息。"
 
 #~ msgctxt "@info:usagetip under a set of radio buttons when Touch Mode is on"
 #~ msgid "Automatically set to Large when in Touch mode"
