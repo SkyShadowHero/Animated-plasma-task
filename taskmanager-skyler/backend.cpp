@@ -35,6 +35,8 @@
 #include <QTimer>
 #include <QVersionNumber>
 
+#include <algorithm>
+
 #include <PlasmaActivities/Consumer>
 #include <PlasmaActivities/Stats/Cleaning>
 #include <PlasmaActivities/Stats/ResultSet>
@@ -49,6 +51,37 @@ using namespace KAStats;
 using namespace KAStats::Terms;
 
 static constexpr int NoApplications = 2; // kactivitymanager StatsPlugin WhatToRemember.
+
+namespace
+{
+// KDE stores colors in config files as "R,G,B" (optionally with a fourth alpha
+// component). Returns an invalid QColor for empty or malformed input so callers
+// can chain fallbacks.
+QColor parseKdeColor(const QString &value)
+{
+    if (value.isEmpty()) {
+        return QColor();
+    }
+
+    const QStringList parts = value.split(QLatin1Char(','));
+    if (parts.size() < 3) {
+        return QColor();
+    }
+
+    int components[4] = {0, 0, 0, 255};
+    const qsizetype count = std::min<qsizetype>(parts.size(), 4);
+    for (qsizetype i = 0; i < count; ++i) {
+        bool ok = false;
+        const int component = parts.at(i).trimmed().toInt(&ok);
+        if (!ok) {
+            return QColor();
+        }
+        components[i] = std::clamp(component, 0, 255);
+    }
+
+    return QColor(components[0], components[1], components[2], components[3]);
+}
+} // namespace
 
 Backend::Backend(QObject *parent)
     : QObject(parent)
@@ -70,8 +103,17 @@ Backend::Backend(QObject *parent)
             &KConfigWatcher::configChanged,
             this,
             [this](const KConfigGroup &group, const QByteArrayList &names) {
-                if (group.name() == QLatin1String("General")
-                    && names.contains(QByteArrayLiteral("AccentColor"))) {
+                const QString groupName = group.name();
+                // Custom accent picked in System Settings.
+                if (groupName == QLatin1String("General")
+                    && (names.contains(QByteArrayLiteral("AccentColor"))
+                        // Accent switched back to "from color scheme", or the
+                        // scheme itself was changed: [Colors:*] is rewritten.
+                        || names.contains(QByteArrayLiteral("ColorSchemeHash"))
+                        || names.contains(QByteArrayLiteral("LastUsedCustomAccentColor")))) {
+                    Q_EMIT accentColorChanged();
+                } else if (groupName == QLatin1String("Colors:Selection")
+                           && names.contains(QByteArrayLiteral("BackgroundNormal"))) {
                     Q_EMIT accentColorChanged();
                 }
             });
@@ -80,27 +122,32 @@ Backend::Backend(QObject *parent)
 QColor Backend::accentColor() const
 {
     const KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("kdeglobals"), KConfig::NoGlobals);
-    const QString value = config->group(QStringLiteral("General")).readEntry(QStringLiteral("AccentColor"), QString());
-    if (value.isEmpty()) {
-        return QColor();
+
+    // 1) Explicit custom accent ("Custom" under System Settings → Colors).
+    //    Plasma writes it to [General] AccentColor and leaves the color
+    //    scheme's own selection color untouched.
+    const QColor customAccent =
+        parseKdeColor(config->group(QStringLiteral("General")).readEntry(QStringLiteral("AccentColor"), QString()));
+    if (customAccent.isValid()) {
+        return customAccent;
     }
 
-    const QStringList rgb = value.split(QLatin1Char(','));
-    if (rgb.size() < 3) {
-        return QColor();
+    // 2) Accent follows the active color scheme (the default). Plasma then
+    //    removes AccentColor from kdeglobals entirely, and the accent *is* the
+    //    scheme's selection background — [Colors:Selection] BackgroundNormal.
+    //    Plasma copies the active scheme into kdeglobals, so this also tracks
+    //    scheme switches without resolving the ColorScheme= path ourselves.
+    const QColor schemeAccent = parseKdeColor(
+        config->group(QStringLiteral("Colors:Selection")).readEntry(QStringLiteral("BackgroundNormal"), QString()));
+    if (schemeAccent.isValid()) {
+        return schemeAccent;
     }
 
-    bool okR = false;
-    bool okG = false;
-    bool okB = false;
-    const int r = rgb.at(0).trimmed().toInt(&okR);
-    const int g = rgb.at(1).trimmed().toInt(&okG);
-    const int b = rgb.at(2).trimmed().toInt(&okB);
-    if (!okR || !okG || !okB) {
-        return QColor();
-    }
-
-    return QColor(r, g, b);
+    // 3) Last resort: the most recent custom accent the user ever picked,
+    //    which Plasma keeps around after switching back to the scheme. Better
+    //    than returning an invalid color, which renders as black in QML.
+    return parseKdeColor(
+        config->group(QStringLiteral("General")).readEntry(QStringLiteral("LastUsedCustomAccentColor"), QString()));
 }
 
 Backend::~Backend()

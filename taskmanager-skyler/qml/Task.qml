@@ -933,12 +933,16 @@ PlasmaCore.ToolTipArea {
             visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useCustomIndicator && !task.inPopup && task.model.IsWindow
             z: 5
             // Fixed colors: accent color when hovered/active, gray otherwise.
-            // The backend reads kdeglobals [General] AccentColor directly, so
-            // it follows the user's KDE accent color. Fall back to Kirigami's
-            // highlight color when no accent color is configured.
-            color: (task.model.IsActive || task.containsMouse)
-                ? (tasksRoot.backend.accentColor.a > 0 ? tasksRoot.backend.accentColor : Kirigami.Theme.highlightColor)
-                : "#888888"
+            // The backend resolves the accent from kdeglobals — [General]
+            // AccentColor for a custom accent, otherwise the active color
+            // scheme's [Colors:Selection] BackgroundNormal. Kirigami.Theme is
+            // deliberately not used as a fallback: inside a plasmoid it is not
+            // bound to the Plasma color scheme and resolves to black.
+            readonly property color accent: {
+                const c = tasksRoot.backend.accentColor;
+                return c.a > 0 ? c : "#3daee9"; // Breeze's default accent
+            }
+            color: (task.model.IsActive || task.containsMouse) ? accent : "#888888"
 
             // Horizontal bar (bottom/top): width animates
             // Vertical bar (left/right): height animates

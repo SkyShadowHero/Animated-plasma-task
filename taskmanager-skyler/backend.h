@@ -33,10 +33,12 @@ class Backend : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
-    // The user's KDE accent color from kdeglobals [General] AccentColor.
-    // PlasmaCore.Theme.highlightColor is not exposed as a Q_PROPERTY and
-    // Plasmoid.accentColor is walled off from the user setting, so read it
-    // directly here and expose it with change notification.
+    // The user's effective KDE accent color, resolved from kdeglobals:
+    // [General] AccentColor when a custom accent is set, otherwise the active
+    // color scheme's [Colors:Selection] BackgroundNormal. Neither
+    // PlasmaCore.Theme.highlightColor (removed in Plasma 6) nor
+    // Plasmoid.accentColor (walled off from the user setting) is usable here,
+    // so resolve it directly and expose it with change notification.
     Q_PROPERTY(QColor accentColor READ accentColor NOTIFY accentColorChanged)
 
 public:
