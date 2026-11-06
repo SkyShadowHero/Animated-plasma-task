@@ -948,8 +948,10 @@ PlasmaCore.ToolTipArea {
             // Vertical bar (left/right): height animates
             readonly property bool isVertical: Plasmoid.configuration.indicatorPosition >= 2
             readonly property bool isHighlighted: task.model.IsActive || task.containsMouse
-            // Thicker while hovered only (not when merely active)
-            readonly property real barThickness: task.containsMouse ? 5 : 3
+            // Constant thickness: hovering only recolours the bar, it never
+            // grows. Only the length changes (short when inactive, long when
+            // active), and that one keeps its bounce.
+            readonly property real barThickness: 3
             readonly property real shortExtent: Math.max(6, (isVertical ? iconBox.height : iconBox.width) * 0.2)
             readonly property real longExtent: (isVertical ? iconBox.height : iconBox.width) * (task.model.IsGroupParent ? 0.3 : 0.4)
 
@@ -960,18 +962,17 @@ PlasmaCore.ToolTipArea {
 
             // Dot presence shortens the bar just a little and shifts the combo to be centered
             readonly property bool hasDot: task.model.IsGroupParent
-            // Dot diameter fixed (does not grow with hover thickness) so the
-            // bar+dot combo centering stays stable and the bar does not drift
-            // left when the bar thickens on hover.
-            // Dot width stays fixed; only its height thickens with the bar.
-            readonly property real dotExtent: 3
-            readonly property real dotHeight: task.containsMouse ? 5 : 3
+            // Dot is a small circle matching the bar's thickness, so the
+            // bar+dot combo centering stays stable at all times.
+            readonly property real dotExtent: barThickness
+            readonly property real dotHeight: barThickness
             readonly property real dotSpacing: 2
             // Actual extra width the dot occupies (used for precise centering)
             readonly property real comboExtent: hasDot ? dotExtent + dotSpacing : 0
 
-            // Thickness changes (hover 3->5) must be smooth, not bouncy;
-            // only the length change (active short->long) gets the OutBack bounce.
+            // Only the length changes (inactive short -> active long); that
+            // one keeps the OutBack bounce. The thickness dimension is fixed,
+            // so its Behavior never fires and simply guards against jitter.
             Behavior on width {
                 NumberAnimation { duration: 250 * task.animMul; easing.type: customIndicator.isVertical ? Easing.OutQuad : Easing.OutBack }
             }
@@ -1011,9 +1012,6 @@ PlasmaCore.ToolTipArea {
                 y: customIndicator.isVertical
                     ? customIndicator.height + customIndicator.dotSpacing
                     : (customIndicator.height - height) / 2
-                Behavior on height {
-                    NumberAnimation { duration: 250 * task.animMul; easing.type: Easing.OutQuad }
-                }
             }
         }
 
