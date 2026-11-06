@@ -24,16 +24,37 @@ AbstractKickoffItemDelegate {
 
     property bool compact: Plasmoid.configuration.compactMode
 
-    leftPadding: KickoffSingleton.listItemMetrics.margins.left
-        + (mirrored ? KickoffSingleton.fontMetrics.descent : 0)
-    rightPadding: KickoffSingleton.listItemMetrics.margins.right
-        + (!mirrored ? KickoffSingleton.fontMetrics.descent : 0)
-    // Otherwise it's *too* compact :)
-    topPadding: compact && !isCategoryListItem ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
-    bottomPadding: compact && !isCategoryListItem ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+    // `Plasmoid.configuration` is undefined for the measuring instances that
+    // KickoffSingleton keeps around (a singleton has no applet context), so the
+    // lookup has to be guarded — otherwise every delegate logs a TypeError.
+    readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
 
-    icon.width: compact || root.isCategoryListItem ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.medium
-    icon.height: compact || root.isCategoryListItem ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.medium
+    leftPadding: fluent
+        ? FluentStyle.spacingMedium
+        : KickoffSingleton.listItemMetrics.margins.left
+            + (mirrored ? KickoffSingleton.fontMetrics.descent : 0)
+    rightPadding: fluent
+        ? FluentStyle.spacingSmall
+        : KickoffSingleton.listItemMetrics.margins.right
+            + (!mirrored ? KickoffSingleton.fontMetrics.descent : 0)
+    // Otherwise it's *too* compact :)
+    topPadding: fluent
+        ? FluentStyle.navigationItemPadding
+        : (compact && !isCategoryListItem ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing)
+    bottomPadding: fluent
+        ? FluentStyle.navigationItemPadding
+        : (compact && !isCategoryListItem ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing)
+
+    // Note: both expressions are written out because the contentItem declares an
+    // item with id `icon`, which shadows this `icon` group property; using
+    // `icon.height: icon.width` here would resolve to the item and make its
+    // implicit size loop.
+    icon.width: fluent && root.isCategoryListItem
+        ? FluentStyle.navigationIconSize
+        : (compact || root.isCategoryListItem ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.medium)
+    icon.height: fluent && root.isCategoryListItem
+        ? FluentStyle.navigationIconSize
+        : (compact || root.isCategoryListItem ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.medium)
 
     labelTruncated: label.truncated
     descriptionTruncated: descriptionLabel.truncated
@@ -152,15 +173,20 @@ AbstractKickoffItemDelegate {
         anchors.right: root.right
         anchors.verticalCenter: root.verticalCenter
 
-        active: root.isSeparator
+        active: root.isSeparator && !root.fluent
 
         asynchronous: false
-        sourceComponent: KSvg.SvgItem {
-            width: parent.width
-            height: KickoffSingleton.lineSvg.horLineHeight
+        sourceComponent: themeSeparator
 
-            svg: KickoffSingleton.lineSvg
-            elementId: "horizontal-line"
+        Component {
+            id: themeSeparator
+            KSvg.SvgItem {
+                width: parent.width
+                height: KickoffSingleton.lineSvg.horLineHeight
+
+                svg: KickoffSingleton.lineSvg
+                elementId: "horizontal-line"
+            }
         }
     }
 }

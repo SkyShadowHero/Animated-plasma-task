@@ -10,7 +10,6 @@ import QtQuick.Templates as T
 import org.kde.plasma.private.kicker as Kicker
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasmoid
-import org.kde.plasma.extras as PlasmaExtras
 
 BasePage {
     id: root
@@ -57,66 +56,28 @@ BasePage {
         // No ListView highlight — current item uses per-delegate background (instant).
         view.highlight: null
 
-        // Hover-follow sliding bar: tracks mouse position smoothly
-        property int hoveredIndex: -1
-        property int hoveredY: 0
-        property int hoveredHeight: 0
-        property bool hoverShowing: false
-        Timer {
-            id: hoverHideTimer
-            interval: 200
-            onTriggered: sideBar.hoverShowing = false
-        }
-        PlasmaExtras.Highlight {
-            id: hoverHighlight
-            height: sideBar.hoveredHeight
-            width: sideBar.view.availableWidth
-            x: sideBar.view.contentItem?.x ?? 0
-            y: sideBar.hoveredY
-            active: false
-            hovered: true
-            opacity: sideBar.hoverShowing && !Plasmoid.configuration.switchCategoryOnHover ? 1 : 0
-            visible: opacity > 0
-            z: 1
-            Behavior on y {
-                NumberAnimation { duration: 100; easing.type: Easing.OutQuad }
-            }
-            Behavior on height {
-                NumberAnimation { duration: 100; easing.type: Easing.OutQuad }
-            }
-            Behavior on opacity {
-                NumberAnimation { duration: 150; easing.type: Easing.OutQuad }
-            }
+        // Fluent: accent pill marking the selected category, sliding between
+        // rows instead of appearing instantly.
+        FluentSideBarPill {
+            listView: sideBar
         }
 
         delegate: KickoffListDelegate {
             id: sideBarDelegate
             width: view.availableWidth
             isCategoryListItem: true
-            // Current item background: instant snap
-            background: PlasmaExtras.Highlight {
+            // Current item background: the Fluent state layer fades in, the
+            // theme highlight keeps its old instant behaviour. Hover is handled
+            // per row — there is no highlight that follows the pointer.
+            background: FluentHighlight {
                 anchors.fill: parent
                 active: false
-                hovered: sideBarDelegate.ListView.isCurrentItem
-                visible: hovered
-            }
-
-            // Track hover for the sliding bar
-            Connections {
-                target: sideBarDelegate.mouseArea
-                function onEntered() {
-                    hoverHideTimer.stop();
-                    sideBar.hoverShowing = true;
-                    sideBar.hoveredIndex = sideBarDelegate.index;
-                    // Map the delegate's origin to the highlight's parent
-                    // coordinate space, so the highlight stays aligned even
-                    // when the list is scrolled.
-                    sideBar.hoveredY = sideBarDelegate.mapToItem(hoverHighlight.parent, 0, 0).y;
-                    sideBar.hoveredHeight = sideBarDelegate.height;
-                }
-                function onExited() {
-                    hoverHideTimer.restart();
-                }
+                hovered: sideBarDelegate.mouseArea.containsMouse
+                selected: sideBarDelegate.ListView.isCurrentItem
+                // The selected category is a white card on the light menu
+                // surface; a grey state layer just looked washed out here.
+                selectedColor: FluentStyle.selectionSurface
+                radius: FluentStyle.radiusControl
             }
 
             component FavoritesDropArea: DropArea {

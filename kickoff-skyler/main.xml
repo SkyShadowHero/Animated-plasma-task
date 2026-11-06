@@ -82,12 +82,12 @@
             <default>true</default>
         </entry>
         <entry name="useCustomDecorations" type="Bool">
-            <label>Master switch for all custom launcher decorations (highlight background).</label>
-            <default>false</default>
+            <label>Master switch for all custom launcher decorations (highlight background and its animation).</label>
+            <default>true</default>
         </entry>
         <entry name="useHighlight" type="Bool">
             <label>Whether to show a custom highlight background behind the icon when hovered.</label>
-            <default>false</default>
+            <default>true</default>
         </entry>
         <entry name="highlightShape" type="Enum">
             <label>Shape of the hover highlight background. 0=Rounded rectangle, 1=Rectangle, 2=Circle.</label>
@@ -99,12 +99,23 @@
             <default>0</default>
         </entry>
         <entry name="highlightColor" type="Enum">
-            <label>Color of the hover highlight background. 0=White, 1=Black.</label>
+            <label>Color of the hover highlight background. 0=White, 1=Black, 2=Automatic (follow the system color scheme).</label>
             <choices>
                 <choice name="White"/>
                 <choice name="Black"/>
+                <choice name="Automatic"/>
             </choices>
-            <default>0</default>
+            <default>2</default>
+        </entry>
+        <entry name="highlightScale" type="Int">
+            <label>Size of the hover highlight background in percent of the icon box (50-200).</label>
+            <default>90</default>
+            <min>50</min>
+            <max>200</max>
+        </entry>
+        <entry name="useFluentStyle" type="Bool">
+            <label>Whether to style the launcher popup after Fluent Design (Windows 11): rounded state-layer highlights on items, an accent pill on the category sidebar, a sliding tab indicator and animated hover/focus transitions.</label>
+            <default>true</default>
         </entry>
     </group>
 </kcfg>

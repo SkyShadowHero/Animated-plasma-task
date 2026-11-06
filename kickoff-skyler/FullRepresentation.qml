@@ -24,6 +24,11 @@ EmptyPage {
     id: root
 
     // kickoff is Kickoff.qml
+
+    // No custom surface here: the popup's background is the theme dialog
+    // background itself (see Plasmoid.backgroundHints in main.qml), so the
+    // content pulls out over that frame exactly like the stock launcher. This
+    // is what removes the "second layer" — there is only ever one surface.
     leftPadding: -kickoff.backgroundMetrics.leftPadding
     rightPadding: -kickoff.backgroundMetrics.rightPadding
     topPadding: 0

@@ -197,12 +197,19 @@
       <default>0</default>
     </entry>
     <entry name="highlightColor" type="Enum">
-      <label>Color of the hover/active highlight background. 0=White, 1=Black.</label>
+      <label>Color of the hover/active highlight background. 0=White, 1=Black, 2=Automatic (follow the system color scheme).</label>
       <choices>
         <choice name="White"/>
         <choice name="Black"/>
+        <choice name="Automatic"/>
       </choices>
-      <default>0</default>
+      <default>2</default>
+    </entry>
+    <entry name="highlightScale" type="Int">
+      <label>Size of the hover/active highlight background in percent of the icon box (50-200).</label>
+      <default>90</default>
+      <min>50</min>
+      <max>200</max>
     </entry>
     <entry name="iconScale" type="Int">
       <label>Icon scale in percent (20-150).</label>

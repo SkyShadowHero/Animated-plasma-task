@@ -134,14 +134,8 @@ PlasmoidItem {
         }
     }
 
-    // Animation speed multiplier (mirrors Task.qml)
-    readonly property real animMul: {
-        switch (Plasmoid.configuration.animationSpeed) {
-            case 0: return 0.5;
-            case 2: return 1.5;
-            default: return 1.0;
-        }
-    }
+    // Animation speed multiplier (shared with Task.qml via TaskTools.js)
+    readonly property real animMul: TaskManagerApplet.TaskTools.animationMultiplier(Plasmoid.configuration.animationSpeed)
 
     readonly property TaskManager.TasksModel tasksModel: TaskManager.TasksModel {
         id: tasksModel

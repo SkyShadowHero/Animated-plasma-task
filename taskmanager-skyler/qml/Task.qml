@@ -87,14 +87,31 @@ PlasmaCore.ToolTipArea {
     property var winIdList: model.WinIdList
     property int lastWinCount: winIdList ? winIdList.length : 0
 
-    // Animation speed: 0=Fast, 1=Normal, 2=Slow.  Scales entry+minimize only.
-    readonly property real animMul: {
-        switch (Plasmoid.configuration.animationSpeed) {
-            case 0: return 0.5;
-            case 2: return 1.5;
-            default: return 1.0;
-        }
-    }
+    // Animation speed multiplier. The mapping lives in TaskTools.js so this
+    // file and main.qml (ghost icons) always agree on what each step means.
+    readonly property real animMul: TaskManagerApplet.TaskTools.animationMultiplier(Plasmoid.configuration.animationSpeed)
+
+    // Icons are drawn at `iconScale` percent, so pixel offsets next to them
+    // have to follow: 5px is a gentle lift under a 100% icon and a shove
+    // under a 20% one.
+    readonly property real iconScaleFactor: Plasmoid.configuration.iconScale / 100.0
+    readonly property real hoverLift: Math.round(5 * iconScaleFactor)
+    // Relative hover zoom. The iconScale transform below multiplies on top of
+    // this, so the two compose instead of double-applying: 100% + hover = 1.10.
+    readonly property real hoverScale: 1.10
+
+    // Whether the system colour scheme is dark, used by the "Automatic"
+    // highlight colour. Kirigami.Theme.backgroundColor is the app palette's
+    // window colour, i.e. kdeglobals [Colors:Window] BackgroundNormal, so it
+    // flips when the user switches scheme. (Kirigami.Theme.highlightColor, by
+    // contrast, is NOT wired to the Plasma accent — see Backend::accentColor.)
+    readonly property bool darkTheme: Kirigami.Theme.backgroundColor.hsvValue < 0.5
+    readonly property bool highlightUsesWhite: TaskManagerApplet.TaskTools.highlightUsesWhite(Plasmoid.configuration.highlightColor, darkTheme)
+
+    // Mask size relative to the icon box, from the `highlightScale` setting
+    // (percent, 50-200). One property so the active and the hover mask can
+    // never end up at different sizes.
+    readonly property real highlightRatio: TaskManagerApplet.TaskTools.highlightRatio(Plasmoid.configuration.highlightScale)
 
     // Whether the plasma theme's "Widgets/Tasks" frame decoration is used.
     // Null-safe: reading Plasmoid.configuration lazily inside
@@ -105,7 +122,9 @@ PlasmaCore.ToolTipArea {
 
     // Suppress minimise animation for newly-appeared tasks
     // (e.g. virtual-desktop switch where IsMinimized arrives set).
-    Timer { id: entryCooldown; interval: 300 }
+    // Scaled with the speed setting: a slower entry animation has to be
+    // covered by a longer window, or the task bounces in the middle of it.
+    Timer { id: entryCooldown; interval: 300 * task.animMul }
 
     readonly property bool audioIndicatorsEnabled: Plasmoid.configuration.indicateAudioStreams
     readonly property bool tooltipControlsEnabled: Plasmoid.configuration.tooltipControls
@@ -727,8 +746,9 @@ PlasmaCore.ToolTipArea {
             Translate {
                 // Hover lift: direction from config (0=Up, 1=Down, 2=Left, 3=Right)
                 readonly property int dir: Plasmoid.configuration.hoverDirection
-                x: (Plasmoid.configuration.hoverEffect && task.containsMouse && (dir === 2 || dir === 3)) ? (dir === 2 ? -5 : 5) : 0
-                y: (Plasmoid.configuration.hoverEffect && task.containsMouse && (dir === 0 || dir === 1)) ? (dir === 0 ? -5 : 5) : 0
+                readonly property bool hovering: Plasmoid.configuration.hoverEffect && task.containsMouse
+                x: (hovering && (dir === 2 || dir === 3)) ? (dir === 2 ? -task.hoverLift : task.hoverLift) : 0
+                y: (hovering && (dir === 0 || dir === 1)) ? (dir === 0 ? -task.hoverLift : task.hoverLift) : 0
                 Behavior on x {
                     NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
                 }
@@ -739,8 +759,9 @@ PlasmaCore.ToolTipArea {
             Scale {
                 origin.x: iconBox.width / 2
                 origin.y: iconBox.height / 2
-                xScale: (Plasmoid.configuration.hoverEffect && task.containsMouse) ? 1.10 : 1.0
-                yScale: (Plasmoid.configuration.hoverEffect && task.containsMouse) ? 1.10 : 1.0
+                readonly property bool hovering: Plasmoid.configuration.hoverEffect && task.containsMouse
+                xScale: hovering ? task.hoverScale : 1.0
+                yScale: hovering ? task.hoverScale : 1.0
                 Behavior on xScale {
                     NumberAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
                 }
@@ -751,9 +772,8 @@ PlasmaCore.ToolTipArea {
             Scale {
                 origin.x: iconBox.width / 2
                 origin.y: iconBox.height / 2
-                readonly property real scale: Plasmoid.configuration.iconScale / 100.0
-                xScale: scale
-                yScale: scale
+                xScale: task.iconScaleFactor
+                yScale: task.iconScaleFactor
             }
         ]
 
@@ -830,19 +850,20 @@ PlasmaCore.ToolTipArea {
         // through opacity so it can fade in/out smoothly.
         visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
             && !task.inPopup
-        // Icon-only: slightly smaller than the icon, centered (Windows-style
-        // highlight). Icon+text: the highlight spans the whole icon+text block
-        // horizontally (icon left edge → text right edge) so both stay inside;
-        // vertically it keeps the same 0.9 proportion as icon-only.
+        // Icon-only: the mask is a square scaled from the icon box. Icon+text:
+        // the block spans icon + text and is scaled from that block, so 100%
+        // reproduces the old full-block width and anything below it shrinks
+        // around the same centre. Both modes scale uniformly and stay
+        // centred, so changing `highlightScale` never shifts the mask sideways.
         // Anchored to layout geometry (not to the icon's transforms), so the
         // hover / entry / minimize / press animations never move it.
         readonly property bool wholeHighlight: !task.tasksRoot.iconsOnly
         readonly property real contentW: task.width - taskFrame.margins.left - taskFrame.margins.right
         readonly property real contentH: task.height - taskFrame.margins.top - taskFrame.margins.bottom
-        x: wholeHighlight ? taskFrame.margins.left : iconBox.x + (iconBox.width - width) / 2
+        x: wholeHighlight ? taskFrame.margins.left + (contentW - width) / 2 : iconBox.x + (iconBox.width - width) / 2
         y: wholeHighlight ? taskFrame.margins.top + (contentH - height) / 2 : iconBox.y + (iconBox.height - height) / 2
-        width: wholeHighlight ? contentW : iconBox.width * 0.9
-        height: wholeHighlight ? contentH * 0.9 : iconBox.height * 0.9
+        width: (wholeHighlight ? contentW : iconBox.width) * task.highlightRatio
+        height: (wholeHighlight ? contentH : iconBox.height) * task.highlightRatio
         // Soft shadow like the Windows taskbar highlight
         layer.enabled: true
         layer.effect: MultiEffect {
@@ -861,12 +882,13 @@ PlasmaCore.ToolTipArea {
             }
         }
 
-        // Active uses the more opaque variant; color: White (default) or Black
-        readonly property int hColor: Plasmoid.configuration.highlightColor
-        readonly property real activeOpacity: hColor === 0 ? 0.9 : 0.8
-        color: hColor === 1
-            ? Qt.rgba(0, 0, 0, activeOpacity)
-            : Qt.rgba(1, 1, 1, activeOpacity)
+        // Active uses the more opaque variant. The White/Black/Automatic
+        // choice is resolved once on the task (task.highlightUsesWhite).
+        readonly property real activeOpacity: TaskManagerApplet.TaskTools.highlightAlpha(
+            Plasmoid.configuration.highlightColor, task.darkTheme, true)
+        color: task.highlightUsesWhite
+            ? Qt.rgba(1, 1, 1, activeOpacity)
+            : Qt.rgba(0, 0, 0, activeOpacity)
         Behavior on color {
             ColorAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
         }
@@ -888,16 +910,16 @@ PlasmaCore.ToolTipArea {
         readonly property bool wholeHighlight: !task.tasksRoot.iconsOnly
         readonly property real contentW: task.width - taskFrame.margins.left - taskFrame.margins.right
         readonly property real contentH: task.height - taskFrame.margins.top - taskFrame.margins.bottom
-        x: wholeHighlight ? taskFrame.margins.left : iconBox.x + (iconBox.width - width) / 2
+        x: wholeHighlight ? taskFrame.margins.left + (contentW - width) / 2 : iconBox.x + (iconBox.width - width) / 2
         y: wholeHighlight ? taskFrame.margins.top + (contentH - height) / 2 : iconBox.y + (iconBox.height - height) / 2
-        width: wholeHighlight ? contentW : iconBox.width * 0.9
-        height: wholeHighlight ? contentH * 0.9 : iconBox.height * 0.9
-        // Slightly stronger opacity than before; color: White (default) or Black
-        readonly property int hColor: Plasmoid.configuration.highlightColor
-        readonly property real hoverOpacity: hColor === 0 ? 0.95 : 0.85
-        color: hColor === 1
-            ? Qt.rgba(0, 0, 0, hoverOpacity)
-            : Qt.rgba(1, 1, 1, hoverOpacity)
+        width: (wholeHighlight ? contentW : iconBox.width) * task.highlightRatio
+        height: (wholeHighlight ? contentH : iconBox.height) * task.highlightRatio
+        // Slightly stronger opacity than the active mask; same colour choice.
+        readonly property real hoverOpacity: TaskManagerApplet.TaskTools.highlightAlpha(
+            Plasmoid.configuration.highlightColor, task.darkTheme, false)
+        color: task.highlightUsesWhite
+            ? Qt.rgba(1, 1, 1, hoverOpacity)
+            : Qt.rgba(0, 0, 0, hoverOpacity)
         radius: {
             switch (Plasmoid.configuration.highlightShape) {
             case 1: return 0; // Rectangle

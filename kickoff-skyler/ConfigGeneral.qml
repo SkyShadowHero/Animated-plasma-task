@@ -45,6 +45,8 @@ KCM.SimpleKCM {
     property alias cfg_useHighlight: useHighlightCheckbox.checked
     property alias cfg_highlightShape: highlightShapeCombo.currentIndex
     property alias cfg_highlightColor: highlightColorCombo.currentIndex
+    property alias cfg_highlightScale: highlightScaleSpin.value
+    property alias cfg_useFluentStyle: useFluentStyleCheckbox.checked
 
     Kirigami.FormLayout {
         QQC2.Button {
@@ -241,8 +243,32 @@ KCM.SimpleKCM {
             enabled: useCustomDecorationsCheckbox.checked && useHighlightCheckbox.checked
             model: [
                 i18nc("@item:inlistbox highlight color", "White"),
-                i18nc("@item:inlistbox highlight color", "Black")
+                i18nc("@item:inlistbox highlight color", "Black"),
+                i18nc("@item:inlistbox highlight color follows the system color scheme", "Automatic (follow color scheme)")
             ]
+        }
+
+        QQC2.SpinBox {
+            id: highlightScaleSpin
+            Kirigami.FormData.label: i18nc("@label:spinbox", "Highlight size:")
+            enabled: useCustomDecorationsCheckbox.checked && useHighlightCheckbox.checked
+            from: 50
+            to: 200
+            stepSize: 5
+            value: 90
+            editable: true
+            textFromValue: function(val) { return val + "%" }
+            valueFromText: function(txt) { return parseInt(txt) || 90 }
+        }
+
+        Item {
+            Kirigami.FormData.isSection: true
+        }
+
+        QQC2.CheckBox {
+            id: useFluentStyleCheckbox
+            text: i18nc("@option:check", "Use Fluent (Windows 11) styling for the popup")
+            checked: true
         }
 
         QQC2.CheckBox {

@@ -167,3 +167,39 @@ function handleFavoriteAction(actionId, actionArgument) {
         favoriteModel.setFavoriteOn(favoriteId, actionArgument.favoriteActivity);
     }
 }
+
+// ── Custom decoration: hover highlight background ─────────────────────
+// Mirrors taskmanager-skyler/qml/code/TaskTools.js: the same Enum from
+// main.xml (0=White, 1=Black, 2=Automatic) and the same mask proportion, so
+// the launcher highlight and the taskbar highlight are indistinguishable.
+function highlightUsesWhite(choice, isDarkTheme) {
+    if (choice === 0) {
+        return true;
+    }
+    if (choice === 1) {
+        return false;
+    }
+    return !isDarkTheme; // Automatic
+}
+
+function highlightAlpha(choice, isDarkTheme, active) {
+    const white = highlightUsesWhite(choice, isDarkTheme);
+    if (active) {
+        return white ? 0.9 : 0.8;
+    }
+    return white ? 0.95 : 0.85;
+}
+
+// Mask size from the `highlightScale` setting (percent, 50-200, default 90).
+// Same implementation and same clamp as taskmanager-skyler/qml/code/TaskTools.js
+// so both widgets always agree on how big the mask is.
+const highlightRatioDefault = 0.9;
+
+function highlightRatio(scalePercent) {
+    const value = (scalePercent || 0) / 100.0;
+    if (!(value > 0)) {
+        return highlightRatioDefault;
+    }
+    return Math.min(2.0, Math.max(0.5, value));
+}
+

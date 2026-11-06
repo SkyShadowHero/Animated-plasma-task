@@ -41,6 +41,7 @@ KCMUtils.SimpleKCM {
     property alias cfg_useHighlight: useHighlight.checked
     property alias cfg_highlightShape: highlightShape.currentIndex
     property alias cfg_highlightColor: highlightColor.currentIndex
+    property alias cfg_highlightScale: highlightScale.value
     property alias cfg_iconScale: iconScale.value
 
     Component.onCompleted: {
@@ -321,8 +322,22 @@ KCMUtils.SimpleKCM {
             enabled: useCustomDecorations.checked && useHighlight.checked
             model: [
                 i18nc("@item:inlistbox highlight color", "White"),
-                i18nc("@item:inlistbox highlight color", "Black")
+                i18nc("@item:inlistbox highlight color", "Black"),
+                i18nc("@item:inlistbox highlight color follows the system color scheme", "Automatic (follow color scheme)")
             ]
+        }
+
+        QQC2.SpinBox {
+            id: highlightScale
+            Kirigami.FormData.label: i18nc("@label:spinbox", "Highlight size:")
+            enabled: useCustomDecorations.checked && useHighlight.checked
+            from: 50
+            to: 200
+            stepSize: 5
+            value: 90
+            editable: true
+            textFromValue: function(val) { return val + "%" }
+            valueFromText: function(txt) { return parseInt(txt) || 90 }
         }
 
         QQC2.SpinBox {

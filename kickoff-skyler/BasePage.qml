@@ -79,18 +79,41 @@ FocusScope {
             }
         }
     }
+    readonly property bool fluent: Plasmoid.configuration.useFluentStyle
+
+    // The theme draws a full-height rule with an SVG, gutter included. Fluent
+    // replaces both: the SVG column collapses to zero width (the navigation
+    // pane should not carry a gutter) and the rule itself is redrawn flat, see
+    // below.
     KSvg.SvgItem {
         id: separator
+        visible: !root.fluent
         anchors {
             top: parent.top
             left: sideBarFilter.right
             bottom: parent.bottom
         }
         LayoutMirroring.enabled: kickoff.sideBarOnRight
-        implicitWidth: naturalSize.width
+        implicitWidth: root.fluent ? 0 : naturalSize.width
         implicitHeight: implicitWidth
         elementId: "vertical-line"
         svg: KickoffSingleton.lineSvg
+    }
+    // Fluent: a flat 1px rule instead of the themed SVG (which is hidden
+    // above). It is drawn over the boundary rather than taking part in the
+    // layout, so the navigation pane does not get a gutter. Kept on a whole
+    // pixel — a half-pixel offset would render it as two grey columns.
+    Rectangle {
+        visible: root.fluent
+        anchors {
+            top: parent.top
+            left: sideBarFilter.right
+            bottom: parent.bottom
+        }
+        LayoutMirroring.enabled: kickoff.sideBarOnRight
+        width: FluentStyle.strokeWidth
+        color: FluentStyle.divider
+        z: 1
     }
     Loader {
         id: contentAreaLoader

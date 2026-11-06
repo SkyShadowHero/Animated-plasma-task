@@ -27,9 +27,19 @@ import "code/tools.js" as Tools
 PlasmoidItem {
     id: kickoff
 
-    // Hide the KDE theme applet background (hover/expanded highlight) when
-    // theme decorations are disabled.
-    Plasmoid.backgroundHints: Plasmoid.configuration.useThemeDecorations ? PlasmaCore.Types.DefaultBackground : PlasmaCore.Types.NoBackground
+    // The popup uses the theme's own dialog background — the "menu background"
+    // itself — as its one and only surface. Fluent mode used to paint a card on
+    // top of it, which is exactly what made the popup look like two stacked
+    // layers (the card, plus whatever the heading frames drew over it). Only
+    // the decorations drawn *inside* the surface are restyled.
+    Plasmoid.backgroundHints: {
+        if (Plasmoid.configuration.useFluentStyle) {
+            return PlasmaCore.Types.DefaultBackground;
+        }
+        return Plasmoid.configuration.useThemeDecorations
+            ? PlasmaCore.Types.DefaultBackground
+            : PlasmaCore.Types.NoBackground;
+    }
 
     width: Kirigami.Units.iconSizes.huge
     height: Kirigami.Units.iconSizes.huge
@@ -47,6 +57,13 @@ PlasmoidItem {
         PlasmaCore.Types.LeftEdge,
     ].includes(Plasmoid.location)
     readonly property bool vertical: Plasmoid.formFactor === PlasmaCore.Types.Vertical
+
+    // Custom decoration colour, resolved exactly like the task manager (see
+    // Tools.highlightUsesWhite): White / Black / Automatic by colour scheme.
+    // Kirigami.Theme.backgroundColor is the app palette's window colour, i.e.
+    // kdeglobals [Colors:Window], so this follows the system light/dark mode.
+    readonly property bool darkTheme: Kirigami.Theme.backgroundColor.hsvValue < 0.5
+    readonly property bool highlightUsesWhite: Tools.highlightUsesWhite(Plasmoid.configuration.highlightColor, darkTheme)
 
     // Used to prevent the width from changing frequently when the scrollbar appears or disappears
     readonly property bool mayHaveGridWithScrollBar: Plasmoid.configuration.applicationsDisplay === 0
@@ -256,6 +273,10 @@ PlasmoidItem {
 
         hoverEnabled: true
 
+        // Fluent uses a much shallower press than the KDE theme (0.96 vs 0.85):
+        // a panel icon should dip, not squash.
+        readonly property real pressScaleTarget: Plasmoid.configuration.useFluentStyle ? 0.96 : 0.85
+
         transform: [
             Scale {
                 id: pressScale
@@ -285,8 +306,8 @@ PlasmoidItem {
 
         ParallelAnimation {
             id: pressDown
-            NumberAnimation { target: pressScale; property: "xScale"; to: 0.85; duration: 80; easing.type: Easing.OutQuad }
-            NumberAnimation { target: pressScale; property: "yScale"; to: 0.85; duration: 80; easing.type: Easing.OutQuad }
+            NumberAnimation { target: pressScale; property: "xScale"; to: compactRoot.pressScaleTarget; duration: 80; easing.type: Easing.OutQuad }
+            NumberAnimation { target: pressScale; property: "yScale"; to: compactRoot.pressScaleTarget; duration: 80; easing.type: Easing.OutQuad }
         }
         ParallelAnimation {
             id: pressUp
@@ -393,18 +414,19 @@ PlasmoidItem {
             id: launcherHighlight
             z: -1
             anchors.centerIn: compactRep
-            // Use the container (parent) size — the most reliable binding —
-            // and scale up slightly so it reads at least as large as the
-            // taskbar highlight.
-            width: Math.min(compactRep.width, compactRep.height) * 1.05
+            // Same proportion and the same `highlightScale` setting as the
+            // taskbar masks (Tools.highlightRatio) so the launcher and the
+            // tasks read as one set on the panel: 90% of the icon box by
+            // default, instead of the old fixed 1.05 that made the launcher
+            // highlight noticeably larger than the task one.
+            width: Math.min(compactRep.width, compactRep.height) * Tools.highlightRatio(Plasmoid.configuration.highlightScale)
             height: width
             visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
-            readonly property int hColor: Plasmoid.configuration.highlightColor
-            readonly property real hoverOpacity: hColor === 0 ? 0.95 : 0.85
-            readonly property real activeOpacity: hColor === 0 ? 0.9 : 0.8
-            color: hColor === 1
-                ? Qt.rgba(0, 0, 0, kickoff.expanded ? activeOpacity : hoverOpacity)
-                : Qt.rgba(1, 1, 1, kickoff.expanded ? activeOpacity : hoverOpacity)
+            readonly property real maskAlpha: Tools.highlightAlpha(
+                Plasmoid.configuration.highlightColor, kickoff.darkTheme, kickoff.expanded)
+            color: kickoff.highlightUsesWhite
+                ? Qt.rgba(1, 1, 1, maskAlpha)
+                : Qt.rgba(0, 0, 0, maskAlpha)
             Behavior on color {
                 ColorAnimation { duration: 120; easing.type: Easing.OutQuad }
             }
@@ -423,6 +445,21 @@ PlasmoidItem {
                 shadowBlur: 0.15
                 shadowVerticalOffset: 1
                 shadowHorizontalOffset: 0
+            }
+            // Fluent: the mask grows into place instead of only fading in.
+            // Disabled with the style so the plain look stays a pure crossfade.
+            transform: Scale {
+                origin.x: launcherHighlight.width / 2
+                origin.y: launcherHighlight.height / 2
+                readonly property bool engaged: compactRoot.containsMouse || kickoff.expanded
+                xScale: (!Plasmoid.configuration.useFluentStyle || engaged) ? 1 : 0.9
+                yScale: xScale
+                Behavior on xScale {
+                    NumberAnimation { duration: FluentStyle.durationFast; easing.type: FluentStyle.easingStandard }
+                }
+                Behavior on yScale {
+                    NumberAnimation { duration: FluentStyle.durationFast; easing.type: FluentStyle.easingStandard }
+                }
             }
             opacity: (compactRoot.containsMouse || kickoff.expanded) ? 1 : 0
             Behavior on opacity {

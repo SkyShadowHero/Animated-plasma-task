@@ -522,6 +522,15 @@ msgctxt "@item:inlistbox highlight color"
 msgid "Black"
 msgstr "黑色"
 
+#: qml/ConfigAppearance.qml:325
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "自动（跟随系统配色）"
+
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "遮罩大小："
+
 #: qml/ConfigAppearance.qml:330
 msgid "Icon scale:"
 msgstr "图标缩放："

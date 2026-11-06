@@ -13,6 +13,67 @@
 // Can't be `let`, or else QML counterpart won't be able to assign to it.
 var taskManagerInstanceCount = 0;
 
+// ── Custom decoration: hover/active highlight background ──────────────
+// `highlightColor` is the Enum declared in main.xml:
+// 0=White, 1=Black, 2=Automatic (follow the system colour scheme).
+// Both the active and the hover mask go through these helpers so they can
+// never disagree, and kickoff-skyler/code/tools.js carries the same helpers
+// for the launcher so all three widgets resolve the colour identically.
+function highlightUsesWhite(choice, isDarkTheme) {
+    if (choice === 0) {
+        return true;
+    }
+    if (choice === 1) {
+        return false;
+    }
+    return !isDarkTheme; // Automatic
+}
+
+function highlightAlpha(choice, isDarkTheme, active) {
+    const white = highlightUsesWhite(choice, isDarkTheme);
+    if (active) {
+        return white ? 0.9 : 0.8;
+    }
+    return white ? 0.95 : 0.85;
+}
+
+// Size of the mask relative to the icon box, driven by the `highlightScale`
+// setting (percent, 50-200, default 90 = the old fixed value). Shared with the
+// launcher so the taskbar and the launcher do not read as two different sizes
+// on one panel. The clamp lives here so a hand-edited config file cannot push
+// the mask to something absurd.
+const highlightRatioDefault = 0.9;
+
+function highlightRatio(scalePercent) {
+    const value = (scalePercent || 0) / 100.0;
+    if (!(value > 0)) {
+        return highlightRatioDefault;
+    }
+    return Math.min(2.0, Math.max(0.5, value));
+}
+
+// Duration multiplier for the `animationSpeed` setting. Shared by Task.qml
+// (entry / minimize / hover animations) and main.qml (ghost icons) so the two
+// can never drift apart. Indices match the Enum declared in main.xml and the
+// combo box in ConfigAppearance.qml:
+// 0=VeryFast, 1=Fast, 2=Normal, 3=Slow, 4=VerySlow.
+// 1.0 is the base duration written into the animations themselves, so every
+// step is a real step and Normal is not slower than Fast.
+function animationMultiplier(speed) {
+    switch (speed) {
+    case 0:
+        return 0.5;
+    case 1:
+        return 0.75;
+    case 3:
+        return 1.25;
+    case 4:
+        return 1.5;
+    default: // 2 = Normal, plus anything unexpected
+        return 1.0;
+    }
+}
+
 function activateNextPrevTask(anchor, next, wheelSkipMinimized, wheelEnabled, tasks) {
     // FIXME TODO: Unnecessarily convoluted and costly; optimize.
 

@@ -23,15 +23,66 @@ import org.kde.plasma.plasmoid
 PlasmaExtras.PlasmoidHeading {
     id: root
 
+    // The themed heading frame is the last piece of KDE decoration left in the
+    // popup: `header-center` is a translucent dark plate, so it paints a grey
+    // band over the card and a hairline along its bottom edge.
+    //
+    // It cannot be removed — `backgroundMetrics`, whose margins feed this
+    // control's insets, lives inside it — so it is made invisible. `visible`
+    // alone is not enough: the item binds that property itself
+    // (`fromCurrentImageSet === …`), and its late re-evaluation wins over an
+    // external Binding. Nothing binds `opacity`, so that is what is used here.
+    Binding {
+        target: root.background
+        property: "opacity"
+        value: 0
+        when: root.background !== null && Plasmoid.configuration.useFluentStyle
+        restoreMode: Binding.RestoreBinding
+    }
+    Binding {
+        target: root.background
+        property: "visible"
+        value: false
+        when: root.background !== null && Plasmoid.configuration.useFluentStyle
+        restoreMode: Binding.RestoreBinding
+    }
+    Component.onCompleted: {
+        if (Plasmoid.configuration.useFluentStyle && root.background) {
+            root.background.opacity = 0;
+            root.background.visible = false;
+        }
+    }
+
+    // Fluent: a hairline under the search field, matching the one above the tab
+    // bar. The themed frame used to paint this and is now hidden, so it is
+    // drawn by hand — with x/y/width rather than anchors, because the item is
+    // declared in the padded contentItem and only reparented by `parent:`, so an
+    // anchor to `root` resolves before that and never applies.
+    Rectangle {
+        parent: root
+        visible: Plasmoid.configuration.useFluentStyle
+        x: FluentStyle.spacingMedium
+        y: root.height - height
+        width: Math.max(0, root.width - 2 * FluentStyle.spacingMedium)
+        height: FluentStyle.strokeWidth
+        color: FluentStyle.divider
+        z: 3
+    }
+
     property alias searchText: searchField.text
     property Item configureButton: configureButton
     property Item pinButton: pinButton
     property Item avatar: avatar
     property real preferredNameAndIconWidth: 0
 
-    contentHeight: layoutContainer.height
-        + kickoff.backgroundMetrics.topPadding
-        + kickoff.backgroundMetrics.bottomPadding
+    readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
+
+    // The themed heading derived its padding from the dialog frame's margins;
+    // with the frame gone the search field sat flush against the popup edge, so
+    // Fluent states its own breathing room instead.
+    contentHeight: layoutContainer.height + (fluent
+        ? FluentStyle.spacingLarge * 2
+        : kickoff.backgroundMetrics.topPadding + kickoff.backgroundMetrics.bottomPadding)
 
     KCoreAddons.KUser {
         id: kuser
@@ -184,7 +235,7 @@ PlasmaExtras.PlasmoidHeading {
                     kickoff.contentArea.forceActiveFocus(Qt.TabFocusReason);
                 }
 
-                PlasmaExtras.SearchField {
+                FluentSearchField {
                     id: searchField
                     Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
                     Layout.fillWidth: true
@@ -249,6 +300,20 @@ PlasmaExtras.PlasmoidHeading {
                     text: Plasmoid.internalAction("configure").text
                     display: PC3.ToolButton.IconOnly
 
+                    // Fluent icon button: rounded state layer instead of the
+                    // theme's square button frame. The padding has to be set
+                    // by hand because the Plasma ToolButton derives it from its
+                    // own KSvg background, which is replaced here.
+                    leftPadding: FluentStyle.iconButtonPadding
+                    rightPadding: FluentStyle.iconButtonPadding
+                    topPadding: FluentStyle.iconButtonPadding
+                    bottomPadding: FluentStyle.iconButtonPadding
+                    background: FluentHighlight {
+                        hovered: configureButton.hovered
+                        pressed: configureButton.down
+                        radius: FluentStyle.radiusControl
+                    }
+
                     PC3.ToolTip.text: text
                     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
                     PC3.ToolTip.visible: hovered
@@ -275,6 +340,18 @@ PlasmaExtras.PlasmoidHeading {
                     icon.name: "window-pin"
                     text: i18nc("@action:button Pin widget open if it loses focus, icon-only button, for tooltip/Accessible", "Keep Open") // qmllint disable unqualified
                     display: PC3.ToolButton.IconOnly
+                    leftPadding: FluentStyle.iconButtonPadding
+                    rightPadding: FluentStyle.iconButtonPadding
+                    topPadding: FluentStyle.iconButtonPadding
+                    bottomPadding: FluentStyle.iconButtonPadding
+                    background: FluentHighlight {
+                        hovered: pinButton.hovered
+                        pressed: pinButton.down
+                        // Checked is a real toggle state here, so it keeps the
+                        // selected alpha instead of only a hover layer.
+                        selected: pinButton.checked
+                        radius: FluentStyle.radiusControl
+                    }
                     PC3.ToolTip.text: text
                     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
                     PC3.ToolTip.visible: hovered

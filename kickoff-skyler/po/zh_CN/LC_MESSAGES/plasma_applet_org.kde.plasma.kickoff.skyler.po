@@ -216,6 +216,10 @@ msgctxt "@option:check"
 msgid "Use custom launcher decorations"
 msgstr "使用自定义启动器装饰"
 
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "使用 Fluent（Windows 11）风格的弹窗外观"
+
 #: ConfigGeneral.qml:220
 msgctxt "@option:check"
 msgid "Show highlight background on hover"
@@ -255,6 +259,15 @@ msgstr "白色"
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
 msgstr "黑色"
+
+#: ConfigGeneral.qml:242
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "自动（跟随系统配色）"
+
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "遮罩大小："
 
 #: ConfigGeneral.qml:250
 msgctxt "@option:check"

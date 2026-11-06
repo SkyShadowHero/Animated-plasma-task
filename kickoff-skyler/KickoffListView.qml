@@ -37,6 +37,8 @@ EmptyPage {
     property bool mainContentView: false
     property bool hasSectionView: false
 
+    readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
+
     /**
      * Request showing the section view
      */
@@ -44,9 +46,12 @@ EmptyPage {
 
     clip: view.height < view.contentHeight
 
+    // These strips make the whole list edge a hover target: the pointer sitting
+    // in the padding (or on the now-invisible divider) would still select the
+    // nearest row. Fluent has no invisible hit areas, so they collapse.
     header: MouseArea {
-        implicitHeight: KickoffSingleton.listItemMetrics.margins.top
-        hoverEnabled: root.mainContentView || Plasmoid.configuration.switchCategoryOnHover
+        implicitHeight: root.fluent ? 0 : KickoffSingleton.listItemMetrics.margins.top
+        hoverEnabled: !root.fluent && (root.mainContentView || Plasmoid.configuration.switchCategoryOnHover)
         onEntered: {
             if (containsMouse) {
                 const targetIndex = view.indexAt(mouseX + view.contentX, view.contentY)
@@ -59,8 +64,8 @@ EmptyPage {
     }
 
     footer: MouseArea {
-        implicitHeight: KickoffSingleton.listItemMetrics.margins.bottom
-        hoverEnabled: root.mainContentView || Plasmoid.configuration.switchCategoryOnHover
+        implicitHeight: root.fluent ? 0 : KickoffSingleton.listItemMetrics.margins.bottom
+        hoverEnabled: !root.fluent && (root.mainContentView || Plasmoid.configuration.switchCategoryOnHover)
         onEntered: {
             if (containsMouse) {
                 const targetIndex = view.indexAt(mouseX + view.contentX, view.height + view.contentY - 1)
@@ -77,8 +82,10 @@ EmptyPage {
                             implicitHeaderWidth2,
                             implicitFooterWidth2)
 
-    leftPadding: verticalScrollBar.visible && root.mirrored ? verticalScrollBar.implicitWidth : 0
-    rightPadding: verticalScrollBar.visible && !root.mirrored ? verticalScrollBar.implicitWidth : 0
+    // Fluent scrollbars float over the content instead of reserving a gutter, so
+    // no width is taken away from the rows.
+    leftPadding: verticalScrollBar.visible && root.mirrored && !root.fluent ? verticalScrollBar.implicitWidth : 0
+    rightPadding: verticalScrollBar.visible && !root.mirrored && !root.fluent ? verticalScrollBar.implicitWidth : 0
 
     contentItem: ListView {
         id: view
@@ -142,7 +149,9 @@ EmptyPage {
 
         // Without switch-on-hover, it's possible for the selected category and the hovered category to be adjacent.
         // When this happens, their highlights touch and look ugly without some artificial spacing added.
-        spacing: root.isSidebar && !Plasmoid.configuration.switchCategoryOnHover ? Kirigami.Units.smallSpacing : 0
+        spacing: root.isSidebar && !Plasmoid.configuration.switchCategoryOnHover
+            ? (Plasmoid.configuration.useFluentStyle ? FluentStyle.spacingXSmall : Kirigami.Units.smallSpacing)
+            : 0
 
         section {
             property: "group"
@@ -181,6 +190,39 @@ EmptyPage {
             z: 2
             height: root.height
             anchors.right: parent.right
+
+            // The Plasma theme sizes its scrollbar through the SVG's
+            // `hint-scrollbar-size` and the frame's margins (8-12px here),
+            // which is why the thumb used to read as a thick divider. Fluent's
+            // is a 4px hairline, so every metric is pinned instead of being
+            // derived from the theme.
+            implicitWidth: FluentStyle.spacingXSmall
+            width: FluentStyle.spacingXSmall
+            leftPadding: 0
+            rightPadding: 0
+            topPadding: 0
+            bottomPadding: 0
+            leftInset: 0
+            rightInset: 0
+            topInset: 0
+            bottomInset: 0
+
+            // The themed track only ever shows on hover and is now 4px wide
+            // too, so it is left alone (replacing `background` would break the
+            // insets that the base control derives from its `bgFrame` id).
+
+            contentItem: Rectangle {
+                implicitWidth: FluentStyle.spacingXSmall
+                radius: width / 2
+                color: FluentStyle.withAlpha(FluentStyle.layer,
+                    verticalScrollBar.pressed ? 0.35 : (verticalScrollBar.hovered ? 0.22 : 0.14))
+                Behavior on color {
+                    ColorAnimation {
+                        duration: FluentStyle.durationFast
+                        easing.type: FluentStyle.easingSoft
+                    }
+                }
+            }
         }
 
         Kirigami.WheelHandler {

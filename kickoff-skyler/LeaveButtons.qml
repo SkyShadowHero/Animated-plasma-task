@@ -111,11 +111,22 @@ RowLayout {
 
             model: filteredButtonsModel
             delegate: PC3.ToolButton {
+                id: actionButton
                 required property int index
                 required property var model
 
                 text: model.display
                 icon.name: model.decoration
+                leftPadding: FluentStyle.iconButtonPadding
+                rightPadding: FluentStyle.iconButtonPadding
+                topPadding: FluentStyle.iconButtonPadding
+                bottomPadding: FluentStyle.iconButtonPadding
+                // Same rounded state layer as the header buttons.
+                background: FluentHighlight {
+                    hovered: actionButton.hovered
+                    pressed: actionButton.down
+                    radius: FluentStyle.radiusControl
+                }
                 onClicked: {
                     filteredButtonsModel.trigger(index);
                     if (kickoff.hideOnWindowDeactivate) {
@@ -164,6 +175,7 @@ RowLayout {
     // button with different display modes to calculate the layout properly
     // without binding loops.
     component OverflowMenuButton : PC3.ToolButton {
+        id: overflowButton
         Accessible.role: Accessible.ButtonMenu
         icon.width: Kirigami.Units.iconSizes.smallMedium
         icon.height: Kirigami.Units.iconSizes.smallMedium
@@ -171,6 +183,16 @@ RowLayout {
         text: [i18nc("@title:menu menubutton","Session"), i18nc("@title:menu menubutton", "Power"), i18nc("@title:menu menubutton", "More"), i18nc("@title:menu menubutton", "Session and Power")][Plasmoid.configuration.primaryActions] // qmllint disable unqualified
         // Make it look pressed while the menu is open
         down: contextMenu.status === PlasmaExtras.Menu.Open || pressed
+        leftPadding: FluentStyle.iconButtonPadding
+        rightPadding: FluentStyle.iconButtonPadding
+        topPadding: FluentStyle.iconButtonPadding
+        bottomPadding: FluentStyle.iconButtonPadding
+        background: FluentHighlight {
+            hovered: overflowButton.hovered
+            pressed: overflowButton.down
+            selected: contextMenu.status === PlasmaExtras.Menu.Open
+            radius: FluentStyle.radiusControl
+        }
         Keys.onTabPressed: event => {
             kickoff.firstHeaderItem.forceActiveFocus(Qt.TabFocusReason);
         }

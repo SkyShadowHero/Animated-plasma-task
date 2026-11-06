@@ -16,7 +16,6 @@ import QtQuick
 import QtQuick.Templates as T
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PC3
-import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kirigami as Kirigami
 import "code/tools.js" as Tools
 import org.kde.plasma.plasmoid
@@ -46,7 +45,14 @@ T.ItemDelegate {
     property bool isSearchResult: false
 
     readonly property bool isSeparator: model && (model.isSeparator === true)
-    property int separatorHeight: KickoffSingleton.lineSvg.horLineHeight + (2 * Kirigami.Units.smallSpacing)
+    // Guarded: the measuring instances in KickoffSingleton have no applet
+    // context, so `Plasmoid.configuration` is undefined there.
+    readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
+    // A group separator in Fluent is empty space, not a line: the row keeps a
+    // little height to breathe but draws nothing (see KickoffListDelegate).
+    property int separatorHeight: fluent
+        ? FluentStyle.spacingMedium
+        : KickoffSingleton.lineSvg.horLineHeight + (2 * Kirigami.Units.smallSpacing)
     property int itemHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset, implicitContentHeight + topPadding + bottomPadding)
 
     readonly property bool dragEnabled: enabled && !isCategoryListItem
@@ -54,7 +60,13 @@ T.ItemDelegate {
 
     readonly property alias mouseArea: mouseArea
 
+    // Upstream turns the label/icon to the highlighted colour while the item is
+    // pressed, because the themed pressed state paints a highlight-coloured
+    // background under it. The Fluent card never does — it is a white/neutral
+    // lift — so the text has to keep its normal colour, otherwise it flashes
+    // white (on light) for the duration of the click.
     readonly property bool iconAndLabelsShouldlookSelected: down && !isCategoryListItem
+        && !(Plasmoid.configuration?.useFluentStyle ?? false)
 
     property bool labelTruncated: false
     property bool descriptionTruncated: false
@@ -63,6 +75,20 @@ T.ItemDelegate {
     property Item dragIconItem: null
 
     down: mouseArea.pressed || dragHandler.active
+
+    // WinUI press feedback. It is applied to the delegate itself so the state
+    // layer, the glyph and the labels shrink together as one — scaling only the
+    // content (as before) left the highlight at full size, which read as the
+    // text sliding around inside a static box.
+    scale: root.fluent && root.down && !root.isSeparator ? 0.96 : 1
+    transformOrigin: Item.Center
+    Behavior on scale {
+        enabled: root.fluent
+        NumberAnimation {
+            duration: FluentStyle.durationFast
+            easing.type: FluentStyle.easingSoft
+        }
+    }
 
     function openActionMenu(x = undefined, y = undefined) {
         if (!hasActionList) { return; }
@@ -193,16 +219,27 @@ T.ItemDelegate {
         anchors.margins: 1
         // Flickable margins are not mirrored, so disable layout mirroring
         LayoutMirroring.enabled: false
-        // Only for ListView since extending margins for GridView is hard
-        anchors.leftMargin: root.view instanceof ListView ? -root.view.leftMargin : anchors.margins
-        anchors.rightMargin: root.view instanceof ListView ? -root.view.rightMargin : anchors.margins
-        hoverEnabled: root.view
+        // Only for ListView since extending margins for GridView is hard.
+        // Fluent keeps the hit area inside the row: the negative margins would
+        // also cover the list padding (and the divider strip), so hovering there
+        // would highlight a row the pointer is not on.
+        anchors.leftMargin: root.fluent
+            ? anchors.margins
+            : (root.view instanceof ListView ? -root.view.leftMargin : anchors.margins)
+        anchors.rightMargin: root.fluent
+            ? anchors.margins
+            : (root.view instanceof ListView ? -root.view.rightMargin : anchors.margins)
+        hoverEnabled: !root.isSeparator
+            && root.view
             // When the movedWithWheel condition is broken, this ensures that
             // onEntered is called again without moving the mouse.
             && !root.view.movedWithWheel
             // Fix VerticalStackView animation causing view currentIndex
             // to change while delegates are moving under the mouse cursor
             && kickoff.fullRepresentationItem && !kickoff.fullRepresentationItem.contentItem.busy && !kickoff.fullRepresentationItem.blockingHoverFocus
+        // A separator is empty space, so it must not be a hover target at all:
+        // otherwise the pointer lights up a "row" that draws nothing.
+        enabled: !root.isSeparator
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
         onEntered: {
@@ -261,16 +298,33 @@ T.ItemDelegate {
     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     background: Loader {
-        active: (root.GridView?.isCurrentItem || root.ListView?.isCurrentItem) ?? false
-        sourceComponent: PlasmaExtras.Highlight {
+        id: backgroundLoader
+
+        readonly property bool current: (root.GridView?.isCurrentItem || root.ListView?.isCurrentItem) ?? false
+
+        // Fluent keeps a state layer on every item so hovering fades one in —
+        // the theme only ever needs it on the current item. Separators draw
+        // nothing at all, not even a hover layer.
+        active: !root.isSeparator && ((Plasmoid.configuration?.useFluentStyle ?? false) || current)
+
+        sourceComponent: FluentHighlight {
             anchors.fill: parent
             z: (root.Drag.active ?? false) ? 3 : 0
-            hovered: true
+            hovered: (Plasmoid.configuration?.useFluentStyle ?? false) ? root.mouseArea.containsMouse : true
+            selected: backgroundLoader.current
+            // Same white card as the selected category in the sidebar, so both
+            // panes mark "here" identically instead of the right pane looking
+            // washed out with a grey layer (and dark inverts it to a lifted
+            // white layer, see FluentStyle.selectionSurface).
+            selectedColor: FluentStyle.selectionSurface
+            radius: root.GridView ? FluentStyle.radiusOverlay : FluentStyle.radiusControl
 
-            pressed: root.down  && !root.isCategoryListItem
+            pressed: root.down && !root.isCategoryListItem
 
-            active: root.view.activeFocus ||
-                    (kickoff.contentArea === root && kickoff.searchField.activeFocus)
+            // Guarded: this Loader also runs for the measuring delegates in
+            // KickoffSingleton, where `view` is still null.
+            active: (root.view?.activeFocus ?? false) ||
+                    (kickoff.contentArea === root && (kickoff.searchField?.activeFocus ?? false))
         }
     }
 }
