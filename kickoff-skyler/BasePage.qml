@@ -50,6 +50,7 @@ FocusScope {
         Loader {
             id: sideBarLoader
             anchors.fill: parent
+            anchors.topMargin: root.paneTopInset
             // When positioned after the content area, Tab should go to the start of the footer focus chain
             Keys.onTabPressed: event => {
                 (kickoff.paneSwap ? kickoff.footer.nextItemInFocusChain() : contentAreaLoader)
@@ -80,6 +81,14 @@ FocusScope {
         }
     }
     readonly property bool fluent: Plasmoid.configuration.useFluentStyle
+
+    // Breathing room under the header hairline. Both panes — the navigation
+    // list and the content view — used to start flush against that rule, so
+    // the first row read as glued to the search box. The inset is applied to
+    // the loaders' anchors instead of to the lists themselves, so the rows
+    // move down without the popup growing: the panes simply become that much
+    // shorter.
+    readonly property real paneTopInset: fluent ? FluentStyle.spacingSmall : 0
 
     // The theme draws a full-height rule with an SVG, gutter included. Fluent
     // replaces both: the SVG column collapses to zero width (the navigation
@@ -120,6 +129,7 @@ FocusScope {
         focus: true
         anchors {
             top: parent.top
+            topMargin: root.paneTopInset
             left: separator.right
             right: parent.right
             bottom: parent.bottom

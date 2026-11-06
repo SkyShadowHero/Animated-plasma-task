@@ -103,14 +103,19 @@ QtObject {
     readonly property color surface: Kirigami.Theme.backgroundColor
     readonly property color textPrimary: Kirigami.Theme.textColor
     readonly property color textSecondary: withAlpha(Kirigami.Theme.textColor, alphaSecondaryText)
-    readonly property color accent: Kirigami.Theme.highlightColor
+    // Not Kirigami.Theme.highlightColor: inside the popup that one is the
+    // *Plasma style's* selection colour (the Win11 style ships #0078D4), so it
+    // ignored the accent picked in System Settings and did not match the
+    // panel's indicators. KdeAccent resolves kdeglobals the same way the task
+    // manager does; it falls back to Kirigami's colour if nothing is readable.
+    readonly property color accent: KdeAccent.accent
     readonly property color onAccent: Kirigami.Theme.highlightedTextColor
     readonly property color stroke: withAlpha(layer, alphaStroke)
     // Hairline separating two regions (e.g. the tab bar from the content). A
     // touch stronger than a control outline, or it disappears on the frosted
     // popup background.
     readonly property color divider: withAlpha(layer, dark ? 0.16 : 0.11)
-    readonly property color focusRing: withAlpha(Kirigami.Theme.highlightColor, 0.55)
+    readonly property color focusRing: withAlpha(accent, 0.55)
 
     // Filled controls (the search box). WinUI's TextBox sits one step *above*
     // the surface, not below it: a pale fill that lifts off the background.

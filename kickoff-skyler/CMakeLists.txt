@@ -1,4 +1,4 @@
-set_source_files_properties(KickoffSingleton.qml ActionMenu.qml FluentStyle.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+set_source_files_properties(KickoffSingleton.qml ActionMenu.qml FluentStyle.qml KdeAccent.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 plasma_add_applet(org.kde.plasma.kickoff.skyler
 QML_SOURCES
@@ -26,6 +26,7 @@ QML_SOURCES
     KickoffListDelegate.qml
     KickoffListView.qml
     KickoffSingleton.qml
+    KdeAccent.qml
     LeaveButtons.qml
     ListOfGridsView.qml
     ListOfGridsViewDelegate.qml
