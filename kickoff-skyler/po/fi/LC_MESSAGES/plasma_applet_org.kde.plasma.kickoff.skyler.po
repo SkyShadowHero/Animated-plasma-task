@@ -1,8 +1,9 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"POT-Creation-Date: 2026-11-08 12:00+0800\n"
 "PO-Revision-Date: 2025-06-24 17:11+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -13,370 +14,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: Header.qml:86
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr ""
-
-#: Header.qml:276
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr ""
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "Perusasetukset:"
-
-#: main.qml:427
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr ""
-
-#: FullRepresentation.qml:136
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "Ei osumia"
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr ""
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr ""
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr ""
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr ""
-
-#: KickoffListDelegate.qml:136
-msgctxt "Newly-installed app, badge, keep short"
-msgid "New!"
-msgstr "Uusi!"
-
-#: KickoffListDelegate.qml:142
-msgid "There is a newly-installed application in this category"
-msgstr ""
-
-#: KickoffListDelegate.qml:143
-msgid "Newly-installed application"
-msgstr ""
-
-#: KickoffGridDelegate.qml:68
-msgctxt "@label Newly-installed app, badge, keep short"
-msgid "New!"
-msgstr "Uusi!"
-
-#: KickoffGridDelegate.qml:73
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr ""
-
-#: ConfigGeneral.qml:53
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr ""
-
-#: ConfigGeneral.qml:59
-msgctxt "@action:button"
-msgid "Change Application Launcher's icon"
-msgstr "Vaihda sovelluskäynnistimen kuvake"
-
-#: ConfigGeneral.qml:60
-msgctxt "@info:whatsthis"
-msgid ""
-"Current icon is %1. Click to open menu to change the current icon or reset "
-"to the default icon."
-msgstr ""
-"Nykyinen kuvake on %1. Vaihda kuvake tai palauta oletuskuvake avaamalla "
-"valikko."
-
-#: ConfigGeneral.qml:64
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "Kuvakkeen nimi on ”%1”"
-
-#: ConfigGeneral.qml:99
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "Valitse…"
-
-#: ConfigGeneral.qml:101
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "Valitse sovelluskäynnistimen kuvake"
-
-#: ConfigGeneral.qml:105
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "Palauta oletuskuvake"
-
-#: ConfigGeneral.qml:111
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "Poista kuvake"
-
-#: ConfigGeneral.qml:122
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "Selite:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "Kirjoita selite tähän"
-
-#: ConfigGeneral.qml:138
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "Palauta valikon selite"
-
-#: ConfigGeneral.qml:151
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr "Pystysuuntaiseen paneeliin ei voi lisätä tekstiselitettä."
-
-#: ConfigGeneral.qml:163
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "Aakkosta sovellukset"
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr ""
-
-#: ConfigGeneral.qml:173
-msgctxt "General options"
-msgid "General:"
-msgstr "Perusasetukset:"
-
-#: ConfigGeneral.qml:177
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "Aakkosta sovellukset"
-
-#: ConfigGeneral.qml:181
-msgctxt "@info:whatsthis"
-msgid ""
-"This doesn't affect how applications are sorted in either search results or "
-"the favorites page."
-msgstr ""
-"Tämä ei vaikuta siihen, miten sovellukset lajitellaan hakutuloksissa tai "
-"suosikkisivulla."
-
-#: ConfigGeneral.qml:187
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr ""
-
-#: ConfigGeneral.qml:193
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr ""
-
-#: ConfigGeneral.qml:198
-msgid "Icon hover effect"
-msgstr ""
-
-#: ConfigGeneral.qml:208
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr ""
-
-#: ConfigGeneral.qml:214
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr ""
-
-#: ConfigGeneral.qml:220
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr ""
-
-#: ConfigGeneral.qml:227
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr ""
-
-#: ConfigGeneral.qml:231
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rounded rectangle"
-msgstr ""
-
-#: ConfigGeneral.qml:232
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr ""
-
-#: ConfigGeneral.qml:233
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr ""
-
-#: ConfigGeneral.qml:239
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr ""
-
-#: ConfigGeneral.qml:243
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr ""
-
-#: ConfigGeneral.qml:244
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr ""
-
-#: ConfigGeneral.qml:250
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr ""
-
-#: ConfigGeneral.qml:256
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "Hakuliitännäisten asetukset…"
-
-#: ConfigGeneral.qml:266
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr ""
-
-#: ConfigGeneral.qml:267 ConfigGeneral.qml:275
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr ""
-
-#: ConfigGeneral.qml:267
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr ""
-
-#: ConfigGeneral.qml:275
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr ""
-
-#: ConfigGeneral.qml:283
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "Näytä suosikeissa"
-
-#: ConfigGeneral.qml:284
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr ""
-
-#: ConfigGeneral.qml:292
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr ""
-
-#: ConfigGeneral.qml:300
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr ""
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr ""
-
-#: ConfigGeneral.qml:309
-msgctxt "@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr ""
-
-#: ConfigGeneral.qml:321
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr ""
-
-#: ConfigGeneral.qml:322
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr ""
-
-#: ConfigGeneral.qml:331
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr ""
-
-#: ConfigGeneral.qml:340
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr ""
-
-#: ConfigGeneral.qml:349
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr ""
-
-#: PlacesPage.qml:64
-msgctxt "category in Places sidebar"
-msgid "Computer"
-msgstr "Tietokone"
-
-#: PlacesPage.qml:65
-msgctxt "category in Places sidebar"
-msgid "History"
-msgstr "Historia"
-
-#: PlacesPage.qml:66
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "Usein käytetyt"
-
-#: Footer.qml:101
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr ""
-
-#: Footer.qml:117
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr ""
-
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr ""
-
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "Poista suosikeista"
-
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "Lisää suosikkeihin"
+
+#: ConfigGeneral.qml:200
+msgid "Icon hover effect"
+msgstr "Hover-efekti"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "Vasta-asennettu sovellus"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -386,9 +34,379 @@ msgstr "Kaikissa aktiviteeteissa"
 msgid "On the Current Activity"
 msgstr "Nykyisessä aktiviteetissa"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Poista suosikeista"
+
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "Näytä suosikeissa"
+
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "Tässä luokassa on vasta-asennettu sovellus"
+
+#: ConfigGeneral.qml:61
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "Vaihda sovelluskäynnistimen kuvake"
+
+#: ConfigGeneral.qml:140
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Palauta valikon selite"
+
+#: Header.qml:341
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Pidä avoinna"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Avaa käyttäjäasetukset"
+
+#: ConfigGeneral.qml:282
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Hakuliitännäisten asetukset…"
+
+#: ConfigGeneral.qml:113
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Poista kuvake"
+
+#: main.qml:477
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Muokkaa sovelluksia…"
+
+#: ConfigGeneral.qml:153
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "Pystysuuntaiseen paneeliin ei voi lisätä tekstiselitettä."
+
+#: ConfigGeneral.qml:126
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Kirjoita selite tähän"
+
+#: FullRepresentation.qml:141
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Ei osumia"
+
+#: ConfigGeneral.qml:66
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Kuvakkeen nimi on ”%1”"
+
+#: ConfigGeneral.qml:103
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Valitse sovelluskäynnistimen kuvake"
+
+#: ConfigGeneral.qml:62
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr ""
+"Nykyinen kuvake on %1. Vaihda kuvake tai palauta oletuskuvake avaamalla "
+"valikko."
+
+#: ConfigGeneral.qml:183
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr ""
+"Tämä ei vaikuta siihen, miten sovellukset lajitellaan hakutuloksissa tai "
+"suosikkisivulla."
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "%1 rivin × %2 sarakkeen ruudukko"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "kuvaus (nimi)"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "vain kuvaus"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "nimi (kuvaus)"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "vain nimi"
+
+#: ConfigGeneral.qml:246
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "musta"
+
+#: ConfigGeneral.qml:245
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "valkoinen"
+
+#: ConfigGeneral.qml:247
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Automaattinen (seuraa väriteemaa)"
+
+#: ConfigGeneral.qml:235
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Ympyrä"
+
+#: ConfigGeneral.qml:234
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Suorakulmio"
+
+#: ConfigGeneral.qml:233
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr "Pyöristetty suorakulmio"
+
+#: ConfigGeneral.qml:101
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Valitse…"
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Palauta oletuskuvake"
+
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Vasta-asennettu sovellus"
+
+#: KickoffGridDelegate.qml:69
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Uusi!"
+
+#: ConfigGeneral.qml:55
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Kuvake:"
+
+#: ConfigGeneral.qml:292
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Sivupaneelin sijainti:"
+
+#: ConfigGeneral.qml:241
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Korostusväri:"
+
+#: ConfigGeneral.qml:229
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Korostusmuoto:"
+
+#: ConfigGeneral.qml:165
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Aakkosta sovellukset"
+
+#: ConfigGeneral.qml:253
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Korostuksen koko:"
+
+#: ConfigGeneral.qml:124
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Selite:"
+
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Korosta vasta-asennetut sovellukset"
+
+#: ConfigGeneral.qml:375
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "näytä toimintopainikkeiden selitteet"
+
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "Näytä korostuksen tausta hoverissa"
+
+#: ConfigGeneral.qml:179
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Aakkosta sovellukset"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "vaihda sivupaneelin luokkia leijuttaessa niiden yllä"
+
+#: ConfigGeneral.qml:270
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Käytä sujuvaa (Windows 11) tyyliä ponnahdusikkunassa"
+
+#: ConfigGeneral.qml:210
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "Käytä KDE-teemakoristeita"
+
+#: ConfigGeneral.qml:189
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "käytä tiivistä luetelmatyyliä"
+
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Käytä mukautettuja käynnistimen koristeita"
+
+#: ConfigGeneral.qml:310
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "ruudukkona"
+
+#: ConfigGeneral.qml:318
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "luettelona"
+
+#: ConfigGeneral.qml:327
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "ruudukkona"
+
+#: ConfigGeneral.qml:335
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "luettelona"
+
+#: ConfigGeneral.qml:348
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "virta"
+
+#: ConfigGeneral.qml:366
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "virta ja istunto"
+
+#: ConfigGeneral.qml:357
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "istunto"
+
+#: ConfigGeneral.qml:301
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "vasemmalla"
+
+#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "oikealla"
+
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Perusasetukset:"
+
+#: ConfigGeneral.qml:347
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Näytä painikkeet:"
+
+#: ConfigGeneral.qml:309
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Näytä suosikeissa"
+
+#: ConfigGeneral.qml:326
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Näytä muut sovellukset:"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Lisää"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Virta"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Istunto"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Istunto ja virta"
+
+#: Footer.qml:269
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Sovellukset"
+
+#: Footer.qml:285
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Sijainnit"
+
+#: ConfigGeneral.qml:175
+msgctxt "General options"
+msgid "General:"
+msgstr "Perusasetukset:"
+
+#: KickoffListDelegate.qml:157
+msgctxt "Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Uusi!"
+
+#: PlacesPage.qml:68
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "Tietokone"
+
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Usein käytetyt"
+
+#: PlacesPage.qml:69
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "Historia"
+
+#: ConfigGeneral.qml:293
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "vasemmalla"
 
 #~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
 #~ msgid "Automatically disabled when in Touch Mode"

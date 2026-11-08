@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-12 21:16+0800\n"
+"POT-Creation-Date: 2026-11-08 12:00+0800\n"
 "PO-Revision-Date: 2026-09-06 00:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: KairikiFedora <13278297951@sina.cn>\n"
@@ -16,533 +16,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: backend.cpp:372
-msgid "Recent Downloads"
-msgstr "最近のダウンロード"
+#: qml/ConfigAppearance.qml:263
+msgid "Animation"
+msgstr "アニメーション"
 
-#: backend.cpp:374
+#: qml/ConfigAppearance.qml:282
+msgid "Icon hover effect"
+msgstr "アイコンのホバー効果"
+
+#: qml/ConfigAppearance.qml:345
+msgid "Icon scale:"
+msgstr "アイコンのスケール:"
+
+#: backend.cpp:460
 msgid "Recent Connections"
 msgstr "最近の接続"
 
-#: backend.cpp:376
+#: backend.cpp:458
+msgid "Recent Downloads"
+msgstr "最近のダウンロード"
+
+#: backend.cpp:462
 msgid "Recent Places"
 msgstr "最近の場所"
 
-#: backend.cpp:385
-msgctxt "@action:inmenu"
-msgid "Forget Recent Downloads"
-msgstr "最近のダウンロードを忘れる"
+#: qml/ConfigAppearance.qml:301
+msgid "Show highlight background on hover/active"
+msgstr "ホバー/アクティブ時にハイライト背景を表示する"
 
-#: backend.cpp:387
-msgctxt "@action:inmenu"
-msgid "Forget Recent Connections"
-msgstr "最近の接続を忘れる"
+#: qml/TaskBadgeOverlay.qml:112
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "%1k"
+msgstr "%1k"
 
-#: backend.cpp:389
-msgctxt "@action:inmenu"
-msgid "Forget Recent Places"
-msgstr "最近の場所を忘れる"
+#: qml/TaskBadgeOverlay.qml:109
+msgctxt ""
+"'k' is a suffix for 'thousand'; keep to one character or else the badge "
+"could overflow!"
+msgid "9k+"
+msgstr "9k+"
 
-#: backend.cpp:391
-msgctxt "@action:inmenu"
-msgid "Forget Recent Files"
-msgstr "最近のファイルを忘れる"
-
-#: qml/ContextMenu.qml:100
-msgctxt "@title:group for section of menu items"
-msgid "Places"
-msgstr "場所"
-
-#: qml/ContextMenu.qml:106
-msgctxt "@title:group for section of menu items"
-msgid "Recent Files"
-msgstr "最近のファイル"
-
-#: qml/ContextMenu.qml:116
-msgctxt "@title:group for section of menu items"
-msgid "Actions"
-msgstr "操作"
-
-#: qml/ContextMenu.qml:163
-msgctxt "Play previous track"
-msgid "Previous Track"
-msgstr "前のトラック"
-
-#: qml/ContextMenu.qml:177
-msgctxt "Pause playback"
-msgid "Pause"
-msgstr "一時停止"
-
-#: qml/ContextMenu.qml:177
-msgctxt "Start playback"
-msgid "Play"
-msgstr "再生"
-
-#: qml/ContextMenu.qml:195
-msgctxt "Play next track"
-msgid "Next Track"
-msgstr "次のトラック"
-
-#: qml/ContextMenu.qml:206
-msgctxt "Stop playback"
-msgid "Stop"
-msgstr "停止"
-
-#: qml/ContextMenu.qml:226
-msgctxt "Quit media player app"
-msgid "Quit"
-msgstr "終了"
-
-#: qml/ContextMenu.qml:241
-msgctxt "Open or bring to the front window of media player app"
-msgid "Restore"
-msgstr "復元"
-
-#: qml/ContextMenu.qml:266
-msgctxt "@option:check inmenu, no separate unmute action"
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
 msgid "Mute"
 msgstr "ミュート"
 
-#: qml/ContextMenu.qml:277
-msgctxt "action:inmenu"
-msgid "Open New Window"
-msgstr "新しいウィンドウを開く"
-
-#: qml/ContextMenu.qml:293
-msgctxt "action:inmenu"
-msgid "Move to &Desktop"
-msgstr "&デスクトップに移動"
-
-#: qml/ContextMenu.qml:323
-msgctxt "action:inmenu"
-msgid "Move &To Current Desktop"
-msgstr "現在の&デスクトップに移動"
-
-#: qml/ContextMenu.qml:345
-msgctxt "action:inmenu"
-msgid "&All Desktops"
-msgstr "すべての&デスクトップ"
-
-#: qml/ContextMenu.qml:373
-msgctxt "action:inmenu"
-msgid "&New Desktop"
-msgstr "新しい&デスクトップ"
-
-#: qml/ContextMenu.qml:393
-msgctxt "action:inmenu"
-msgid "Show in &Activities"
-msgstr "&アクティビティに表示"
-
-#: qml/ContextMenu.qml:417
-msgctxt "action:inmenu"
-msgid "Add To Current Activity"
-msgstr "現在のアクティビティに追加"
-
-#: qml/ContextMenu.qml:427
-msgctxt "action:inmenu"
-msgid "All Activities"
-msgstr "すべてのアクティビティ"
-
-#: qml/ContextMenu.qml:483
-#, qt-format
-msgctxt "action:inmenu"
-msgid "Move to %1"
-msgstr "%1 に移動"
-
-#: qml/ContextMenu.qml:509 qml/ContextMenu.qml:525
-msgctxt "action:inmenu"
-msgid "&Pin to Task Manager"
-msgstr "タスクマネージャーに&ピン留め"
-
-#: qml/ContextMenu.qml:577
-msgctxt "action:inmenu"
-msgid "On All Activities"
-msgstr "すべてのアクティビティで"
-
-#: qml/ContextMenu.qml:583
-msgctxt "action:inmenu"
-msgid "On The Current Activity"
-msgstr "現在のアクティビティで"
-
-#: qml/ContextMenu.qml:607
-msgctxt "action:inmenu"
-msgid "Unpin from Task Manager"
-msgstr "タスクマネージャーからピン留めを外す"
-
-#: qml/ContextMenu.qml:622
-msgctxt "item:inmenu opens submenu"
-msgid "More"
-msgstr "その他"
-
-#: qml/ContextMenu.qml:631
-msgctxt "action:inmenu"
-msgid "&Move"
-msgstr "&移動"
-
-#: qml/ContextMenu.qml:640
-msgctxt "action:inmenu"
-msgid "Re&size"
-msgstr "サイズ&変更"
-
-#: qml/ContextMenu.qml:654
-msgctxt "action:inmenu"
-msgid "Ma&ximize"
-msgstr "最&大化"
-
-#: qml/ContextMenu.qml:668
-msgctxt "action:inmenu"
-msgid "Mi&nimize"
-msgstr "最&小化"
-
-#: qml/ContextMenu.qml:678
-msgctxt "action:inmenu"
-msgid "Keep &Above Others"
-msgstr "常に&最前面に表示"
-
-#: qml/ContextMenu.qml:688
-msgctxt "action:inmenu"
-msgid "Keep &Below Others"
-msgstr "常に&最背面に表示"
-
-#: qml/ContextMenu.qml:700
-msgctxt "action:inmenu"
-msgid "&Fullscreen"
-msgstr "&全画面"
-
-#: qml/ContextMenu.qml:713
-msgctxt "action:inmenu"
-msgid "&Shade"
-msgstr "&シェード"
-
-#: qml/ContextMenu.qml:725
-msgctxt "@action:inmenu"
-msgid "&No Titlebar and Frame"
-msgstr "タイトルバーと&枠を表示しない"
-
-#: qml/ContextMenu.qml:738
-msgctxt "@action:inmenu"
-msgid "&Hide from Screencast"
-msgstr "スクリーンキャストから&非表示"
-
-#: qml/ContextMenu.qml:754
-msgctxt "@option:check inmenu"
-msgid "Allow this program to be grouped"
-msgstr "このプログラムのグループ化を許可"
-
-#: qml/ContextMenu.qml:800
-msgctxt "@action:inmenu"
-msgid "&Close All"
-msgstr "すべて&閉じる"
+#: qml/AudioStream.qml:94
+msgctxt "@action:button"
+msgid "Unmute"
+msgstr "ミュートを解除"
 
 #: qml/ContextMenu.qml:800
 msgctxt "@action:inmenu"
 msgid "&Close"
 msgstr "&閉じる"
 
-#: qml/config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "Appearance"
-msgstr "外観"
+#: qml/ContextMenu.qml:800
+msgctxt "@action:inmenu"
+msgid "&Close All"
+msgstr "すべて&閉じる"
 
-#: qml/config.qml:18
-msgctxt "@title:group for configuration dialog page"
-msgid "Behavior"
-msgstr "動作"
+#: qml/ContextMenu.qml:738
+msgctxt "@action:inmenu"
+msgid "&Hide from Screencast"
+msgstr "スクリーンキャストから&非表示"
 
-#: qml/ConfigAppearance.qml:62
-msgctxt "@label for several checkboxes"
-msgid "General:"
-msgstr "全般:"
+#: qml/ContextMenu.qml:725
+msgctxt "@action:inmenu"
+msgid "&No Titlebar and Frame"
+msgstr "タイトルバーと&枠を表示しない"
 
-#: qml/ConfigAppearance.qml:63
-msgctxt "@option:check section General"
-msgid "Show small window previews when hovering over tasks"
-msgstr "タスクにカーソルを合わせたときに小さなウィンドウプレビューを表示する"
+#: backend.cpp:473
+msgctxt "@action:inmenu"
+msgid "Forget Recent Connections"
+msgstr "最近の接続を忘れる"
 
-#: qml/ConfigAppearance.qml:68
-msgctxt "@option:check section General"
-msgid "Hide other windows when hovering over previews"
-msgstr "プレビューにカーソルを合わせたときに他のウィンドウを隠す"
+#: backend.cpp:471
+msgctxt "@action:inmenu"
+msgid "Forget Recent Downloads"
+msgstr "最近のダウンロードを忘れる"
 
-#: qml/ConfigAppearance.qml:68
-msgctxt "@option:check section General"
-msgid "Hide other windows when hovering over tooltips"
-msgstr "ツールチップにカーソルを合わせたときに他のウィンドウを隠す"
+#: backend.cpp:477
+msgctxt "@action:inmenu"
+msgid "Forget Recent Files"
+msgstr "最近のファイルを忘れる"
 
-#: qml/ConfigAppearance.qml:73
-msgctxt "@option:check section General"
-msgid "Show an indicator when a task is playing audio"
-msgstr "タスクがオーディオを再生しているときにインジケーターを表示する"
-
-#: qml/ConfigAppearance.qml:83
-msgctxt "@option:check section General"
-msgid "Mute task when clicking indicator"
-msgstr "インジケーターをクリックしたときにタスクをミュートする"
-
-#: qml/ConfigAppearance.qml:91
-msgctxt "@option:check section General"
-msgid "Show media and volume controls in tooltip"
-msgstr "ツールチップにメディアと音量コントロールを表示する"
-
-#: qml/ConfigAppearance.qml:99
-msgctxt "@option:check section General"
-msgid "Fill free space on panel"
-msgstr "パネルの空きスペースを埋める"
-
-#: qml/ConfigAppearance.qml:111
-msgctxt "@label:listbox"
-msgid "Maximum task width:"
-msgstr "タスクの最大幅:"
-
-#: qml/ConfigAppearance.qml:114
-msgctxt "@item:inlistbox how wide a task item should be"
-msgid "Narrow"
-msgstr "狭い"
-
-#: qml/ConfigAppearance.qml:115
-msgctxt "@item:inlistbox how wide a task item should be"
-msgid "Medium"
-msgstr "中"
-
-#: qml/ConfigAppearance.qml:116
-msgctxt "@item:inlistbox how wide a task item should be"
-msgid "Wide"
-msgstr "広い"
-
-#: qml/ConfigAppearance.qml:127
-msgctxt ""
-"@label for radio button group, completes sentence: … when panel is low on "
-"space etc."
-msgid "Use multi-column view:"
-msgstr "複数列ビューを使用:"
-
-#: qml/ConfigAppearance.qml:128
-msgctxt ""
-"@label for radio button group, completes sentence: … when panel is low on "
-"space etc."
-msgid "Use multi-row view:"
-msgstr "複数行ビューを使用:"
-
-#: qml/ConfigAppearance.qml:134
-msgctxt "@option:radio Never use multi-column view for Task Manager"
-msgid "Never"
-msgstr "しない"
-
-#: qml/ConfigAppearance.qml:144
-msgctxt "@option:radio completes sentence: Use multi-column/row view"
-msgid "When panel is low on space and thick enough"
-msgstr "パネルのスペースが少なく、十分な厚さがあるとき"
-
-#: qml/ConfigAppearance.qml:154
-msgctxt "@option:radio completes sentence: Use multi-column/row view"
-msgid "Always when panel is thick enough"
-msgstr "パネルが十分な厚さのときは常に"
-
-#: qml/ConfigAppearance.qml:161
-msgctxt "@label:spinbox maximum number of columns for tasks"
-msgid "Maximum columns:"
-msgstr "最大列数:"
-
-#: qml/ConfigAppearance.qml:162
-msgctxt "@label:spinbox maximum number of rows for tasks"
-msgid "Maximum rows:"
-msgstr "最大行数:"
-
-#: qml/ConfigAppearance.qml:172
-msgctxt "@label:listbox"
-msgid "Spacing between icons:"
-msgstr "アイコン間の間隔:"
-
-#: qml/ConfigAppearance.qml:176
-msgctxt "@item:inlistbox Icon spacing"
-msgid "Small"
-msgstr "小"
-
-#: qml/ConfigAppearance.qml:180
-msgctxt "@item:inlistbox Icon spacing"
-msgid "Normal"
-msgstr "通常"
-
-#: qml/ConfigAppearance.qml:184
-msgctxt "@item:inlistbox Icon spacing"
-msgid "Large"
-msgstr "大"
-
-#: qml/ConfigAppearance.qml:207
-msgctxt "@label for checkbox"
-msgid "Mini Tooltip:"
-msgstr "ミニツールチップ:"
-
-#: qml/ConfigAppearance.qml:208
-msgctxt "@option:check section Mini Tooltip"
-msgid "Use compact tooltip style"
-msgstr "コンパクトなツールチップスタイルを使用する"
-
-#: qml/ConfigAppearance.qml:213
-msgctxt "@label for checkbox"
-msgid "Custom Decorations:"
-msgstr "カスタム装飾:"
-
-#: qml/ConfigAppearance.qml:214
-msgctxt "@option:check"
-msgid "Use custom task decorations (highlight, indicator)"
-msgstr "カスタムのタスク装飾（ハイライト、インジケーター）を使用する"
-
-#: qml/ConfigAppearance.qml:219
-msgctxt "@label for checkbox"
-msgid "Theme Decorations:"
-msgstr "テーマの装飾:"
-
-#: qml/ConfigAppearance.qml:220
-msgctxt "@option:check"
-msgid "Use KDE theme hover/active decorations"
-msgstr "KDE テーマのホバー/アクティブ装飾を使用する"
-
-#: qml/ConfigAppearance.qml:230
-msgctxt "@label for checkbox"
-msgid "Indicator:"
-msgstr "インジケーター:"
-
-#: qml/ConfigAppearance.qml:231
-msgctxt "@option:check"
-msgid "Show custom indicator bar"
-msgstr "カスタムインジケーターバーを表示する"
-
-#: qml/ConfigAppearance.qml:237
-msgctxt "@label:listbox"
-msgid "Indicator position:"
-msgstr "インジケーターの位置:"
-
-#: qml/ConfigAppearance.qml:241
-msgctxt "@item:inlistbox indicator position"
-msgid "Bottom"
-msgstr "下"
-
-#: qml/ConfigAppearance.qml:242
-msgctxt "@item:inlistbox indicator position"
-msgid "Top"
-msgstr "上"
-
-#: qml/ConfigAppearance.qml:243
-msgctxt "@item:inlistbox indicator position"
-msgid "Left"
-msgstr "左"
-
-#: qml/ConfigAppearance.qml:244
-msgctxt "@item:inlistbox indicator position"
-msgid "Right"
-msgstr "右"
-
-#: qml/ConfigAppearance.qml:253
-msgid "Animation"
-msgstr "アニメーション"
-
-#: qml/ConfigAppearance.qml:259
-msgctxt "@label:listbox"
-msgid "Animation speed:"
-msgstr "アニメーション速度:"
-
-#: qml/ConfigAppearance.qml:262
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Fast"
-msgstr "非常に速い"
-
-#: qml/ConfigAppearance.qml:263
-msgctxt "@item:inlistbox animation speed"
-msgid "Fast"
-msgstr "速い"
-
-#: qml/ConfigAppearance.qml:264
-msgctxt "@item:inlistbox animation speed"
-msgid "Normal"
-msgstr "通常"
-
-#: qml/ConfigAppearance.qml:265
-msgctxt "@item:inlistbox animation speed"
-msgid "Slow"
-msgstr "遅い"
-
-#: qml/ConfigAppearance.qml:266
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Slow"
-msgstr "非常に遅い"
-
-#: qml/ConfigAppearance.qml:272
-msgid "Icon hover effect"
-msgstr "アイコンのホバー効果"
-
-#: qml/ConfigAppearance.qml:278
-msgctxt "@label:listbox"
-msgid "Hover direction:"
-msgstr "ホバー方向:"
-
-#: qml/ConfigAppearance.qml:282
-msgctxt "@item:inlistbox hover direction"
-msgid "Up"
-msgstr "上"
-
-#: qml/ConfigAppearance.qml:283
-msgctxt "@item:inlistbox hover direction"
-msgid "Down"
-msgstr "下"
-
-#: qml/ConfigAppearance.qml:284
-msgctxt "@item:inlistbox hover direction"
-msgid "Left"
-msgstr "左"
-
-#: qml/ConfigAppearance.qml:285
-msgctxt "@item:inlistbox hover direction"
-msgid "Right"
-msgstr "右"
-
-#: qml/ConfigAppearance.qml:291
-msgid "Show highlight background on hover/active"
-msgstr "ホバー/アクティブ時にハイライト背景を表示する"
-
-#: qml/ConfigAppearance.qml:298
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "ハイライトの形状:"
-
-#: qml/ConfigAppearance.qml:302
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rounded Rectangle"
-msgstr "角丸長方形"
-
-#: qml/ConfigAppearance.qml:303
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "長方形"
-
-#: qml/ConfigAppearance.qml:304
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "円"
-
-#: qml/ConfigAppearance.qml:310
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "ハイライトの色:"
-
-#: qml/ConfigAppearance.qml:314
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "白"
-
-#: qml/ConfigAppearance.qml:315
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "黒"
-
-#: qml/ConfigAppearance.qml:316
-msgctxt "@item:inlistbox highlight color"
-msgid "Theme Highlight"
-msgstr "テーマのハイライト"
-
-#: qml/ConfigAppearance.qml:322
-msgid "Icon scale:"
-msgstr "アイコンのスケール:"
+#: backend.cpp:475
+msgctxt "@action:inmenu"
+msgid "Forget Recent Places"
+msgstr "最近の場所を忘れる"
 
 #: qml/ConfigBehavior.qml:50
 msgctxt "@info"
@@ -552,43 +116,67 @@ msgid ""
 "behavior. If you don't find one, consider reporting this as a bug to the "
 "app's developer."
 msgstr ""
-"この設定を使用して、あまりにも頻繁に注意を要求するアプリケーションを回避して"
-"いる場合は、まずそのアプリ内でその動作を無効にする設定を探してください。見つ"
-"からない場合は、アプリの開発者にバグとして報告することを検討してください。"
+"この設定を使用して、あまりにも頻繁に注意を要求するアプリケーションを回避している場合は、まずそのアプリ内でその動作を無効にする設定を探してください。見つからない場合は、アプリの開発者にバグとして報告することを検討してください。"
 
-#: qml/ConfigBehavior.qml:66
-msgctxt "@label:listbox how to group tasks"
-msgid "Group:"
-msgstr "グループ:"
+#: qml/ConfigBehavior.qml:98
+msgctxt "@info displayed as InlineMessage"
+msgid ""
+"The compositor does not support displaying windows side by side, so a "
+"textual list will be displayed instead."
+msgstr "コンポジターがウィンドウを並べて表示することをサポートしていないため、代わりにテキストリストが表示されます。"
 
-#: qml/ConfigBehavior.qml:70
-msgctxt "@item:inlistbox how to group tasks"
-msgid "Do not group"
-msgstr "グループ化しない"
+#: qml/Task.qml:324
+msgctxt "@info:tooltip"
+msgid "There is %1 new message."
+msgid_plural "There are %1 new messages."
+msgstr[0] "%1 件の新しいメッセージがあります。"
 
-#: qml/ConfigBehavior.qml:71
-msgctxt "@item:inlistbox how to group tasks"
-msgid "By program name"
-msgstr "プログラム名でグループ化"
+#: qml/AudioStream.qml:95
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Mute %1"
+msgstr "%1 をミュート"
 
-#: qml/ConfigBehavior.qml:77
-msgctxt "@label:listbox completes sentence like: … cycles through tasks"
-msgid "Clicking grouped task:"
-msgstr "グループ化されたタスクをクリック:"
+#: qml/AudioStream.qml:95
+msgctxt "@info:tooltip %1 is the window title"
+msgid "Unmute %1"
+msgstr "%1 のミュートを解除"
+
+#: qml/ToolTipInstance.qml:219
+msgctxt "@info:tooltip Close this window"
+msgid "Close window"
+msgstr "ウィンドウを閉じる"
+
+#: qml/Task.qml:319
+msgctxt "@info:usagetip %1 application name"
+msgid "Launch %1"
+msgstr "%1 を起動"
+
+#: qml/Task.qml:345
+msgctxt "@info:usagetip %1 task name"
+msgid "Activate %1"
+msgstr "%1 をアクティブ化"
+
+#: qml/Task.qml:341
+msgctxt "@info:usagetip %1 task name"
+msgid "Open textual list of windows for %1"
+msgstr "%1 のウィンドウのテキストリストを開く"
+
+#: qml/Task.qml:332
+msgctxt "@info:usagetip %1 task name"
+msgid "Show Task tooltip for %1"
+msgstr "%1 のタスクツールチップを表示"
+
+#: qml/Task.qml:336
+msgctxt "@info:usagetip %1 task name"
+msgid "Show windows side by side for %1"
+msgstr "%1 のウィンドウを並べて表示"
 
 #: qml/ConfigBehavior.qml:84
 msgctxt ""
-"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through "
-"tasks' "
+"@item:inlistbox Completes the sentence 'Clicking grouped task cycles through"
+" tasks' "
 msgid "Cycles through tasks"
 msgstr "タスクを順に切り替える"
-
-#: qml/ConfigBehavior.qml:85
-msgctxt ""
-"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
-"window previews' "
-msgid "Shows small window previews"
-msgstr "小さなウィンドウプレビューを表示する"
 
 #: qml/ConfigBehavior.qml:86
 msgctxt ""
@@ -597,6 +185,13 @@ msgctxt ""
 msgid "Shows large window previews"
 msgstr "大きなウィンドウプレビューを表示する"
 
+#: qml/ConfigBehavior.qml:85
+msgctxt ""
+"@item:inlistbox Completes the sentence 'Clicking grouped task shows small "
+"window previews' "
+msgid "Shows small window previews"
+msgstr "小さなウィンドウプレビューを表示する"
+
 #: qml/ConfigBehavior.qml:87
 msgctxt ""
 "@item:inlistbox Completes the sentence 'Clicking grouped task shows textual "
@@ -604,121 +199,20 @@ msgctxt ""
 msgid "Shows textual list"
 msgstr "テキストリストを表示する"
 
-#: qml/ConfigBehavior.qml:98
-msgctxt "@info displayed as InlineMessage"
-msgid ""
-"The compositor does not support displaying windows side by side, so a "
-"textual list will be displayed instead."
-msgstr ""
-"コンポジターがウィンドウを並べて表示することをサポートしていないため、代わり"
-"にテキストリストが表示されます。"
+#: qml/ConfigAppearance.qml:185
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "大"
 
-#: qml/ConfigBehavior.qml:108
-msgctxt "@option:check grouped task"
-msgid "Combine into single button"
-msgstr "単一のボタンにまとめる"
+#: qml/ConfigAppearance.qml:181
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "通常"
 
-#: qml/ConfigBehavior.qml:115
-msgctxt "@option:check grouped task"
-msgid "Group only when the Task Manager is full"
-msgstr "タスクマネージャーがいっぱいのときのみグループ化する"
-
-#: qml/ConfigBehavior.qml:127
-msgctxt "@label:listbox sort tasks in grouped task"
-msgid "Sort:"
-msgstr "並べ替え:"
-
-#: qml/ConfigBehavior.qml:134
-msgctxt "@item:inlistbox sort tasks in grouped task"
-msgid "Do not sort"
-msgstr "並べ替えない"
-
-#: qml/ConfigBehavior.qml:138
-msgctxt "@item:inlistbox sort tasks in grouped task"
-msgid "Manually"
-msgstr "手動"
-
-#: qml/ConfigBehavior.qml:142
-msgctxt "@item:inlistbox sort tasks in grouped task"
-msgid "Alphabetically"
-msgstr "アルファベット順"
-
-#: qml/ConfigBehavior.qml:146
-msgctxt "@item:inlistbox sort tasks in grouped task"
-msgid "By desktop"
-msgstr "デスクトップ別"
-
-#: qml/ConfigBehavior.qml:150
-msgctxt "@item:inlistbox sort tasks in grouped task"
-msgid "By activity"
-msgstr "アクティビティ別"
-
-#: qml/ConfigBehavior.qml:154
-msgctxt "@item:inlistbox sort tasks in grouped task"
-msgid "By horizontal window position"
-msgstr "ウィンドウの水平位置順"
-
-#: qml/ConfigBehavior.qml:165
-msgctxt "@option:check configure task sorting"
-msgid "Keep launchers separate"
-msgstr "ランチャーを分けておく"
-
-#: qml/ConfigBehavior.qml:172
-msgctxt "@option:check for icons-and-text task manager"
-msgid "Hide launchers after application startup"
-msgstr "アプリケーションの起動後にランチャーを隠す"
-
-#: qml/ConfigBehavior.qml:182
-msgctxt ""
-"@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
-"task'"
-msgid "Clicking active task:"
-msgstr "アクティブなタスクをクリック:"
-
-#: qml/ConfigBehavior.qml:183
-msgctxt ""
-"@option:check Part of a sentence: 'Clicking active task minimizes the task'"
-msgid "Minimizes the task"
-msgstr "タスクを最小化する"
-
-#: qml/ConfigBehavior.qml:188
-msgctxt "@label:listbox completes sentence like: … does nothing"
-msgid "Middle-clicking any task:"
-msgstr "任意のタスクを中クリック:"
-
-#: qml/ConfigBehavior.qml:192
-msgctxt ""
-"@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
-msgid "Does nothing"
-msgstr "何もしない"
-
-#: qml/ConfigBehavior.qml:193
-msgctxt ""
-"@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
-"or group'"
-msgid "Closes window or group"
-msgstr "ウィンドウまたはグループを閉じる"
-
-#: qml/ConfigBehavior.qml:194
-msgctxt ""
-"@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
-"window'"
-msgid "Opens a new window"
-msgstr "新しいウィンドウを開く"
-
-#: qml/ConfigBehavior.qml:195
-msgctxt ""
-"@item:inlistbox Part of a sentence: 'Middle-clicking any task minimizes/"
-"restores window or group'"
-msgid "Minimizes/Restores window or group"
-msgstr "ウィンドウまたはグループを最小化/復元する"
-
-#: qml/ConfigBehavior.qml:196
-msgctxt ""
-"@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
-"grouping'"
-msgid "Toggles grouping"
-msgstr "グループ化を切り替える"
+#: qml/ConfigAppearance.qml:177
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "小"
 
 #: qml/ConfigBehavior.qml:197
 msgctxt ""
@@ -727,18 +221,46 @@ msgctxt ""
 msgid "Brings it to the current virtual desktop"
 msgstr "現在の仮想デスクトップに移動する"
 
-#: qml/ConfigBehavior.qml:207
+#: qml/ConfigBehavior.qml:193
 msgctxt ""
-"@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
-"through tasks/cycles through the selected task's windows/adjusts the hovered "
-"task’s volume''"
-msgid "Scrolling behavior:"
-msgstr "スクロール動作:"
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task closes window "
+"or group'"
+msgid "Closes window or group"
+msgstr "ウィンドウまたはグループを閉じる"
 
-#: qml/ConfigBehavior.qml:211
-msgctxt "@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
+#: qml/ConfigBehavior.qml:192
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task does nothing'"
 msgid "Does nothing"
 msgstr "何もしない"
+
+#: qml/ConfigBehavior.qml:195
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task "
+"minimizes/restores window or group'"
+msgid "Minimizes/Restores window or group"
+msgstr "ウィンドウまたはグループを最小化/復元する"
+
+#: qml/ConfigBehavior.qml:194
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task opens a new "
+"window'"
+msgid "Opens a new window"
+msgstr "新しいウィンドウを開く"
+
+#: qml/ConfigBehavior.qml:196
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
+"grouping'"
+msgid "Toggles grouping"
+msgstr "グループ化を切り替える"
+
+#: qml/ConfigBehavior.qml:214
+msgctxt ""
+"@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
+"task’s volume'"
+msgid "Adjusts the hovered task’s volume"
+msgstr "カーソルを合わせたタスクの音量を調整する"
 
 #: qml/ConfigBehavior.qml:212
 msgctxt ""
@@ -754,17 +276,188 @@ msgctxt ""
 msgid "Cycles through the hovered task’s windows"
 msgstr "カーソルを合わせたタスクのウィンドウを順に切り替える"
 
-#: qml/ConfigBehavior.qml:214
+#: qml/ConfigBehavior.qml:211
 msgctxt ""
-"@item:inlistbox Part of a sentence: 'Scrolling behavior adjusts the hovered "
-"task’s volume'"
-msgid "Adjusts the hovered task’s volume"
-msgstr "カーソルを合わせたタスクの音量を調整する"
+"@item:inlistbox Part of a sentence: 'Scrolling behavior does nothing'"
+msgid "Does nothing"
+msgstr "何もしない"
 
-#: qml/ConfigBehavior.qml:222
-msgctxt "@option:check mouse wheel task cycling"
-msgid "Skip minimized tasks"
-msgstr "最小化されたタスクをスキップする"
+#: qml/ConfigAppearance.qml:273
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "速い"
+
+#: qml/ConfigAppearance.qml:274
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "通常"
+
+#: qml/ConfigAppearance.qml:275
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "遅い"
+
+#: qml/ConfigAppearance.qml:272
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "非常に速い"
+
+#: qml/ConfigAppearance.qml:276
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "非常に遅い"
+
+#: qml/ConfigAppearance.qml:325
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "黒"
+
+#: qml/ConfigAppearance.qml:324
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "白"
+
+#: qml/ConfigAppearance.qml:326
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "自動（配色に従う）"
+
+#: qml/ConfigAppearance.qml:314
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "円"
+
+#: qml/ConfigAppearance.qml:313
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "長方形"
+
+#: qml/ConfigAppearance.qml:312
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded Rectangle"
+msgstr "角丸長方形"
+
+#: qml/ConfigAppearance.qml:293
+msgctxt "@item:inlistbox hover direction"
+msgid "Down"
+msgstr "下"
+
+#: qml/ConfigAppearance.qml:294
+msgctxt "@item:inlistbox hover direction"
+msgid "Left"
+msgstr "左"
+
+#: qml/ConfigAppearance.qml:295
+msgctxt "@item:inlistbox hover direction"
+msgid "Right"
+msgstr "右"
+
+#: qml/ConfigAppearance.qml:292
+msgctxt "@item:inlistbox hover direction"
+msgid "Up"
+msgstr "上"
+
+#: qml/ConfigBehavior.qml:71
+msgctxt "@item:inlistbox how to group tasks"
+msgid "By program name"
+msgstr "プログラム名でグループ化"
+
+#: qml/ConfigBehavior.qml:70
+msgctxt "@item:inlistbox how to group tasks"
+msgid "Do not group"
+msgstr "グループ化しない"
+
+#: qml/ConfigAppearance.qml:116
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Medium"
+msgstr "中"
+
+#: qml/ConfigAppearance.qml:115
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Narrow"
+msgstr "狭い"
+
+#: qml/ConfigAppearance.qml:117
+msgctxt "@item:inlistbox how wide a task item should be"
+msgid "Wide"
+msgstr "広い"
+
+#: qml/ConfigAppearance.qml:251
+msgctxt "@item:inlistbox indicator position"
+msgid "Bottom"
+msgstr "下"
+
+#: qml/ConfigAppearance.qml:253
+msgctxt "@item:inlistbox indicator position"
+msgid "Left"
+msgstr "左"
+
+#: qml/ConfigAppearance.qml:254
+msgctxt "@item:inlistbox indicator position"
+msgid "Right"
+msgstr "右"
+
+#: qml/ConfigAppearance.qml:252
+msgctxt "@item:inlistbox indicator position"
+msgid "Top"
+msgstr "上"
+
+#: qml/ConfigBehavior.qml:142
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Alphabetically"
+msgstr "アルファベット順"
+
+#: qml/ConfigBehavior.qml:150
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By activity"
+msgstr "アクティビティ別"
+
+#: qml/ConfigBehavior.qml:146
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By desktop"
+msgstr "デスクトップ別"
+
+#: qml/ConfigBehavior.qml:154
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "By horizontal window position"
+msgstr "ウィンドウの水平位置順"
+
+#: qml/ConfigBehavior.qml:134
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Do not sort"
+msgstr "並べ替えない"
+
+#: qml/ConfigBehavior.qml:138
+msgctxt "@item:inlistbox sort tasks in grouped task"
+msgid "Manually"
+msgstr "手動"
+
+#: qml/ConfigAppearance.qml:214
+msgctxt "@label for checkbox"
+msgid "Custom Decorations:"
+msgstr "カスタム装飾:"
+
+#: qml/ConfigAppearance.qml:240
+msgctxt "@label for checkbox"
+msgid "Indicator:"
+msgstr "インジケーター:"
+
+#: qml/ConfigAppearance.qml:208
+msgctxt "@label for checkbox"
+msgid "Mini Tooltip:"
+msgstr "ミニツールチップ:"
+
+#: qml/ConfigAppearance.qml:225
+msgctxt "@label for checkbox"
+msgid "Theme Decorations:"
+msgstr "テーマの装飾:"
+
+#: qml/ConfigBehavior.qml:182
+msgctxt ""
+"@label for checkbox Part of a sentence: 'Clicking active task minimizes the "
+"task'"
+msgid "Clicking active task:"
+msgstr "アクティブなタスクをクリック:"
 
 #: qml/ConfigBehavior.qml:232
 msgctxt ""
@@ -772,15 +465,170 @@ msgctxt ""
 msgid "Show only tasks:"
 msgstr "表示するタスク:"
 
-#: qml/ConfigBehavior.qml:233
-msgctxt "@option:check completes sentence: show only tasks"
-msgid "From the current desktop"
-msgstr "現在のデスクトップから"
+#: qml/ConfigBehavior.qml:257
+msgctxt ""
+"@label for checkbox, completes sentence: … unhide if window wants attention"
+msgid "When panel is hidden:"
+msgstr "パネルが非表示のとき:"
+
+#: qml/ConfigAppearance.qml:128
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-column view:"
+msgstr "複数列ビューを使用:"
+
+#: qml/ConfigAppearance.qml:129
+msgctxt ""
+"@label for radio button group, completes sentence: … when panel is low on "
+"space etc."
+msgid "Use multi-row view:"
+msgstr "複数行ビューを使用:"
+
+#: qml/ConfigBehavior.qml:273
+msgctxt ""
+"@label for radiobutton group completes sentence like: … on the bottom"
+msgid "New tasks appear:"
+msgstr "新しいタスクの表示位置:"
+
+#: qml/ConfigAppearance.qml:63
+msgctxt "@label for several checkboxes"
+msgid "General:"
+msgstr "全般:"
+
+#: qml/ConfigAppearance.qml:269
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "アニメーション速度:"
+
+#: qml/ConfigAppearance.qml:320
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "ハイライトの色:"
+
+#: qml/ConfigAppearance.qml:308
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "ハイライトの形状:"
+
+#: qml/ConfigAppearance.qml:288
+msgctxt "@label:listbox"
+msgid "Hover direction:"
+msgstr "ホバー方向:"
+
+#: qml/ConfigAppearance.qml:247
+msgctxt "@label:listbox"
+msgid "Indicator position:"
+msgstr "インジケーターの位置:"
+
+#: qml/ConfigAppearance.qml:112
+msgctxt "@label:listbox"
+msgid "Maximum task width:"
+msgstr "タスクの最大幅:"
+
+#: qml/ConfigAppearance.qml:173
+msgctxt "@label:listbox"
+msgid "Spacing between icons:"
+msgstr "アイコン間の間隔:"
+
+#: qml/ConfigBehavior.qml:207
+msgctxt ""
+"@label:listbox Part of a sentence: 'Scrolling behavior does nothing/cycles "
+"through tasks/cycles through the selected task's windows/adjusts the hovered"
+" task’s volume''"
+msgid "Scrolling behavior:"
+msgstr "スクロール動作:"
+
+#: qml/ConfigBehavior.qml:77
+msgctxt "@label:listbox completes sentence like: … cycles through tasks"
+msgid "Clicking grouped task:"
+msgstr "グループ化されたタスクをクリック:"
+
+#: qml/ConfigBehavior.qml:188
+msgctxt "@label:listbox completes sentence like: … does nothing"
+msgid "Middle-clicking any task:"
+msgstr "任意のタスクを中クリック:"
+
+#: qml/ConfigBehavior.qml:66
+msgctxt "@label:listbox how to group tasks"
+msgid "Group:"
+msgstr "グループ:"
+
+#: qml/ConfigBehavior.qml:127
+msgctxt "@label:listbox sort tasks in grouped task"
+msgid "Sort:"
+msgstr "並べ替え:"
+
+#: qml/ConfigAppearance.qml:332
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "ハイライトサイズ："
+
+#: qml/ConfigAppearance.qml:162
+msgctxt "@label:spinbox maximum number of columns for tasks"
+msgid "Maximum columns:"
+msgstr "最大列数:"
+
+#: qml/ConfigAppearance.qml:163
+msgctxt "@label:spinbox maximum number of rows for tasks"
+msgid "Maximum rows:"
+msgstr "最大行数:"
+
+#: qml/ConfigAppearance.qml:241
+msgctxt "@option:check"
+msgid "Show custom indicator bar"
+msgstr "カスタムインジケーターバーを表示する"
+
+#: qml/ConfigAppearance.qml:226
+msgctxt "@option:check"
+msgid "Use KDE theme hover/active decorations"
+msgstr "KDE テーマのホバー/アクティブ装飾を使用する"
+
+#: qml/ConfigAppearance.qml:215
+msgctxt "@option:check"
+msgid "Use custom task decorations (highlight, indicator)"
+msgstr "カスタムのタスク装飾（ハイライト、インジケーター）を使用する"
+
+#: qml/ConfigBehavior.qml:183
+msgctxt ""
+"@option:check Part of a sentence: 'Clicking active task minimizes the task'"
+msgid "Minimizes the task"
+msgstr "タスクを最小化する"
+
+#: qml/ConfigBehavior.qml:277
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the bottom"
+msgstr "下"
+
+#: qml/ConfigBehavior.qml:294
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "On the top"
+msgstr "上"
+
+#: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:298
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the left"
+msgstr "左"
+
+#: qml/ConfigBehavior.qml:281 qml/ConfigBehavior.qml:300
+msgctxt "@option:check completes sentence: New tasks appear"
+msgid "To the right"
+msgstr "右"
+
+#: qml/ConfigBehavior.qml:258
+msgctxt "@option:check completes sentence: When panel is hidden"
+msgid "Unhide when a window wants attention"
+msgstr "ウィンドウが注意を求めたときに再表示する"
 
 #: qml/ConfigBehavior.qml:238
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current activity"
 msgstr "現在のアクティビティから"
+
+#: qml/ConfigBehavior.qml:233
+msgctxt "@option:check completes sentence: show only tasks"
+msgid "From the current desktop"
+msgstr "現在のデスクトップから"
 
 #: qml/ConfigBehavior.qml:243
 msgctxt "@option:check completes sentence: show only tasks"
@@ -792,78 +640,132 @@ msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
 msgstr "最小化されているもの"
 
-#: qml/ConfigBehavior.qml:257
-msgctxt ""
-"@label for checkbox, completes sentence: … unhide if window wants attention"
-msgid "When panel is hidden:"
-msgstr "パネルが非表示のとき:"
+#: qml/ConfigBehavior.qml:165
+msgctxt "@option:check configure task sorting"
+msgid "Keep launchers separate"
+msgstr "ランチャーを分けておく"
 
-#: qml/ConfigBehavior.qml:258
-msgctxt "@option:check completes sentence: When panel is hidden"
-msgid "Unhide when a window wants attention"
-msgstr "ウィンドウが注意を求めたときに再表示する"
+#: qml/ConfigBehavior.qml:172
+msgctxt "@option:check for icons-and-text task manager"
+msgid "Hide launchers after application startup"
+msgstr "アプリケーションの起動後にランチャーを隠す"
 
-#: qml/ConfigBehavior.qml:273
-msgctxt "@label for radiobutton group completes sentence like: … on the bottom"
-msgid "New tasks appear:"
-msgstr "新しいタスクの表示位置:"
+#: qml/ConfigBehavior.qml:108
+msgctxt "@option:check grouped task"
+msgid "Combine into single button"
+msgstr "単一のボタンにまとめる"
 
-#: qml/ConfigBehavior.qml:277
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "On the bottom"
-msgstr "下"
+#: qml/ConfigBehavior.qml:115
+msgctxt "@option:check grouped task"
+msgid "Group only when the Task Manager is full"
+msgstr "タスクマネージャーがいっぱいのときのみグループ化する"
 
-#: qml/ConfigBehavior.qml:281 qml/ConfigBehavior.qml:300
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "To the right"
-msgstr "右"
+#: qml/ContextMenu.qml:754
+msgctxt "@option:check inmenu"
+msgid "Allow this program to be grouped"
+msgstr "このプログラムのグループ化を許可"
 
-#: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:298
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "To the left"
-msgstr "左"
+#: qml/ContextMenu.qml:266
+msgctxt "@option:check inmenu, no separate unmute action"
+msgid "Mute"
+msgstr "ミュート"
 
-#: qml/ConfigBehavior.qml:294
-msgctxt "@option:check completes sentence: New tasks appear"
-msgid "On the top"
-msgstr "上"
+#: qml/ConfigBehavior.qml:222
+msgctxt "@option:check mouse wheel task cycling"
+msgid "Skip minimized tasks"
+msgstr "最小化されたタスクをスキップする"
 
-#: qml/ToolTipInstance.qml:219
-msgctxt "@info:tooltip Close this window"
-msgid "Close window"
-msgstr "ウィンドウを閉じる"
+#: qml/ConfigAppearance.qml:100
+msgctxt "@option:check section General"
+msgid "Fill free space on panel"
+msgstr "パネルの空きスペースを埋める"
 
-#: qml/ToolTipInstance.qml:432
-#, qt-format
-msgctxt "button to unmute app"
-msgid "Unmute %1"
-msgstr "%1 のミュートを解除"
+#: qml/ConfigAppearance.qml:69
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over previews"
+msgstr "プレビューにカーソルを合わせたときに他のウィンドウを隠す"
 
-#: qml/ToolTipInstance.qml:433
-#, qt-format
-msgctxt "button to mute app"
-msgid "Mute %1"
-msgstr "%1 をミュート"
+#: qml/ConfigAppearance.qml:69
+msgctxt "@option:check section General"
+msgid "Hide other windows when hovering over tooltips"
+msgstr "ツールチップにカーソルを合わせたときに他のウィンドウを隠す"
+
+#: qml/ConfigAppearance.qml:84
+msgctxt "@option:check section General"
+msgid "Mute task when clicking indicator"
+msgstr "インジケーターをクリックしたときにタスクをミュートする"
+
+#: qml/ConfigAppearance.qml:74
+msgctxt "@option:check section General"
+msgid "Show an indicator when a task is playing audio"
+msgstr "タスクがオーディオを再生しているときにインジケーターを表示する"
+
+#: qml/ConfigAppearance.qml:92
+msgctxt "@option:check section General"
+msgid "Show media and volume controls in tooltip"
+msgstr "ツールチップにメディアと音量コントロールを表示する"
+
+#: qml/ConfigAppearance.qml:64
+msgctxt "@option:check section General"
+msgid "Show small window previews when hovering over tasks"
+msgstr "タスクにカーソルを合わせたときに小さなウィンドウプレビューを表示する"
+
+#: qml/ConfigAppearance.qml:209
+msgctxt "@option:check section Mini Tooltip"
+msgid "Use compact tooltip style"
+msgstr "コンパクトなツールチップスタイルを使用する"
+
+#: qml/ConfigAppearance.qml:135
+msgctxt "@option:radio Never use multi-column view for Task Manager"
+msgid "Never"
+msgstr "しない"
+
+#: qml/ConfigAppearance.qml:155
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "Always when panel is thick enough"
+msgstr "パネルが十分な厚さのときは常に"
+
+#: qml/ConfigAppearance.qml:145
+msgctxt "@option:radio completes sentence: Use multi-column/row view"
+msgid "When panel is low on space and thick enough"
+msgstr "パネルのスペースが少なく、十分な厚さがあるとき"
+
+#: qml/config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "Appearance"
+msgstr "外観"
+
+#: qml/config.qml:18
+msgctxt "@title:group for configuration dialog page"
+msgid "Behavior"
+msgstr "動作"
+
+#: qml/ContextMenu.qml:116
+msgctxt "@title:group for section of menu items"
+msgid "Actions"
+msgstr "操作"
+
+#: qml/ContextMenu.qml:100
+msgctxt "@title:group for section of menu items"
+msgid "Places"
+msgstr "場所"
+
+#: qml/ContextMenu.qml:106
+msgctxt "@title:group for section of menu items"
+msgid "Recent Files"
+msgstr "最近のファイル"
 
 #: qml/ToolTipInstance.qml:451
-#, qt-format
 msgctxt "Accessibility data on volume slider"
 msgid "Adjust volume for %1"
 msgstr "%1 の音量を調整"
 
-#: qml/ToolTipInstance.qml:467
-#, qt-format
-msgctxt "volume percentage"
-msgid "%1%"
-msgstr "%1%"
-
-#: qml/ToolTipInstance.qml:471
-msgctxt "only used for sizing, should be widest possible string"
-msgid "100%"
-msgstr "100%"
+#: qml/ToolTipInstance.qml:505
+msgctxt "Activities a window is currently on (apart from the current one)"
+msgid "Also available on %1"
+msgstr "%1 でも利用可能"
 
 #: qml/ToolTipInstance.qml:487
-#, qt-format
 msgctxt "Comma-separated list of desktops"
 msgid "On %1"
 msgstr "%1 上"
@@ -873,86 +775,187 @@ msgctxt "Comma-separated list of desktops"
 msgid "Pinned to all desktops"
 msgstr "すべてのデスクトップにピン留め"
 
-#: qml/ToolTipInstance.qml:496
-msgctxt "Which virtual desktop a window is currently on"
-msgid "Available on all activities"
-msgstr "すべてのアクティビティで利用可能"
+#: qml/ContextMenu.qml:241
+msgctxt "Open or bring to the front window of media player app"
+msgid "Restore"
+msgstr "復元"
 
-#: qml/ToolTipInstance.qml:506
-#, qt-format
-msgctxt "Activities a window is currently on (apart from the current one)"
-msgid "Also available on %1"
-msgstr "%1 でも利用可能"
+#: qml/ContextMenu.qml:177
+msgctxt "Pause playback"
+msgid "Pause"
+msgstr "一時停止"
 
-#: qml/ToolTipInstance.qml:510
-#, qt-format
+#: qml/ContextMenu.qml:195
+msgctxt "Play next track"
+msgid "Next Track"
+msgstr "次のトラック"
+
+#: qml/ContextMenu.qml:163
+msgctxt "Play previous track"
+msgid "Previous Track"
+msgstr "前のトラック"
+
+#: qml/ContextMenu.qml:226
+msgctxt "Quit media player app"
+msgid "Quit"
+msgstr "終了"
+
+#: backend.cpp:374
+msgctxt "Show all user Places"
+msgid "%1 more Place…"
+msgid_plural "%1 more Places…"
+msgstr[0] "その他 (%1個)…"
+
+#: qml/ContextMenu.qml:177
+msgctxt "Start playback"
+msgid "Play"
+msgstr "再生"
+
+#: qml/ContextMenu.qml:206
+msgctxt "Stop playback"
+msgid "Stop"
+msgstr "停止"
+
+#: qml/ToolTipInstance.qml:509
 msgctxt "Which activities a window is currently on"
 msgid "Available on %1"
 msgstr "%1 で利用可能"
 
-#: qml/AudioStream.qml:94
-msgctxt "@action:button"
-msgid "Unmute"
-msgstr "ミュートを解除"
+#: qml/ToolTipInstance.qml:495
+msgctxt "Which virtual desktop a window is currently on"
+msgid "Available on all activities"
+msgstr "すべてのアクティビティで利用可能"
 
-#: qml/AudioStream.qml:94
-msgctxt "@action:button"
-msgid "Mute"
-msgstr "ミュート"
+#: qml/ContextMenu.qml:345
+msgctxt "action:inmenu"
+msgid "&All Desktops"
+msgstr "すべての&デスクトップ"
 
-#: qml/AudioStream.qml:95
-#, qt-format
-msgctxt "@info:tooltip %1 is the window title"
-msgid "Unmute %1"
-msgstr "%1 のミュートを解除"
+#: qml/ContextMenu.qml:700
+msgctxt "action:inmenu"
+msgid "&Fullscreen"
+msgstr "&全画面"
 
-#: qml/AudioStream.qml:95
-#, qt-format
-msgctxt "@info:tooltip %1 is the window title"
+#: qml/ContextMenu.qml:631
+msgctxt "action:inmenu"
+msgid "&Move"
+msgstr "&移動"
+
+#: qml/ContextMenu.qml:373
+msgctxt "action:inmenu"
+msgid "&New Desktop"
+msgstr "新しい&デスクトップ"
+
+#: qml/ContextMenu.qml:509 qml/ContextMenu.qml:525
+msgctxt "action:inmenu"
+msgid "&Pin to Task Manager"
+msgstr "タスクマネージャーに&ピン留め"
+
+#: qml/ContextMenu.qml:713
+msgctxt "action:inmenu"
+msgid "&Shade"
+msgstr "&シェード"
+
+#: qml/ContextMenu.qml:417
+msgctxt "action:inmenu"
+msgid "Add To Current Activity"
+msgstr "現在のアクティビティに追加"
+
+#: qml/ContextMenu.qml:427
+msgctxt "action:inmenu"
+msgid "All Activities"
+msgstr "すべてのアクティビティ"
+
+#: qml/ContextMenu.qml:678
+msgctxt "action:inmenu"
+msgid "Keep &Above Others"
+msgstr "常に&最前面に表示"
+
+#: qml/ContextMenu.qml:688
+msgctxt "action:inmenu"
+msgid "Keep &Below Others"
+msgstr "常に&最背面に表示"
+
+#: qml/ContextMenu.qml:654
+msgctxt "action:inmenu"
+msgid "Ma&ximize"
+msgstr "最&大化"
+
+#: qml/ContextMenu.qml:668
+msgctxt "action:inmenu"
+msgid "Mi&nimize"
+msgstr "最&小化"
+
+#: qml/ContextMenu.qml:323
+msgctxt "action:inmenu"
+msgid "Move &To Current Desktop"
+msgstr "現在の&デスクトップに移動"
+
+#: qml/ContextMenu.qml:483
+msgctxt "action:inmenu"
+msgid "Move to %1"
+msgstr "%1 に移動"
+
+#: qml/ContextMenu.qml:293
+msgctxt "action:inmenu"
+msgid "Move to &Desktop"
+msgstr "&デスクトップに移動"
+
+#: qml/ContextMenu.qml:577
+msgctxt "action:inmenu"
+msgid "On All Activities"
+msgstr "すべてのアクティビティで"
+
+#: qml/ContextMenu.qml:583
+msgctxt "action:inmenu"
+msgid "On The Current Activity"
+msgstr "現在のアクティビティで"
+
+#: qml/ContextMenu.qml:277
+msgctxt "action:inmenu"
+msgid "Open New Window"
+msgstr "新しいウィンドウを開く"
+
+#: qml/ContextMenu.qml:640
+msgctxt "action:inmenu"
+msgid "Re&size"
+msgstr "サイズ&変更"
+
+#: qml/ContextMenu.qml:393
+msgctxt "action:inmenu"
+msgid "Show in &Activities"
+msgstr "&アクティビティに表示"
+
+#: qml/ContextMenu.qml:607
+msgctxt "action:inmenu"
+msgid "Unpin from Task Manager"
+msgstr "タスクマネージャーからピン留めを外す"
+
+#: qml/ToolTipInstance.qml:433
+msgctxt "button to mute app"
 msgid "Mute %1"
 msgstr "%1 をミュート"
 
-#: qml/TaskBadgeOverlay.qml:101
-msgctxt ""
-"'k' is a suffix for 'thousand'; keep to one character or else the badge "
-"could overflow!"
-msgid "9k+"
-msgstr "9k+"
+#: qml/ToolTipInstance.qml:432
+msgctxt "button to unmute app"
+msgid "Unmute %1"
+msgstr "%1 のミュートを解除"
 
-#: qml/TaskBadgeOverlay.qml:104
-#, qt-format
-msgctxt ""
-"'k' is a suffix for 'thousand'; keep to one character or else the badge "
-"could overflow!"
-msgid "%1k"
-msgstr "%1k"
+#: qml/ContextMenu.qml:622
+msgctxt "item:inmenu opens submenu"
+msgid "More"
+msgstr "その他"
 
-#: qml/Task.qml:284
-#, qt-format
-msgctxt "@info:usagetip %1 application name"
-msgid "Launch %1"
-msgstr "%1 を起動"
+#: qml/ToolTipInstance.qml:471
+msgctxt "only used for sizing, should be widest possible string"
+msgid "100%"
+msgstr "100%"
 
-#: qml/Task.qml:297
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Show Task tooltip for %1"
-msgstr "%1 のタスクツールチップを表示"
+#: qml/ToolTipInstance.qml:467
+msgctxt "volume percentage"
+msgid "%1%"
+msgstr "%1%"
 
-#: qml/Task.qml:301
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Show windows side by side for %1"
-msgstr "%1 のウィンドウを並べて表示"
-
-#: qml/Task.qml:306
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Open textual list of windows for %1"
-msgstr "%1 のウィンドウのテキストリストを開く"
-
-#: qml/Task.qml:310
-#, qt-format
-msgctxt "@info:usagetip %1 task name"
-msgid "Activate %1"
-msgstr "%1 をアクティブ化"
+#~ msgctxt "@item:inlistbox highlight color"
+#~ msgid "Theme Highlight"
+#~ msgstr "テーマのハイライト"

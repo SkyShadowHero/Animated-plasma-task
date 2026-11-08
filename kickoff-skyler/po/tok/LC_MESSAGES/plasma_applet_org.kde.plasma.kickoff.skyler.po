@@ -1,8 +1,9 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-desktop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-14 11:26+0800\n"
+"POT-Creation-Date: 2026-11-08 12:00+0800\n"
 "PO-Revision-Date: 2024-07-07 20:49-0400\n"
 "Last-Translator: Janet Blackquill <uhhadd@gmail.com>\n"
 "Language-Team: C <kde-i18n-doc@kde.org>\n"
@@ -13,375 +14,396 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.0\n"
 
-#: Header.qml:86
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr ""
-
-#: Header.qml:276
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr ""
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr ""
-
-#: main.qml:427
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr ""
-
-#: FullRepresentation.qml:136
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "mi alasa e ijo ala"
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr ""
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr ""
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr ""
-
-#: LeaveButtons.qml:171
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr ""
-
-#: KickoffListDelegate.qml:136
-msgctxt "Newly-installed app, badge, keep short"
-msgid "New!"
-msgstr ""
-
-#: KickoffListDelegate.qml:142
-msgid "There is a newly-installed application in this category"
-msgstr ""
-
-#: KickoffListDelegate.qml:143
-msgid "Newly-installed application"
-msgstr ""
-
-#: KickoffGridDelegate.qml:68
-msgctxt "@label Newly-installed app, badge, keep short"
-msgid "New!"
-msgstr ""
-
-#: KickoffGridDelegate.qml:73
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr ""
-
-#: ConfigGeneral.qml:53
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr ""
-
-#: ConfigGeneral.qml:59
-msgctxt "@action:button"
-msgid "Change Application Launcher's icon"
-msgstr ""
-
-#: ConfigGeneral.qml:60
-msgctxt "@info:whatsthis"
-msgid ""
-"Current icon is %1. Click to open menu to change the current icon or reset "
-"to the default icon."
-msgstr ""
-
-#: ConfigGeneral.qml:64
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr ""
-
-#: ConfigGeneral.qml:99
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr ""
-
-#: ConfigGeneral.qml:101
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr ""
-
-#: ConfigGeneral.qml:105
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr ""
-
-#: ConfigGeneral.qml:111
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr ""
-
-#: ConfigGeneral.qml:122
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr ""
-
-#: ConfigGeneral.qml:124
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr ""
-
-#: ConfigGeneral.qml:138
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr ""
-
-#: ConfigGeneral.qml:151
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr ""
-
-#: ConfigGeneral.qml:163
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr ""
-
-#: ConfigGeneral.qml:165
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr ""
-
-#: ConfigGeneral.qml:173
-msgctxt "General options"
-msgid "General:"
-msgstr ""
-
-#: ConfigGeneral.qml:177
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr ""
-
-#: ConfigGeneral.qml:181
-msgctxt "@info:whatsthis"
-msgid ""
-"This doesn't affect how applications are sorted in either search results or "
-"the favorites page."
-msgstr ""
-
-#: ConfigGeneral.qml:187
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr ""
-
-#: ConfigGeneral.qml:193
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr ""
-
-#: ConfigGeneral.qml:198
-msgid "Icon hover effect"
-msgstr ""
-
-#: ConfigGeneral.qml:208
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr ""
-
-#: ConfigGeneral.qml:214
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr ""
-
-#: ConfigGeneral.qml:220
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr ""
-
-#: ConfigGeneral.qml:227
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr ""
-
-#: ConfigGeneral.qml:231
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rounded rectangle"
-msgstr ""
-
-#: ConfigGeneral.qml:232
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr ""
-
-#: ConfigGeneral.qml:233
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr ""
-
-#: ConfigGeneral.qml:239
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr ""
-
-#: ConfigGeneral.qml:243
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr ""
-
-#: ConfigGeneral.qml:244
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr ""
-
-#: ConfigGeneral.qml:250
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr ""
-
-#: ConfigGeneral.qml:256
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr ""
-
-#: ConfigGeneral.qml:266
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr ""
-
-#: ConfigGeneral.qml:267 ConfigGeneral.qml:275
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr ""
-
-#: ConfigGeneral.qml:267
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr ""
-
-#: ConfigGeneral.qml:275
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr ""
-
-#: ConfigGeneral.qml:283
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
+#: code/tools.js:36
+msgid "Add to Favorites"
 msgstr "o pana tawa lipu open"
 
-#: ConfigGeneral.qml:284
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr ""
+#: ConfigGeneral.qml:200
+msgid "Icon hover effect"
+msgstr "Icon hover effect"
 
-#: ConfigGeneral.qml:292
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr ""
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "Newly-installed application"
 
-#: ConfigGeneral.qml:300
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr ""
+#: code/tools.js:60
+msgid "On All Activities"
+msgstr "On All Activities"
 
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr ""
-
-#: ConfigGeneral.qml:309
-msgctxt "@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr ""
-
-#: ConfigGeneral.qml:321
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr ""
-
-#: ConfigGeneral.qml:322
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr ""
-
-#: ConfigGeneral.qml:331
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr ""
-
-#: ConfigGeneral.qml:340
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr ""
-
-#: ConfigGeneral.qml:349
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr ""
-
-#: PlacesPage.qml:64
-msgctxt "category in Places sidebar"
-msgid "Computer"
-msgstr "ilo sina"
-
-#: PlacesPage.qml:65
-msgctxt "category in Places sidebar"
-msgid "History"
-msgstr "ma pi tenpo pini"
-
-#: PlacesPage.qml:66
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "ma pi kepeken mute"
-
-#: Footer.qml:101
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr ""
-
-#: Footer.qml:117
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr ""
-
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr ""
+#: code/tools.js:110
+msgid "On the Current Activity"
+msgstr "On the Current Activity"
 
 #: code/tools.js:32
 msgid "Remove from Favorites"
 msgstr "o weka tan lipu open"
 
-#: code/tools.js:36
-msgid "Add to Favorites"
-msgstr "o pana tawa lipu open"
-
-#: code/tools.js:60
-msgid "On All Activities"
-msgstr ""
-
-#: code/tools.js:110
-msgid "On the Current Activity"
-msgstr ""
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "o pana tawa lipu open"
+
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "There is a newly-installed application in this category"
+
+#: ConfigGeneral.qml:61
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "Change Application Launcher's icon"
+
+#: ConfigGeneral.qml:140
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Reset menu label"
+
+#: Header.qml:341
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Keep Open"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Open user settings"
+
+#: ConfigGeneral.qml:282
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Configure Search Plugins…"
+
+#: ConfigGeneral.qml:113
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Remove icon"
+
+#: main.qml:477
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Edit Applications…"
+
+#: ConfigGeneral.qml:153
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "A text label cannot be set when the Panel is vertical."
+
+#: ConfigGeneral.qml:126
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Type here to add a text label"
+
+#: FullRepresentation.qml:141
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "mi alasa e ijo ala"
+
+#: ConfigGeneral.qml:66
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Icon name is \"%1\""
+
+#: ConfigGeneral.qml:103
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Choose an icon for Application Launcher"
+
+#: ConfigGeneral.qml:62
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+
+#: ConfigGeneral.qml:183
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Grid with %1 rows, %2 columns"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Description (Name)"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Description only"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Name (Description)"
+
+#: ConfigGeneral.qml:167
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Name only"
+
+#: ConfigGeneral.qml:246
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "Black"
+
+#: ConfigGeneral.qml:245
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "White"
+
+#: ConfigGeneral.qml:247
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Automatic (follow color scheme)"
+
+#: ConfigGeneral.qml:235
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Circle"
+
+#: ConfigGeneral.qml:234
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: ConfigGeneral.qml:233
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr "Rounded rectangle"
+
+#: ConfigGeneral.qml:101
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Choose…"
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Reset to default icon"
+
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Newly-installed application"
+
+#: KickoffGridDelegate.qml:69
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "New!"
+
+#: ConfigGeneral.qml:55
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Icon:"
+
+#: ConfigGeneral.qml:292
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Sidebar position:"
+
+#: ConfigGeneral.qml:241
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Highlight color:"
+
+#: ConfigGeneral.qml:229
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Highlight shape:"
+
+#: ConfigGeneral.qml:165
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Show applications as:"
+
+#: ConfigGeneral.qml:253
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Highlight size:"
+
+#: ConfigGeneral.qml:124
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Text label:"
+
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Highlight newly-installed applications"
+
+#: ConfigGeneral.qml:375
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Show action button captions"
+
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "Show highlight background on hover"
+
+#: ConfigGeneral.qml:179
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Sort applications alphabetically"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "Switch sidebar categories when hovering over them"
+
+#: ConfigGeneral.qml:270
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Use Fluent (Windows 11) styling for the popup"
+
+#: ConfigGeneral.qml:210
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "Use KDE theme decorations"
+
+#: ConfigGeneral.qml:189
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Use compact list item style"
+
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Use custom launcher decorations"
+
+#: ConfigGeneral.qml:310
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "In a grid"
+
+#: ConfigGeneral.qml:318
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "In a list"
+
+#: ConfigGeneral.qml:327
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "In a grid"
+
+#: ConfigGeneral.qml:335
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "In a list"
+
+#: ConfigGeneral.qml:348
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Power"
+
+#: ConfigGeneral.qml:366
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Power and session"
+
+#: ConfigGeneral.qml:357
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Session"
+
+#: ConfigGeneral.qml:301
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Left"
+
+#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Right"
+
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "General"
+
+#: ConfigGeneral.qml:347
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Show buttons for:"
+
+#: ConfigGeneral.qml:309
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "o pana tawa lipu open"
+
+#: ConfigGeneral.qml:326
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Show other applications:"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "More"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Power"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Session"
+
+#: LeaveButtons.qml:183
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Session and Power"
+
+#: Footer.qml:269
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Applications"
+
+#: Footer.qml:285
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Places"
+
+#: ConfigGeneral.qml:175
+msgctxt "General options"
+msgid "General:"
+msgstr "General:"
+
+#: KickoffListDelegate.qml:157
+msgctxt "Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "New!"
+
+#: PlacesPage.qml:68
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "ilo sina"
+
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "ma pi kepeken mute"
+
+#: PlacesPage.qml:69
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "ma pi tenpo pini"
+
+#: ConfigGeneral.qml:293
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Left"
