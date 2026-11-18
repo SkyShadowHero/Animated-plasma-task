@@ -35,6 +35,32 @@ EmptyPage {
     bottomPadding: -kickoff.backgroundMetrics.bottomPadding
     readonly property var appletInterface: kickoff
 
+    // The page's background item is placed from the *insets*, and insets are
+    // not the paddings: they default to zero and a positive value pulls the
+    // background inward (x = leftInset, width = width - leftInset -
+    // rightInset). So the backdrop can only reach the card the theme paints —
+    // one frame margin outside this item, which is the whole point of the
+    // negative paddings above — by going negative by exactly that margin.
+    leftInset: -kickoff.backgroundMetrics.leftPadding
+    rightInset: -kickoff.backgroundMetrics.rightPadding
+    topInset: -kickoff.backgroundMetrics.topPadding
+    bottomInset: -kickoff.backgroundMetrics.bottomPadding
+
+    // Acrylic backdrop. The blur itself comes from the compositor (Plasmoid.
+    // backgroundHints keeps DefaultBackground) and the card — its silhouette,
+    // its corner, its edge — belongs to the theme, so this layer is nothing
+    // but a colour cast plus the grain, stretched over the whole card.
+    //
+    // Driven by opacity, not visibility. Visibility on a *background* item is
+    // the control's own bookkeeping: hiding it takes the layer out of the
+    // scene graph, which drops the grain's texture and lets the popup forget
+    // that it has a backdrop at all — so switching the option off and then on
+    // again left an empty card. Opacity keeps the item alive and bound, so the
+    // wash and the grain come straight back when the option returns.
+    background: FluentAcrylic {
+        opacity: (Plasmoid.configuration?.useFluentStyle ?? false) ? 1 : 0
+    }
+
     Layout.minimumWidth: implicitWidth
     Layout.minimumHeight: implicitHeight
 

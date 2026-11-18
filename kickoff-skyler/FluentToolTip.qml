@@ -32,6 +32,30 @@ T.ToolTip {
     timeout: -1
     closePolicy: T.Popup.CloseOnEscape | T.Popup.CloseOnPressOutsideParent | T.Popup.CloseOnReleaseOutsideParent
 
+    // Fade rather than pop. The tooltip already waits before it appears, so the
+    // fade has to be short enough not to read as lag on top of that delay —
+    // hence durationFast, with the decelerate curve on the way in and the
+    // softer one on the way out (disappearing should feel quicker than
+    // arriving, otherwise the card seems to linger after the pointer left).
+    enter: Transition {
+        NumberAnimation {
+            property: "opacity"
+            from: 0.0
+            to: 1.0
+            duration: FluentStyle.durationFast
+            easing.type: FluentStyle.easingStandard
+        }
+    }
+    exit: Transition {
+        NumberAnimation {
+            property: "opacity"
+            from: 1.0
+            to: 0.0
+            duration: Math.round(FluentStyle.durationFast * 0.8)
+            easing.type: FluentStyle.easingSoft
+        }
+    }
+
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             contentWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
@@ -51,7 +75,17 @@ T.ToolTip {
         readonly property int maxTextLength: Kirigami.Units.gridUnit * 14
 
         text: control.text.replace(/&(?=\S)/g, "")
-        font: control.font
+        // One point below the surrounding UI: Fluent's tooltips sit clearly
+        // under body text, and the inherited size made a three-line card read
+        // like a paragraph. Family and weight are restated so only the size
+        // changes and the hint still matches the UI it describes — Plasma
+        // themes always express their fonts in points, so points are all this
+        // needs (a font carrying only a pixel size would land on the 1pt
+        // floor, which no Plasma style does).
+        font.family: control.font.family
+        font.weight: control.font.weight
+        font.italic: control.font.italic
+        font.pointSize: Math.max(1, control.font.pointSize - 1)
         color: FluentStyle.textPrimary
         wrapMode: Text.Wrap
         maximumLineCount: 3

@@ -289,7 +289,13 @@ T.ItemDelegate {
         if (root.labelTruncated) {
             return model?.display ?? ""
         } else if (root.descriptionTruncated || (!root.descriptionVisible && (root.isSearchResult
-                                                                              || Plasmoid.configuration.appNameFormat > 1))) {
+                                                                              // Optional chaining, because delegates are built
+                                                                              // before the applet's configuration map is handed
+                                                                              // to the QML side: the very first evaluation of this
+                                                                              // binding can land on an undefined configuration and
+                                                                              // would otherwise throw (0 = "Name only", the stock
+                                                                              // default, so nothing is shown while it is missing).
+                                                                              || (Plasmoid.configuration?.appNameFormat ?? 0) > 1))) {
             return description
         }
         return ""

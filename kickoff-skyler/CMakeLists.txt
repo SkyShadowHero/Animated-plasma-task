@@ -12,6 +12,7 @@ QML_SOURCES
     DropAreaGridView.qml
     DropAreaListView.qml
     EmptyPage.qml
+    FluentAcrylic.qml
     FluentHighlight.qml
     FluentSearchField.qml
     FluentSideBarPill.qml

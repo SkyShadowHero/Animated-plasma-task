@@ -117,5 +117,15 @@
             <label>Whether to style the launcher popup after Fluent Design (Windows 11): rounded state-layer highlights on items, an accent pill on the category sidebar, a sliding tab indicator and animated hover/focus transitions.</label>
             <default>true</default>
         </entry>
+        <entry name="acrylicFollowsTheme" type="Bool">
+            <label>Whether the acrylic mask behind the popup takes its corner radius from the active Plasma style. Turn this off to pick the radius by hand, which is what you want when the style rounds its dialogs differently from what the style advertises to Kirigami.</label>
+            <default>true</default>
+        </entry>
+        <entry name="acrylicRadius" type="Int">
+            <label>Corner radius, in pixels, of the acrylic mask when it does not follow the style.</label>
+            <default>12</default>
+            <min>0</min>
+            <max>64</max>
+        </entry>
     </group>
 </kcfg>

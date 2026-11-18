@@ -6,6 +6,8 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.components as PlasmaComponents3
+import org.kde.plasma.plasmoid
 import org.kde.kirigami as Kirigami
 
 /**
@@ -25,6 +27,30 @@ PlasmaExtras.SearchField {
     id: root
 
     readonly property int __padding: 5
+
+    readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
+
+    // ActionTextField reports the focus shortcut it registered ("Ctrl+F") by
+    // floating it through the attached PC3.ToolTip while the field is hovered
+    // and empty. That tooltip is painted with the Tooltip colour group, i.e.
+    // the pale-on-pale smudge this style produces, so Fluent mirrors its text
+    // into FluentToolTip and keeps the theme one out of the way. The text is
+    // read, not re-bound: the base type already binds it to the shortcut, and
+    // binding it again here would only fight that.
+    readonly property string shortcutHint: PlasmaComponents3.ToolTip.text
+
+    PlasmaComponents3.ToolTip.visible: !root.fluent && root.shortcutHint.length > 0
+                                        && root.text.length === 0 && root.hovered
+
+    FluentToolTip {
+        parent: root
+        // Below the field rather than above it: the search field sits at the
+        // very top of the popup, so there is nothing to hover over up there.
+        y: root.height + Math.round(Kirigami.Units.smallSpacing * 1.5)
+
+        visible: root.fluent && root.hovered && root.text.length === 0 && root.shortcutHint.length > 0
+        text: root.shortcutHint
+    }
 
     background: Rectangle {
         id: bg
