@@ -29,6 +29,10 @@ Item {
     // selection stays a plain state layer; the sidebar sets it to a solid card
     // so the selected category reads as "here", not as "dimmed".
     property color selectedColor: "transparent"
+    // Small chrome buttons (header configure/pin, footer power) use one ink
+    // state layer for every interaction instead of mixing a white pressed card
+    // with a translucent hover wash. Keeps them visually uniform.
+    property bool flatStates: false
 
     Loader {
         anchors.fill: parent
@@ -39,24 +43,30 @@ Item {
         id: fluentLayer
 
         Rectangle {
+            anchors.fill: parent
             radius: root.radius
 
-            // One wash for every state, only its strength changes: selection is
-            // the baseline, hover is a fraction of it, and a press goes past it
-            // (i.e. darker ink on light, brighter tint on dark) so the row sinks
-            // under the click instead of flaring up. `selected` wins over hover:
-            // call sites also report the current row as hovered, and letting
-            // hover win drew the selection at 60% strength.
+            // Selection is a pale surface (a white card on light, a lifted
+            // white on dark) and hover is a weaker version of it. A press is a
+            // different wash altogether — a dark layer — so clicking a row
+            // darkens it in BOTH schemes instead of brightening it.
+            // `selected` wins over hover: call sites also report the current
+            // row as hovered, and letting hover win drew it at 60% strength.
             readonly property real wash: root.selectedColor.a
-            readonly property real level: root.pressed
-                ? FluentStyle.washPressed
-                : (root.selected ? 1 : (root.hovered ? FluentStyle.washHover : 0))
+            readonly property real level: root.selected ? 1 : (root.hovered ? FluentStyle.washHover : 0)
 
-            color: wash > 0
-                ? FluentStyle.withAlpha(root.selectedColor, wash * level)
-                : FluentStyle.stateColor(root.pressed
+            // Flat mode: one translucent ink layer for hover / press / checked,
+            // no white card — used by the small header/footer icon buttons.
+            // Regular mode keeps the strong press surface for list rows.
+            color: root.flatStates
+                ? FluentStyle.stateColor(root.pressed
                     ? FluentStyle.alphaPressed
-                    : (root.hovered ? FluentStyle.alphaHover : 0))
+                    : (root.selected ? FluentStyle.alphaSelected : (root.hovered ? FluentStyle.alphaHover : 0)))
+                : (root.pressed
+                    ? FluentStyle.pressedSurface
+                    : (wash > 0
+                        ? FluentStyle.withAlpha(root.selectedColor, wash * level)
+                        : FluentStyle.stateColor(root.hovered ? FluentStyle.alphaHover : 0)))
 
             // WinUI fades the state layer in ~100ms; no movement, no bounce.
             Behavior on color {

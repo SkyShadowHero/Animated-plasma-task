@@ -60,9 +60,15 @@ PlasmaExtras.PlasmoidHeading {
     Rectangle {
         parent: root
         visible: Plasmoid.configuration.useFluentStyle
-        x: FluentStyle.spacingMedium
+        // This footer lives in FullRepresentation's contentItem, which is
+        // pulled out by NEGATIVE left/right padding (see FullRepresentation).
+        // So `root` is wider than the popup by one padding on each side, and
+        // using the header's plain `x: padding` would put this line at the
+        // popup edge instead of inset like the header's. Double the left
+        // inset and subtract both paddings twice to land on the same edges.
+        x: 2 * kickoff.backgroundMetrics.leftPadding
         y: 0
-        width: Math.max(0, root.width - 2 * FluentStyle.spacingMedium)
+        width: Math.max(0, root.width - 2 * (kickoff.backgroundMetrics.leftPadding + kickoff.backgroundMetrics.rightPadding))
         height: FluentStyle.strokeWidth
         color: FluentStyle.divider
         z: 3

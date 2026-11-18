@@ -126,6 +126,7 @@ RowLayout {
                     hovered: actionButton.hovered
                     pressed: actionButton.down
                     radius: FluentStyle.radiusControl
+                    flatStates: true
                 }
                 onClicked: {
                     filteredButtonsModel.trigger(index);
@@ -138,7 +139,13 @@ RowLayout {
 
                 PC3.ToolTip.text: text
                 PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
-                PC3.ToolTip.visible: display === PC3.AbstractButton.IconOnly && hovered
+                PC3.ToolTip.visible: !Plasmoid.configuration.useFluentStyle
+                    && display === PC3.AbstractButton.IconOnly && hovered
+                FluentToolTip {
+                    visible: Plasmoid.configuration.useFluentStyle
+                        && parent.display === PC3.AbstractButton.IconOnly && parent.hovered
+                    text: parent.text
+                }
 
                 Keys.onTabPressed: event => {
                     if (index === buttonRepeater.count - 1 && !root.__layout.overflowMenuButtonIsVisible) {
@@ -192,6 +199,7 @@ RowLayout {
             pressed: overflowButton.down
             selected: contextMenu.status === PlasmaExtras.Menu.Open
             radius: FluentStyle.radiusControl
+            flatStates: true
         }
         Keys.onTabPressed: event => {
             kickoff.firstHeaderItem.forceActiveFocus(Qt.TabFocusReason);
@@ -224,8 +232,12 @@ RowLayout {
         visible: root.__layout.overflowMenuButtonIsVisible && root.__layout.collapseOverflowMenuButton
 
         PC3.ToolTip.text: text
-        PC3.ToolTip.visible: hovered || activeFocus
+        PC3.ToolTip.visible: !Plasmoid.configuration.useFluentStyle && (hovered || activeFocus)
         PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
+        FluentToolTip {
+            visible: Plasmoid.configuration.useFluentStyle && (parent.hovered || parent.activeFocus)
+            text: parent.text
+        }
     }
 
     Instantiator {

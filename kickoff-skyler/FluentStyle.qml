@@ -55,9 +55,9 @@ QtObject {
     // WinUI nav items carry a 20px glyph; 22 here keeps the rows roomy while
     // still fitting four more categories in the same sidebar height.
     readonly property int navigationIconSize: 22
-    // Vertical padding of a navigation row: 22px glyph + 2*9 = 40px rows,
-    // which is the Windows 11 start-menu rhythm without the oversized feel.
-    readonly property int navigationItemPadding: 9
+    // Vertical padding of a navigation row: 22px glyph + 2*6 = 34px rows.
+    // Tighter than the default WinUI 40px so more categories fit at once.
+    readonly property int navigationItemPadding: 6
     // Padding around a 16px glyph inside an icon-only button (28x28 total).
     readonly property int iconButtonPadding: 6
 
@@ -89,8 +89,19 @@ QtObject {
     // one — the same "state layer" WinUI paints over its surface. A white block
     // read as a separate panel pasted on the popup; a low-alpha ink tint keeps
     // everything one surface and stays readable in both schemes.
-    readonly property real selectionAlpha: dark ? 0.14 : 0.085
-    readonly property color selectionSurface: withAlpha(layer, selectionAlpha)
+    // Selected row: a white card on the light popup, a lifted white on the
+    // dark one. Win11 paints selection as a pale surface, not a dark wash.
+    // Selected rows are a solid card on light (a translucent white over the
+    // frosted popup reads as dirty grey); on dark they are a lifted white layer.
+    readonly property color selectionSurface: dark
+        ? withAlpha(Qt.rgba(1, 1, 1, 1), 0.16)
+        : Qt.rgba(1, 1, 1, 1)
+    // Press: a clean shaded card, not a translucent black wash — black over the
+    // frosted surface muddies to grey. Light is a solid slightly-shaded white;
+    // dark is a *less* lifted white, i.e. the row darkens relative to selected.
+    readonly property color pressedSurface: dark
+        ? withAlpha(Qt.rgba(1, 1, 1, 1), 0.08)
+        : Qt.rgba(0.92, 0.92, 0.92, 1)
 
     // Strength of that wash for hover / press, as a fraction of the selection.
     // Hover is most of the way there (the row you are about to pick should

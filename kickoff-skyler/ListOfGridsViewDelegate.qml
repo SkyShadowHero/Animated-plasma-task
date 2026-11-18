@@ -9,7 +9,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Templates as T
 
-import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.plasmoid
 
 KickoffGridView {
     id: root
@@ -38,17 +38,28 @@ KickoffGridView {
         width: view.cellWidth
         Accessible.role: Accessible.Cell
 
+        // Fluent: this was the last delegate still painting its state layer
+        // with PlasmaExtras.Highlight (a themed FrameSvg). FluentHighlight is a
+        // drop-in replacement: it forwards to the theme component when the
+        // style switch is off, and paints a flat state layer when it is on.
+        // For Fluent the Loader stays alive on every tile so hover can fade in;
+        // the theme path keeps the old current-item-only behaviour.
         background: Loader {
-            active: itemDelegate.GridView.isCurrentItem && root.isCurrentSectionGrid
-            sourceComponent: PlasmaExtras.Highlight {
+            id: backgroundLoader
+            readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
+            active: backgroundLoader.fluent
+                || (itemDelegate.GridView.isCurrentItem && root.isCurrentSectionGrid)
+            sourceComponent: FluentHighlight {
                 anchors.fill: parent
                 z: (root.Drag.active ?? false) ? 3 : 0
-                hovered: true
-
+                hovered: backgroundLoader.fluent ? itemDelegate.mouseArea.containsMouse : true
                 pressed: itemDelegate.down
+                selected: itemDelegate.GridView.isCurrentItem && root.isCurrentSectionGrid
+                selectedColor: FluentStyle.selectionSurface
+                radius: FluentStyle.radiusOverlay
 
                 active: root.view.activeFocus ||
-                        (kickoff.contentArea === root && kickoff.searchField.activeFocus)
+                        (kickoff.contentArea === root && (kickoff.searchField?.activeFocus ?? false))
             }
         }
 

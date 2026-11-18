@@ -170,13 +170,30 @@ AbstractKickoffItemDelegate {
         id: separatorLoader
 
         anchors.left: root.left
+        // Fluent: start the rule at the same left edge as the row's icon and
+        // label (root.left + leftPadding), instead of running it out to the
+        // bare popup edge. That keeps the left ends of the sidebar group
+        // rules aligned with the content rather than overhanging it.
+        anchors.leftMargin: root.fluent ? root.leftPadding : 0
         anchors.right: root.right
         anchors.verticalCenter: root.verticalCenter
 
-        active: root.isSeparator && !root.fluent
+        active: root.isSeparator
 
         asynchronous: false
-        sourceComponent: themeSeparator
+        sourceComponent: root.fluent ? fluentSeparator : themeSeparator
+
+        // Fluent: a flat 1px rule in the shared divider colour, instead of the
+        // themed SVG. It is the same hairline used by the header / footer /
+        // search field, so every separator in the popup reads as one system.
+        Component {
+            id: fluentSeparator
+            Rectangle {
+                width: parent.width
+                height: FluentStyle.strokeWidth
+                color: FluentStyle.divider
+            }
+        }
 
         Component {
             id: themeSeparator

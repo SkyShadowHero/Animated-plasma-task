@@ -88,7 +88,7 @@ FocusScope {
     // the loaders' anchors instead of to the lists themselves, so the rows
     // move down without the popup growing: the panes simply become that much
     // shorter.
-    readonly property real paneTopInset: fluent ? FluentStyle.spacingSmall : 0
+    readonly property real paneTopInset: fluent ? FluentStyle.spacingXSmall : 0
 
     // The theme draws a full-height rule with an SVG, gutter included. Fluent
     // replaces both: the SVG column collapses to zero width (the navigation

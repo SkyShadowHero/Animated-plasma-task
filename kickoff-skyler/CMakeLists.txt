@@ -16,6 +16,7 @@ QML_SOURCES
     FluentSearchField.qml
     FluentSideBarPill.qml
     FluentStyle.qml
+    FluentToolTip.qml
     Footer.qml
     FullRepresentation.qml
     Header.qml

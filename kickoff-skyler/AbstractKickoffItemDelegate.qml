@@ -285,7 +285,7 @@ T.ItemDelegate {
         }
     }
 
-    PC3.ToolTip.text: {
+    readonly property string tooltipText: {
         if (root.labelTruncated) {
             return model?.display ?? ""
         } else if (root.descriptionTruncated || (!root.descriptionVisible && (root.isSearchResult
@@ -294,8 +294,17 @@ T.ItemDelegate {
         }
         return ""
     }
-    PC3.ToolTip.visible: mouseArea.containsMouse && PC3.ToolTip.text.length > 0
+    PC3.ToolTip.text: root.tooltipText
+    // The theme tooltip is unreadable under the Win11 style (pale text on
+    // pale card). Fluent draws its own instead; keep the theme one off there.
+    PC3.ToolTip.visible: !root.fluent && mouseArea.containsMouse && root.tooltipText.length > 0
     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+    FluentToolTip {
+        parent: root
+        visible: root.fluent && mouseArea.containsMouse && root.tooltipText.length > 0
+        text: root.tooltipText
+    }
 
     background: Loader {
         id: backgroundLoader

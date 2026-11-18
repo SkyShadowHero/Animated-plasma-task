@@ -11,6 +11,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Templates as T
 
 import org.kde.plasma.plasmoid
@@ -156,7 +157,12 @@ EmptyPage {
         section {
             property: "group"
             criteria: ViewSection.FullString
-            delegate: PlasmaExtras.ListSectionHeader {
+            delegate: root.fluent ? fluentSectionHeader : themeSectionHeader
+        }
+
+        Component {
+            id: themeSectionHeader
+            PlasmaExtras.ListSectionHeader {
                 required property string section
 
                 width: view.availableWidth
@@ -169,6 +175,57 @@ EmptyPage {
                 }
 
                 onClicked: root.showSectionViewRequested(text)
+            }
+        }
+
+        // Fluent: ListSectionHeader paints its trailing rule with the
+        // themed KSvg "horizontal-line", so it is replaced wholesale. The
+        // glyph is a plain label and the rule is the same 1px divider used
+        // everywhere else in the popup.
+        Component {
+            id: fluentSectionHeader
+            Item {
+                id: sectionHeader
+                required property string section
+
+                width: view.availableWidth
+                height: KickoffSingleton.compactListDelegateHeight
+
+                readonly property string label: section.length === 1
+                    ? section.toUpperCase() : section
+
+                RowLayout {
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                    }
+                    spacing: FluentStyle.spacingMedium
+
+                    PC3.Label {
+                        Layout.leftMargin: FluentStyle.spacingMedium
+                        text: sectionHeader.label
+                        font.bold: true
+                        color: FluentStyle.textSecondary
+                        elide: Text.ElideRight
+                    }
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignVCenter
+                        height: FluentStyle.strokeWidth
+                        color: FluentStyle.divider
+                    }
+                }
+
+                HoverHandler {
+                    enabled: root.hasSectionView
+                    cursorShape: enabled ? Qt.PointingHandCursor : undefined
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    enabled: root.hasSectionView
+                    onClicked: root.showSectionViewRequested(sectionHeader.label)
+                }
             }
         }
 

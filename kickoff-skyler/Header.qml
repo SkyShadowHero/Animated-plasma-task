@@ -61,9 +61,9 @@ PlasmaExtras.PlasmoidHeading {
     Rectangle {
         parent: root
         visible: Plasmoid.configuration.useFluentStyle
-        x: FluentStyle.spacingMedium
+        x: kickoff.backgroundMetrics.leftPadding
         y: root.height - height
-        width: Math.max(0, root.width - 2 * FluentStyle.spacingMedium)
+        width: Math.max(0, root.width - kickoff.backgroundMetrics.leftPadding - kickoff.backgroundMetrics.rightPadding)
         height: FluentStyle.strokeWidth
         color: FluentStyle.divider
         z: 3
@@ -219,7 +219,12 @@ PlasmaExtras.PlasmoidHeading {
 
                     PC3.ToolTip.text: infoLabel.text
                     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    PC3.ToolTip.visible: infoLabel.truncated && containsMouse
+                    PC3.ToolTip.visible: !root.fluent && infoLabel.truncated && containsMouse
+
+                    FluentToolTip {
+                        visible: root.fluent && infoLabel.truncated && parent.containsMouse
+                        text: infoLabel.text
+                    }
                 }
             }
             RowLayout {
@@ -312,11 +317,16 @@ PlasmaExtras.PlasmoidHeading {
                         hovered: configureButton.hovered
                         pressed: configureButton.down
                         radius: FluentStyle.radiusControl
+                        flatStates: true
                     }
 
                     PC3.ToolTip.text: text
                     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    PC3.ToolTip.visible: hovered
+                    PC3.ToolTip.visible: !root.fluent && hovered
+                    FluentToolTip {
+                        visible: root.fluent && parent.hovered
+                        text: parent.text
+                    }
                     Keys.onTabPressed: event => {
                         tabSetFocus(event, nextItemInFocusChain(false));
                     }
@@ -351,10 +361,15 @@ PlasmaExtras.PlasmoidHeading {
                         // selected alpha instead of only a hover layer.
                         selected: pinButton.checked
                         radius: FluentStyle.radiusControl
+                        flatStates: true
                     }
                     PC3.ToolTip.text: text
                     PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
-                    PC3.ToolTip.visible: hovered
+                    PC3.ToolTip.visible: !root.fluent && hovered
+                    FluentToolTip {
+                        visible: root.fluent && parent.hovered
+                        text: parent.text
+                    }
                     Binding {
                         target: kickoff
                         property: "hideOnWindowDeactivate"
