@@ -48,6 +48,9 @@ KCM.SimpleKCM {
     property alias cfg_highlightScale: highlightScaleSpin.value
     property alias cfg_useFluentStyle: useFluentStyleCheckbox.checked
     property alias cfg_useAcrylic: useAcrylicCheckbox.checked
+    property alias cfg_useWin11Menu: useWin11MenuCheckbox.checked
+    property alias cfg_win11AppsAsCards: win11AppsAsCardsCheckbox.checked
+    property alias cfg_win11AllAppsGrouping: win11AllAppsGroupingCombo.currentIndex
     property alias cfg_acrylicFollowsTheme: acrylicFollowsThemeCheckbox.checked
     property alias cfg_acrylicRadius: acrylicRadiusSpin.value
 
@@ -279,6 +282,32 @@ KCM.SimpleKCM {
             text: i18nc("@option:check", "Acrylic backdrop behind the popup")
             enabled: useFluentStyleCheckbox.checked
             checked: false
+        }
+
+        QQC2.CheckBox {
+            id: useWin11MenuCheckbox
+            Kirigami.FormData.label: i18nc("@label:group prefix for menu layout options", "Menu layout:")
+            text: i18nc("@option:check", "Windows 11 Start menu layout (Pinned, All apps, Recommended)")
+            enabled: useFluentStyleCheckbox.checked
+            checked: false
+        }
+
+        QQC2.CheckBox {
+            id: win11AppsAsCardsCheckbox
+            Kirigami.FormData.label: i18nc("@label:group prefix for Win11 menu options", "All apps:")
+            text: i18nc("@option:check", "Show as pinned-style cards instead of a list")
+            enabled: useWin11MenuCheckbox.checked
+            checked: false
+        }
+
+        QQC2.ComboBox {
+            id: win11AllAppsGroupingCombo
+            Kirigami.FormData.label: i18nc("@label:listbox", "Group by:")
+            enabled: useWin11MenuCheckbox.checked
+            model: [
+                i18nc("@item:inlistbox all apps grouping", "First letter (A–Z)"), // qmllint disable unqualified
+                i18nc("@item:inlistbox all apps grouping", "Category") // qmllint disable unqualified
+            ]
         }
 
         QQC2.CheckBox {

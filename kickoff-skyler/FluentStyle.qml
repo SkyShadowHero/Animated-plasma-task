@@ -47,7 +47,9 @@ QtObject {
     // WinUI control height is 32 (Compact 24, comfortable 40). A search box
     // sits at 36 because it carries an icon plus a clear button.
     readonly property int controlHeight: 32
-    readonly property int searchFieldHeight: 36
+    // WinUI's TextBox is a 32px control; the extra height this field used to
+    // carry was what made the header feel taller than the rest of the popup.
+    readonly property int searchFieldHeight: controlHeight
     readonly property int listItemHeight: 36
     // NavigationView selection indicator: 3px wide, 16px tall, fully rounded.
     readonly property int navigationIndicatorWidth: 3
@@ -96,6 +98,14 @@ QtObject {
     readonly property color selectionSurface: dark
         ? withAlpha(Qt.rgba(1, 1, 1, 1), 0.16)
         : Qt.rgba(1, 1, 1, 1)
+    // Keyboard / pre-highlight for a row that sits directly on the popup rather
+    // than on a card (the search results list). `selectionSurface` is white on
+    // light, which is invisible there, so this is the ink state layer instead:
+    // a light grey band on light, a faint white lift on dark. Both alphas are
+    // deliberately low — the dark scheme used to be 16%, which turned the
+    // pre-highlighted result into a black-ish block instead of the quiet lift
+    // Win11 shows.
+    readonly property color keyboardSelectionSurface: withAlpha(layer, dark ? 0.10 : 0.07)
     // Press: a clean shaded card, not a translucent black wash — black over the
     // frosted surface muddies to grey. Light is a solid slightly-shaded white;
     // dark is a *less* lifted white, i.e. the row darkens relative to selected.
@@ -127,6 +137,19 @@ QtObject {
     // popup background.
     readonly property color divider: withAlpha(layer, dark ? 0.16 : 0.11)
     readonly property color focusRing: withAlpha(accent, 0.55)
+
+    // ── Flyouts (menus) ──────────────────────────────────────────────────
+    // WinUI's menu flyout is "acrylic in app", but acrylic needs a blur of
+    // whatever is *behind the window*, and a QML popup cannot reach that: the
+    // compositor blurs the whole dialog, not a rectangle inside it, and
+    // MultiEffect only blurs an item's own source. A translucent fill on its
+    // own just lets the card's grain and rows show through, which reads as
+    // dirt rather than depth — so the flyout is a solid step above the card
+    // instead, separated by its hairline edge and shadow.
+    readonly property color flyoutFill: dark
+        ? Qt.rgba(0.173, 0.173, 0.173, 1)
+        : Qt.rgba(0.976, 0.976, 0.976, 1)
+    readonly property color flyoutStroke: withAlpha(layer, dark ? 0.14 : 0.10)
 
     // Filled controls (the search box). WinUI's TextBox sits one step *above*
     // the surface, not below it: a pale fill that lifts off the background.

@@ -202,14 +202,43 @@ PlasmoidItem {
     }
 
     // Used to show smaller Kickoff on small screens
-    readonly property int minimumGridRowCount: Math.min(Screen.desktopAvailableWidth, Screen.desktopAvailableHeight) * Screen.devicePixelRatio < KickoffSingleton.gridCellSize * 4 + (fullRepresentationItem ? fullRepresentationItem.normalPage.preferredSideBarWidth : KickoffSingleton.gridCellSize * 2) ? 2 : 4
+    readonly property int minimumGridRowCount: Math.min(Screen.desktopAvailableWidth, Screen.desktopAvailableHeight) * Screen.devicePixelRatio < KickoffSingleton.gridCellSize * 4 + (fullRepresentationItem && fullRepresentationItem.normalPage ? fullRepresentationItem.normalPage.preferredSideBarWidth : KickoffSingleton.gridCellSize * 2) ? 2 : 4
     //END
 
     Plasmoid.icon: Plasmoid.configuration.icon
 
     preferredRepresentation: compactRepresentation
 
-    fullRepresentation: FullRepresentation { focus: true }
+    // Two complete representations share this one entry point. A Loader keeps
+    // both code paths isolated: the classic Kickoff layout is untouched, and
+    // the Win11 Start menu is a self-contained page. The forwarded properties
+    // below preserve the API the classic delegates and the sizing logic read
+    // off `fullRepresentationItem`, so switching layouts cannot strand a
+    // binding on a null item.
+    fullRepresentation: Loader {
+        id: representationLoader
+
+        readonly property Item contentItem: item ? item.contentItem : null
+        readonly property bool blockingHoverFocus: item ? (item.blockingHoverFocus ?? false) : false
+        readonly property Item normalPage: item ? (item.normalPage ?? null) : null
+
+        Layout.minimumWidth: item ? (item.Layout.minimumWidth ?? 0) : (Kirigami.Units.iconSizes.huge * 10)
+        Layout.minimumHeight: item ? (item.Layout.minimumHeight ?? 0) : (Kirigami.Units.iconSizes.huge * 10)
+
+        sourceComponent: (Plasmoid.configuration?.useWin11Menu ?? false)
+                         && (Plasmoid.configuration?.useFluentStyle ?? false)
+            ? win11RepresentationComponent
+            : classicRepresentationComponent
+
+        Component {
+            id: classicRepresentationComponent
+            FullRepresentation { focus: true }
+        }
+        Component {
+            id: win11RepresentationComponent
+            Win11StartMenu { focus: true }
+        }
+    }
 
     // Only exists because the default CompactRepresentation doesn't:
     // - open on drag
@@ -441,7 +470,7 @@ PlasmoidItem {
             layer.effect: MultiEffect {
                 shadowEnabled: true
                 shadowColor: "black"
-                shadowOpacity: 0.15
+                shadowOpacity: 0.10
                 shadowBlur: 0.15
                 shadowVerticalOffset: 1
                 shadowHorizontalOffset: 0
