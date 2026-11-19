@@ -58,7 +58,8 @@ EmptyPage {
     // again left an empty card. Opacity keeps the item alive and bound, so the
     // wash and the grain come straight back when the option returns.
     background: FluentAcrylic {
-        opacity: (Plasmoid.configuration?.useFluentStyle ?? false) ? 1 : 0
+        opacity: ((Plasmoid.configuration?.useFluentStyle ?? false)
+                  && (Plasmoid.configuration?.useAcrylic ?? false)) ? 1 : 0
     }
 
     Layout.minimumWidth: implicitWidth

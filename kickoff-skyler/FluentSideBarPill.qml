@@ -131,45 +131,44 @@ Rectangle {
         travel.restart();
     }
 
-    // A scroll while the pill is travelling would move the slot out from under
-    // the offsets; drop the trip and ride the row instead.
-    Connections {
-        target: root.flick
-        function onContentYChanged(): void {
-            if (travel.running) {
-                travel.stop();
-                root.leadOffset = 0;
-                root.trailOffset = 0;
-            }
-        }
-    }
+    // Scrolling while the pill travels must NOT abort the animation. The old
+    // version stopped the trip on every contentY change and snapped both ends
+    // to zero, which is exactly what happens when switching to a category that
+    // scrolls the list: the pill jumped the last part of the way instead of
+    // arriving. `y` already follows the row through slotTop, so scrolling just
+    // carries the in-flight pill along; the offsets then settle to zero on
+    // their own and it lands on the new row.
 
     ParallelAnimation {
         id: travel
 
-        // Leading end: one continuous glide on Compose's "fast-out-slow-in"
-        // curve.
+        // Leading end: WinUI's point-to-point curve. Unlike Compose's
+        // (0.4, 0, 0.2, 1) it starts at full speed (0.55/0.55 = 1) instead of
+        // sitting still for the first ~60ms — at this short a duration that
+        // dead zone eats most of the frames and the bar appears to stutter,
+        // then lurch. This one is already moving on frame one and decelerates
+        // smoothly to a stop, so the fast end reads as one continuous glide.
         NumberAnimation {
             target: root
             property: "leadOffset"
             to: 0
-            duration: 470
+            duration: 300
             easing.type: Easing.Bezier
-            easing.bezierCurve: [0.4, 0.0, 0.2, 1.0]
+            easing.bezierCurve: [0.55, 0.55, 0.0, 1.0]
         }
         // Trailing end: held back for a beat (that is what stretches the bar),
         // then it hurries to catch up and settles together with the leading
         // end — so the bar ends at exactly its normal length.
         SequentialAnimation {
             PauseAnimation {
-                duration: 70
+                duration: 60
             }
             NumberAnimation {
                 target: root
                 property: "trailOffset"
                 to: 0
-                duration: 400
-                easing.type: Easing.InOutCubic
+                duration: 300
+                easing.type: Easing.OutCubic
             }
         }
     }

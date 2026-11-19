@@ -47,6 +47,7 @@ KCM.SimpleKCM {
     property alias cfg_highlightColor: highlightColorCombo.currentIndex
     property alias cfg_highlightScale: highlightScaleSpin.value
     property alias cfg_useFluentStyle: useFluentStyleCheckbox.checked
+    property alias cfg_useAcrylic: useAcrylicCheckbox.checked
     property alias cfg_acrylicFollowsTheme: acrylicFollowsThemeCheckbox.checked
     property alias cfg_acrylicRadius: acrylicRadiusSpin.value
 
@@ -270,14 +271,21 @@ KCM.SimpleKCM {
         QQC2.CheckBox {
             id: useFluentStyleCheckbox
             text: i18nc("@option:check", "Use Fluent (Windows 11) styling for the popup")
-            checked: true
+            checked: false
+        }
+
+        QQC2.CheckBox {
+            id: useAcrylicCheckbox
+            text: i18nc("@option:check", "Acrylic backdrop behind the popup")
+            enabled: useFluentStyleCheckbox.checked
+            checked: false
         }
 
         QQC2.CheckBox {
             id: acrylicFollowsThemeCheckbox
             Kirigami.FormData.label: i18nc("@label:group prefix for acrylic options", "Acrylic mask:")
             text: i18nc("@option:check", "Take the corner radius from the Plasma style")
-            enabled: useFluentStyleCheckbox.checked
+            enabled: useAcrylicCheckbox.checked
             checked: true
         }
 
@@ -286,7 +294,7 @@ KCM.SimpleKCM {
             Kirigami.FormData.label: i18nc("@label:spinbox", "Corner radius:")
             // Only meaningful once the mask stops following the style, and only
             // when there is a mask at all.
-            enabled: useFluentStyleCheckbox.checked && !acrylicFollowsThemeCheckbox.checked
+            enabled: useAcrylicCheckbox.checked && !acrylicFollowsThemeCheckbox.checked
             from: 0
             to: 64
             stepSize: 1

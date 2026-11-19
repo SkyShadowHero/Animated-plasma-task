@@ -16,8 +16,8 @@ import org.kde.kirigami as Kirigami
  * Everything that makes the field useful is inherited — search icon, clear
  * action, Ctrl+F focus sequence, translated placeholder, accessible roles —
  * and only the KDE SVG frame (`widgets/lineedit`) is replaced by a WinUI
- * TextBox: a rounded filled layer with no outline, and a 2px accent underline
- * that grows out of the centre on focus.
+ * TextBox: a rounded filled layer with a hairline outline, and a 2px accent
+ * underline that grows out of the centre on focus.
  *
  * The background has to expose a `margins` object: TextField reads
  * background.margins.* to compute its own padding, so a plain Rectangle would
@@ -68,10 +68,11 @@ PlasmaExtras.SearchField {
         // Fully rounded, like the Windows 11 search box on the start menu.
         radius: height / 2
         // WinUI TextBox at rest: a filled layer one step above the surface,
-        // with no outline at all. The only stroke it ever shows is the accent
-        // underline while focused.
+        // held in by a hairline stroke so its edge reads against the card.
+        // The accent underline is the only heavier line, and only on focus.
         color: root.activeFocus ? FluentStyle.fieldFillFocus : FluentStyle.fieldFill
-        border.width: 0
+        border.width: FluentStyle.strokeWidth
+        border.color: FluentStyle.stroke
 
         Behavior on color {
             ColorAnimation {
