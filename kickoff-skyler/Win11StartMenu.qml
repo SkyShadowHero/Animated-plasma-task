@@ -2649,10 +2649,12 @@ T.Page {
                         readonly property int cellWidth: shownCount > 0
                             ? Math.min(root.tileWidth, Math.floor(width / shownCount))
                             : root.tileWidth
-                        // Same cell height as the Pinned / All apps cards, so a
-                        // wrapped two-line name gets the room to show both
-                        // lines instead of being clipped under the icon.
-                        readonly property int stripHeight: root.tileHeight
+                        // No fixed cell height: each card keeps AppTile's own
+                        // elastic height, so a one-line name stays compact and
+                        // a wrapped two-line name grows — exactly like the
+                        // Pinned / All apps cards. The row is as tall as its
+                        // tallest visible card (the Flow reports that).
+                        readonly property var viewBridge: ({ model: win11RecentModel })
                         height: root.showWin11Recent && shownCount > 0
                             ? recentHeader.implicitHeight + recentStrip.height + FluentStyle.spacingSmall
                             : 0
@@ -2671,31 +2673,28 @@ T.Page {
                             onActionTriggered: root.showRecent()
                         }
 
-                        // One non-scrolling row: the tiles are sized to fill the
-                        // width exactly, so the strip is a static preview. The
-                        // full list lives on the Recent page the "…" opens.
-                        ListView {
+                        // A Flow, not a ListView: it sizes itself to its tallest
+                        // child, which is what makes the row height follow the
+                        // line count. The tiles are sized to fill the width
+                        // exactly, so this never wraps to a second row; the full
+                        // list lives on the Recent page the "…" opens.
+                        Flow {
                             id: recentStrip
                             visible: root.showWin11Recent && recentSection.shownCount > 0
                             anchors.top: recentHeader.bottom
                             anchors.left: parent.left
                             anchors.right: parent.right
-                            height: recentSection.stripHeight
-                            model: win11RecentModel
-                            orientation: ListView.Horizontal
-                            interactive: false
-                            boundsBehavior: Flickable.StopAtBounds
-                            clip: true
-                            focus: false
-                            currentIndex: -1
-
-                            delegate: AppTile {
-                                width: recentSection.cellWidth
-                                height: recentSection.stripHeight
-                                cellWidth: recentSection.cellWidth
-                                dynamicWidth: false
-                                view: recentStrip
-                                visible: index < recentSection.shownCount
+                            spacing: 0
+                            Repeater {
+                                model: win11RecentModel
+                                delegate: AppTile {
+                                    visible: index < recentSection.shownCount
+                                    cellWidth: recentSection.cellWidth
+                                    // Flow has no model of its own; hand the
+                                    // tile the same shim Pinned does not need
+                                    // (it falls back to the favourites model).
+                                    view: recentSection.viewBridge
+                                }
                             }
                         }
                     }
