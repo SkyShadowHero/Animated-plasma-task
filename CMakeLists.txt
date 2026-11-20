@@ -61,6 +61,12 @@ install(CODE "
             file(REMOVE \"\${LINK}\")
             execute_process(COMMAND \${CMAKE_COMMAND} -E create_symlink
                 \"\${SKYLER_DOMAIN}.mo\" \"\${LINK}\")
+            # The symlink is created outside file(INSTALL), so it would not be
+            # recorded in install_manifest.txt and `make uninstall` would leave
+            # it behind (dangling once the .mo it points to is gone). Append it
+            # to the manifest so uninstall cleans it up too.
+            string(REPLACE \"\$ENV{DESTDIR}\" \"\" MANIFEST_LINK \"\${LINK}\")
+            list(APPEND CMAKE_INSTALL_MANIFEST_FILES \"\${MANIFEST_LINK}\")
         endif()
     endforeach()
 ")
