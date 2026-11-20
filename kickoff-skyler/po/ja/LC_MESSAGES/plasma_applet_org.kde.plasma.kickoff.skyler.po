@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_kickoff\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2026-02-21 08:36+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
@@ -16,17 +16,13 @@ msgstr ""
 "X-Generator: Lokalize 25.12.2\n"
 "X-Text-Markup: kde4\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "お気に入りから削除"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "お気に入りに追加"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "アイコンのホバー効果"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "新しくインストールしたアプリ"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -36,375 +32,510 @@ msgstr "すべてのアクティビティ"
 msgid "On the Current Activity"
 msgstr "現在のアクティビティ"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "お気に入りから削除"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "お気に入りに表示"
-
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "このカテゴリに新しくインストールしたアプリがあります"
-
-#: ConfigGeneral.qml:61
-msgctxt "@action:button"
-msgid "Change Application Launcher's icon"
-msgstr "アプリケーションランチャーのアイコンを変更"
-
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "メニューラベルをリセット"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr "固定"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "ユーザ設定を開く"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "検索プラグインを設定..."
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "アイコンを削除"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "アプリケーションを編集..."
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr "パネルが垂直なときはテキストラベルを設定できません。"
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "ここにタイプしてテキストラベルを追加"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "一致なし"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "アイコンの名前は \"%1\" です。"
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "アプリケーションランチャーのアイコンを選択"
-
-#: ConfigGeneral.qml:62
-msgctxt "@info:whatsthis"
-msgid ""
-"Current icon is %1. Click to open menu to change the current icon or reset "
-"to the default icon."
-msgstr "現在のアイコンは %1 です。現在のアイコンを変更、もしくはデフォルトのアイコンにリセットするには、クリックしてメニューを開いてください。"
-
-#: ConfigGeneral.qml:183
-msgctxt "@info:whatsthis"
-msgid ""
-"This doesn't affect how applications are sorted in either search results or "
-"the favorites page."
-msgstr "この設定は検索結果やお気に入りページの並び順には影響しません。"
-
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "%1行、%2列のグリッド"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "説明 (名前)"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "説明のみ"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "名前 (説明)"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "名前のみ"
-
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "黒"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "白"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "自動（配色に従う）"
-
-#: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "円"
-
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "長方形"
-
-#: ConfigGeneral.qml:233
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rounded rectangle"
-msgstr "角丸長方形"
-
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "選択..."
-
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "標準のアイコンに戻す"
-
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr "新しくインストールしたアプリ"
-
-#: KickoffGridDelegate.qml:69
-msgctxt "@label Newly-installed app, badge, keep short"
-msgid "New!"
-msgstr "新着!"
-
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "アイコン:"
-
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "サイドバーの位置:"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "ハイライトの色:"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "ハイライトの形状:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "アプリケーションの表示形式:"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "ハイライトサイズ："
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "テキストラベル:"
-
-#: ConfigGeneral.qml:195
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr "新しくインストールしたアプリを強調"
-
-#: ConfigGeneral.qml:375
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "ボタンに名前を表示"
-
-#: ConfigGeneral.qml:222
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr "ホバー時にハイライトの背景を表示"
-
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "アルファベット順に並び替え"
-
-#: ConfigGeneral.qml:276
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr "ホバーでサイドバーのカテゴリを切り替え"
-
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "ポップアップに Fluent (Windows 11) スタイルを使用する"
-
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "KDE テーマの装飾を使用"
-
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "アプリ一覧をコンパクトに表示"
-
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "カスタムランチャーの装飾を使用"
-
-#: ConfigGeneral.qml:310
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr "グリッドで表示"
-
-#: ConfigGeneral.qml:318
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr "リストで表示"
-
-#: ConfigGeneral.qml:327
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr "グリッドで表示"
-
-#: ConfigGeneral.qml:335
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr "リストで表示"
-
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "電源"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "電源とセッション"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "セッション"
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "左"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "右"
 
 #: config.qml:13
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
 msgstr "全般"
 
-#: ConfigGeneral.qml:347
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr "ボタンの表示:"
+#: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "アイコン:"
+
+#: ConfigGeneral.qml:67
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "アプリケーションランチャーのアイコンを変更"
+
+#: ConfigGeneral.qml:68
+msgctxt "@info:whatsthis"
+msgid ""
+"Current icon is %1. Click to open menu to change the current icon or reset "
+"to the default icon."
+msgstr "現在のアイコンは %1 です。現在のアイコンを変更、もしくはデフォルトのアイコンにリセットするには、クリックしてメニューを開いてください。"
+
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "アイコンの名前は \"%1\" です。"
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "選択..."
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "アプリケーションランチャーのアイコンを選択"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "標準のアイコンに戻す"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "アイコンを削除"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "テキストラベル:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "ここにタイプしてテキストラベルを追加"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "メニューラベルをリセット"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "パネルが垂直なときはテキストラベルを設定できません。"
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "アプリケーションの表示形式:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "名前のみ"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "説明のみ"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "名前 (説明)"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "説明 (名前)"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "全般:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "アルファベット順に並び替え"
+
+#: ConfigGeneral.qml:189
+msgctxt "@info:whatsthis"
+msgid ""
+"This doesn't affect how applications are sorted in either search results or "
+"the favorites page."
+msgstr "この設定は検索結果やお気に入りページの並び順には影響しません。"
+
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "アプリ一覧をコンパクトに表示"
+
+#: ConfigGeneral.qml:201
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "新しくインストールしたアプリを強調"
+
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "アイコンのホバー効果"
+
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "KDE テーマの装飾を使用"
+
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "カスタムランチャーの装飾を使用"
+
+#: ConfigGeneral.qml:228
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "ホバー時にハイライトの背景を表示"
+
+#: ConfigGeneral.qml:235
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "ハイライトの形状:"
+
+#: ConfigGeneral.qml:239
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr "角丸長方形"
+
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "長方形"
+
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "円"
+
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "ハイライトの色:"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "白"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "黒"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "自動（配色に従う）"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "ハイライトサイズ："
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "ポップアップに Fluent (Windows 11) スタイルを使用する"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "ポップアップ背後の疑似アクリル背景"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "メニューのレイアウト:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr "Windows 11 スタートメニューのレイアウト（ピン留め、すべてのアプリ、おすすめ）"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "すべてのアプリ:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "リストの代わりにピン留めカードとして表示"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "グループ化:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "最初の文字 (A–Z)"
 
 #: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "カテゴリ"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "疑似アクリルマスク:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "Plasma スタイルから角の半径を取得"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "角の半径:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 ピクセル"
+
+#: ConfigGeneral.qml:338
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "ホバーでサイドバーのカテゴリを切り替え"
+
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "検索プラグインを設定..."
+
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "サイドバーの位置:"
+
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "右"
+
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "左"
+
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "左"
+
+#: ConfigGeneral.qml:371
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
 msgstr "お気に入りの表示:"
 
-#: ConfigGeneral.qml:326
+#: ConfigGeneral.qml:372
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "グリッドで表示"
+
+#: ConfigGeneral.qml:380
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "リストで表示"
+
+#: ConfigGeneral.qml:388
 msgctxt "@title:group prefix for radio button group"
 msgid "Show other applications:"
 msgstr "他のアプリケーション:"
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "その他"
+#: ConfigGeneral.qml:389
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "グリッドで表示"
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
+#: ConfigGeneral.qml:397
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "リストで表示"
+
+#: ConfigGeneral.qml:409
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "ボタンの表示:"
+
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
 msgid "Power"
 msgstr "電源"
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
 msgid "Session"
 msgstr "セッション"
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "セッションと電源"
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "電源とセッション"
 
-#: Footer.qml:269
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "ボタンに名前を表示"
+
+#: Footer.qml:275
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: Footer.qml:285
+#: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
 msgstr "場所"
 
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "全般:"
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "一致なし"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "ユーザー設定を開く"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "固定"
+
+#: KickoffGridDelegate.qml:69
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "新着!"
+
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "新しくインストールしたアプリ"
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "%1行、%2列のグリッド"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "新着!"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "このカテゴリに新しくインストールしたアプリがあります"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "新しくインストールしたアプリ"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "セッション"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "電源"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "その他"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "セッションと電源"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "アプリケーションを編集..."
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "コンピュータ"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "よく使用するもの"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "履歴"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "左"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "よく使用するもの"
+
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "アプリ、ファイル、設定を検索"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "ユーザー設定を開く"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "その他の電源オプション"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "ピン留め"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "すべてのアプリ"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "戻る"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "アニメーション速度:"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "非常に速い"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "速い"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "標準"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "遅い"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "非常に遅い"
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr "最近:"
+
+msgctxt "@option:check"
+msgid "Show recently used items above All apps"
+msgstr "最近使用した項目を「すべてのアプリ」の上に表示"
+
+msgctxt "@title:section recently used items"
+msgid "Recent"
+msgstr "最近"
+
+#: Win11StartMenu.qml:3217
+msgctxt "@info no recent items yet"
+msgid "No recent items"
+msgstr "最近の項目はありません"
 
 #~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
 #~ msgid "Automatically disabled when in Touch Mode"
@@ -413,44 +544,3 @@ msgstr "左"
 #~ msgctxt "Newly installed app, badge, keep short"
 #~ msgid "New!"
 #~ msgstr "New!"
-
-msgctxt "@label:listbox"
-msgid "Animation speed:"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Normal"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Slow"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Slow"
-msgstr ""
-
-msgctxt "@label:group prefix for Win11 menu options"
-msgid "Recent:"
-msgstr ""
-
-msgctxt "@option:check"
-msgid "Show recently used items above All apps"
-msgstr ""
-
-msgctxt "@title:section recently used items"
-msgid "Recent"
-msgstr ""
-
-#: Win11StartMenu.qml:3217
-msgctxt "@info no recent items yet"
-msgid "No recent items"
-msgstr ""
