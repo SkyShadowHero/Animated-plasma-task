@@ -98,38 +98,40 @@ PlasmoidItem {
     // does not influence either of them. Gate both on the setting, leaving the
     // shell's own visibility/opacity animations intact so that with decorations
     // enabled the panel behaves exactly as upstream.
-    function findAppletContainer() {
-        const self = kickoff.compactRepresentation;
-        if (!self) {
-            return null;
-        }
-        const containerName = "org.kde.desktop-CompactApplet";
+    // `compactRepresentation` on the applet root is a Component — the shell
+    // instantiates it and keeps the Item — so it can only be used as an item
+    // when it really is one.
+    function compactRepresentationItem() {
+        const rep = kickoff.compactRepresentation;
+        return (rep && typeof rep.mapToItem === "function") ? rep : null;
+    }
 
-        // Walk up first: the shell parents the compact representation straight
-        // into the container, so any matching ancestor is necessarily ours.
-        let item = self;
-        while (item) {
-            if (item.objectName === containerName) {
-                return item;
-            }
-            item = item.parent;
-        }
-        // Fall back to a window-wide search in case the item is still being
-        // reparented when this runs. There it must be verified that the
-        // container really belongs to this applet, not to a neighbour.
+    function findAppletContainer() {
         const win = kickoff.Window.window;
         if (!win || !win.contentItem) {
             return null;
         }
-        const stack = [win.contentItem];
+        const containerName = "org.kde.desktop-CompactApplet";
+        const rep = compactRepresentationItem();
+        const content = win.contentItem;
+        const stack = [content];
         while (stack.length) {
             const node = stack.pop();
             if (node.objectName === containerName) {
+                // Ownership: the container points back at its own applet, and
+                // only that applet's container may be touched.
                 let owns = false;
                 try {
-                    owns = node.compactRepresentation === self;
+                    owns = node.plasmoidItem === kickoff;
                 } catch (e) {
                     owns = false;
+                }
+                if (!owns && rep) {
+                    try {
+                        owns = node.compactRepresentation === rep;
+                    } catch (e) {
+                        owns = false;
+                    }
                 }
                 if (owns) {
                     return node;
@@ -144,21 +146,19 @@ PlasmoidItem {
     }
 
     // Every tabbar frame drawn on top of this applet, wherever it comes from.
-    // `exceptFrame` is the container's expanded item, which is handled through
-    // `visible` instead so its expand animation keeps working; `container` is
-    // skipped as a whole as a safety net when `expandedFeedback` is missing.
-    function gateAppletTabbarFrames(exceptFrame, container) {
+    // Geometry is taken from the container, which is exactly the applet's area.
+    // `exceptFrame` is the container's expanded item, handled through `visible`
+    // instead so its expand animation keeps working.
+    function gateAppletTabbarFrames(container, exceptFrame) {
         const win = kickoff.Window.window;
-        const self = kickoff.compactRepresentation;
-        if (!win || !self || !win.contentItem) {
+        if (!container || !win || !win.contentItem) {
             return false;
         }
         const content = win.contentItem;
-        const origin = self.mapToItem(content, 0, 0);
+        const origin = container.mapToItem(content, 0, 0);
         const left = origin.x;
         const top = origin.y;
-        const right = left + self.width;
-        const bottom = top + self.height;
+        const bottom = top + container.height;
         // The theme adds shadow margins around the tab frame, so compare with a
         // tolerance instead of demanding identical geometry.
         const tolerance = 16;
@@ -176,12 +176,12 @@ PlasmoidItem {
             if (imagePath === "widgets/tabbar"
                     && node !== exceptFrame
                     && node !== container
-                    && (!container || node.parent !== container)) {
+                    && node.parent !== container) {
                 const nodeOrigin = node.mapToItem(content, 0, 0);
                 const overlapsVertically = nodeOrigin.y < bottom
                     && nodeOrigin.y + node.height > top;
                 const sameColumn = Math.abs(nodeOrigin.x - left) < tolerance
-                    && Math.abs(node.width - self.width) < tolerance;
+                    && Math.abs(node.width - container.width) < tolerance;
                 if (overlapsVertically && sameColumn) {
                     // Opacity rather than visible: the panel indicator owns a
                     // `visible` binding of its own that must keep working.
@@ -210,7 +210,7 @@ PlasmoidItem {
             });
             done = true;
         }
-        if (gateAppletTabbarFrames(frame, container)) {
+        if (gateAppletTabbarFrames(container, frame)) {
             done = true;
         }
         return done;
