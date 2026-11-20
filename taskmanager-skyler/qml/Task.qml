@@ -86,6 +86,13 @@ PlasmaCore.ToolTipArea {
     // Track WinIdList length to detect child window removals from a group.
     property var winIdList: model.WinIdList
     property int lastWinCount: winIdList ? winIdList.length : 0
+    // Window title changes when an already-running app navigates to another
+    // internal page (e.g. Input Method Settings opening inside an existing,
+    // minimized System Settings window), without creating a new window.
+    property string currentTitle: model ? model.display : ""
+    // Some apps request attention instead of (or in addition to) changing the
+    // title when they are opened into an existing background window.
+    property bool currentAttention: model ? model.IsDemandingAttention : false
 
     // Animation speed multiplier. The mapping lives in TaskTools.js so this
     // file and main.qml (ghost icons) always agree on what each step means.
@@ -125,6 +132,9 @@ PlasmaCore.ToolTipArea {
     // Scaled with the speed setting: a slower entry animation has to be
     // covered by a longer window, or the task bounces in the middle of it.
     Timer { id: entryCooldown; interval: 300 * task.animMul }
+    // Progressive title updates can arrive in quick succession; keep the
+    // background page-change feedback to one double bounce per burst.
+    Timer { id: titleBounceCooldown; interval: 900 * task.animMul }
 
     readonly property bool audioIndicatorsEnabled: Plasmoid.configuration.indicateAudioStreams
     readonly property bool tooltipControlsEnabled: Plasmoid.configuration.tooltipControls
@@ -242,6 +252,26 @@ PlasmaCore.ToolTipArea {
         }
         ParallelAnimation {
             NumberAnimation { target: entrySlide; property: "y"; to: 0; duration: 120 * task.animMul; easing.type: Easing.OutBounce }
+        }
+    }
+
+    // Two small hops for a background window whose title changes while it is
+    // minimized: the app switched internal pages without raising its window.
+    // Amplitude follows iconScale like the hover lift does.
+    SequentialAnimation {
+        id: titleBounceAnim
+        ParallelAnimation {
+            NumberAnimation { target: entrySlide; property: "y"; to: -4 * task.iconScaleFactor; duration: 60 * task.animMul; easing.type: Easing.OutQuad }
+        }
+        ParallelAnimation {
+            NumberAnimation { target: entrySlide; property: "y"; to: 0; duration: 90 * task.animMul; easing.type: Easing.OutQuad }
+        }
+        PauseAnimation { duration: 50 * task.animMul }
+        ParallelAnimation {
+            NumberAnimation { target: entrySlide; property: "y"; to: -3 * task.iconScaleFactor; duration: 60 * task.animMul; easing.type: Easing.OutQuad }
+        }
+        ParallelAnimation {
+            NumberAnimation { target: entrySlide; property: "y"; to: 0; duration: 90 * task.animMul; easing.type: Easing.OutQuad }
         }
     }
 
@@ -407,6 +437,30 @@ PlasmaCore.ToolTipArea {
             }
         }
         task.lastWinCount = newLen;
+    }
+
+    function maybeTitleBounce(): void {
+        // Only meaningful for an existing, minimized, non-active window:
+        // the app navigated to another page without popping up.
+        if (!completed || inPopup || !model || !model.IsWindow
+                || !model.IsMinimized || model.IsActive) {
+            return;
+        }
+        if (titleBounceCooldown.running || entryAnim.running
+                || bumpAnim.running || titleBounceAnim.running
+                || indicatorFlashAnim.running) {
+            return;
+        }
+        titleBounceCooldown.start();
+        titleBounceAnim.start();
+        indicatorFlashAnim.start();
+    }
+
+    onCurrentTitleChanged: maybeTitleBounce()
+    onCurrentAttentionChanged: {
+        if (currentAttention) {
+            maybeTitleBounce();
+        }
     }
 
     onIndexChanged: {
@@ -964,7 +1018,31 @@ PlasmaCore.ToolTipArea {
                 const c = tasksRoot.backend.accentColor;
                 return c.a > 0 ? c : "#3daee9"; // Breeze's default accent
             }
-            color: (task.model.IsActive || task.containsMouse) ? accent : "#888888"
+            // Flash level is driven by indicatorFlashAnim (0 normal, 1 flashed).
+            // Keeping the base colour in a binding means the normal
+            // active/hover colours still work after the flash finishes.
+            property real flashLevel: 0.0
+            // Mix channels directly: Qt.tint only takes two arguments here.
+            function mixColor(base: color, target: color, amount: real): color {
+                return Qt.rgba(base.r * (1 - amount) + target.r * amount,
+                               base.g * (1 - amount) + target.g * amount,
+                               base.b * (1 - amount) + target.b * amount,
+                               base.a)
+            }
+            // Normal state: gray (or accent while active/hovered). The flash
+            // pulses to the theme accent colour and settles back to gray.
+            readonly property color baseIndicatorColor: (task.model.IsActive || task.containsMouse) ? accent : "#888888"
+            color: mixColor(baseIndicatorColor, accent, flashLevel)
+
+            // Two colour flashes matching titleBounceAnim's two hops.
+            SequentialAnimation {
+                id: indicatorFlashAnim
+                NumberAnimation { target: customIndicator; property: "flashLevel"; to: 1.0; duration: 60 * task.animMul; easing.type: Easing.OutQuad }
+                NumberAnimation { target: customIndicator; property: "flashLevel"; to: 0.0; duration: 90 * task.animMul; easing.type: Easing.OutQuad }
+                PauseAnimation { duration: 50 * task.animMul }
+                NumberAnimation { target: customIndicator; property: "flashLevel"; to: 1.0; duration: 60 * task.animMul; easing.type: Easing.OutQuad }
+                NumberAnimation { target: customIndicator; property: "flashLevel"; to: 0.0; duration: 90 * task.animMul; easing.type: Easing.OutQuad }
+            }
 
             // Horizontal bar (bottom/top): width animates
             // Vertical bar (left/right): height animates
