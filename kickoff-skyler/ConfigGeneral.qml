@@ -352,7 +352,7 @@ KCM.SimpleKCM {
         QQC2.CheckBox {
             id: win11ShowRecentCheckbox
             Kirigami.FormData.label: i18nc("@label:group prefix for Win11 menu options", "Recent:")
-            text: i18nc("@option:check", "Show recently used apps above All apps")
+            text: i18nc("@option:check", "Show recently used items above All apps")
             enabled: useFluentStyleCheckbox.checked && useWin11MenuCheckbox.checked
             checked: false
         }

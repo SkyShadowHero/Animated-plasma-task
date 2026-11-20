@@ -526,9 +526,14 @@ msgid "Recent:"
 msgstr "最近："
 
 msgctxt "@option:check"
-msgid "Show recently used apps above All apps"
-msgstr "在“所有应用”上方显示最近使用的应用"
+msgid "Show recently used items above All apps"
+msgstr "在“所有应用”上方显示最近使用的内容"
 
-msgctxt "@title:section recently used applications"
+msgctxt "@title:section recently used items"
 msgid "Recent"
 msgstr "最近"
+
+#: Win11StartMenu.qml:3217
+msgctxt "@info no recent items yet"
+msgid "No recent items"
+msgstr "暂无最近使用的内容"
