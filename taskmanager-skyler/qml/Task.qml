@@ -891,17 +891,18 @@ PlasmaCore.ToolTipArea {
         }
     }
 
-    // ── Active highlight background behind the icon (per-task, only when the
-    //    app is active; hover highlight lives on the taskbar level in main.qml
-    //    so it can slide between icons). Anchored to iconBox so it tracks the
-    //    icon layout without inheriting its hover transforms. ──
+    // ── Highlight mask behind the icon (per-task): the one mask for both the
+    //    hover and the active state, so the two can never blink past each
+    //    other. Anchored to iconBox so it tracks the icon layout without
+    //    inheriting its hover transforms. ──
     Rectangle {
         id: highlightBg
         // z:-1 so it renders behind the icon (it is declared after iconBox
         // because anchors.fill: iconBox needs the target to already exist)
         z: -1
-        // Visibility is switch-controlled only; the active state is expressed
-        // through opacity so it can fade in/out smoothly.
+        // Visibility is switch-controlled only; hover and active are both
+        // expressed through opacity so the mask can fade between them instead
+        // of handing over from one item to another.
         visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
             && !task.inPopup
         // Icon-only: the mask is a square scaled from the icon box. Icon+text:
@@ -936,64 +937,21 @@ PlasmaCore.ToolTipArea {
             }
         }
 
-        // Active uses the more opaque variant. The White/Black/Automatic
-        // choice is resolved once on the task (task.highlightUsesWhite).
-        readonly property real activeOpacity: TaskManagerApplet.TaskTools.highlightAlpha(
+        // The fill is opaque and the state alpha rides on `opacity`, so hover
+        // and active share one item and one animation: going from one to the
+        // other is a 5% step rather than a cross-fade. Active is the more
+        // opaque variant; the White/Black/Automatic choice is resolved once
+        // on the task (task.highlightUsesWhite).
+        color: task.highlightUsesWhite ? "white" : "black"
+        readonly property real activeAlpha: TaskManagerApplet.TaskTools.highlightAlpha(
             Plasmoid.configuration.highlightColor, task.darkTheme, true)
-        color: task.highlightUsesWhite
-            ? Qt.rgba(1, 1, 1, activeOpacity)
-            : Qt.rgba(0, 0, 0, activeOpacity)
-        Behavior on color {
-            ColorAnimation { duration: 120 * task.animMul; easing.type: Easing.OutQuad }
-        }
-
-        opacity: task.model.IsActive ? 1 : 0
-        Behavior on opacity {
-            NumberAnimation { duration: 80 * task.animMul; easing.type: Easing.OutQuad }
-        }
-    }
-
-    // ── Hover highlight background (per-task, anchored the same way as the
-    //    active highlight so they always line up perfectly) ──
-    Rectangle {
-        id: hoverHighlightBg
-        z: -1
-        visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
-            && !task.inPopup && !task.model.IsActive
-        // Same geometry as the active highlight (whole icon+text block or icon)
-        readonly property bool wholeHighlight: !task.tasksRoot.iconsOnly
-        readonly property real contentW: task.width - taskFrame.margins.left - taskFrame.margins.right
-        readonly property real contentH: task.height - taskFrame.margins.top - taskFrame.margins.bottom
-        x: wholeHighlight ? taskFrame.margins.left + (contentW - width) / 2 : iconBox.x + (iconBox.width - width) / 2
-        y: wholeHighlight ? taskFrame.margins.top + (contentH - height) / 2 : iconBox.y + (iconBox.height - height) / 2
-        width: (wholeHighlight ? contentW : iconBox.width) * task.highlightRatio
-        height: (wholeHighlight ? contentH : iconBox.height) * task.highlightRatio
-        // Slightly stronger opacity than the active mask; same colour choice.
-        readonly property real hoverOpacity: TaskManagerApplet.TaskTools.highlightAlpha(
+        readonly property real hoverAlpha: TaskManagerApplet.TaskTools.highlightAlpha(
             Plasmoid.configuration.highlightColor, task.darkTheme, false)
-        color: task.highlightUsesWhite
-            ? Qt.rgba(1, 1, 1, hoverOpacity)
-            : Qt.rgba(0, 0, 0, hoverOpacity)
-        radius: {
-            switch (Plasmoid.configuration.highlightShape) {
-            case 1: return 0; // Rectangle
-            case 2: return width / 2; // Circle
-            default: return Kirigami.Units.smallSpacing; // Rounded Rectangle
-            }
-        }
-        // Softer shadow than the active highlight
-        layer.enabled: true
-        layer.effect: MultiEffect {
-            shadowEnabled: true
-            shadowColor: "black"
-            shadowOpacity: 0.15
-            shadowBlur: 0.15
-            shadowVerticalOffset: 1
-            shadowHorizontalOffset: 0
-        }
-        // No delayed hide, no slide animation: appears/disappears with hover,
-        // fading out smoothly.
-        opacity: task.containsMouse ? 1 : 0
+
+        // Hover is the slightly stronger variant, so an active task stays at
+        // the active alpha while the pointer is over it — activating a window
+        // under the cursor must not dim the mask.
+        opacity: task.model.IsActive ? activeAlpha : (task.containsMouse ? hoverAlpha : 0)
         Behavior on opacity {
             NumberAnimation { duration: 80 * task.animMul; easing.type: Easing.OutQuad }
         }

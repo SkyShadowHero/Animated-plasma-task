@@ -1,43 +1,58 @@
+# Maintainer: SkyShadowHero <a1233456333@163.com>
 pkgname=plasma6-applets-animated-taskmanager
 _pkgname=Animated-plasma-task
-pkgver=1.1.0
+pkgver=1.1.3
 pkgrel=1
 pkgdesc="Forked KDE Plasma 6 plasmoids with press / entry / minimize animations."
 arch=('x86_64')
-url="https://github.com/SkyShadowHero/skyler-plasma-taskmanager"
-license=('GPL-2.0-or-later')
+url="https://github.com/SkyShadowHero/Animated-plasma-task"
+license=('GPL-2.0')
 depends=(
+    # plasma runtime: shell, applet container, private QML modules
+    # (kicker, mpris, sessions, taskmanager), libnotificationmanager
     'plasma-workspace'
+    'plasma5support'
+    'libplasma'
+    'plasma-activities'
+    'plasma-activities-stats'
+    'libksysguard'
+    # KF6
     'kservice'
-    'kirigami'
+    'ki18n'
+    'knotifications'
     'kiconthemes'
     'ksvg'
     'kio'
     'krunner'
     'kdeclarative'
-    'qt6-declarative'
     'kcoreaddons'
     'kconfig'
     'kwindowsystem'
     'kglobalaccel'
     'kcmutils'
-    'libplasma'
-    'plasma-activities-stats'
+    'kitemmodels'
+    # QML-only dependencies of the applets
+    'kirigami'
+    'kirigami-addons'
+    'kpipewire'
+    'plasma-pa'
+    'qt6-declarative'
 )
 makedepends=(
     'cmake'
     'extra-cmake-modules'
 )
 source=(
-    "${_pkgname}-${pkgver}.tar.gz::https://github.com/SkyShadowHero/skyler-plasma-taskmanager/archive/refs/tags/${pkgver}.tar.gz"
+    "${_pkgname}-${pkgver}.tar.gz::https://github.com/SkyShadowHero/Animated-plasma-task/archive/refs/tags/${pkgver}.tar.gz"
 )
-
-sha256sums=('1d2e2c6f2a26280d94558a9079a90b4fec14bab4150a575acd37341d12bb9011')
+# The tag archive changes with every release; run `updpkgsums` once the
+# ${pkgver} tag exists upstream to replace SKIP with the real checksum.
+sha256sums=('SKIP')
 
 build() {
     cmake -B build -S "${_pkgname}-${pkgver}" \
         -DCMAKE_BUILD_TYPE=None \
-        -DCMAKE_INSTALL_PREFIX=/usr 
+        -DCMAKE_INSTALL_PREFIX=/usr
     cmake --build build
 }
 
