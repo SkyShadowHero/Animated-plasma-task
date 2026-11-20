@@ -83,6 +83,139 @@ PlasmoidItem {
     // pace from the taskbar highlight sitting next to it.
     readonly property real animMul: Tools.animationMultiplier(Plasmoid.configuration.animationSpeed)
 
+    // The desktop shell paints a "widgets/tabbar" active-tab frame at an
+    // applet's position in two independent places, and neither of them looks at
+    // the applet's own decoration settings:
+    //
+    //  - CompactApplet.qml draws `expandedItem` (z: -100) behind the applet
+    //    while the popup is expanded;
+    //  - Panel.qml draws its "Panel Focus Indicator" at whichever applet holds
+    //    focus, which is exactly what happens right after the icon is clicked.
+    //
+    // In the Win11OS theme both render as the blue bar on the panel edge plus
+    // the light rounded plate behind the icon, so switching off "Use KDE theme
+    // decorations" still left that plate in place. `Plasmoid.backgroundHints`
+    // does not influence either of them. Gate both on the setting, leaving the
+    // shell's own visibility/opacity animations intact so that with decorations
+    // enabled the panel behaves exactly as upstream.
+    function findAppletContainer() {
+        const self = kickoff.compactRepresentation;
+        if (!self) {
+            return null;
+        }
+        const containerName = "org.kde.desktop-CompactApplet";
+
+        // Walk up first: the shell parents the compact representation straight
+        // into the container, so any matching ancestor is necessarily ours.
+        let item = self;
+        while (item) {
+            if (item.objectName === containerName) {
+                return item;
+            }
+            item = item.parent;
+        }
+        // Fall back to a window-wide search in case the item is still being
+        // reparented when this runs. There it must be verified that the
+        // container really belongs to this applet, not to a neighbour.
+        const win = kickoff.Window.window;
+        if (!win || !win.contentItem) {
+            return null;
+        }
+        const stack = [win.contentItem];
+        while (stack.length) {
+            const node = stack.pop();
+            if (node.objectName === containerName) {
+                let owns = false;
+                try {
+                    owns = node.compactRepresentation === self;
+                } catch (e) {
+                    owns = false;
+                }
+                if (owns) {
+                    return node;
+                }
+            }
+            const kids = node.children;
+            for (let i = 0; i < kids.length; ++i) {
+                stack.push(kids[i]);
+            }
+        }
+        return null;
+    }
+
+    // Every tabbar frame drawn on top of this applet, wherever it comes from.
+    // `exceptFrame` is the container's expanded item, which is handled through
+    // `visible` instead so its expand animation keeps working; `container` is
+    // skipped as a whole as a safety net when `expandedFeedback` is missing.
+    function gateAppletTabbarFrames(exceptFrame, container) {
+        const win = kickoff.Window.window;
+        const self = kickoff.compactRepresentation;
+        if (!win || !self || !win.contentItem) {
+            return false;
+        }
+        const content = win.contentItem;
+        const origin = self.mapToItem(content, 0, 0);
+        const left = origin.x;
+        const top = origin.y;
+        const right = left + self.width;
+        const bottom = top + self.height;
+        // The theme adds shadow margins around the tab frame, so compare with a
+        // tolerance instead of demanding identical geometry.
+        const tolerance = 16;
+
+        let touched = false;
+        const stack = [content];
+        while (stack.length) {
+            const node = stack.pop();
+            let imagePath = "";
+            try {
+                imagePath = node.imagePath;
+            } catch (e) {
+                imagePath = "";
+            }
+            if (imagePath === "widgets/tabbar"
+                    && node !== exceptFrame
+                    && node !== container
+                    && (!container || node.parent !== container)) {
+                const nodeOrigin = node.mapToItem(content, 0, 0);
+                const overlapsVertically = nodeOrigin.y < bottom
+                    && nodeOrigin.y + node.height > top;
+                const sameColumn = Math.abs(nodeOrigin.x - left) < tolerance
+                    && Math.abs(node.width - self.width) < tolerance;
+                if (overlapsVertically && sameColumn) {
+                    // Opacity rather than visible: the panel indicator owns a
+                    // `visible` binding of its own that must keep working.
+                    node.opacity = Qt.binding(function () {
+                        return Plasmoid.configuration.useThemeDecorations ? 1 : 0;
+                    });
+                    touched = true;
+                }
+            }
+            const kids = node.children;
+            for (let i = 0; i < kids.length; ++i) {
+                stack.push(kids[i]);
+            }
+        }
+        return touched;
+    }
+
+    function syncShellExpandedFrame() {
+        const container = findAppletContainer();
+        const frame = (container && container.expandedFeedback) ? container.expandedFeedback : null;
+
+        let done = false;
+        if (frame) {
+            frame.visible = Qt.binding(function () {
+                return Plasmoid.configuration.useThemeDecorations && frame.opacity > 0;
+            });
+            done = true;
+        }
+        if (gateAppletTabbarFrames(frame, container)) {
+            done = true;
+        }
+        return done;
+    }
+
     // Used to prevent the width from changing frequently when the scrollbar appears or disappears
     readonly property bool mayHaveGridWithScrollBar: Plasmoid.configuration.applicationsDisplay === 0
         || (Plasmoid.configuration.favoritesDisplay === 0 && kickoff.rootModel.favoritesModel.count > minimumGridRowCount * minimumGridRowCount)
@@ -272,6 +405,25 @@ PlasmoidItem {
         Layout.preferredHeight: compactRoot.sizing.preferredHeight
         Layout.minimumWidth: Layout.preferredWidth
         Layout.minimumHeight: Layout.preferredHeight
+
+        // The shell reparents this item into its own applet container, so the
+        // container can only be reached once the parent is in place. A short
+        // retry covers the case where the container is built after we are.
+        onParentChanged: kickoff.syncShellExpandedFrame()
+        Component.onCompleted: kickoff.syncShellExpandedFrame()
+
+        Timer {
+            interval: 300
+            repeat: true
+            running: true
+            property int attempts: 0
+            onTriggered: {
+                attempts++;
+                if (kickoff.syncShellExpandedFrame() || attempts >= 10) {
+                    running = false;
+                }
+            }
+        }
 
         MouseArea {
             id: compactRoot
