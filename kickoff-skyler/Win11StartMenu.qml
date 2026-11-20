@@ -206,6 +206,9 @@ T.Page {
             if (!kickoff.expanded) {
                 suppressTextSwitch = true;
                 searchFieldItem.clear();
+                // A menu closed while the field was focused must not reopen
+                // with the focus accent still painted.
+                searchFieldItem.focus = false;
                 suppressTextSwitch = false;
             } else {
                 // Always open on the Home page, even if the last session was
@@ -328,9 +331,14 @@ T.Page {
     // which closes the search box's caret exactly like clicking the empty part
     // of the Start menu does in Windows.
     function releaseSearchFocus(): void {
-        if (!searchFieldItem.activeFocus) {
+        if (!searchFieldItem.activeFocus && !searchFieldItem.focus) {
             return;
         }
+        // forceActiveFocus() alone can be swallowed when the page is not a
+        // focus scope: clear the field's own focus flag as well, then give the
+        // page keyboard focus so the underline/hover animation really unwinds.
+        searchFieldItem.focus = false;
+        root.focus = true;
         root.forceActiveFocus(Qt.MouseFocusReason);
     }
 
@@ -399,14 +407,15 @@ T.Page {
         }
     }
 
-    // Sits under every control, so it only ever sees presses that no row,
-    // tile or field accepted — i.e. the empty part of the menu.
-    MouseArea {
-        parent: root
-        anchors.fill: parent
-        z: -1
+    // Any tap that no child control consumed is a click on the empty menu.
+    // A handler on the page itself (instead of a MouseArea painted behind it)
+    // actually receives those taps: a z:-1 sibling is covered by the content
+    // item and never saw them, which left the search field's focus accent
+    // stuck on after clicking elsewhere.
+    TapHandler {
         acceptedButtons: Qt.LeftButton
-        onPressed: root.releaseSearchFocus()
+        gesturePolicy: TapHandler.ReleaseWithinBounds
+        onTapped: root.releaseSearchFocus()
     }
 
     // The whole surface zooms away behind the A–Z sheet: everything inside
@@ -1785,6 +1794,17 @@ T.Page {
         }
     }
 
+    // Shared wheel handling for every Win11 scroll surface. The classic views
+    // already use Kirigami.WheelHandler with this step size; the Win11 pages
+    // only had Flickable's built-in wheel flicking plus a /2 step on the tiny
+    // scrollbar, which made the wheel feel far slower than the rest of Plasma.
+    component FastWheelHandler : Kirigami.WheelHandler {
+        filterMouseEvents: true
+        // Same default speed the classic Kickoff views use.
+        horizontalStepSize: 20 * Qt.styleHints.wheelScrollLines
+        verticalStepSize: 20 * Qt.styleHints.wheelScrollLines
+    }
+
     // ── Minimal overlay scrollbar ───────────────────────────────────────
     // Win11 does not use a Plasma scrollbar here: no track, no arrows, no
     // frame — just a short rounded thumb that sits faintly on the edge and
@@ -1904,14 +1924,13 @@ T.Page {
             }
             onReleased: thumbArea.dragging = false
             onCanceled: thumbArea.dragging = false
-            onWheel: (wheel) => {
-                if (!bar.flickable) {
-                    return;
-                }
-                const step = wheel.angleDelta.y / 2;
-                bar.flickable.contentY = Math.max(0, Math.min(bar.maxOffset,
-                    bar.flickable.contentY - step));
-            }
+        }
+
+        // Wheel over the thin bar uses the same step size as the surface, so
+        // speed no longer changes depending on which part of the menu is under
+        // the pointer.
+        FastWheelHandler {
+            target: bar.flickable
         }
     }
 
@@ -2446,6 +2465,10 @@ T.Page {
                 boundsBehavior: Flickable.StopAtBounds
                 clip: true
 
+                FastWheelHandler {
+                    target: homeScroll
+                }
+
                 Column {
                     id: homeColumn
                     y: homeScroll.contentPadding
@@ -2932,6 +2955,11 @@ T.Page {
                     cellHeight: root.tileHeight
                     clip: true
                     boundsBehavior: Flickable.StopAtBounds
+
+                    FastWheelHandler {
+                        target: allAppsGrid
+                    }
+
                     delegate: AppTile {
                         view: allAppsGrid
                         cellWidth: allAppsGrid.cellWidth
@@ -2971,6 +2999,11 @@ T.Page {
                 model: searchView.searchModel
                 clip: true
                 boundsBehavior: Flickable.StopAtBounds
+
+                FastWheelHandler {
+                    target: resultsView
+                }
+
                 // The search field owns the keyboard; this view only carries
                 // the highlight, so it must never take the focus — otherwise
                 // every keystroke after the first would land on the list.
