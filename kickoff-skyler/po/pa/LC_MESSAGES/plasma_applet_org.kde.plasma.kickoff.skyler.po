@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2025-03-24 14:54-0500\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -14,17 +14,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.12.3\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚੋਂ ਹਟਾਓ"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "ਪਸੰਦਾਂ ਵਿੱਚ ਜੋੜੋ"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "ਆਈਕਾਨ ਹੋਵਰ ਪ੍ਰਭਾਵ"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "ਨਵੀਂ-ਇੰਸਟਾਲ ਕੀਤੀ ਐਪਲੀਕੇਸ਼ਨ"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -34,81 +30,26 @@ msgstr "ਸਭ ਸਰਗਰਮੀਆਂ ਉੱਤੇ"
 msgid "On the Current Activity"
 msgstr "ਮੌਜੂਦਾ ਸਰਗਰਮੀ ਉੱਤੇ"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚੋਂ ਹਟਾਓ"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚ ਵੇਖਾਓ"
 
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "ਇਸ ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਇੱਕ ਨਵੀਂ ਸਥਾਪਿਤ ਕੀਤੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ"
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "ਆਮ:"
 
 #: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "ਆਈਕਾਨ:"
+
+#: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "ਐਪਲੀਕੇਸਨ ਲਾਂਚਰ ਦਾ ਆਈਕਾਨ ਬਦਲੋ"
 
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "ਮੇਨੂ ਲੇਬਲ ਮੁੜ-ਸੈ਼ਟ ਕਰੋ"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr "ਖੁੱਲਾ ਰੱਖੋ"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "ਯੂਜ਼ਰ ਸੈਟਿੰਗ ਖੋਲ੍ਹੋ"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "ਖੋਜ ਪਲੱਗਇਨ ਸੰਰਚਨਾ..."
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "ਆਈਕਾਨ ਹਟਾਓ"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "ਐਪਲੀਕੇਸ਼ਨ ਸੰਪਾਦਿਤ ਕਰੋ..."
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr "ਟੈਕਸਟ ਲੇਬਲ ਸੈੱਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਜਦੋਂ ਪੈਨਲ ਲੰਬਕਾਰੀ ਹੋਵੇ।"
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "ਲਿਖਤ ਲੇਬਲ ਜੋੜਣ ਲਈ ਇੱਥੇ ਲਿਖੋ"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "ਕੋਈ ਮੇਲ ਨਹੀਂ"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "ਆਈਕਾਨ ਦਾ ਨਾਂ \"%1\" ਹੈ।"
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "ਐਪਲੀਕੇਸ਼ਨ ਲਾਂਚਰ ਲਈ ਆਈਕਾਨ ਚੁਣੋ"
-
-#: ConfigGeneral.qml:62
+#: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
@@ -117,7 +58,87 @@ msgstr ""
 "ਮੌਜੂਦਾ ਆਈਕਾਨ %1 ਹੈ। ਮੌਜੂਦਾ ਆਈਕਾਨ ਬਦਲਣ ਜਾਂ ਡਿਫਾਲਟ ਆਈਕਾਨ 'ਤੇ ਰੀਸੈਟ ਕਰਨ ਲਈ ਮੀਨੂ"
 " ਖੋਲ੍ਹਣ ਵਾਸਤੇ ਕਲਿੱਕ ਕਰੋ।"
 
-#: ConfigGeneral.qml:183
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "ਆਈਕਾਨ ਦਾ ਨਾਂ \"%1\" ਹੈ।"
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "…ਚੁਣੋ"
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਲਾਂਚਰ ਲਈ ਆਈਕਾਨ ਚੁਣੋ"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "ਮੂਲ ਆਈਕਾਨ ਲਈ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "ਆਈਕਾਨ ਹਟਾਓ"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "ਲਿਖਤ ਲੇਬਲ:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "ਲਿਖਤ ਲੇਬਲ ਜੋੜਣ ਲਈ ਇੱਥੇ ਲਿਖੋ"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "ਮੇਨੂ ਲੇਬਲ ਮੁੜ-ਸੈ਼ਟ ਕਰੋ"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "ਟੈਕਸਟ ਲੇਬਲ ਸੈੱਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਜਦੋਂ ਪੈਨਲ ਲੰਬਕਾਰੀ ਹੋਵੇ।"
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਇੰਝ ਵੇਖੋ:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "ਨਾਂ ਹੀ@ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "ਵੇਰਵਾ ਹੀ@ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "ਨਾਂ ਵੇਰਵਾ@ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "ਵੇਰਵਾ (ਨਾਂ) @ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "ਆਮ:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਵਰਣਮਾਲਾ ਅਨੁਸਾਰ ਲੜੀਬੱਧ"
+
+#: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
@@ -126,329 +147,399 @@ msgstr ""
 "ਇਹ ਪ੍ਰਭਾਵਤ ਨਹੀਂ ਕਰਦਾ ਕਿ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨੂੰ ਜਾਂ ਤਾਂ ਖੋਜ ਨਤੀਜਿਆਂ ਜਾਂ ਮਨਪਸੰਦ ਪੰਨੇ "
 "ਵਿੱਚ ਕਿਵੇਂ ਕ੍ਰਮਬੱਧ ਕੀਤਾ ਜਾਂਦਾ ਹੈ."
 
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "%1 ਕਤਾਰਾਂ, %2 ਕਾਲਮਾਂ ਨਾਲ ਗਰਿੱਡ"
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "ਸੰਖੇਪ ਲਿਸਟ ਆਈਟਮ ਸ਼ੈਲੀ ਵਰਤੋਂ"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "ਵੇਰਵਾ (ਨਾਂ) @ item: inlistbox Format:"
+#: ConfigGeneral.qml:201
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "ਨਵੀਆਂ ਇੰਸਟਾਲ ਕੀਤੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਉਜਾਗਰ ਕਰੋ"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "ਵੇਰਵਾ ਹੀ@ item: inlistbox Format:"
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "ਆਈਕਾਨ ਹੋਵਰ ਪ੍ਰਭਾਵ"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "ਨਾਂ ਵੇਰਵਾ@ item: inlistbox Format:"
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "KDE ਥੀਮ ਸਜਾਵਟ ਵਰਤੋਂ"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "ਨਾਂ ਹੀ@ item: inlistbox Format:"
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "ਕਸਟਮ ਲਾਂਚਰ ਸਜਾਵਟ ਵਰਤੋਂ"
 
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "ਕਾਲਾ"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "ਚਿੱਟਾ"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "ਆਟੋਮੈਟਿਕ (ਰੰਗ ਸਕੀਮ ਦੀ ਪਾਲਣਾ ਕਰੋ)"
+#: ConfigGeneral.qml:228
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "ਹੋਵਰ ਉੱਤੇ ਹਾਈਲਾਈਟ ਬੈਕਗਰਾਊਂਡ ਵੇਖੋ"
 
 #: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "ਚੱਕਰ"
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "ਹਾਈਲਾਈਟ ਸ਼ਕਲ:"
 
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "ਚਤੁਰਭੁਜ"
-
-#: ConfigGeneral.qml:233
+#: ConfigGeneral.qml:239
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
 msgstr "ਗੋਲ ਕਿਨਾਰੇ ਵਾਲੀ ਚਤੁਰਭੁਜ"
 
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "…ਚੁਣੋ"
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "ਚਤੁਰਭੁਜ"
 
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "ਮੂਲ ਆਈਕਾਨ ਲਈ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "ਚੱਕਰ"
 
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr "ਨਵੀਂ-ਇੰਸਟਾਲ ਕੀਤੀ ਐਪਲੀਕੇਸ਼ਨ"
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "ਉਭਾਰਨ ਰੰਗ"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "ਚਿੱਟਾ"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "ਕਾਲਾ"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "ਆਟੋਮੈਟਿਕ (ਰੰਗ ਸਕੀਮ ਦੀ ਪਾਲਣਾ ਕਰੋ)"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "ਹਾਈਲਾਈਟ ਸਾਈਜ਼:"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "ਪੌਪਅਪ ਲਈ ਫਲੂਐਂਟ (ਵਿੰਡੋਜ਼ 11) ਸਟਾਈਲਿੰਗ ਦੀ ਵਰਤੋਂ ਕਰੋ"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "ਪੋਪਅੱਪ ਪਿੱਛੇ ਨਕਲੀ ਐਕ੍ਰਿਲਿਕ ਬੈਕਗਰਾਊਂਡ"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "ਮੀਨੂ ਲੇਆਉਟ:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr "Windows 11 ਸਟਾਰਟ ਮੀਨੂ ਲੇਆਉਟ (ਪਿੰਨ ਕੀਤੇ, ਸਾਰੇ ਐਪ, ਸਿਫ਼ਾਰਸ਼ੀ)"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "ਸਾਰੇ ਐਪ:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "ਸੂਚੀ ਦੀ ਥਾਂ ਪਿੰਨ ਕੀਤੇ ਕਾਰਡਾਂ ਵਜੋਂ ਦਿਖਾਓ"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "ਇਸ ਅਨੁਸਾਰ ਗਰੁੱਪ ਕਰੋ:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "ਪਹਿਲਾ ਅੱਖਰ (A–Z)"
+
+#: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "ਸ਼੍ਰੇਣੀ"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "ਨਕਲੀ ਐਕ੍ਰਿਲਿਕ ਮਾਸਕ:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "Plasma ਸਟਾਈਲ ਤੋਂ ਕੋਨੇ ਦਾ ਰੇਡੀਅਸ ਲਓ"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "ਕੋਨੇ ਦਾ ਰੇਡੀਅਸ:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 ਪਿਕਸਲ"
+msgstr[1] "%1 ਪਿਕਸਲ"
+
+#: ConfigGeneral.qml:338
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "ਜਦੋਂ ਸਾਈਡਬਾਰ ਉੱਤੇ ਹੋਵਰ ਕੀਤਾ ਜਾਵੇ ਤਾਂ ਸਾਈਡਬਾਰ ਸ਼੍ਰੇਣੀਆਂ ਬਦਲੋ"
+
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "ਖੋਜ ਪਲੱਗਇਨ ਸੰਰਚਨਾ..."
+
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "ਸਾਈਡਬਾਰ ਸਥਿਤੀ:"
+
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "ਉਚਾਈ"
+
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "ਖੱਬਾ"
+
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "ਖੱਬਾ"
+
+#: ConfigGeneral.qml:371
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚ ਵੇਖਾਓ"
+
+#: ConfigGeneral.qml:372
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "ਇੱਕ ਗਰਿੱਡ ਵਿੱਚ"
+
+#: ConfigGeneral.qml:380
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "ਇੱਕ ਸੂਚੀ ਵਿੱਚ"
+
+#: ConfigGeneral.qml:388
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "ਹੋਰ ਐਪਲੀਕੇਸ਼ਨ ਵੇਖੋ:"
+
+#: ConfigGeneral.qml:389
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "ਇੱਕ ਗਰਿੱਡ ਵਿੱਚ"
+
+#: ConfigGeneral.qml:397
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "ਇੱਕ ਸੂਚੀ ਵਿੱਚ"
+
+#: ConfigGeneral.qml:409
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "ਇਸ ਲਈ ਬਟਨ ਵੇਖੋ:"
+
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "ਸ਼ਕਤੀ"
+
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "ਸੈਸ਼ਨ"
+
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "ਪਾਵਰ ਅਤੇ ਸੈਸ਼ਨ"
+
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "ਐਕਸ਼ਨ ਬਟਨ ਸੁਰਖੀ ਵੇਖੋ"
+
+#: Footer.qml:275
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "ਕਾਰਜ"
+
+#: Footer.qml:291
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "ਥਾਵਾਂ"
+
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "ਕੋਈ ਮੇਲ ਨਹੀਂ"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "ਯੂਜ਼ਰ ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "ਖੁੱਲਾ ਰੱਖੋ"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "_ਨਵਾਂ"
 
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "ਆਈਕਾਨ:"
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "ਨਵੀਂ-ਇੰਸਟਾਲ ਕੀਤੀ ਐਪਲੀਕੇਸ਼ਨ"
 
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "ਸਾਈਡਬਾਰ ਸਥਿਤੀ:"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "ਉਭਾਰਨ ਰੰਗ"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "ਹਾਈਲਾਈਟ ਸ਼ਕਲ:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "ਐਪਲੀਕੇਸ਼ਨ ਇੰਝ ਵੇਖੋ:"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "ਹਾਈਲਾਈਟ ਸਾਈਜ਼:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "ਲਿਖਤ ਲੇਬਲ:"
-
-#: ConfigGeneral.qml:195
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr "ਨਵੀਆਂ ਇੰਸਟਾਲ ਕੀਤੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਉਜਾਗਰ ਕਰੋ"
-
-#: ConfigGeneral.qml:375
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "ਐਕਸ਼ਨ ਬਟਨ ਸੁਰਖੀ ਵੇਖੋ"
-
-#: ConfigGeneral.qml:222
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr "ਹੋਵਰ ਉੱਤੇ ਹਾਈਲਾਈਟ ਬੈਕਗਰਾਊਂਡ ਵੇਖੋ"
-
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "ਐਪਲੀਕੇਸ਼ਨ ਵਰਣਮਾਲਾ ਅਨੁਸਾਰ ਲੜੀਬੱਧ"
-
-#: ConfigGeneral.qml:276
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr "ਜਦੋਂ ਸਾਈਡਬਾਰ ਉੱਤੇ ਹੋਵਰ ਕੀਤਾ ਜਾਵੇ ਤਾਂ ਸਾਈਡਬਾਰ ਸ਼੍ਰੇਣੀਆਂ ਬਦਲੋ"
-
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "ਪੌਪਅਪ ਲਈ ਫਲੂਐਂਟ (ਵਿੰਡੋਜ਼ 11) ਸਟਾਈਲਿੰਗ ਦੀ ਵਰਤੋਂ ਕਰੋ"
-
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "KDE ਥੀਮ ਸਜਾਵਟ ਵਰਤੋਂ"
-
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "ਸੰਖੇਪ ਲਿਸਟ ਆਈਟਮ ਸ਼ੈਲੀ ਵਰਤੋਂ"
-
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "ਕਸਟਮ ਲਾਂਚਰ ਸਜਾਵਟ ਵਰਤੋਂ"
-
-#: ConfigGeneral.qml:310
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr "ਇੱਕ ਗਰਿੱਡ ਵਿੱਚ"
-
-#: ConfigGeneral.qml:318
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr "ਇੱਕ ਸੂਚੀ ਵਿੱਚ"
-
-#: ConfigGeneral.qml:327
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr "ਇੱਕ ਗਰਿੱਡ ਵਿੱਚ"
-
-#: ConfigGeneral.qml:335
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr "ਇੱਕ ਸੂਚੀ ਵਿੱਚ"
-
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "ਸ਼ਕਤੀ"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "ਪਾਵਰ ਅਤੇ ਸੈਸ਼ਨ"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "ਸੈਸ਼ਨ"
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "ਖੱਬਾ"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "ਉਚਾਈ"
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "ਆਮ:"
-
-#: ConfigGeneral.qml:347
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr "ਇਸ ਲਈ ਬਟਨ ਵੇਖੋ:"
-
-#: ConfigGeneral.qml:309
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚ ਵੇਖਾਓ"
-
-#: ConfigGeneral.qml:326
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr "ਹੋਰ ਐਪਲੀਕੇਸ਼ਨ ਵੇਖੋ:"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "ਹੋਰ"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr "ਸ਼ਕਤੀ"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr "ਸੈਸ਼ਨ"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "ਸੈਸ਼ਨ ਅਤੇ ਪਾਵਰ"
-
-#: Footer.qml:269
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr "ਕਾਰਜ"
-
-#: Footer.qml:285
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr "ਥਾਵਾਂ"
-
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "ਆਮ:"
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "%1 ਕਤਾਰਾਂ, %2 ਕਾਲਮਾਂ ਨਾਲ ਗਰਿੱਡ"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "_ਨਵਾਂ"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "ਇਸ ਸ਼੍ਰੇਣੀ ਵਿੱਚ ਇੱਕ ਨਵੀਂ ਸਥਾਪਿਤ ਕੀਤੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "ਨਵੀਂ-ਇੰਸਟਾਲ ਕੀਤੀ ਐਪਲੀਕੇਸ਼ਨ"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "ਸੈਸ਼ਨ"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "ਸ਼ਕਤੀ"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "ਹੋਰ"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "ਸੈਸ਼ਨ ਅਤੇ ਪਾਵਰ"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਸੰਪਾਦਿਤ ਕਰੋ..."
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "ਕੰਪਿਊਟਰ"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "ਅਕਸਰ ਵਰਤੇ"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "ਅਤੀਤ"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "ਖੱਬਾ"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "ਅਕਸਰ ਵਰਤੇ"
 
-#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
-#~ msgid "Automatically disabled when in Touch Mode"
-#~ msgstr "ਜਦੋਂ ਟੱਚ ਮੋਡ ਹੋਵੇ ਤਾਂ ਆਪਣੇ-ਆਪ ਅਸਮਰੱਥ ਕਰੋ"
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "ਐਪ, ਫ਼ਾਈਲਾਂ ਅਤੇ ਸੈਟਿੰਗਾਂ ਖੋਜੋ"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "ਯੂਜ਼ਰ ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "ਹੋਰ ਪਾਵਰ ਚੋਣਾਂ"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "ਪਿੰਨ ਕੀਤੇ"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "ਸਾਰੇ ਐਪ"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "ਪਿੱਛੇ"
 
 msgctxt "@label:listbox"
 msgid "Animation speed:"
-msgstr ""
+msgstr "ਐਨੀਮੇਸ਼ਨ ਗਤੀ:"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
-msgstr ""
+msgstr "ਬਹੁਤ ਤੇਜ਼"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
-msgstr ""
+msgstr "ਤੇਜ਼"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
-msgstr ""
+msgstr "ਸਧਾਰਨ"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
-msgstr ""
+msgstr "ਹੌਲੀ"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Slow"
-msgstr ""
+msgstr "ਬਹੁਤ ਹੌਲੀ"
 
 msgctxt "@label:group prefix for Win11 menu options"
 msgid "Recent:"
-msgstr ""
+msgstr "ਹਾਲੀਆ:"
 
 msgctxt "@option:check"
 msgid "Show recently used items above All apps"
-msgstr ""
+msgstr "ਹਾਲ ਹੀ ਵਿੱਚ ਵਰਤੀਆਂ ਚੀਜ਼ਾਂ ਸਾਰੇ ਐਪ ਦੇ ਉੱਪਰ ਦਿਖਾਓ"
 
 msgctxt "@title:section recently used items"
 msgid "Recent"
-msgstr ""
+msgstr "ਹਾਲੀਆ"
 
 #: Win11StartMenu.qml:3217
 msgctxt "@info no recent items yet"
 msgid "No recent items"
-msgstr ""
+msgstr "ਕੋਈ ਹਾਲੀਆ ਚੀਜ਼ ਨਹੀਂ"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "ਜਦੋਂ ਟੱਚ ਮੋਡ ਹੋਵੇ ਤਾਂ ਆਪਣੇ-ਆਪ ਅਸਮਰੱਥ ਕਰੋ"

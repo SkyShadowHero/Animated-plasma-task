@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-desktop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2026-01-08 05:41+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -14,17 +14,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "რჩეულებიდან ამოშლა"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "რჩეულებში დამატება"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "Ხატულაზე მიმაგრების ეფექტი"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "ახლად დაყენებული აპლიკაცია"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -34,81 +30,26 @@ msgstr "ყველა აქტივობაზე"
 msgid "On the Current Activity"
 msgstr "მიმდინარე აქტივობაზე"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "რჩეულებიდან ამოშლა"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "რჩეულებში ჩვენება"
 
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "ამ კატეგორიაში ახლად დაყენებული აპლიკაციები არაა"
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "ზოგადი"
 
 #: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "ხატულა:"
+
+#: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "აპლიკაციების გამშვების ხატულას შეცვლა"
 
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "მენიუს ჭდის საწყის მნიშვნელობაზე დაბრუნება"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr "ღიად დატოვება"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "მომხმარებლის პარამეტრების გახსნა"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "ძებნის დამატებების მორგება…"
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "ხატულის წაშლა"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "აპლიკაციების ჩასწორება…"
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr "ტექსტური ჭდის დაყენება მაშინ, როცა პანელი ვერტიკალურია, შეუძლებელია."
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "ტექსტური ჭდის დასამატებლად აკრიფეთ აქ"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "დათხვევა არ არსებობს"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "ხატულის სახელია \"%1\""
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "აირჩიეთ აპლიკაციების გამშვების ხატულა"
-
-#: ConfigGeneral.qml:62
+#: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
@@ -117,7 +58,87 @@ msgstr ""
 "მიმდინარე ხატულაა %1. მიმდინარე ხატულის შესაცვლელად ან ნაგულისხმევზე "
 "დასაბრუნებლად მენიუ გახსენით."
 
-#: ConfigGeneral.qml:183
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "ხატულის სახელია \"%1\""
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "არჩევა…"
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "აირჩიეთ აპლიკაციების გამშვების ხატულა"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "ნაგულისხმევ ხატულაზე დაბრუნება"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "ხატულის წაშლა"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "ტექსტური ჭდე:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "ტექსტური ჭდის დასამატებლად აკრიფეთ აქ"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "მენიუს ჭდის საწყის მნიშვნელობაზე დაბრუნება"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "ტექსტური ჭდის დაყენება მაშინ, როცა პანელი ვერტიკალურია, შეუძლებელია."
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "აპლიკაციის ჩვენება, როგორც:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "მხოლოდ სახელი"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "მხოლოდ აღწერა"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "სახელი (აღწერა)"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "აღწერა (სახელი)"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "ზოგადი:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "აპლიკაციების დალაგება ანბანის მიხედვით"
+
+#: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
@@ -126,288 +147,400 @@ msgstr ""
 "ეს არ ეხება იმას, როგორ ლაგდება აპლიკაციები ძებნის შედეგების ან რჩეულების "
 "გვერდზე."
 
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "ბადე %1 მწკრივით და %2 სვეტით"
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "ელემენტის კომპაქტური ჩამონათვალის სტილის გამოყენება"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "აღწერა (სახელი)"
+#: ConfigGeneral.qml:201
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "ახლად დაყენებული აპლიკაციების გამოკვეთა"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "მხოლოდ აღწერა"
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "Ხატულაზე მიმაგრების ეფექტი"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "სახელი (აღწერა)"
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "KDE თემის დეკორაციების გამოყენება"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "მხოლოდ სახელი"
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Გამოიყენეთ ინდივიდუალური დეკორაციები გამშვები მოწყობილობისთვის"
 
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "შავი"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "ევროპეოიდული"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "Ავტომატური (მიჰყევით ფერთა სქემას)"
+#: ConfigGeneral.qml:228
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "Გადატარებაზე გამოკვეთილი ფონის ჩვენება"
 
 #: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "წრე"
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Გამოკვეთეთ ფორმა:"
 
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "მართკუთხედი"
-
-#: ConfigGeneral.qml:233
+#: ConfigGeneral.qml:239
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
 msgstr "მომრგვალებული მართკუთხედი"
 
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "არჩევა…"
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "მართკუთხედი"
 
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "ნაგულისხმევ ხატულაზე დაბრუნება"
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "წრე"
 
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr "ახლად დაყენებული აპლიკაცია"
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "გამოკვეთის ფერი:"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "ევროპეოიდული"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "შავი"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Ავტომატური (მიჰყევით ფერთა სქემას)"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Გამოკვეთის ზომა:"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Გამოიყენეთ Fluent (Windows 11) სტილი ამომხტარი ფანჯრისთვის"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "ყალბი აკრილის ფონი პოპაპის უკან"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "მენიუს განლაგება:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr ""
+"Windows 11-ის Start მენიუს განლაგება (მიმაგრებული, ყველა აპი, რეკომენდებული)"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "ყველა აპი:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "ჩვენება მიმაგრებული ბარათების სახით სიის ნაცვლად"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "დაჯგუფება:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "პირველი ასო (A–Z)"
+
+#: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "კატეგორია"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "ყალბი აკრილის ნიღაბი:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "კუთხის რადიუსის აღება Plasma-ის სტილიდან"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "კუთხის რადიუსი:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 პიქსელი"
+msgstr[1] "%1 პიქსელი"
+
+#: ConfigGeneral.qml:338
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr ""
+"გვერდითი პანელის კატეგორიების გადართვა თაგუნას კურსორის მათზე გაჩერებისას"
+
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "ძებნის დამატებების მორგება…"
+
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "გვერდითი პანელის მდებარეობა:"
+
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "მარჯვენა"
+
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "მარცხენა"
+
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "მარცხენა"
+
+#: ConfigGeneral.qml:371
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "რჩეულების ჩვენება:"
+
+#: ConfigGeneral.qml:372
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "ბადეში"
+
+#: ConfigGeneral.qml:380
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "სიაში"
+
+#: ConfigGeneral.qml:388
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "სხვა აპლიკაციების ჩვენება:"
+
+#: ConfigGeneral.qml:389
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "ბადეში"
+
+#: ConfigGeneral.qml:397
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "სიაში"
+
+#: ConfigGeneral.qml:409
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "ღილაკების ჩვენება:"
+
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "კვება"
+
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "სესია"
+
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "კვება და სესია"
+
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "ქმედების ღილაკების აღწერის ჩვენება"
+
+#: Footer.qml:275
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "აპლიკაციები"
+
+#: Footer.qml:291
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "ადგილები"
+
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "დათხვევა არ არსებობს"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "მომხმარებლის პარამეტრების გახსნა"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "ღიად დატოვება"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "ახალი!"
 
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "ხატულა:"
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "ახლად დაყენებული აპლიკაცია"
 
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "გვერდითი პანელის მდებარეობა:"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "გამოკვეთის ფერი:"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "Გამოკვეთეთ ფორმა:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "აპლიკაციის ჩვენება, როგორც:"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "Გამოკვეთის ზომა:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "ტექსტური ჭდე:"
-
-#: ConfigGeneral.qml:195
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr "ახლად დაყენებული აპლიკაციების გამოკვეთა"
-
-#: ConfigGeneral.qml:375
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "ქმედების ღილაკების აღწერის ჩვენება"
-
-#: ConfigGeneral.qml:222
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr "Გადატარებაზე გამოკვეთილი ფონის ჩვენება"
-
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "აპლიკაციების დალაგება ანბანის მიხედვით"
-
-#: ConfigGeneral.qml:276
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr ""
-"გვერდითი პანელის კატეგორიების გადართვა თაგუნას კურსორის მათზე გაჩერებისას"
-
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "Გამოიყენეთ Fluent (Windows 11) სტილი ამომხტარი ფანჯრისთვის"
-
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "KDE თემის დეკორაციების გამოყენება"
-
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "ელემენტის კომპაქტური ჩამონათვალის სტილის გამოყენება"
-
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "Გამოიყენეთ ინდივიდუალური დეკორაციები გამშვები მოწყობილობისთვის"
-
-#: ConfigGeneral.qml:310
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr "ბადეში"
-
-#: ConfigGeneral.qml:318
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr "სიაში"
-
-#: ConfigGeneral.qml:327
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr "ბადეში"
-
-#: ConfigGeneral.qml:335
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr "სიაში"
-
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "კვება"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "კვება და სესია"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "სესია"
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "მარცხენა"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "მარჯვენა"
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "ზოგადი"
-
-#: ConfigGeneral.qml:347
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr "ღილაკების ჩვენება:"
-
-#: ConfigGeneral.qml:309
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "რჩეულების ჩვენება:"
-
-#: ConfigGeneral.qml:326
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr "სხვა აპლიკაციების ჩვენება:"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "მეტი"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr "კვება"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr "სესია"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "სესია და კვება"
-
-#: Footer.qml:269
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr "აპლიკაციები"
-
-#: Footer.qml:285
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr "ადგილები"
-
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "ზოგადი:"
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "ბადე %1 მწკრივით და %2 სვეტით"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "ახალი!"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "ამ კატეგორიაში ახლად დაყენებული აპლიკაციები არაა"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "ახლად დაყენებული აპლიკაცია"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "სესია"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "კვება"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "მეტი"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "სესია და კვება"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "აპლიკაციების ჩასწორება…"
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "კომპიუტერი"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "ხშირად გამოყენებული"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "ისტორია"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "მარცხენა"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "ხშირად გამოყენებული"
+
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "აპების, ფაილებისა და პარამეტრების ძიება"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "მომხმარებლის პარამეტრების გახსნა"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "ენერგიის დამატებითი პარამეტრები"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "მიმაგრებული"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "ყველა აპი"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "უკან"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "ანიმაციის სიჩქარე:"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "ძალიან სწრაფი"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "სწრაფი"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "ნორმალური"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "ნელი"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "ძალიან ნელი"
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr "ბოლო:"
+
+msgctxt "@option:check"
+msgid "Show recently used items above All apps"
+msgstr "ბოლოს გამოყენებული ელემენტების ჩვენება ყველა აპის ზემოთ"
+
+msgctxt "@title:section recently used items"
+msgid "Recent"
+msgstr "ბოლო"
+
+#: Win11StartMenu.qml:3217
+msgctxt "@info no recent items yet"
+msgid "No recent items"
+msgstr "ბოლო ელემენტები არ არის"
 
 #~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
 #~ msgid "Automatically disabled when in Touch Mode"
@@ -416,44 +549,3 @@ msgstr "მარცხენა"
 #~ msgctxt "Newly installed app, badge, keep short"
 #~ msgid "New!"
 #~ msgstr "ახალი!"
-
-msgctxt "@label:listbox"
-msgid "Animation speed:"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Normal"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Slow"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Slow"
-msgstr ""
-
-msgctxt "@label:group prefix for Win11 menu options"
-msgid "Recent:"
-msgstr ""
-
-msgctxt "@option:check"
-msgid "Show recently used items above All apps"
-msgstr ""
-
-msgctxt "@title:section recently used items"
-msgid "Recent"
-msgstr ""
-
-#: Win11StartMenu.qml:3217
-msgctxt "@info no recent items yet"
-msgid "No recent items"
-msgstr ""

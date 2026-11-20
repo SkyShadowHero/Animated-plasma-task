@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2026-03-13 11:17+0100\n"
 "Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: \n"
@@ -16,17 +16,13 @@ msgstr ""
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Odstranit z oblíbených"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "Přidat do oblíbených"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "Efekt při najetí myší"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "Nově instalované aplikace:"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -36,81 +32,26 @@ msgstr "Ve všech aktivitách"
 msgid "On the Current Activity"
 msgstr "V současné aktivitě"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "Odstranit z oblíbených"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "Zobrazit v oblíbených"
 
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "V této kategorii je nově nainstalovaná aplikace"
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Obecné"
 
 #: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Ikona:"
+
+#: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "Změnit ikonu spouštěče aplikace"
 
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "Resetovat popisek nabídky"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr "Ponechat otevřené"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "Otevřít nastavení uživatele"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "Nastavit pro vyhledávání…"
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "Odstranit ikonu"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "Upravit aplikace…"
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr "Pokud je panel svislý, nelze nastavit textový popisek."
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "Pro přidání textového popisku pište zde"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "Žádné shody"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "Název ikony je \"%1\""
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "Vyberte ikonu spouštěče aplikace"
-
-#: ConfigGeneral.qml:62
+#: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
@@ -119,7 +60,87 @@ msgstr ""
 "Současná ikona je %1. Klikněte pro otevření nabídky pro změnu současné ikony"
 " nebo vrácení původní ikony."
 
-#: ConfigGeneral.qml:183
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Název ikony je \"%1\""
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Vybrat…"
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Vyberte ikonu spouštěče aplikace"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Obnovit výchozí ikonu"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Odstranit ikonu"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Textový popisek:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Pro přidání textového popisku pište zde"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Resetovat popisek nabídky"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "Pokud je panel svislý, nelze nastavit textový popisek."
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Zobrazit aplikace jako:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Pouze název"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Pouze popis"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Název (popis)"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Popis (název)"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "Obecné:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Řadit aplikace podle abecedy"
+
+#: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
@@ -128,287 +149,400 @@ msgstr ""
 "Tímto nebude ovlivněno řazení aplikací ve výsledcích vyhledávání nebo na "
 "stránce oblíbených."
 
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "Mřížka s %1 řádky, %2 sloupci"
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Použít kompaktní styl seznamu položek"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "Popis (název)"
+#: ConfigGeneral.qml:201
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Zvýraznit nově nainstalované aplikace"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "Pouze popis"
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "Efekt při najetí myší"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "Název (popis)"
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "Použít dekorace motivu kde"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "Pouze název"
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Použijte vlastní ozdoby spouštěče"
 
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "Černá"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "Bílá"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "Automaticky (postupujte podle barevného schématu)"
+#: ConfigGeneral.qml:228
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "Zobrazit zvýrazněné pozadí při najetí myší"
 
 #: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "Kruh"
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Zvýraznit tvar:"
 
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "Obdélník"
-
-#: ConfigGeneral.qml:233
+#: ConfigGeneral.qml:239
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
 msgstr "Zaoblený pravoúhelník"
 
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "Vybrat…"
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Obdélník"
 
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "Obnovit výchozí ikonu"
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Kruh"
 
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Barva zvýraznění:"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "Bílá"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "Černá"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Automaticky (postupujte podle barevného schématu)"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Velikost zvýraznění:"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Použijte plynulý (Windows 11) styl pro vyskakovací okno"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "Falešné akrylové pozadí za vyskakovacím oknem"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "Rozvržení nabídky:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr ""
+"Rozvržení nabídky Start Windows 11 (Připnuto, Všechny aplikace, Doporučeno)"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "Všechny aplikace:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "Zobrazit jako připnuté karty místo seznamu"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "Seskupit podle:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "První písmeno (A–Z)"
+
+#: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "Kategorie"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "Falešná akrylová maska:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "Převzít poloměr rohů ze stylu Plasma"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "Poloměr rohů:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 pixel"
+msgstr[1] "%1 pixely"
+msgstr[2] "%1 pixelů"
+
+#: ConfigGeneral.qml:338
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "Přepínání kategorií postranního panelu při najetí myší"
+
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Nastavit pro vyhledávání…"
+
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Pozice postranní lišty:"
+
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Vpravo"
+
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Vlevo"
+
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Vlevo"
+
+#: ConfigGeneral.qml:371
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Zobrazit oblíbené:"
+
+#: ConfigGeneral.qml:372
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "V mřížce"
+
+#: ConfigGeneral.qml:380
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "V seznamu"
+
+#: ConfigGeneral.qml:388
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
 msgstr "Zobrazit ostatní aplikace:"
+
+#: ConfigGeneral.qml:389
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "V mřížce"
+
+#: ConfigGeneral.qml:397
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "V seznamu"
+
+#: ConfigGeneral.qml:409
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Zobrazit tlačítka pro:"
+
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Napájení"
+
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Sezení"
+
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Napájení a sezení"
+
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Zobrazit popisky akčních tlačítek"
+
+#: Footer.qml:275
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Aplikace"
+
+#: Footer.qml:291
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Místa"
+
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Žádné shody"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Otevřít nastavení uživatele"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Ponechat otevřené"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Nové!"
 
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "Ikona:"
-
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "Pozice postranní lišty:"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "Barva zvýraznění:"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "Zvýraznit tvar:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "Zobrazit aplikace jako:"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "Velikost zvýraznění:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "Textový popisek:"
-
-#: ConfigGeneral.qml:195
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr "Zvýraznit nově nainstalované aplikace"
-
-#: ConfigGeneral.qml:375
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "Zobrazit popisky akčních tlačítek"
-
-#: ConfigGeneral.qml:222
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr "Zobrazit zvýrazněné pozadí při najetí myší"
-
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "Řadit aplikace podle abecedy"
-
-#: ConfigGeneral.qml:276
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr "Přepínání kategorií postranního panelu při najetí myší"
-
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "Použijte plynulý (Windows 11) styl pro vyskakovací okno"
-
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "Použít dekorace motivu kde"
-
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "Použít kompaktní styl seznamu položek"
-
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "Použijte vlastní ozdoby spouštěče"
-
-#: ConfigGeneral.qml:310
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr "V mřížce"
-
-#: ConfigGeneral.qml:318
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr "V seznamu"
-
-#: ConfigGeneral.qml:327
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr "V mřížce"
-
-#: ConfigGeneral.qml:335
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr "V seznamu"
-
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "Napájení"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "Napájení a sezení"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "Sezení"
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "Vlevo"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "Vpravo"
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "Obecné"
-
-#: ConfigGeneral.qml:347
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr "Zobrazit tlačítka pro:"
-
-#: ConfigGeneral.qml:309
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "Zobrazit oblíbené:"
-
-#: ConfigGeneral.qml:326
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
 msgstr "Zobrazit ostatní aplikace:"
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "Více"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr "Napájení"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr "Sezení"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "Sezení a napájení"
-
-#: Footer.qml:269
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr "Aplikace"
-
-#: Footer.qml:285
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr "Místa"
-
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "Obecné:"
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Mřížka s %1 řádky, %2 sloupci"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Nové!"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "V této kategorii je nově nainstalovaná aplikace"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "Nově instalované aplikace:"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Sezení"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Napájení"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Více"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Sezení a napájení"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Upravit aplikace…"
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "Počítač"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "Často používané"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "Historie"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "Vlevo"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Často používané"
+
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "Hledat aplikace, soubory a nastavení"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "Otevřít nastavení uživatele"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "Další možnosti napájení"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "Připnuto"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "Všechny aplikace"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "Zpět"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "Rychlost animace:"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "Velmi rychlá"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "Rychlá"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "Normální"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "Pomalá"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "Velmi pomalá"
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr "Nedávné:"
+
+msgctxt "@option:check"
+msgid "Show recently used items above All apps"
+msgstr "Zobrazit nedávno použité položky nad Všechny aplikace"
+
+msgctxt "@title:section recently used items"
+msgid "Recent"
+msgstr "Nedávné"
+
+#: Win11StartMenu.qml:3217
+msgctxt "@info no recent items yet"
+msgid "No recent items"
+msgstr "Žádné nedávné položky"
 
 #~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
 #~ msgid "Automatically disabled when in Touch Mode"
@@ -417,44 +551,3 @@ msgstr "Vlevo"
 #~ msgctxt "Newly installed app, badge, keep short"
 #~ msgid "New!"
 #~ msgstr "Nové!"
-
-msgctxt "@label:listbox"
-msgid "Animation speed:"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Normal"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Slow"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Slow"
-msgstr ""
-
-msgctxt "@label:group prefix for Win11 menu options"
-msgid "Recent:"
-msgstr ""
-
-msgctxt "@option:check"
-msgid "Show recently used items above All apps"
-msgstr ""
-
-msgctxt "@title:section recently used items"
-msgid "Recent"
-msgstr ""
-
-#: Win11StartMenu.qml:3217
-msgctxt "@info no recent items yet"
-msgid "No recent items"
-msgstr ""

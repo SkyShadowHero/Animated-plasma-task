@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-desktop\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2025-03-15 06:51+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -14,17 +14,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.12.1\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Hapus dari Favorit"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "Tambahkan ke Favorit"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "Efek hover ikon"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "Aplikasi yang baru dipasang"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -34,81 +30,26 @@ msgstr "Di Semua Activities"
 msgid "On the Current Activity"
 msgstr "Di Aktivitas Saat Ini"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "Hapus dari Favorit"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "Tampilkan di Favorit"
 
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "Ada aplikasi yang baru diinstal dalam kategori ini"
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Umum:"
 
 #: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Ikon:"
+
+#: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "Ubah ikon Peluncur Aplikasi"
 
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "Atur ulang label menu"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr "Tetap Buka"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "Setelan pengguna"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "Konfigurasi Plugin Pencarian..."
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "Hapus ikon"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "Edit Aplikasi…"
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr "Teks tidak dapat ditetapkan ketika Panel berada di posisi vertikal."
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "Ketik di sini untuk menambahkan sebuah label teks"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "Tidak ada yang cocok"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "Nama ikon adalah \"%1\""
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "Pilih ikon untuk Peluncur Aplikasi"
-
-#: ConfigGeneral.qml:62
+#: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
@@ -117,7 +58,87 @@ msgstr ""
 "Ikon saat ini adalah %1. Klik untuk membuka menu untuk mengubah ikon saat "
 "ini atau mengatur ulang ke ikon bawaan."
 
-#: ConfigGeneral.qml:183
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Nama ikon adalah \"%1\""
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Pilih..."
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Pilih ikon untuk Peluncur Aplikasi"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Atur ulang ke ikon bawaan"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Hapus ikon"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Label teks:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Ketik di sini untuk menambahkan sebuah label teks"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Atur ulang label menu"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr "Teks tidak dapat ditetapkan ketika Panel berada di posisi vertikal."
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Urutkan aplikasi secara alfabet"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Nama saja"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Deskripsi saja"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Nama (Deskripsi)"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Deskripsi (Nama)"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "Umum:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Urutkan aplikasi secara alfabet"
+
+#: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
@@ -126,329 +147,401 @@ msgstr ""
 "Ini tidak memengaruhi cara aplikasi diurutkan dalam hasil pencarian atau "
 "halaman favorit."
 
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "Kisi dengan %1 baris, %2 kolom"
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Gunakan gaya item daftar ringkas"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "Deskripsi (Nama)"
+#: ConfigGeneral.qml:201
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Sorot aplikasi yang baru dipasang"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "Deskripsi saja"
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "Efek hover ikon"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "Nama (Deskripsi)"
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "Gunakan dekorasi tema KDE"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "Nama saja"
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Gunakan dekorasi peluncur khusus"
 
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "Hitam"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "Putih"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "Otomatis (ikuti skema warna)"
+#: ConfigGeneral.qml:228
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "Tampilkan latar belakang sorotan pada hover"
 
 #: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "Lingkaran"
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Bentuk sorotan:"
 
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "Persegi panjang"
-
-#: ConfigGeneral.qml:233
+#: ConfigGeneral.qml:239
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
 msgstr "Persegi panjang bulat"
 
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "Pilih..."
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Persegi panjang"
 
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "Atur ulang ke ikon bawaan"
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Lingkaran"
 
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr "Aplikasi yang baru dipasang"
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Warna isi sorotan"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "Putih"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "Hitam"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Otomatis (ikuti skema warna)"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Ukuran sorotan:"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Gunakan gaya Fluent (Windows 11) untuk popup"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "Latar akrilik palsu di belakang popup"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "Tata letak menu:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr ""
+"Tata letak menu Mulai Windows 11 (Disematkan, Semua aplikasi, "
+"Direkomendasikan)"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "Semua aplikasi:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "Tampilkan sebagai kartu disematkan, bukan daftar"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "Kelompokkan berdasarkan:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "Huruf pertama (A–Z)"
+
+#: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "Kategori"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "Masker akrilik palsu:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "Ambil radius sudut dari gaya Plasma"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "Radius sudut:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 piksel"
+msgstr[1] "%1 piksel"
+
+#: ConfigGeneral.qml:338
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "Ganti kategori bilah sisi saat melayang di atasnya"
+
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Konfigurasi Plugin Pencarian..."
+
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Posisi sidebar:"
+
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Kanan"
+
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Kiri"
+
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Kiri"
+
+#: ConfigGeneral.qml:371
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Tampilkan di Favorit"
+
+#: ConfigGeneral.qml:372
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "Dalam kisi"
+
+#: ConfigGeneral.qml:380
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "Dalam daftar"
+
+#: ConfigGeneral.qml:388
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Tampilkan aplikasi lain:"
+
+#: ConfigGeneral.qml:389
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "Dalam kisi"
+
+#: ConfigGeneral.qml:397
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "Dalam daftar"
+
+#: ConfigGeneral.qml:409
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Tampilkan tombol untuk:"
+
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Kuasa"
+
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Sesi"
+
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Kekuasaan dan sesi"
+
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Tampilkan keterangan tombol tindakan"
+
+#: Footer.qml:275
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Aplikasi"
+
+#: Footer.qml:291
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Tempat"
+
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Tidak ada yang cocok"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Buka pengaturan pengguna"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Tetap Buka"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Baru!"
 
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "Ikon:"
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Aplikasi yang baru dipasang"
 
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "Posisi sidebar:"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "Warna isi sorotan"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "Bentuk sorotan:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "Urutkan aplikasi secara alfabet"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "Ukuran sorotan:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "Label teks:"
-
-#: ConfigGeneral.qml:195
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr "Sorot aplikasi yang baru dipasang"
-
-#: ConfigGeneral.qml:375
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "Tampilkan keterangan tombol tindakan"
-
-#: ConfigGeneral.qml:222
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr "Tampilkan latar belakang sorotan pada hover"
-
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "Urutkan aplikasi secara alfabet"
-
-#: ConfigGeneral.qml:276
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr "Ganti kategori bilah sisi saat melayang di atasnya"
-
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "Gunakan gaya Fluent (Windows 11) untuk popup"
-
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "Gunakan dekorasi tema KDE"
-
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "Gunakan gaya item daftar ringkas"
-
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "Gunakan dekorasi peluncur khusus"
-
-#: ConfigGeneral.qml:310
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr "Dalam kisi"
-
-#: ConfigGeneral.qml:318
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr "Dalam daftar"
-
-#: ConfigGeneral.qml:327
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr "Dalam kisi"
-
-#: ConfigGeneral.qml:335
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr "Dalam daftar"
-
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "Kuasa"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "Kekuasaan dan sesi"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "Sesi"
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "Kiri"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "Kanan"
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "Umum:"
-
-#: ConfigGeneral.qml:347
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr "Tampilkan tombol untuk:"
-
-#: ConfigGeneral.qml:309
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "Tampilkan di Favorit"
-
-#: ConfigGeneral.qml:326
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr "Tampilkan aplikasi lain:"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "Lainnya"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr "Kuasa"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr "Sesi"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "Sesi dan Kekuasaan"
-
-#: Footer.qml:269
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr "Aplikasi"
-
-#: Footer.qml:285
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr "Tempat"
-
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "Umum:"
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Kisi dengan %1 baris, %2 kolom"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Baru!"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "Ada aplikasi yang baru diinstal dalam kategori ini"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "Aplikasi yang baru dipasang"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Sesi"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Kuasa"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Lainnya"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Sesi dan Kekuasaan"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Edit Aplikasi…"
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "Komputer"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "Sering Digunakan"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "Histori"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "Kiri"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Sering Digunakan"
 
-#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
-#~ msgid "Automatically disabled when in Touch Mode"
-#~ msgstr "Otomatis dinonaktifkan ketika di Mode Sentuh"
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "Cari aplikasi, file, dan pengaturan"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "Buka pengaturan pengguna"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "Opsi daya lainnya"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "Disematkan"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "Semua aplikasi"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "Kembali"
 
 msgctxt "@label:listbox"
 msgid "Animation speed:"
-msgstr ""
+msgstr "Kecepatan animasi:"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
-msgstr ""
+msgstr "Sangat cepat"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
-msgstr ""
+msgstr "Cepat"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
-msgstr ""
+msgstr "Lambat"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Slow"
-msgstr ""
+msgstr "Sangat lambat"
 
 msgctxt "@label:group prefix for Win11 menu options"
 msgid "Recent:"
-msgstr ""
+msgstr "Terbaru:"
 
 msgctxt "@option:check"
 msgid "Show recently used items above All apps"
-msgstr ""
+msgstr "Tampilkan item yang baru digunakan di atas Semua aplikasi"
 
 msgctxt "@title:section recently used items"
 msgid "Recent"
-msgstr ""
+msgstr "Terbaru"
 
 #: Win11StartMenu.qml:3217
 msgctxt "@info no recent items yet"
 msgid "No recent items"
-msgstr ""
+msgstr "Tidak ada item terbaru"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "Otomatis dinonaktifkan ketika di Mode Sentuh"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_launcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2026-01-13 19:50+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,17 +17,13 @@ msgstr ""
 "X-Generator: Lokalize 25.12.1\n"
 "X-Text-Markup: kde4\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Убрать из избранного"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "Добавить в избранное"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "Эффект при наведении на иконку"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "Недавно установленные приложения"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -37,82 +33,26 @@ msgstr "Во всех комнатах"
 msgid "On the Current Activity"
 msgstr "Только в текущей комнате"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "Убрать из избранного"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "Показывать в избранном"
 
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "В этом разделе имеются недавно установленные приложения"
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Общие"
 
 #: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Значок:"
+
+#: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "Изменить значок меню запуска приложений"
 
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "Сбросить текст надписи"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr "Не закрывать"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "Открыть настройки пользователя"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "Настроить модули поиска…"
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "Удалить значок"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "Редактировать меню…"
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr ""
-"Надпись не может быть использована при вертикальной ориентации панели."
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "Введите текст надписи…"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "Совпадений не найдено"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "Название значка: «%1»"
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "Выберите значок меню запуска приложений"
-
-#: ConfigGeneral.qml:62
+#: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
@@ -121,7 +61,88 @@ msgstr ""
 "Текущий значок: %1. Нажмите, чтобы открыть меню, позволяющее изменить значок"
 " или применить значок по умолчанию."
 
-#: ConfigGeneral.qml:183
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Название значка: «%1»"
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Выбрать…"
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Выберите значок меню запуска приложений"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Значок по умолчанию"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Удалить значок"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Надпись:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Введите текст надписи…"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Сбросить текст надписи"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr ""
+"Надпись не может быть использована при вертикальной ориентации панели."
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Формат наименования программ:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Только названия"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Только описания"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Название (Описание)"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Описание (Название)"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "Основные:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Сортировать приложения по алфавиту"
+
+#: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
@@ -130,287 +151,401 @@ msgstr ""
 "Этот параметр не влияет на порядок сортировки приложений в результатах "
 "поиска иди на странице «Избранное»."
 
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "Сетка, строк: %1, столбцов: %2"
+#: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Компактные элементы в списках"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "Описание (Название)"
+#: ConfigGeneral.qml:201
+msgctxt "@option:check"
+msgid "Highlight newly-installed applications"
+msgstr "Выделять недавно установленные приложения"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "Только описания"
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "Эффект при наведении на иконку"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "Название (Описание)"
+#: ConfigGeneral.qml:216
+msgctxt "@option:check"
+msgid "Use KDE theme decorations"
+msgstr "Использовать оформление тем KDE"
 
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "Только названия"
+#: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Использовать пользовательские украшения пусковой установки"
 
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "Черный"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "Белый"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "Автоматически (по цветовой схеме)"
+#: ConfigGeneral.qml:228
+msgctxt "@option:check"
+msgid "Show highlight background on hover"
+msgstr "Показать фон выделения при наведении"
 
 #: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "Круг"
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Форма подсветки:"
 
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "Прямоугольник"
-
-#: ConfigGeneral.qml:233
+#: ConfigGeneral.qml:239
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
 msgstr "Закругленный прямоугольник"
 
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "Выбрать…"
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Прямоугольник"
 
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "Значок по умолчанию"
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Круг"
 
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr "Недавно установленные приложения"
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Цвет подсветки:"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "Белый"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "Черный"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Автоматически (по цветовой схеме)"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Размер подсветки:"
+
+#: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Используйте стиль Fluent (Windows 11) для всплывающего окна"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "Имитация акрилового фона за всплывающим окном"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "Макет меню:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr ""
+"Макет меню «Пуск» Windows 11 (Закреплённые, Все приложения, Рекомендуемые)"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "Все приложения:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "Показывать в виде закреплённых карточек вместо списка"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "Группировать по:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "Первая буква (A–Z)"
+
+#: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "Категория"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "Имитация акриловой маски:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "Взять радиус углов из стиля Plasma"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "Радиус углов:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 пиксель"
+msgstr[1] "%1 пикселя"
+msgstr[2] "%1 пикселей"
+msgstr[3] "%1 пиксель"
+
+#: ConfigGeneral.qml:338
+msgctxt "@option:check"
+msgid "Switch sidebar categories when hovering over them"
+msgstr "Переключать категории при наведении курсора мыши"
+
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Настроить модули поиска…"
+
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Расположение боковой панели:"
+
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Справа"
+
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Слева"
+
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Слева"
+
+#: ConfigGeneral.qml:371
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Избранные приложения:"
+
+#: ConfigGeneral.qml:372
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
+msgid "In a grid"
+msgstr "Сеткой"
+
+#: ConfigGeneral.qml:380
+msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
+msgid "In a list"
+msgstr "Списком"
+
+#: ConfigGeneral.qml:388
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Остальные приложения:"
+
+#: ConfigGeneral.qml:389
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a grid'"
+msgid "In a grid"
+msgstr "Сеткой"
+
+#: ConfigGeneral.qml:397
+msgctxt ""
+"@option:radio Part of a sentence: 'Show other applications in a list'"
+msgid "In a list"
+msgstr "Списком"
+
+#: ConfigGeneral.qml:409
+msgctxt "@title:group prefix for radio button group"
+msgid "Show buttons for:"
+msgstr "Показывать кнопки:"
+
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
+msgid "Power"
+msgstr "Управление питанием"
+
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
+msgid "Session"
+msgstr "Управление сеансами"
+
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Управление питанием и сеансами"
+
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Подписи кнопок действия"
+
+#: Footer.qml:275
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Applications"
+msgstr "Приложения"
+
+#: Footer.qml:291
+msgctxt "@title:tab kickoff sidebar tab"
+msgid "Places"
+msgstr "Точки входа"
+
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Совпадений не найдено"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Открыть настройки пользователя"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr "Не закрывать"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Новое"
 
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "Значок:"
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Недавно установленные приложения"
 
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "Расположение боковой панели:"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "Цвет подсветки:"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "Форма подсветки:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "Формат наименования программ:"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "Размер подсветки:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "Надпись:"
-
-#: ConfigGeneral.qml:195
-msgctxt "@option:check"
-msgid "Highlight newly-installed applications"
-msgstr "Выделять недавно установленные приложения"
-
-#: ConfigGeneral.qml:375
-msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "Подписи кнопок действия"
-
-#: ConfigGeneral.qml:222
-msgctxt "@option:check"
-msgid "Show highlight background on hover"
-msgstr "Показать фон выделения при наведении"
-
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "Сортировать приложения по алфавиту"
-
-#: ConfigGeneral.qml:276
-msgctxt "@option:check"
-msgid "Switch sidebar categories when hovering over them"
-msgstr "Переключать категории при наведении курсора мыши"
-
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "Используйте стиль Fluent (Windows 11) для всплывающего окна"
-
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "Использовать оформление тем KDE"
-
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "Компактные элементы в списках"
-
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "Использовать пользовательские украшения пусковой установки"
-
-#: ConfigGeneral.qml:310
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
-msgid "In a grid"
-msgstr "Сеткой"
-
-#: ConfigGeneral.qml:318
-msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
-msgid "In a list"
-msgstr "Списком"
-
-#: ConfigGeneral.qml:327
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a grid'"
-msgid "In a grid"
-msgstr "Сеткой"
-
-#: ConfigGeneral.qml:335
-msgctxt ""
-"@option:radio Part of a sentence: 'Show other applications in a list'"
-msgid "In a list"
-msgstr "Списком"
-
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "Управление питанием"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "Управление питанием и сеансами"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "Управление сеансами"
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "Слева"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "Справа"
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "Общие"
-
-#: ConfigGeneral.qml:347
-msgctxt "@title:group prefix for radio button group"
-msgid "Show buttons for:"
-msgstr "Показывать кнопки:"
-
-#: ConfigGeneral.qml:309
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "Избранные приложения:"
-
-#: ConfigGeneral.qml:326
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr "Остальные приложения:"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "Больше"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Power"
-msgstr "Управление питанием"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session"
-msgstr "Управление сеансами"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "Управление сеансом и питанием"
-
-#: Footer.qml:269
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Applications"
-msgstr "Приложения"
-
-#: Footer.qml:285
-msgctxt "@title:tab kickoff sidebar tab"
-msgid "Places"
-msgstr "Точки входа"
-
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "Основные:"
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Сетка, строк: %1, столбцов: %2"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Новое"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "В этом разделе имеются недавно установленные приложения"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "Недавно установленные приложения"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Управление сеансами"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Управление питанием"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Больше"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Управление сеансом и питанием"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Редактировать меню…"
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "Компьютер"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "Часто используемые"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "Последние"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "Слева"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Часто используемые"
+
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "Поиск приложений, файлов и настроек"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "Открыть настройки пользователя"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "Дополнительные параметры питания"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "Закреплённые"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "Все приложения"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "Скорость анимации:"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "Очень быстро"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "Быстро"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "Обычно"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "Медленно"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "Очень медленно"
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr "Недавние:"
+
+msgctxt "@option:check"
+msgid "Show recently used items above All apps"
+msgstr "Показывать недавно использованные элементы над «Все приложения»"
+
+msgctxt "@title:section recently used items"
+msgid "Recent"
+msgstr "Недавние"
+
+#: Win11StartMenu.qml:3217
+msgctxt "@info no recent items yet"
+msgid "No recent items"
+msgstr "Нет недавних элементов"
 
 #~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
 #~ msgid "Automatically disabled when in Touch Mode"
@@ -419,44 +554,3 @@ msgstr "Слева"
 #~ msgctxt "Newly installed app, badge, keep short"
 #~ msgid "New!"
 #~ msgstr "Новое"
-
-msgctxt "@label:listbox"
-msgid "Animation speed:"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Fast"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Normal"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Slow"
-msgstr ""
-
-msgctxt "@item:inlistbox animation speed"
-msgid "Very Slow"
-msgstr ""
-
-msgctxt "@label:group prefix for Win11 menu options"
-msgid "Recent:"
-msgstr ""
-
-msgctxt "@option:check"
-msgid "Show recently used items above All apps"
-msgstr ""
-
-msgctxt "@title:section recently used items"
-msgid "Recent"
-msgstr ""
-
-#: Win11StartMenu.qml:3217
-msgctxt "@info no recent items yet"
-msgid "No recent items"
-msgstr ""
