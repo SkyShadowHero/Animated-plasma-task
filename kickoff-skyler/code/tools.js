@@ -203,3 +203,21 @@ function highlightRatio(scalePercent) {
     return Math.min(2.0, Math.max(0.5, value));
 }
 
+// Animation speed multiplier, identical to TaskTools.js so the launcher
+// highlight animates in step with the taskbar ones. The Enum comes from the
+// new `animationSpeed` key in main.xml (0=VeryFast ... 4=VerySlow).
+function animationMultiplier(speed) {
+    switch (speed) {
+    case 0:
+        return 0.5;
+    case 1:
+        return 0.75;
+    case 3:
+        return 1.25;
+    case 4:
+        return 1.5;
+    default: // 2 = Normal, plus anything unexpected
+        return 1.0;
+    }
+}
+

@@ -224,7 +224,7 @@ msgstr "對彈出視窗使用 Fluent (Windows 11) 樣式"
 
 #: ConfigGeneral.qml:282
 msgctxt "@option:check"
-msgid "Acrylic backdrop behind the popup"
+msgid "Fake acrylic backdrop behind the popup"
 msgstr "彈出視窗背後的壓克力背景"
 
 #: ConfigGeneral.qml:289
@@ -263,8 +263,8 @@ msgid "Category"
 msgstr "類別"
 
 #: ConfigGeneral.qml:315
-msgctxt "@label:group prefix for acrylic options"
-msgid "Acrylic mask:"
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
 msgstr "壓克力遮罩："
 
 #: ConfigGeneral.qml:316
@@ -491,3 +491,39 @@ msgstr "所有應用程式"
 msgctxt "@action:button"
 msgid "Back"
 msgstr "返回"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr ""
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr ""
+
+msgctxt "@option:check"
+msgid "Show recently used apps above All apps"
+msgstr ""
+
+msgctxt "@title:section recently used applications"
+msgid "Recent"
+msgstr ""

@@ -46,10 +46,10 @@ EmptyPage {
     topInset: -kickoff.backgroundMetrics.topPadding
     bottomInset: -kickoff.backgroundMetrics.bottomPadding
 
-    // Acrylic backdrop. The blur itself comes from the compositor (Plasmoid.
-    // backgroundHints keeps DefaultBackground) and the card — its silhouette,
-    // its corner, its edge — belongs to the theme, so this layer is nothing
-    // but a colour cast plus the grain, stretched over the whole card.
+    // "Fake acrylic" backdrop. There is no real blur here — the compositor's
+    // blur comes from Plasmoid.backgroundHints, and the card silhouette, its
+    // corner and its edge belong to the theme — so this layer is nothing but a
+    // colour cast plus the grain, stretched over the whole card.
     //
     // Driven by opacity, not visibility. Visibility on a *background* item is
     // the control's own bookkeeping: hiding it takes the layer out of the

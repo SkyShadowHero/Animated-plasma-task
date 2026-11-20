@@ -59,7 +59,13 @@ RowLayout {
     }
 
     component FilteredModel : KItemModels.KSortFilterProxyModel {
+        id: proxy
         sourceModel: systemModel
+
+        // Keep one stable handler reference so we can disconnect it when the
+        // proxy dies. connect() to the global config singleton without a
+        // matching disconnect() leaked lambdas bound to dead QML contexts.
+        property var configChangedHandler: null
 
         function systemFavoritesContainsRow(sourceRow, sourceParent) {
             const FavoriteIdRole = sourceModel.KItemModels.KRoleNames.role("favoriteId");
@@ -73,11 +79,20 @@ RowLayout {
         }
 
         Component.onCompleted: {
-            Plasmoid.configuration.valueChanged.connect((key, value) => {
+            // Call through the proxy id: bare invalidateFilter() inside a
+            // lambda resolves against null here.
+            proxy.configChangedHandler = (key, value) => {
                 if (key === "systemFavorites") {
-                    invalidateFilter();
+                    proxy.invalidateFilter();
                 }
-            });
+            };
+            Plasmoid.configuration.valueChanged.connect(proxy.configChangedHandler);
+        }
+
+        Component.onDestruction: {
+            if (proxy.configChangedHandler !== null) {
+                Plasmoid.configuration.valueChanged.disconnect(proxy.configChangedHandler);
+            }
         }
     }
 

@@ -229,8 +229,8 @@ msgstr "使用 Fluent（Windows 11）风格的弹窗外观"
 
 #: ConfigGeneral.qml:282
 msgctxt "@option:check"
-msgid "Acrylic backdrop behind the popup"
-msgstr "弹窗背后的亚克力背景"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "弹窗背后的假亚克力背景"
 
 #: ConfigGeneral.qml:289
 msgctxt "@label:group prefix for menu layout options"
@@ -268,9 +268,9 @@ msgid "Category"
 msgstr "类别"
 
 #: ConfigGeneral.qml:315
-msgctxt "@label:group prefix for acrylic options"
-msgid "Acrylic mask:"
-msgstr "亚克力遮罩："
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "假亚克力遮罩："
 
 #: ConfigGeneral.qml:316
 msgctxt "@option:check"
@@ -496,3 +496,39 @@ msgstr "所有应用"
 msgctxt "@action:button"
 msgid "Back"
 msgstr "返回"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr "动画速度："
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr "极快"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr "快"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr "正常"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr "慢"
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr "极慢"
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr "最近："
+
+msgctxt "@option:check"
+msgid "Show recently used apps above All apps"
+msgstr "在“所有应用”上方显示最近使用的应用"
+
+msgctxt "@title:section recently used applications"
+msgid "Recent"
+msgstr "最近"

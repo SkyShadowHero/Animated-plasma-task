@@ -32,7 +32,21 @@ PlasmoidItem {
     // top of it, which is exactly what made the popup look like two stacked
     // layers (the card, plus whatever the heading frames drew over it). Only
     // the decorations drawn *inside* the surface are restyled.
+    //
+    // On a panel this property does double duty: the containment also paints the
+    // applet background frame ("widgets/background") behind the compact icon
+    // whenever the hints allow it — the same reason kdeconnect guards with
+    // `inPanel ? NoBackground : DefaultBackground`. That frame is a KDE theme
+    // SVG, so keeping it on left a theme card behind the launcher icon even
+    // after "Use KDE theme decorations" was switched off. Fluent used to
+    // short-circuit this to DefaultBackground (for the popup surface), which is
+    // what kept the stray frame alive. The popup is a PlasmaWindow/AppletPopup
+    // that paints its own "dialogs/background" frame and never reads this hint,
+    // so on a panel the hint only ever produced that background.
     Plasmoid.backgroundHints: {
+        if (inPanel) {
+            return PlasmaCore.Types.NoBackground;
+        }
         if (Plasmoid.configuration.useFluentStyle) {
             return PlasmaCore.Types.DefaultBackground;
         }
@@ -64,6 +78,10 @@ PlasmoidItem {
     // kdeglobals [Colors:Window], so this follows the system light/dark mode.
     readonly property bool darkTheme: Kirigami.Theme.backgroundColor.hsvValue < 0.5
     readonly property bool highlightUsesWhite: Tools.highlightUsesWhite(Plasmoid.configuration.highlightColor, darkTheme)
+    // Same five-speed multiplier as the task manager, from the same Enum
+    // layout in main.xml, so the launcher highlight never runs at a different
+    // pace from the taskbar highlight sitting next to it.
+    readonly property real animMul: Tools.animationMultiplier(Plasmoid.configuration.animationSpeed)
 
     // Used to prevent the width from changing frequently when the scrollbar appears or disappears
     readonly property bool mayHaveGridWithScrollBar: Plasmoid.configuration.applicationsDisplay === 0
@@ -302,9 +320,10 @@ PlasmoidItem {
 
         hoverEnabled: true
 
-        // Fluent uses a much shallower press than the KDE theme (0.96 vs 0.85):
-        // a panel icon should dip, not squash.
-        readonly property real pressScaleTarget: Plasmoid.configuration.useFluentStyle ? 0.96 : 0.85
+        // Same press depth as the taskbar icons (Task.qml pressDownAnim):
+        // 0.85 on the way down, 1.0 on the way back. The old Fluent-only 0.96
+        // made the launcher dip far less than the tasks beside it.
+        readonly property real pressScaleTarget: 0.85
 
         transform: [
             Scale {
@@ -335,13 +354,13 @@ PlasmoidItem {
 
         ParallelAnimation {
             id: pressDown
-            NumberAnimation { target: pressScale; property: "xScale"; to: compactRoot.pressScaleTarget; duration: 80; easing.type: Easing.OutQuad }
-            NumberAnimation { target: pressScale; property: "yScale"; to: compactRoot.pressScaleTarget; duration: 80; easing.type: Easing.OutQuad }
+            NumberAnimation { target: pressScale; property: "xScale"; to: compactRoot.pressScaleTarget; duration: 80 * kickoff.animMul; easing.type: Easing.OutQuad }
+            NumberAnimation { target: pressScale; property: "yScale"; to: compactRoot.pressScaleTarget; duration: 80 * kickoff.animMul; easing.type: Easing.OutQuad }
         }
         ParallelAnimation {
             id: pressUp
-            NumberAnimation { target: pressScale; property: "xScale"; to: 1.0; duration: 250; easing.type: Easing.OutBack }
-            NumberAnimation { target: pressScale; property: "yScale"; to: 1.0; duration: 250; easing.type: Easing.OutBack }
+            NumberAnimation { target: pressScale; property: "xScale"; to: 1.0; duration: 250 * kickoff.animMul; easing.type: Easing.OutBack }
+            NumberAnimation { target: pressScale; property: "yScale"; to: 1.0; duration: 250 * kickoff.animMul; easing.type: Easing.OutBack }
         }
 
         DropArea {
@@ -443,12 +462,16 @@ PlasmoidItem {
             id: launcherHighlight
             z: -1
             anchors.centerIn: compactRep
-            // Same proportion and the same `highlightScale` setting as the
-            // taskbar masks (Tools.highlightRatio) so the launcher and the
-            // tasks read as one set on the panel: 90% of the icon box by
-            // default, instead of the old fixed 1.05 that made the launcher
-            // highlight noticeably larger than the task one.
-            width: Math.min(compactRep.width, compactRep.height) * Tools.highlightRatio(Plasmoid.configuration.highlightScale)
+            // Match the taskbar masks exactly, not just in proportion: both are
+            // a square scaled from the panel thickness by the same
+            // `highlightScale` ratio (Tools.highlightRatio). The old base was
+            // min(compactRep.width, height) = Kirigami's large icon size, so on
+            // a taller panel the launcher mask came out visibly smaller than
+            // the task mask beside it. Using the panel-thickness edge fixes
+            // that. Whole-block highlight (icon + menu label) is not relevant
+            // here: the launcher has no resizable task label to cover.
+            readonly property real panelThickness: kickoff.vertical ? compactRep.width : compactRep.height
+            width: panelThickness * Tools.highlightRatio(Plasmoid.configuration.highlightScale)
             height: width
             visible: Plasmoid.configuration.useCustomDecorations && Plasmoid.configuration.useHighlight
             readonly property real maskAlpha: Tools.highlightAlpha(
@@ -457,7 +480,7 @@ PlasmoidItem {
                 ? Qt.rgba(1, 1, 1, maskAlpha)
                 : Qt.rgba(0, 0, 0, maskAlpha)
             Behavior on color {
-                ColorAnimation { duration: 120; easing.type: Easing.OutQuad }
+                ColorAnimation { duration: 120 * kickoff.animMul; easing.type: Easing.OutQuad }
             }
             radius: {
                 switch (Plasmoid.configuration.highlightShape) {
@@ -470,29 +493,17 @@ PlasmoidItem {
             layer.effect: MultiEffect {
                 shadowEnabled: true
                 shadowColor: "black"
-                shadowOpacity: 0.10
+                shadowOpacity: 0.15
                 shadowBlur: 0.15
                 shadowVerticalOffset: 1
                 shadowHorizontalOffset: 0
             }
-            // Fluent: the mask grows into place instead of only fading in.
-            // Disabled with the style so the plain look stays a pure crossfade.
-            transform: Scale {
-                origin.x: launcherHighlight.width / 2
-                origin.y: launcherHighlight.height / 2
-                readonly property bool engaged: compactRoot.containsMouse || kickoff.expanded
-                xScale: (!Plasmoid.configuration.useFluentStyle || engaged) ? 1 : 0.9
-                yScale: xScale
-                Behavior on xScale {
-                    NumberAnimation { duration: FluentStyle.durationFast; easing.type: FluentStyle.easingStandard }
-                }
-                Behavior on yScale {
-                    NumberAnimation { duration: FluentStyle.durationFast; easing.type: FluentStyle.easingStandard }
-                }
-            }
+            // Pure crossfade, same as the taskbar hover mask. The old Fluent
+            // 0.9 -> 1 grow transform made the launcher pop differently from
+            // the neighbouring tasks, so it is gone.
             opacity: (compactRoot.containsMouse || kickoff.expanded) ? 1 : 0
             Behavior on opacity {
-                NumberAnimation { duration: 80; easing.type: Easing.OutQuad }
+                NumberAnimation { duration: 80 * kickoff.animMul; easing.type: Easing.OutQuad }
             }
         }
     }

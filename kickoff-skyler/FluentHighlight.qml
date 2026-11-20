@@ -5,22 +5,22 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.plasmoid
 
 /**
  * Drop-in replacement for PlasmaExtras.Highlight used anywhere a row needs a
  * state layer.
  *
  * It keeps the `hovered` / `pressed` / `selected` / `active` API of the theme
- * highlight, so call sites do not have to branch on the style — but it *always*
- * paints a WinUI state layer: a translucent rounded rectangle whose alpha
- * animates between rest / hover / pressed / selected instead of snapping.
+ * highlight, so call sites do not have to branch on the style. When Fluent is
+ * on it paints a WinUI state layer: a translucent rounded rectangle whose
+ * alpha animates between rest / hover / pressed / selected instead of snapping.
  *
- * There is deliberately no PlasmaExtras.Highlight fallback any more. The theme
- * control is a FrameSvg — a coloured band with its own insets and (in dark
- * schemes) a black inner wash — so even one code path handing back to it made
- * a launcher row read as the classic Kicker item instead of a Fluent one. A
- * translucent ink layer also cannot go "too black" in dark mode the way the
- * themed highlight does, because the layer is white there.
+ * With Fluent off it hands straight back to PlasmaExtras.Highlight — the
+ * themed FrameSvg decoration — so the classic launcher keeps the Plasma look
+ * instead of inheriting a white Fluent wash. Keeping the switch here means no
+ * call site has to know about the style.
  */
 Item {
     id: root
@@ -44,7 +44,29 @@ Item {
     // with a translucent hover wash. Keeps them visually uniform.
     property bool flatStates: false
 
+    readonly property bool fluent: Plasmoid.configuration?.useFluentStyle ?? false
+
+    // Classic mode: the theme's own SVG highlight. Loader keeps it out of the
+    // scene entirely while Fluent is on, so only one layer is ever painted.
+    Loader {
+        anchors.fill: parent
+        active: !root.fluent
+        sourceComponent: PlasmaExtras.Highlight {
+            anchors.fill: parent
+            z: (root.Drag.active ?? false) ? 3 : 0
+            // PlasmaExtras.Highlight has no `selected` property: the classic
+            // themed SVG paints its "hover" frame whenever hovered is true.
+            // Fold our selected state in so a clicked/current row keeps its
+            // background in classic mode (the original code set
+            // `hovered: ListView.isCurrentItem` for exactly this).
+            hovered: root.hovered || root.selected
+            pressed: root.pressed
+            active: root.active
+        }
+    }
+
     Rectangle {
+        visible: root.fluent
         anchors.fill: parent
         anchors.margins: root.inset
         radius: root.radius

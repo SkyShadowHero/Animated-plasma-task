@@ -46,11 +46,13 @@ KCM.SimpleKCM {
     property alias cfg_highlightShape: highlightShapeCombo.currentIndex
     property alias cfg_highlightColor: highlightColorCombo.currentIndex
     property alias cfg_highlightScale: highlightScaleSpin.value
+    property alias cfg_animationSpeed: animationSpeed.currentIndex
     property alias cfg_useFluentStyle: useFluentStyleCheckbox.checked
     property alias cfg_useAcrylic: useAcrylicCheckbox.checked
     property alias cfg_useWin11Menu: useWin11MenuCheckbox.checked
     property alias cfg_win11AppsAsCards: win11AppsAsCardsCheckbox.checked
     property alias cfg_win11AllAppsGrouping: win11AllAppsGroupingCombo.currentIndex
+    property alias cfg_win11ShowRecent: win11ShowRecentCheckbox.checked
     property alias cfg_acrylicFollowsTheme: acrylicFollowsThemeCheckbox.checked
     property alias cfg_acrylicRadius: acrylicRadiusSpin.value
 
@@ -267,6 +269,20 @@ KCM.SimpleKCM {
             valueFromText: function(txt) { return parseInt(txt) || 90 }
         }
 
+        QQC2.ComboBox {
+            id: animationSpeed
+            Kirigami.FormData.label: i18nc("@label:listbox", "Animation speed:")
+            enabled: useCustomDecorationsCheckbox.checked
+            Layout.fillWidth: true
+            model: [
+                i18nc("@item:inlistbox animation speed", "Very Fast"),
+                i18nc("@item:inlistbox animation speed", "Fast"),
+                i18nc("@item:inlistbox animation speed", "Normal"),
+                i18nc("@item:inlistbox animation speed", "Slow"),
+                i18nc("@item:inlistbox animation speed", "Very Slow")
+            ]
+        }
+
         Item {
             Kirigami.FormData.isSection: true
         }
@@ -279,9 +295,32 @@ KCM.SimpleKCM {
 
         QQC2.CheckBox {
             id: useAcrylicCheckbox
-            text: i18nc("@option:check", "Acrylic backdrop behind the popup")
+            text: i18nc("@option:check", "Fake acrylic backdrop behind the popup")
             enabled: useFluentStyleCheckbox.checked
             checked: false
+        }
+
+        QQC2.CheckBox {
+            id: acrylicFollowsThemeCheckbox
+            Kirigami.FormData.label: i18nc("@label:group prefix for fake acrylic options", "Fake acrylic mask:")
+            text: i18nc("@option:check", "Take the corner radius from the Plasma style")
+            enabled: useFluentStyleCheckbox.checked && useAcrylicCheckbox.checked
+            checked: true
+        }
+
+        QQC2.SpinBox {
+            id: acrylicRadiusSpin
+            Kirigami.FormData.label: i18nc("@label:spinbox", "Corner radius:")
+            // Only meaningful once the mask stops following the style, and only
+            // when there is a mask at all.
+            enabled: useFluentStyleCheckbox.checked && useAcrylicCheckbox.checked && !acrylicFollowsThemeCheckbox.checked
+            from: 0
+            to: 64
+            stepSize: 1
+            editable: true
+            value: 12
+            textFromValue: function(val) { return i18np("%1 pixel", "%1 pixels", val) }
+            valueFromText: function(txt) { return parseInt(txt) || 0 }
         }
 
         QQC2.CheckBox {
@@ -296,14 +335,14 @@ KCM.SimpleKCM {
             id: win11AppsAsCardsCheckbox
             Kirigami.FormData.label: i18nc("@label:group prefix for Win11 menu options", "All apps:")
             text: i18nc("@option:check", "Show as pinned-style cards instead of a list")
-            enabled: useWin11MenuCheckbox.checked
+            enabled: useFluentStyleCheckbox.checked && useWin11MenuCheckbox.checked
             checked: false
         }
 
         QQC2.ComboBox {
             id: win11AllAppsGroupingCombo
             Kirigami.FormData.label: i18nc("@label:listbox", "Group by:")
-            enabled: useWin11MenuCheckbox.checked
+            enabled: useFluentStyleCheckbox.checked && useWin11MenuCheckbox.checked
             model: [
                 i18nc("@item:inlistbox all apps grouping", "First letter (A–Z)"), // qmllint disable unqualified
                 i18nc("@item:inlistbox all apps grouping", "Category") // qmllint disable unqualified
@@ -311,26 +350,11 @@ KCM.SimpleKCM {
         }
 
         QQC2.CheckBox {
-            id: acrylicFollowsThemeCheckbox
-            Kirigami.FormData.label: i18nc("@label:group prefix for acrylic options", "Acrylic mask:")
-            text: i18nc("@option:check", "Take the corner radius from the Plasma style")
-            enabled: useAcrylicCheckbox.checked
-            checked: true
-        }
-
-        QQC2.SpinBox {
-            id: acrylicRadiusSpin
-            Kirigami.FormData.label: i18nc("@label:spinbox", "Corner radius:")
-            // Only meaningful once the mask stops following the style, and only
-            // when there is a mask at all.
-            enabled: useAcrylicCheckbox.checked && !acrylicFollowsThemeCheckbox.checked
-            from: 0
-            to: 64
-            stepSize: 1
-            editable: true
-            value: 12
-            textFromValue: function(val) { return i18np("%1 pixel", "%1 pixels", val) }
-            valueFromText: function(txt) { return parseInt(txt) || 0 }
+            id: win11ShowRecentCheckbox
+            Kirigami.FormData.label: i18nc("@label:group prefix for Win11 menu options", "Recent:")
+            text: i18nc("@option:check", "Show recently used apps above All apps")
+            enabled: useFluentStyleCheckbox.checked && useWin11MenuCheckbox.checked
+            checked: false
         }
 
         QQC2.CheckBox {

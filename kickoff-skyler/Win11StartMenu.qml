@@ -29,8 +29,8 @@ import "code/tools.js" as Tools
  *
  * It is a drop-in replacement for FullRepresentation's body: it owns its own
  * search field (published as kickoff.searchField), a Pinned grid backed by the
- * favourites model with paging, an All apps view, a Recommended list backed by
- * the frequently-used model, and a user / power footer. All launching goes
+ * favourites model with paging, an optional Recent list from Plasma's own
+ * recently-used model, an All apps view, and a user / power footer. All launching goes
  * through the Kicker models, so favourites, recent usage and search behave
  * exactly as they do in the classic layout.
  */
@@ -154,6 +154,24 @@ T.Page {
     readonly property int tileHeight: Math.round(u * 5)
     readonly property int iconSize: Math.round(u * 2.2)
 
+    // Optional Recent block above All apps. It reads Plasma's own
+    // RecentUsageModel, the same History list Kickoff shows in Places; the
+    // setting is off by default and the section disappears when empty.
+    readonly property bool showWin11Recent: (Plasmoid.configuration?.win11ShowRecent ?? false)
+    // The Home strip shows this many in one horizontal row; the full Recent
+    // page lists everything the model returns.
+    readonly property int recentRowLimit: 12
+    readonly property int recentRowHeight: Math.round(u * 2.4)
+
+    // Independent model so Fluent's Recent can include files and folders
+    // without changing the classic Kickoff History page (which uses the
+    // app-only kickoff.recentUsageModel).
+    Kicker.RecentUsageModel {
+        id: win11RecentModel
+        favoritesModel: kickoff.rootModel.favoritesModel
+        shownItems: Kicker.RecentUsageModel.AppsAndDocs
+    }
+
     // All apps drawer style: Pinned-style cards or compact list rows. Lives on
     // the page rather than on the home item so the category drawer — declared
     // at page scope — can read it too.
@@ -164,9 +182,10 @@ T.Page {
     Layout.minimumWidth: menuWidth
     Layout.minimumHeight: menuHeight
 
+    // The "fake acrylic" card: a colour cast plus grain drawn by QML, not a
+    // real compositor blur. The Win11 menu is always a frosted card; the
+    // separate option only governs the classic layout.
     background: FluentAcrylic {
-        // The Win11 menu is always a frosted card; the separate acrylic option
-        // only governs the classic layout.
         opacity: 1
     }
 
@@ -247,27 +266,46 @@ T.Page {
         }
     }
 
+    // Every page change goes through the same shrink/fade. The stack view's
+    // own slide transition is disabled (see its replaceEnter/Exits), so this
+    // is the only motion the user sees.
+    function zoomToPage(component): void {
+        if (pageZoomAnim.running) {
+            return;
+        }
+        root.pageSwitchTarget = component;
+        pageZoomAnim.restart();
+    }
+
     function showHome(): void {
         if (stackView.currentItem && stackView.currentItem.objectName === "win11Home") {
             return;
-        }        stackView.reverseTransitions = true;
-        stackView.replace(homeComponent);
+        }
+        zoomToPage(homeComponent);
     }
 
     function showAllApps(): void {
         suppressTextSwitch = true;
         searchFieldItem.text = "";
         suppressTextSwitch = false;
-        stackView.reverseTransitions = false;
-        stackView.replace(allAppsComponent);
+        zoomToPage(allAppsComponent);
+    }
+
+    function showRecent(): void {
+        if (stackView.currentItem && stackView.currentItem.objectName === "win11Recent") {
+            return;
+        }
+        suppressTextSwitch = true;
+        searchFieldItem.text = "";
+        suppressTextSwitch = false;
+        zoomToPage(recentComponent);
     }
 
     function showSearch(): void {
         if (stackView.currentItem && stackView.currentItem.objectName === "win11Search") {
             return;
         }
-        stackView.reverseTransitions = false;
-        stackView.replace(searchComponent);
+        zoomToPage(searchComponent);
     }
 
     // ── Search focus and launch-by-Return ───────────────────────────────
@@ -429,6 +467,13 @@ T.Page {
     // the instant the sheet comes up.
     property bool pickerActive: false
 
+    // Page-switch zoom (Home / All apps / Recent / Search): the outgoing page
+    // shrinks to 0.8 and fades out, the new one grows back in — the same
+    // gesture the All apps grouping swap uses.
+    property real pageScale: 1
+    property real pageOpacity: 1
+    property Component pageSwitchTarget: null
+
     contentItem: ColumnLayout {
         id: rootColumn
         spacing: 0
@@ -497,6 +542,18 @@ T.Page {
             Layout.fillWidth: true
             Layout.fillHeight: true
             initialItem: homeComponent
+            // Driven by pageZoomAnim instead of the stack view's slide: the
+            // whole page area shrinks and fades on every page change.
+            opacity: root.pageOpacity
+            transform: Scale {
+                origin.x: stackView.width / 2
+                origin.y: stackView.height / 2
+                xScale: root.pageScale
+                yScale: root.pageScale
+            }
+            // No built-in slide/fade: pageZoomAnim owns the transition.
+            replaceEnter: Transition {}
+            replaceExit: Transition {}
         }
 
         Rectangle {
@@ -527,8 +584,8 @@ T.Page {
                 anchors.leftMargin: -kickoff.backgroundMetrics.leftPadding
                 anchors.rightMargin: -kickoff.backgroundMetrics.rightPadding
                 anchors.bottomMargin: -kickoff.backgroundMetrics.bottomPadding
-                // Same radius the acrylic card is drawn with, so the corners
-                // follow the card instead of poking past it.
+                // Same radius the fake-acrylic card is drawn with, so the
+                // corners follow the card instead of poking past it.
                 readonly property int cardRadius: (Plasmoid.configuration?.acrylicFollowsTheme ?? true)
                     ? Kirigami.Units.cornerRadius
                     : (Plasmoid.configuration?.acrylicRadius ?? 12)
@@ -1207,6 +1264,40 @@ T.Page {
     }
 
 
+    // Page-switch shrink: sink the current page to 0.8 and fade it out, swap
+    // the page while nothing is visible, then grow the new one back.
+    SequentialAnimation {
+        id: pageZoomAnim
+        ParallelAnimation {
+            NumberAnimation {
+                target: root; property: "pageScale"; to: 0.8
+                duration: 150; easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                target: root; property: "pageOpacity"; to: 0
+                duration: 130; easing.type: Easing.OutCubic
+            }
+        }
+        ScriptAction {
+            script: {
+                if (root.pageSwitchTarget) {
+                    stackView.replace(root.pageSwitchTarget);
+                }
+            }
+        }
+        PauseAnimation { duration: 40 }
+        ParallelAnimation {
+            NumberAnimation {
+                target: root; property: "pageScale"; to: 1
+                duration: 220; easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                target: root; property: "pageOpacity"; to: 1
+                duration: 180; easing.type: Easing.OutCubic
+            }
+        }
+    }
+
     // ── Jump sheet (A–Z / categories) ───────────────────────────────────
     // One sheet, two data sets. Clicking any letter heading opens the
     // alphabet grid and picking a letter scrolls the Home surface to that
@@ -1544,6 +1635,9 @@ T.Page {
         id: header
         property string title: ""
         property string actionText: ""
+        // Icon-only action (an overflow "…" rather than a labelled button).
+        // Ignored when actionText is set.
+        property string actionIcon: ""
         // When true the caption hugs the top edge instead of being centred.
         // Used for the "All apps" header so its line sits right under the
         // rule above it with no padding in between.
@@ -1555,7 +1649,8 @@ T.Page {
         // being flush with the tiles below it.
         property int hMargin: FluentStyle.spacingMedium
         signal actionTriggered()
-        readonly property bool hasAction: actionText.length > 0
+        readonly property bool hasAction: actionText.length > 0 || actionIcon.length > 0
+        readonly property bool iconOnlyAction: actionText.length === 0
 
         implicitHeight: Math.round(u * 1.9) + topSpace
         width: parent ? parent.width : 0
@@ -1570,18 +1665,42 @@ T.Page {
             font.pixelSize: Math.round(FluentStyle.spacingLarge * 0.92)
         }
 
+        // Labelled action ("See all" style), used when actionText is set.
         PC3.ToolButton {
             id: actionButton
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
-            visible: header.hasAction
+            visible: header.hasAction && !header.iconOnlyAction
             text: header.actionText
-            icon.name: "chevron-right"
+            icon.name: "go-next"
             display: PC3.AbstractButton.TextBesideIcon
             flat: true
             background: FluentHighlight {
                 hovered: actionButton.hovered
                 pressed: actionButton.down
+                radius: FluentStyle.radiusControl
+                flatStates: true
+            }
+            onClicked: header.actionTriggered()
+        }
+
+        // Icon-only action (an overflow "…" rather than a word). Square, the
+        // height of the caption, so the header line keeps its rhythm.
+        PC3.ToolButton {
+            id: iconActionButton
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            visible: header.hasAction && header.iconOnlyAction
+            display: PC3.AbstractButton.IconOnly
+            implicitWidth: Math.round(u * 1.7)
+            implicitHeight: Math.round(u * 1.7)
+            icon.name: header.actionIcon
+            icon.width: Math.round(u * 0.9)
+            icon.height: Math.round(u * 0.9)
+            flat: true
+            background: FluentHighlight {
+                hovered: iconActionButton.hovered
+                pressed: iconActionButton.down
                 radius: FluentStyle.radiusControl
                 flatStates: true
             }
@@ -2496,7 +2615,8 @@ T.Page {
                     Item {
                         width: homeColumn.width
                         // Rule sits at the bottom edge: the gap above keeps
-                        // Pinned breathing room, nothing below before All apps.
+                        // Pinned breathing room, nothing below before the
+                        // optional Recent block and All apps.
                         height: FluentStyle.strokeWidth + FluentStyle.spacingSmall
                         Rectangle {
                             anchors.left: parent.left
@@ -2504,6 +2624,79 @@ T.Page {
                             anchors.bottom: parent.bottom
                             height: FluentStyle.strokeWidth
                             color: FluentStyle.divider
+                        }
+                    }
+
+                    // Optional Recent block above All apps. Reads an
+                    // independent RecentUsageModel that includes apps, files
+                    // and folders (the classic History page stays app-only).
+                    // Shown as ONE horizontal row; the "…" button opens the
+                    // full page.
+                    // Zero height when off or empty.
+                    Item {
+                        id: recentSection
+                        width: homeColumn.width
+                        // Fit the row to the available width: take as many
+                        // tiles as comfortably fit, then divide the width
+                        // evenly so nothing ever spills past the right edge.
+                        // Same minimum as the app tiles below, so the Recent
+                        // row reads at the same scale as Pinned / All apps.
+                        readonly property int minTileWidth: root.tileWidth
+                        readonly property int fitCount: Math.max(1, Math.floor(width / minTileWidth))
+                        readonly property int shownCount: Math.min(win11RecentModel.count,
+                                                                 root.recentRowLimit,
+                                                                 fitCount)
+                        readonly property int cellWidth: shownCount > 0
+                            ? Math.min(root.tileWidth, Math.floor(width / shownCount))
+                            : root.tileWidth
+                        // Same cell height as the Pinned / All apps cards, so a
+                        // wrapped two-line name gets the room to show both
+                        // lines instead of being clipped under the icon.
+                        readonly property int stripHeight: root.tileHeight
+                        height: root.showWin11Recent && shownCount > 0
+                            ? recentHeader.implicitHeight + recentStrip.height + FluentStyle.spacingSmall
+                            : 0
+                        visible: recentSection.height > 0
+                        clip: true
+
+                        SectionHeader {
+                            id: recentHeader
+                            title: i18nc("@title:section recently used items", "Recent") // qmllint disable unqualified
+                            // Overflow ellipsis instead of a word: the row is a
+                            // preview, "…" opens the full Recent page.
+                            actionText: ""
+                            actionIcon: "view-more-horizontal-symbolic"
+                            alignTop: true
+                            topSpace: FluentStyle.spacingMedium
+                            onActionTriggered: root.showRecent()
+                        }
+
+                        // One non-scrolling row: the tiles are sized to fill the
+                        // width exactly, so the strip is a static preview. The
+                        // full list lives on the Recent page the "…" opens.
+                        ListView {
+                            id: recentStrip
+                            visible: root.showWin11Recent && recentSection.shownCount > 0
+                            anchors.top: recentHeader.bottom
+                            anchors.left: parent.left
+                            anchors.right: parent.right
+                            height: recentSection.stripHeight
+                            model: win11RecentModel
+                            orientation: ListView.Horizontal
+                            interactive: false
+                            boundsBehavior: Flickable.StopAtBounds
+                            clip: true
+                            focus: false
+                            currentIndex: -1
+
+                            delegate: AppTile {
+                                width: recentSection.cellWidth
+                                height: recentSection.stripHeight
+                                cellWidth: recentSection.cellWidth
+                                dynamicWidth: false
+                                view: recentStrip
+                                visible: index < recentSection.shownCount
+                            }
                         }
                     }
 
@@ -2906,6 +3099,129 @@ T.Page {
         }
     }
 
+    // ── Recent: full page of apps, files and folders ────────────────────
+    Component {
+        id: recentComponent
+        Item {
+            id: recentPage
+            objectName: "win11Recent"
+            readonly property real contentWidth: recentPage.width - FluentStyle.spacingLarge * 2
+            readonly property int columns: Math.max(1, Math.floor(contentWidth / root.tileWidth))
+
+            function scrollToTop(): void {
+                if (root.appsAsCards) {
+                    recentGrid.positionViewAtBeginning();
+                } else {
+                    recentFullList.positionViewAtBeginning();
+                }
+            }
+
+            ColumnLayout {
+                anchors.fill: parent
+                anchors.leftMargin: FluentStyle.spacingLarge
+                anchors.rightMargin: FluentStyle.spacingLarge
+                anchors.topMargin: FluentStyle.spacingSmall
+                anchors.bottomMargin: 0
+                spacing: FluentStyle.spacingSmall
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    PC3.ToolButton {
+                        id: recentBackButton
+                        // Back arrow only — no word next to it.
+                        icon.name: "go-previous"
+                        display: PC3.AbstractButton.IconOnly
+                        implicitWidth: Math.round(root.u * 1.7)
+                        implicitHeight: Math.round(root.u * 1.7)
+                        icon.width: Math.round(root.u * 0.9)
+                        icon.height: Math.round(root.u * 0.9)
+                        flat: true
+                        background: FluentHighlight { hovered: recentBackButton.hovered; pressed: recentBackButton.down; radius: FluentStyle.radiusControl; flatStates: true }
+                        onClicked: root.showHome()
+                        FluentToolTip {
+                            visible: recentBackButton.hovered
+                            text: i18nc("@action:button", "Back") // qmllint disable unqualified
+                        }
+                    }
+                    Item { Layout.fillWidth: true }
+                    PC3.Label {
+                        text: i18nc("@title:section recently used items", "Recent") // qmllint disable unqualified
+                        color: FluentStyle.textPrimary
+                        font.bold: true
+                    }
+                }
+
+                GridView {
+                    id: recentGrid
+                    visible: root.appsAsCards
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    model: win11RecentModel
+                    cellWidth: Math.floor(recentPage.contentWidth / recentPage.columns)
+                    cellHeight: root.tileHeight
+                    clip: true
+                    boundsBehavior: Flickable.StopAtBounds
+
+                    FastWheelHandler { target: recentGrid }
+
+                    delegate: AppTile {
+                        view: recentGrid
+                        cellWidth: recentGrid.cellWidth
+                        width: recentGrid.cellWidth
+                        height: recentGrid.cellHeight
+                    }
+                }
+
+                ListView {
+                    id: recentFullList
+                    visible: !root.appsAsCards
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    model: win11RecentModel
+                    clip: true
+                    boundsBehavior: Flickable.StopAtBounds
+                    focus: false
+                    currentIndex: -1
+
+                    FastWheelHandler { target: recentFullList }
+
+                    delegate: AppListItem { view: recentFullList }
+                }
+            }
+
+            // Anchored to the page, NOT placed inside the ColumnLayout: a
+            // layout manages its children's geometry, so anchors there are
+            // undefined behaviour (and left the page blank).
+            SmallScrollBar {
+                flickable: root.appsAsCards ? recentGrid : recentFullList
+                anchors.top: recentPage.top
+                anchors.bottom: recentPage.bottom
+                anchors.right: recentPage.right
+                anchors.topMargin: FluentStyle.spacingSmall
+                anchors.bottomMargin: FluentStyle.spacingSmall
+                anchors.rightMargin: Math.round(root.u * 0.4)
+            }
+
+            // Empty state when the model has no history yet.
+            Column {
+                anchors.centerIn: parent
+                spacing: FluentStyle.spacingMedium
+                visible: win11RecentModel.count === 0
+                Kirigami.Icon {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    source: "view-history"
+                    width: Math.round(root.u * 2.4)
+                    height: width
+                    color: FluentStyle.textSecondary
+                }
+                PC3.Label {
+                    text: i18nc("@info no recent items yet", "No recent items") // qmllint disable unqualified
+                    color: FluentStyle.textSecondary
+                }
+            }
+        }
+    }
+
     // ── All apps: flat scrollable grid ──────────────────────────────────
     Component {
         id: allAppsComponent
@@ -2931,12 +3247,20 @@ T.Page {
                     Layout.fillWidth: true
                     PC3.ToolButton {
                         id: backButton
-                        icon.name: "chevron-left"
-                        text: i18nc("@action:button", "Back") // qmllint disable unqualified
-                        display: PC3.AbstractButton.TextBesideIcon
+                        // Back arrow only — no word next to it.
+                        icon.name: "go-previous"
+                        display: PC3.AbstractButton.IconOnly
+                        implicitWidth: Math.round(root.u * 1.7)
+                        implicitHeight: Math.round(root.u * 1.7)
+                        icon.width: Math.round(root.u * 0.9)
+                        icon.height: Math.round(root.u * 0.9)
                         flat: true
                         background: FluentHighlight { hovered: backButton.hovered; pressed: backButton.down; radius: FluentStyle.radiusControl; flatStates: true }
                         onClicked: root.showHome()
+                        FluentToolTip {
+                            visible: backButton.hovered
+                            text: i18nc("@action:button", "Back") // qmllint disable unqualified
+                        }
                     }
                     Item { Layout.fillWidth: true }
                     PC3.Label {

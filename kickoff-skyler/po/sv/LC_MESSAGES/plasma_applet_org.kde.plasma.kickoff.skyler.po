@@ -415,3 +415,39 @@ msgstr "Vänster"
 #~ msgctxt "Newly installed app, badge, keep short"
 #~ msgid "New!"
 #~ msgstr "Ny!"
+
+msgctxt "@label:listbox"
+msgid "Animation speed:"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Fast"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Fast"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Normal"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Slow"
+msgstr ""
+
+msgctxt "@item:inlistbox animation speed"
+msgid "Very Slow"
+msgstr ""
+
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "Recent:"
+msgstr ""
+
+msgctxt "@option:check"
+msgid "Show recently used apps above All apps"
+msgstr ""
+
+msgctxt "@title:section recently used applications"
+msgid "Recent"
+msgstr ""
