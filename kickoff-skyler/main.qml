@@ -98,49 +98,18 @@ PlasmoidItem {
     // does not influence either of them. Gate both on the setting, leaving the
     // shell's own visibility/opacity animations intact so that with decorations
     // enabled the panel behaves exactly as upstream.
-    // `compactRepresentation` on the applet root is a Component — the shell
-    // instantiates it and keeps the Item — so it can only be used as an item
-    // when it really is one.
-    function compactRepresentationItem() {
-        const rep = kickoff.compactRepresentation;
-        return (rep && typeof rep.mapToItem === "function") ? rep : null;
-    }
 
-    function findAppletContainer() {
-        const win = kickoff.Window.window;
-        if (!win || !win.contentItem) {
-            return null;
-        }
+    // The container is the shell's own wrapper: the instantiated representation
+    // is reparented straight into it, so the closest matching ancestor is
+    // necessarily ours.
+    function findAppletContainer(selfItem) {
         const containerName = "org.kde.desktop-CompactApplet";
-        const rep = compactRepresentationItem();
-        const content = win.contentItem;
-        const stack = [content];
-        while (stack.length) {
-            const node = stack.pop();
-            if (node.objectName === containerName) {
-                // Ownership: the container points back at its own applet, and
-                // only that applet's container may be touched.
-                let owns = false;
-                try {
-                    owns = node.plasmoidItem === kickoff;
-                } catch (e) {
-                    owns = false;
-                }
-                if (!owns && rep) {
-                    try {
-                        owns = node.compactRepresentation === rep;
-                    } catch (e) {
-                        owns = false;
-                    }
-                }
-                if (owns) {
-                    return node;
-                }
+        let item = selfItem;
+        while (item) {
+            if (item.objectName === containerName) {
+                return item;
             }
-            const kids = node.children;
-            for (let i = 0; i < kids.length; ++i) {
-                stack.push(kids[i]);
-            }
+            item = item.parent;
         }
         return null;
     }
@@ -151,8 +120,8 @@ PlasmoidItem {
     // instead so its expand animation keeps working.
     function gateAppletTabbarFrames(container, exceptFrame) {
         const win = kickoff.Window.window;
-        if (!container || !win || !win.contentItem) {
-            return false;
+        if (!win || !win.contentItem) {
+            return;
         }
         const content = win.contentItem;
         const origin = container.mapToItem(content, 0, 0);
@@ -163,7 +132,6 @@ PlasmoidItem {
         // tolerance instead of demanding identical geometry.
         const tolerance = 16;
 
-        let touched = false;
         const stack = [content];
         while (stack.length) {
             const node = stack.pop();
@@ -175,7 +143,6 @@ PlasmoidItem {
             }
             if (imagePath === "widgets/tabbar"
                     && node !== exceptFrame
-                    && node !== container
                     && node.parent !== container) {
                 const nodeOrigin = node.mapToItem(content, 0, 0);
                 const overlapsVertically = nodeOrigin.y < bottom
@@ -188,7 +155,6 @@ PlasmoidItem {
                     node.opacity = Qt.binding(function () {
                         return Plasmoid.configuration.useThemeDecorations ? 1 : 0;
                     });
-                    touched = true;
                 }
             }
             const kids = node.children;
@@ -196,24 +162,20 @@ PlasmoidItem {
                 stack.push(kids[i]);
             }
         }
-        return touched;
     }
 
-    function syncShellExpandedFrame() {
-        const container = findAppletContainer();
-        const frame = (container && container.expandedFeedback) ? container.expandedFeedback : null;
-
-        let done = false;
-        if (frame) {
+    function syncShellExpandedFrame(selfItem) {
+        const container = findAppletContainer(selfItem);
+        if (!container) {
+            return;
+        }
+        if (container.expandedFeedback) {
+            const frame = container.expandedFeedback;
             frame.visible = Qt.binding(function () {
                 return Plasmoid.configuration.useThemeDecorations && frame.opacity > 0;
             });
-            done = true;
         }
-        if (gateAppletTabbarFrames(container, frame)) {
-            done = true;
-        }
-        return done;
+        gateAppletTabbarFrames(container, container.expandedFeedback);
     }
 
     // Used to prevent the width from changing frequently when the scrollbar appears or disappears
@@ -407,23 +369,9 @@ PlasmoidItem {
         Layout.minimumHeight: Layout.preferredHeight
 
         // The shell reparents this item into its own applet container, so the
-        // container can only be reached once the parent is in place. A short
-        // retry covers the case where the container is built after we are.
-        onParentChanged: kickoff.syncShellExpandedFrame()
-        Component.onCompleted: kickoff.syncShellExpandedFrame()
-
-        Timer {
-            interval: 300
-            repeat: true
-            running: true
-            property int attempts: 0
-            onTriggered: {
-                attempts++;
-                if (kickoff.syncShellExpandedFrame() || attempts >= 10) {
-                    running = false;
-                }
-            }
-        }
+        // container only exists from the moment the parent changes.
+        onParentChanged: kickoff.syncShellExpandedFrame(compactRep)
+        Component.onCompleted: kickoff.syncShellExpandedFrame(compactRep)
 
         MouseArea {
             id: compactRoot
