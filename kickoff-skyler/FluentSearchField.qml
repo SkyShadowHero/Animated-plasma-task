@@ -15,9 +15,9 @@ import org.kde.kirigami as Kirigami
  *
  * Everything that makes the field useful is inherited — search icon, clear
  * action, Ctrl+F focus sequence, translated placeholder, accessible roles —
- * and only the KDE SVG frame (`widgets/lineedit`) is replaced by a WinUI
- * TextBox: a rounded filled layer with a hairline outline, and a 2px accent
- * underline that grows out of the centre on focus.
+ * and only the KDE SVG frame (`widgets/lineedit`) is replaced by a Win11
+ * capsule: a filled layer with a hairline outline, and a 2px accent underline
+ * that grows out of the centre on focus.
  *
  * The background has to expose a `margins` object: TextField reads
  * background.margins.* to compute its own padding, so a plain Rectangle would
@@ -65,14 +65,19 @@ PlasmaExtras.SearchField {
         implicitWidth: Kirigami.Units.gridUnit * 8
         implicitHeight: FluentStyle.searchFieldHeight
 
-        // Fully rounded, like the Windows 11 search box on the start menu.
+        // A pill, like the Windows 11 search box: the field is 32px tall, so
+        // the radius is half of it. `radiusControl` (6) read as a rounded
+        // rectangle; the Start menu's own field is a capsule.
         radius: height / 2
         // WinUI TextBox at rest: a filled layer one step above the surface,
         // held in by a hairline stroke so its edge reads against the card.
-        // The accent underline is the only heavier line, and only on focus.
-        color: root.activeFocus ? FluentStyle.fieldFillFocus : FluentStyle.fieldFill
+        // Hover lifts the fill and strengthens the edge; focus adds the accent
+        // underline, which is the only heavier line in the control.
+        color: root.activeFocus || root.hovered ? FluentStyle.fieldFillFocus : FluentStyle.fieldFill
         border.width: FluentStyle.strokeWidth
-        border.color: FluentStyle.stroke
+        border.color: root.activeFocus || root.hovered
+            ? FluentStyle.withAlpha(FluentStyle.layer, FluentStyle.dark ? 0.22 : 0.16)
+            : FluentStyle.stroke
 
         Behavior on color {
             ColorAnimation {
@@ -80,8 +85,17 @@ PlasmaExtras.SearchField {
                 easing.type: FluentStyle.easingSoft
             }
         }
+        Behavior on border.color {
+            ColorAnimation {
+                duration: FluentStyle.durationFast
+                easing.type: FluentStyle.easingSoft
+            }
+        }
 
-        // WinUI TextBox focus underline: grows out of the centre on focus.
+        // Focus underline. On a pill the line has to stop where the bottom
+        // curve turns, or it runs out past the silhouette — the inset is the
+        // horizontal travel of the corner arc at this height, which leaves the
+        // bar ~21px short of the full width instead of the 10% it used to lose.
         Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
@@ -89,7 +103,7 @@ PlasmaExtras.SearchField {
             height: 2
             radius: 1
             color: FluentStyle.accent
-            width: parent.width * 0.9 * (root.activeFocus ? 1 : 0)
+            width: (parent.width - Math.round(bg.radius * 1.3)) * (root.activeFocus ? 1 : 0)
             Behavior on width {
                 NumberAnimation {
                     duration: FluentStyle.durationNormal

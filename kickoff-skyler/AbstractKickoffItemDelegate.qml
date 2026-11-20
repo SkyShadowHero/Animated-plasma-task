@@ -236,7 +236,9 @@ T.ItemDelegate {
             && !root.view.movedWithWheel
             // Fix VerticalStackView animation causing view currentIndex
             // to change while delegates are moving under the mouse cursor
-            && kickoff.fullRepresentationItem && !kickoff.fullRepresentationItem.contentItem.busy && !kickoff.fullRepresentationItem.blockingHoverFocus
+            && kickoff.fullRepresentationItem && !(kickoff.fullRepresentationItem.contentItem
+                                                  && kickoff.fullRepresentationItem.contentItem.busy)
+            && !kickoff.fullRepresentationItem.blockingHoverFocus
         // A separator is empty space, so it must not be a hover target at all:
         // otherwise the pointer lights up a "row" that draws nothing.
         enabled: !root.isSeparator

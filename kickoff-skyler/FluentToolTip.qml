@@ -68,35 +68,62 @@ T.ToolTip {
     leftPadding: tooltipPadding
     rightPadding: tooltipPadding
 
-    contentItem: Text {
-        id: label
+    // Optional lighter caption under the name, matching the "All apps" rows.
+    // Empty by default, so every existing single-line tooltip renders exactly
+    // as before.
+    property string description: ""
+
+    // Hard cap on the balloon. A long comment used to stretch the tooltip
+    // across most of the screen (WordWrap only wraps once the text already
+    // has a width), so the text gets an explicit width instead: it is the
+    // natural width up to the cap, and wraps past it.
+    readonly property int maxTextWidth: Math.round(Kirigami.Units.gridUnit * 14)
+
+    contentItem: Column {
+        id: tooltipColumn
+        spacing: descriptionLabel.visible ? Math.round(Kirigami.Units.smallSpacing * 0.5) : 0
+
         // Plain Text, not a Kirigami Label: nothing here re-applies the
         // Tooltip colour set, so `color` is guaranteed to be the real colour.
-        readonly property int maxTextLength: Kirigami.Units.gridUnit * 14
+        Text {
+            id: label
+            text: control.text.replace(/&(?=\S)/g, "")
+            width: Math.min(implicitWidth, control.maxTextWidth)
+            // One point below the surrounding UI: Fluent's tooltips sit clearly
+            // under body text, and the inherited size made a three-line card read
+            // like a paragraph. Family and weight are restated so only the size
+            // changes and the hint still matches the UI it describes — Plasma
+            // themes always express their fonts in points, so points are all this
+            // needs (a font carrying only a pixel size would land on the 1pt
+            // floor, which no Plasma style does).
+            font.family: control.font.family
+            font.weight: control.font.weight
+            font.italic: control.font.italic
+            font.pointSize: Math.max(1, control.font.pointSize - 1)
+            color: FluentStyle.textPrimary
+            // Never elide: the width cap above wraps long text instead.
+            wrapMode: Text.WordWrap
+            elide: Text.ElideNone
+            horizontalAlignment: Text.AlignLeft
+            verticalAlignment: Text.AlignVCenter
+        }
 
-        text: control.text.replace(/&(?=\S)/g, "")
-        // One point below the surrounding UI: Fluent's tooltips sit clearly
-        // under body text, and the inherited size made a three-line card read
-        // like a paragraph. Family and weight are restated so only the size
-        // changes and the hint still matches the UI it describes — Plasma
-        // themes always express their fonts in points, so points are all this
-        // needs (a font carrying only a pixel size would land on the 1pt
-        // floor, which no Plasma style does).
-        font.family: control.font.family
-        font.weight: control.font.weight
-        font.italic: control.font.italic
-        font.pointSize: Math.max(1, control.font.pointSize - 1)
-        color: FluentStyle.textPrimary
-        wrapMode: Text.Wrap
-        maximumLineCount: 3
-        elide: Text.ElideRight
-        horizontalAlignment: Text.AlignLeft
-        verticalAlignment: Text.AlignVCenter
-
-        onLineLaidOut: (line) => {
-            if (line.implicitWidth > maxTextLength) {
-                line.width = maxTextLength
-            }
+        Text {
+            id: descriptionLabel
+            visible: control.description.length > 0
+            text: control.description.replace(/&(?=\S)/g, "")
+            width: Math.min(implicitWidth, control.maxTextWidth)
+            // Description is secondary: one point and one weight below the
+            // name, in the secondary ink — the same treatment the drawer's
+            // app rows use.
+            font.family: control.font.family
+            font.weight: Font.Light
+            font.pointSize: Math.max(1, control.font.pointSize - 2)
+            color: FluentStyle.textSecondary
+            wrapMode: Text.WordWrap
+            elide: Text.ElideNone
+            horizontalAlignment: Text.AlignLeft
+            verticalAlignment: Text.AlignVCenter
         }
     }
 

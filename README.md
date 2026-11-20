@@ -21,6 +21,7 @@ Forked KDE Plasma 6 plasmoids with press / entry / minimize animations.
   - hover animation
   - icon scale
   - 5-speed animation
+  - background page-change bounce
   - custom decorations: highlight background, indicator bar
 - **Task Manager (SkyAnimation)** — `org.kde.plasma.taskmanager.skyler`
   - window bar showing icons and text
@@ -28,6 +29,7 @@ Forked KDE Plasma 6 plasmoids with press / entry / minimize animations.
   - hover animation
   - icon scale
   - 5-speed animation
+  - background page-change bounce
   - custom decorations: highlight background, indicator bar
 - **Application Launcher (SkyAnimation)** — `org.kde.plasma.kickoff.skyler`
   - press scale

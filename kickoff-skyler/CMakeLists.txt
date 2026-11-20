@@ -36,6 +36,7 @@ QML_SOURCES
     PlacesPage.qml
     SectionView.qml
     VerticalStackView.qml
+    Win11StartMenu.qml
     main.qml
 RESOURCES
     main.xml

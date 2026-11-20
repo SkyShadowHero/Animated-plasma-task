@@ -179,9 +179,9 @@ EmptyPage {
         }
 
         // Fluent: ListSectionHeader paints its trailing rule with the
-        // themed KSvg "horizontal-line", so it is replaced wholesale. The
-        // glyph is a plain label and the rule is the same 1px divider used
-        // everywhere else in the popup.
+        // themed KSvg "horizontal-line", so it is replaced wholesale. WinUI
+        // has no rule here either — a group in a results list is introduced
+        // by a small, secondary caption and nothing else.
         Component {
             id: fluentSectionHeader
             Item {
@@ -189,32 +189,22 @@ EmptyPage {
                 required property string section
 
                 width: view.availableWidth
-                height: KickoffSingleton.compactListDelegateHeight
+                height: Math.round(KickoffSingleton.compactListDelegateHeight * 0.86)
 
                 readonly property string label: section.length === 1
                     ? section.toUpperCase() : section
 
-                RowLayout {
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                    }
-                    spacing: FluentStyle.spacingMedium
-
-                    PC3.Label {
-                        Layout.leftMargin: FluentStyle.spacingMedium
-                        text: sectionHeader.label
-                        font.bold: true
-                        color: FluentStyle.textSecondary
-                        elide: Text.ElideRight
-                    }
-                    Rectangle {
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                        height: FluentStyle.strokeWidth
-                        color: FluentStyle.divider
-                    }
+                PC3.Label {
+                    anchors.left: parent.left
+                    anchors.leftMargin: FluentStyle.spacingMedium
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.right: parent.right
+                    anchors.rightMargin: FluentStyle.spacingMedium
+                    text: sectionHeader.label
+                    font.weight: Font.DemiBold
+                    font.pointSize: Math.max(1, Kirigami.Theme.defaultFont.pointSize - 1)
+                    color: FluentStyle.textSecondary
+                    elide: Text.ElideRight
                 }
 
                 HoverHandler {

@@ -121,6 +121,22 @@
             <label>Whether to lay a translucent acrylic wash over the launcher card. Only takes effect when Fluent styling is enabled.</label>
             <default>false</default>
         </entry>
+        <entry name="useWin11Menu" type="Bool">
+            <label>Whether to replace the classic Kickoff layout with a 1:1 recreation of the Windows 11 Start menu: a centred search box, a Pinned application grid with an All apps view, a Recommended list of frequently used applications, and a user/power footer. Requires Fluent styling to be enabled.</label>
+            <default>false</default>
+        </entry>
+        <entry name="win11AppsAsCards" type="Bool">
+            <label>Whether the All apps section of the Windows 11 menu uses a card grid like Pinned instead of the default single-row categorized list.</label>
+            <default>false</default>
+        </entry>
+        <entry name="win11AllAppsGrouping" type="Enum">
+            <label>How the All apps section of the Windows 11 menu is grouped: 0 = by the first letter of the name, 1 = by the freedesktop category. The category list comes from the system menu file, the same one the classic sidebar uses.</label>
+            <choices>
+                <choice name="Alphabetical"/>
+                <choice name="Category"/>
+            </choices>
+            <default>0</default>
+        </entry>
         <entry name="acrylicFollowsTheme" type="Bool">
             <label>Whether the acrylic mask behind the popup takes its corner radius from the active Plasma style. Turn this off to pick the radius by hand, which is what you want when the style rounds its dialogs differently from what the style advertises to Kirigami.</label>
             <default>true</default>
