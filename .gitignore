@@ -20,3 +20,5 @@ log_settings*.cpp
 *.kdev4
 .DS_Store
 *~
+.workbuddy/
+kickoff-skyler/po/.tmp
