@@ -247,7 +247,11 @@ PlasmoidItem {
     }
 
     readonly property TaskManagerApplet.Backend backend: TaskManagerApplet.Backend {
-        id: backend
+        // Distinct id: reusing the property name as the object id makes the
+        // identifier ambiguous when passed to createObject() as an initial
+        // property, which then fails with "Could not set initial property
+        // backend" and leaves every context menu without a backend.
+        id: backendInstance
 
         onAddLauncher: url => {
             tasks.addLauncher(url);
@@ -772,13 +776,20 @@ PlasmoidItem {
     }
 
     function createContextMenu(rootTask, modelIndex, args = {}) {
+        // `backend` is deliberately NOT passed as an initial property: doing
+        // so intermittently fails to apply ("Could not set initial property
+        // backend"), and because it is a required property that makes the
+        // whole createObject() return null. Assign it after creation instead.
         const initialArgs = Object.assign(args, {
             visualParent: rootTask,
             modelIndex,
             mpris2Source,
-            backend,
         });
-        return contextMenuComponent.createObject(rootTask, initialArgs);
+        const menu = contextMenuComponent.createObject(rootTask, initialArgs);
+        if (menu) {
+            menu.backend = backendInstance;
+        }
+        return menu;
     }
 
     function shouldBeMirrored(reverseMode, layoutDirection, vertical): bool {

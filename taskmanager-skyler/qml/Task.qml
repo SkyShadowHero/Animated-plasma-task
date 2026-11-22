@@ -531,7 +531,9 @@ PlasmaCore.ToolTipArea {
     function showContextMenu(args: var): void {
         task.hideImmediately();
         contextMenu = tasksRoot.createContextMenu(task, modelIndex(), args) as ContextMenu;
-        contextMenu.show();
+        if (contextMenu) {
+            contextMenu.show();
+        }
     }
 
     function updateAudioStreams(args: var): void {
