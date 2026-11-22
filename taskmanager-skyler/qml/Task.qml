@@ -638,7 +638,8 @@ PlasmaCore.ToolTipArea {
     TapHandler {
         acceptedButtons: Qt.RightButton
         acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
-        gesturePolicy: TapHandler.WithinBounds // Release grab when menu appears
+        // Ported from plasma-desktop b1ae0e1f: WithinBounds kept the mouse grab
+        // after the menu appeared, so the menu could not take pointer input.
         onPressedChanged: if (pressed) contextMenuTimer.start()
     }
 

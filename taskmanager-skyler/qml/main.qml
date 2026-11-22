@@ -92,6 +92,9 @@ PlasmoidItem {
 //END TODO
 
     property Item dragSource
+    // Ported from plasma-desktop f579c260: remember the highlighted window set so
+    // a late hover-leave cannot cancel a newer hover's highlight.
+    property var hoveredWinIds
 
     signal requestLayout
 
@@ -105,6 +108,14 @@ PlasmoidItem {
         if (!Plasmoid.configuration.highlightWindows) {
             return;
         }
+        // Ported from plasma-desktop f579c260: if the leave event arrives after
+        // something else was already hovered, don't cancel the new highlight.
+        if (!hovered && !(winIds.every(winId => hoveredWinIds?.includes(winId) ?? false) &&
+                          (hoveredWinIds?.length ?? 0) === winIds.length)) {
+            return;
+        }
+        hoveredWinIds = winIds
+
         return DBus.SessionBus.asyncCall({service: "org.kde.KWin.HighlightWindow", path: "/org/kde/KWin/HighlightWindow", iface: "org.kde.KWin.HighlightWindow", member: "highlightWindows", arguments: [hovered ? winIds : []], signature: "(as)"});
     }
 

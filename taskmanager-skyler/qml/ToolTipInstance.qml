@@ -173,6 +173,31 @@ ColumnLayout {
                 }
             }
 
+            // Ported from plasma-desktop 46d59f93: flag tasks demanding attention.
+            // Inline badge to match the local count badge instead of Kirigami.Badge.
+            Item {
+                Layout.alignment: !Plasmoid.configuration.showToolTips && !playerController.active && !volumeControls.active ? Qt.AlignVCenter : Qt.AlignTop
+                Layout.preferredHeight: closeButton.height
+                Layout.preferredWidth: closeButton.width
+                visible: root.model?.IsDemandingAttention ?? false
+
+                Rectangle {
+                    anchors.centerIn: parent
+                    width: Kirigami.Units.iconSizes.small
+                    height: width
+                    radius: height / 2
+                    color: Kirigami.Theme.neutralTextColor
+
+                    Kirigami.Icon {
+                        anchors.centerIn: parent
+                        source: "notification-active-symbolic"
+                        width: parent.height * 0.7
+                        height: width
+                        color: Kirigami.Theme.backgroundColor
+                    }
+                }
+            }
+
             // Count badge.
             // The badge itself is inside an item to better center the text in the bubble
             Item {

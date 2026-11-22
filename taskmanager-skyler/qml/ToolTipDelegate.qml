@@ -93,6 +93,20 @@ Loader {
         id: groupToolTip
 
         PlasmaComponents3.ScrollView {
+            id: scrollView
+
+            // Ported from plasma-desktop c42af268: page the horizontal group
+            // tooltip by one item per wheel notch. Upstream calls scrollLeft()
+            // / scrollRight(), which are not defined in either upstream file;
+            // drive the Flickable directly instead.
+            function scrollGroup(delta) {
+                const flick = scrollView.contentItem
+                const step = (groupToolTipListView.currentItem?.width ?? toolTipDelegate.tooltipInstanceMaximumWidth)
+                           + groupToolTipListView.spacing
+                flick.contentX = Math.max(0, Math.min(flick.contentWidth - flick.width,
+                                                     flick.contentX + delta * step))
+            }
+
             // 2 * Kirigami.Units.smallSpacing is for the margin of tooltipDialog
             readonly property real maximumWidth: Screen.desktopAvailableWidth - 2 * Kirigami.Units.smallSpacing
             readonly property real maximumHeight: Screen.desktopAvailableWidth - 2 * Kirigami.Units.smallSpacing
@@ -182,6 +196,25 @@ Loader {
                     activities: model.Activities
                     hasTrackInATitle: groupToolTipListView.hasTrackInATitle
                     orientation: groupToolTipListView.orientation
+
+                    Kirigami.WheelHandler {
+                        property real accumulatedDeltaY: 0
+                        target: scrollView.contentItem
+                        onWheel: event => {
+                            if (toolTipDelegate.isVerticalPanel || event.angleDelta.x != 0) {
+                                return
+                            }
+                            accumulatedDeltaY += event.angleDelta.y
+                            if (accumulatedDeltaY >= 120) {
+                                accumulatedDeltaY = 0
+                                scrollView.scrollGroup(1)
+                            } else if (accumulatedDeltaY <= -120) {
+                                accumulatedDeltaY = 0
+                                scrollView.scrollGroup(-1)
+                            }
+                            event.accepted = true
+                        }
+                    }
                 }
             }
         }

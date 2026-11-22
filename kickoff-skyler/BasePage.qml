@@ -22,6 +22,13 @@ FocusScope {
 
     property real preferredSideBarWidth: implicitSideBarWidth
     property real preferredSideBarHeight: implicitSideBarHeight
+    // Ported from plasma-desktop caa448cf: on first run Plasma sizes from the
+    // implicit height, so include the full sidebar height, capped at 75% of
+    // the screen. Optional chain guards against the loader not being ready yet.
+    property real initialSideBarHeight: {
+        const sB = sideBarLoader.item as KickoffListView
+        return sB?.calculateTotalHeightForContentHeight?.(sB.view.contentHeight) ?? 0
+    }
 
     property alias sideBarComponent: sideBarLoader.sourceComponent
     property alias sideBarItem: sideBarLoader.item
@@ -32,7 +39,13 @@ FocusScope {
     property alias implicitSideBarHeight: sideBarLoader.implicitHeight
 
     implicitWidth: preferredSideBarWidth + separator.implicitWidth + contentAreaLoader.implicitWidth
-    implicitHeight: Math.max(preferredSideBarHeight, contentAreaLoader.implicitHeight)
+    implicitHeight: Math.max(preferredSideBarHeight, contentAreaLoader.implicitHeight,
+                             Math.min(initialSideBarHeight, Math.round(Screen.desktopAvailableHeight * 0.75)))
+
+    Component.onCompleted: {
+        // Break the binding so later category changes on first run don't resize kickoff.
+        initialSideBarHeight = initialSideBarHeight
+    }
 
     TriangleMouseFilter {
         id: sideBarFilter

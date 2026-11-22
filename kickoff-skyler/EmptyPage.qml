@@ -23,10 +23,15 @@ T.Page {
                             contentWidth + leftPadding + rightPadding,
                             implicitHeaderWidth2,
                             implicitFooterWidth2)
-    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             contentHeight + topPadding + bottomPadding
-                             + (implicitHeaderHeight2 > 0 ? implicitHeaderHeight2 + spacing : 0)
-                             + (implicitFooterHeight2 > 0 ? implicitFooterHeight2 + spacing : 0))
+    // Ported from plasma-desktop caa448cf: reusable so callers can ask what the
+    // height would be for a different content height (initial sidebar sizing).
+    function calculateTotalHeightForContentHeight(baseHeight: double): double {
+        return Math.max(implicitBackgroundHeight + topInset + bottomInset,
+                        baseHeight + topPadding + bottomPadding
+                        + (implicitHeaderHeight2 > 0 ? implicitHeaderHeight2 + spacing : 0)
+                        + (implicitFooterHeight2 > 0 ? implicitFooterHeight2 + spacing : 0))
+    }
+    implicitHeight: calculateTotalHeightForContentHeight(contentHeight)
 
     Accessible.ignored: true
 }

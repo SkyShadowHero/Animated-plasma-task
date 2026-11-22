@@ -60,17 +60,20 @@ KCMUtils.SimpleKCM {
     Kirigami.FormLayout {
         QQC2.CheckBox {
             id: showToolTips
+            Layout.fillWidth: true // Ported from plasma-desktop f96222a3: wrap long labels
             Kirigami.FormData.label: i18nc("@label for several checkboxes", "General:")
             text: i18nc("@option:check section General", "Show small window previews when hovering over tasks")
         }
 
         QQC2.CheckBox {
             id: highlightWindows
+            Layout.fillWidth: true
             text: showToolTips.checked ? i18nc("@option:check section General", "Hide other windows when hovering over previews") : i18nc("@option:check section General", "Hide other windows when hovering over tooltips")
         }
 
         QQC2.CheckBox {
             id: indicateAudioStreams
+            Layout.fillWidth: true
             text: i18nc("@option:check section General", "Show an indicator when a task is playing audio")
             checked: root.cfg_indicateAudioStreams && root.plasmaPaAvailable
             onToggled: root.cfg_indicateAudioStreams = checked
@@ -79,6 +82,7 @@ KCMUtils.SimpleKCM {
 
         QQC2.CheckBox {
             id: interactiveMute
+            Layout.fillWidth: true
             leftPadding: mirrored ? 0 : (indicateAudioStreams.indicator.width + indicateAudioStreams.spacing)
             rightPadding: mirrored ? (indicateAudioStreams.indicator.width + indicateAudioStreams.spacing) : 0
             text: i18nc("@option:check section General", "Mute task when clicking indicator")
@@ -89,6 +93,7 @@ KCMUtils.SimpleKCM {
 
         QQC2.CheckBox {
             id: tooltipControls
+            Layout.fillWidth: true
             text: i18nc("@option:check section General", "Show media and volume controls in tooltip")
             checked: root.cfg_tooltipControls && root.plasmaPaAvailable
             onToggled: root.cfg_tooltipControls = checked
@@ -97,6 +102,7 @@ KCMUtils.SimpleKCM {
 
         QQC2.CheckBox {
             id: fill
+            Layout.fillWidth: true
             text: i18nc("@option:check section General", "Fill free space on panel")
         }
 
@@ -124,6 +130,7 @@ KCMUtils.SimpleKCM {
 
         QQC2.RadioButton {
             id: forbidStripes
+            Layout.fillWidth: true
             Kirigami.FormData.label: root.plasmoidVertical
                 ? i18nc("@label for radio button group, completes sentence: … when panel is low on space etc.", "Use multi-column view:")
                 : i18nc("@label for radio button group, completes sentence: … when panel is low on space etc.", "Use multi-row view:")
@@ -137,6 +144,7 @@ KCMUtils.SimpleKCM {
 
         QQC2.RadioButton {
             id: allowStripes
+            Layout.fillWidth: true
             onToggled: {
                 if (checked) {
                     maxStripes.value = Math.max(2, maxStripes.value)
@@ -147,6 +155,7 @@ KCMUtils.SimpleKCM {
 
         QQC2.RadioButton {
             id: forceStripes
+            Layout.fillWidth: true
             onToggled: {
                 if (checked) {
                     maxStripes.value = Math.max(2, maxStripes.value)
