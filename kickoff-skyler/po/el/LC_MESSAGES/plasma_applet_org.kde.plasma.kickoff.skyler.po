@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 12:00+0800\n"
+"POT-Creation-Date: 2026-11-19 23:19+0800\n"
 "PO-Revision-Date: 2024-09-19 17:29+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -14,17 +14,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.1\n"
 
+#: code/tools.js:32
+msgid "Remove from Favorites"
+msgstr "Αφαίρεση από τα αγαπημένα"
+
 #: code/tools.js:36
 msgid "Add to Favorites"
 msgstr "Προσθήκη στα αγαπημένα"
-
-#: ConfigGeneral.qml:200
-msgid "Icon hover effect"
-msgstr "Εφέ αιώρησης"
-
-#: KickoffListDelegate.qml:164
-msgid "Newly-installed application"
-msgstr "Νεοεγκατεστημένη εφαρμογή"
 
 #: code/tools.js:60
 msgid "On All Activities"
@@ -34,84 +30,26 @@ msgstr "Σε όλες τις δραστηριότητες"
 msgid "On the Current Activity"
 msgstr "Στην τρέχουσα δραστηριότητα"
 
-#: code/tools.js:32
-msgid "Remove from Favorites"
-msgstr "Αφαίρεση από τα αγαπημένα"
-
 #: code/tools.js:124
 msgid "Show in Favorites"
 msgstr "Εμφάνιση στα αγαπημένα"
 
-#: KickoffListDelegate.qml:163
-msgid "There is a newly-installed application in this category"
-msgstr "Υπάρχει μια πρόσφατα εγκατεστημένη εφαρμογή σε αυτήν την κατηγορία"
+#: config.qml:13
+msgctxt "@title:group for configuration dialog page"
+msgid "General"
+msgstr "Γενικά:"
 
 #: ConfigGeneral.qml:61
+msgctxt "@label prefix for icon-only button"
+msgid "Icon:"
+msgstr "Εικονίδιο:"
+
+#: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "Αλλαγή εικονιδίου εκκινητή εφαρμογών"
 
-#: ConfigGeneral.qml:140
-msgctxt "@action:button"
-msgid "Reset menu label"
-msgstr "Επαναφορά ετικέτας μενού"
-
-#: Header.qml:341
-msgctxt ""
-"@action:button Pin widget open if it loses focus, icon-only button, for "
-"tooltip/Accessible"
-msgid "Keep Open"
-msgstr ""
-"ÎÎ¹Î±ÏÎ®ÏÎ·ÏÎ· ÏÎ¿Ï"
-" Î±Î½Î¿Î¹ÎºÏÎ¿Ï"
-
-#: Header.qml:137
-msgctxt "@action:button icon-only, for tooltip/Accessible"
-msgid "Open user settings"
-msgstr "Ρυθμίσεις χρήστη"
-
-#: ConfigGeneral.qml:282
-msgctxt "@action:button opens plasmasearch kcm"
-msgid "Configure Search Plugins…"
-msgstr "Ρύθμιση ενεργών πρόσθετων αναζήτησης…"
-
-#: ConfigGeneral.qml:113
-msgctxt "@action:inmenu"
-msgid "Remove icon"
-msgstr "Αφαίρεση εικονιδίου"
-
-#: main.qml:477
-msgctxt "@action:inmenu launches kmenuedit"
-msgid "Edit Applications…"
-msgstr "Επεξεργασία αιτήσεων…"
-
-#: ConfigGeneral.qml:153
-msgctxt "@info"
-msgid "A text label cannot be set when the Panel is vertical."
-msgstr ""
-"Η ετικέτα κειμένου δεν μπορεί να οριστεί όταν ο πίνακας είναι κατακόρυφος."
-
-#: ConfigGeneral.qml:126
-msgctxt "@info:placeholder"
-msgid "Type here to add a text label"
-msgstr "Πληκτρολογήστε εδώ για να προσθέσετε μια ετικέτα κειμένου"
-
-#: FullRepresentation.qml:141
-msgctxt "@info:status"
-msgid "No matches"
-msgstr "Δεν υπάρχουν αντιστοιχίες"
-
-#: ConfigGeneral.qml:66
-msgctxt "@info:tooltip"
-msgid "Icon name is \"%1\""
-msgstr "Το όνομα του εικονιδίου είναι «%1»"
-
-#: ConfigGeneral.qml:103
-msgctxt "@info:whatsthis"
-msgid "Choose an icon for Application Launcher"
-msgstr "Επιλέξτε ένα εικονίδιο για τον εκκινητή εφαρμογών"
-
-#: ConfigGeneral.qml:62
+#: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
@@ -121,7 +59,88 @@ msgstr ""
 "αλλάξετε το τρέχον εικονίδιο ή να το επαναφέρετε στο προεπιλεγμένο "
 "εικονίδιο."
 
-#: ConfigGeneral.qml:183
+#: ConfigGeneral.qml:72
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "Το όνομα του εικονιδίου είναι «%1»"
+
+#: ConfigGeneral.qml:107
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "Επιλογή…"
+
+#: ConfigGeneral.qml:109
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "Επιλέξτε ένα εικονίδιο για τον εκκινητή εφαρμογών"
+
+#: ConfigGeneral.qml:113
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "Επαναφορά στο προεπιλεγμένο εικονίδιο"
+
+#: ConfigGeneral.qml:119
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "Αφαίρεση εικονιδίου"
+
+#: ConfigGeneral.qml:130
+msgctxt "@label:textbox"
+msgid "Text label:"
+msgstr "Ετικέτα κειμένου:"
+
+#: ConfigGeneral.qml:132
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label"
+msgstr "Πληκτρολογήστε εδώ για να προσθέσετε μια ετικέτα κειμένου"
+
+#: ConfigGeneral.qml:146
+msgctxt "@action:button"
+msgid "Reset menu label"
+msgstr "Επαναφορά ετικέτας μενού"
+
+#: ConfigGeneral.qml:159
+msgctxt "@info"
+msgid "A text label cannot be set when the Panel is vertical."
+msgstr ""
+"Η ετικέτα κειμένου δεν μπορεί να οριστεί όταν ο πίνακας είναι κατακόρυφος."
+
+#: ConfigGeneral.qml:171
+msgctxt "@label:listbox"
+msgid "Show applications as:"
+msgstr "Εμφάνιση εφαρμογών ως:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name only"
+msgstr "Μόνο όνομα@ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description only"
+msgstr "Μόνο περιγραφή"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Name (Description)"
+msgstr "Όνομα περιγραφή@ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:173
+msgctxt "@item:inlistbox"
+msgid "Description (Name)"
+msgstr "Περιγραφή (όνομα) @ item: inlistbox Format:"
+
+#: ConfigGeneral.qml:181
+msgctxt "General options"
+msgid "General:"
+msgstr "Γενικά:"
+
+#: ConfigGeneral.qml:185
+msgctxt "@option:check"
+msgid "Sort applications alphabetically"
+msgstr "Ταξινόμηση εφαρμογών αλφαβητικά"
+
+#: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
@@ -130,331 +149,405 @@ msgstr ""
 "Αυτό δεν επηρεάζει τον τρόπο ταξινόμησης των εφαρμογών είτε στα αποτελέσματα"
 " αναζήτησης είτε στη σελίδα αγαπημένων."
 
-#: KickoffGridView.qml:116
-msgctxt "@info:whatsthis Accessible description"
-msgid "Grid with %1 rows, %2 columns"
-msgstr "Πλέγμα με %1 γραμμές, %2 στήλες"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description (Name)"
-msgstr "Περιγραφή (όνομα) @ item: inlistbox Format:"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Description only"
-msgstr "Μόνο περιγραφή"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name (Description)"
-msgstr "Όνομα περιγραφή@ item: inlistbox Format:"
-
-#: ConfigGeneral.qml:167
-msgctxt "@item:inlistbox"
-msgid "Name only"
-msgstr "Μόνο όνομα@ item: inlistbox Format:"
-
-#: ConfigGeneral.qml:246
-msgctxt "@item:inlistbox highlight color"
-msgid "Black"
-msgstr "Μαύρο"
-
-#: ConfigGeneral.qml:245
-msgctxt "@item:inlistbox highlight color"
-msgid "White"
-msgstr "Λευκό"
-
-#: ConfigGeneral.qml:247
-msgctxt "@item:inlistbox highlight color follows the system color scheme"
-msgid "Automatic (follow color scheme)"
-msgstr "Αυτόματο (ακολουθήστε το συνδυασμό χρωμάτων)"
-
-#: ConfigGeneral.qml:235
-msgctxt "@item:inlistbox highlight shape"
-msgid "Circle"
-msgstr "Κύκλος"
-
-#: ConfigGeneral.qml:234
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rectangle"
-msgstr "Ορθογώνιο"
-
-#: ConfigGeneral.qml:233
-msgctxt "@item:inlistbox highlight shape"
-msgid "Rounded rectangle"
-msgstr "Στρογγυλοποιημένο ορθογώνιο"
-
-#: ConfigGeneral.qml:101
-msgctxt "@item:inmenu Open icon chooser dialog"
-msgid "Choose…"
-msgstr "Επιλογή…"
-
-#: ConfigGeneral.qml:107
-msgctxt "@item:inmenu Reset icon to default"
-msgid "Reset to default icon"
-msgstr "Επαναφορά στο προεπιλεγμένο εικονίδιο"
-
-#: KickoffGridDelegate.qml:74
-msgctxt "@label Accessible name for badge"
-msgid "Newly-installed application"
-msgstr "Νεοεγκατεστημένη εφαρμογή"
-
-#: KickoffGridDelegate.qml:69
-msgctxt "@label Newly-installed app, badge, keep short"
-msgid "New!"
-msgstr "Νέα!"
-
-#: ConfigGeneral.qml:55
-msgctxt "@label prefix for icon-only button"
-msgid "Icon:"
-msgstr "Εικονίδιο:"
-
-#: ConfigGeneral.qml:292
-msgctxt "@label:group prefix for radio button group"
-msgid "Sidebar position:"
-msgstr "Θέση πλευρικής στήλης"
-
-#: ConfigGeneral.qml:241
-msgctxt "@label:listbox"
-msgid "Highlight color:"
-msgstr "Χρώμα επισήμανσης:"
-
-#: ConfigGeneral.qml:229
-msgctxt "@label:listbox"
-msgid "Highlight shape:"
-msgstr "Σχήμα επισήμανσης:"
-
-#: ConfigGeneral.qml:165
-msgctxt "@label:listbox"
-msgid "Show applications as:"
-msgstr "Εμφάνιση εφαρμογών ως:"
-
-#: ConfigGeneral.qml:253
-msgctxt "@label:spinbox"
-msgid "Highlight size:"
-msgstr "Μέγεθος επισήμανσης:"
-
-#: ConfigGeneral.qml:124
-msgctxt "@label:textbox"
-msgid "Text label:"
-msgstr "Ετικέτα κειμένου:"
-
 #: ConfigGeneral.qml:195
+msgctxt "@option:check"
+msgid "Use compact list item style"
+msgstr "Χρήση στυλ στοιχείου συμπυκνωμένης λίστας"
+
+#: ConfigGeneral.qml:201
 msgctxt "@option:check"
 msgid "Highlight newly-installed applications"
 msgstr "Επισήμανση νεοεγκατεστημένων εφαρμογών"
 
-#: ConfigGeneral.qml:375
+#: ConfigGeneral.qml:206
+msgid "Icon hover effect"
+msgstr "Εφέ αιώρησης"
+
+#: ConfigGeneral.qml:216
 msgctxt "@option:check"
-msgid "Show action button captions"
-msgstr "Εμφάνιση λεζάντων κουμπιών ενεργειών"
+msgid "Use KDE theme decorations"
+msgstr "Χρήση διακοσμήσεων θέματος του KDE"
 
 #: ConfigGeneral.qml:222
+msgctxt "@option:check"
+msgid "Use custom launcher decorations"
+msgstr "Χρησιμοποιήστε προσαρμοσμένες διακοσμήσεις εκτοξευτή"
+
+#: ConfigGeneral.qml:228
 msgctxt "@option:check"
 msgid "Show highlight background on hover"
 msgstr "Εμφάνιση φόντου επισήμανσης στο δείκτη του ποντικιού"
 
-#: ConfigGeneral.qml:179
-msgctxt "@option:check"
-msgid "Sort applications alphabetically"
-msgstr "Ταξινόμηση εφαρμογών αλφαβητικά"
+#: ConfigGeneral.qml:235
+msgctxt "@label:listbox"
+msgid "Highlight shape:"
+msgstr "Σχήμα επισήμανσης:"
+
+#: ConfigGeneral.qml:239
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rounded rectangle"
+msgstr "Στρογγυλοποιημένο ορθογώνιο"
+
+#: ConfigGeneral.qml:240
+msgctxt "@item:inlistbox highlight shape"
+msgid "Rectangle"
+msgstr "Ορθογώνιο"
+
+#: ConfigGeneral.qml:241
+msgctxt "@item:inlistbox highlight shape"
+msgid "Circle"
+msgstr "Κύκλος"
+
+#: ConfigGeneral.qml:247
+msgctxt "@label:listbox"
+msgid "Highlight color:"
+msgstr "Χρώμα επισήμανσης:"
+
+#: ConfigGeneral.qml:251
+msgctxt "@item:inlistbox highlight color"
+msgid "White"
+msgstr "Λευκό"
+
+#: ConfigGeneral.qml:252
+msgctxt "@item:inlistbox highlight color"
+msgid "Black"
+msgstr "Μαύρο"
+
+#: ConfigGeneral.qml:253
+msgctxt "@item:inlistbox highlight color follows the system color scheme"
+msgid "Automatic (follow color scheme)"
+msgstr "Αυτόματο (ακολουθήστε το συνδυασμό χρωμάτων)"
+
+#: ConfigGeneral.qml:259
+msgctxt "@label:spinbox"
+msgid "Highlight size:"
+msgstr "Μέγεθος επισήμανσης:"
 
 #: ConfigGeneral.qml:276
+msgctxt "@option:check"
+msgid "Use Fluent (Windows 11) styling for the popup"
+msgstr "Χρησιμοποιήστε το στυλ Fluent (Windows 11) για το αναδυόμενο παράθυρο"
+
+#: ConfigGeneral.qml:282
+msgctxt "@option:check"
+msgid "Fake acrylic backdrop behind the popup"
+msgstr "Ψεύτικο φόντο ακρυλικού πίσω από το αναδυόμενο παράθυρο"
+
+#: ConfigGeneral.qml:289
+msgctxt "@label:group prefix for menu layout options"
+msgid "Menu layout:"
+msgstr "Διάταξη μενού:"
+
+#: ConfigGeneral.qml:290
+msgctxt "@option:check"
+msgid "Windows 11 Start menu layout (Pinned, All apps, Recommended)"
+msgstr ""
+"Διάταξη μενού Έναρξης των Windows 11 (Καρφιτσωμένα, Όλες οι εφαρμογές, "
+"Προτεινόμενα)"
+
+#: ConfigGeneral.qml:297
+msgctxt "@label:group prefix for Win11 menu options"
+msgid "All apps:"
+msgstr "Όλες οι εφαρμογές:"
+
+#: ConfigGeneral.qml:298
+msgctxt "@option:check"
+msgid "Show as pinned-style cards instead of a list"
+msgstr "Εμφάνιση ως καρφιτσωμένες κάρτες αντί για λίστα"
+
+#: ConfigGeneral.qml:305
+msgctxt "@label:listbox"
+msgid "Group by:"
+msgstr "Ομαδοποίηση κατά:"
+
+#: ConfigGeneral.qml:308
+msgctxt "@item:inlistbox all apps grouping"
+msgid "First letter (A–Z)"
+msgstr "Πρώτο γράμμα (A–Z)"
+
+#: ConfigGeneral.qml:309
+msgctxt "@item:inlistbox all apps grouping"
+msgid "Category"
+msgstr "Κατηγορία"
+
+#: ConfigGeneral.qml:315
+msgctxt "@label:group prefix for fake acrylic options"
+msgid "Fake acrylic mask:"
+msgstr "Ψεύτικη μάσκα ακρυλικού:"
+
+#: ConfigGeneral.qml:316
+msgctxt "@option:check"
+msgid "Take the corner radius from the Plasma style"
+msgstr "Λήψη ακτίνας γωνιών από το στυλ Plasma"
+
+#: ConfigGeneral.qml:323
+msgctxt "@label:spinbox"
+msgid "Corner radius:"
+msgstr "Ακτίνα γωνιών:"
+
+#: ConfigGeneral.qml:332
+msgid "%1 pixel"
+msgid_plural "%1 pixels"
+msgstr[0] "%1 pixel"
+msgstr[1] "%1 pixel"
+
+#: ConfigGeneral.qml:338
 msgctxt "@option:check"
 msgid "Switch sidebar categories when hovering over them"
 msgstr ""
 "Εναλλαγή κατηγοριών πλευρικής στήλης όταν τοποθετείτε τον δείκτη του "
 "ποντικιού επάνω τους"
 
-#: ConfigGeneral.qml:270
-msgctxt "@option:check"
-msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "Χρησιμοποιήστε το στυλ Fluent (Windows 11) για το αναδυόμενο παράθυρο"
+#: ConfigGeneral.qml:344
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "Ρύθμιση ενεργών πρόσθετων αναζήτησης…"
 
-#: ConfigGeneral.qml:210
-msgctxt "@option:check"
-msgid "Use KDE theme decorations"
-msgstr "Χρήση διακοσμήσεων θέματος του KDE"
+#: ConfigGeneral.qml:354
+msgctxt "@label:group prefix for radio button group"
+msgid "Sidebar position:"
+msgstr "Θέση πλευρικής στήλης"
 
-#: ConfigGeneral.qml:189
-msgctxt "@option:check"
-msgid "Use compact list item style"
-msgstr "Χρήση στυλ στοιχείου συμπυκνωμένης λίστας"
+#: ConfigGeneral.qml:355 ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Right"
+msgstr "Δεξιά"
 
-#: ConfigGeneral.qml:216
-msgctxt "@option:check"
-msgid "Use custom launcher decorations"
-msgstr "Χρησιμοποιήστε προσαρμοσμένες διακοσμήσεις εκτοξευτή"
+#: ConfigGeneral.qml:355
+msgctxt "option:radio sidebar position"
+msgid "Left"
+msgstr "Αριστερά"
 
-#: ConfigGeneral.qml:310
+#: ConfigGeneral.qml:363
+msgctxt "@option:radio sidebar position"
+msgid "Left"
+msgstr "Αριστερά"
+
+#: ConfigGeneral.qml:371
+msgctxt "@title:group prefix for radio button group"
+msgid "Show favorites:"
+msgstr "Εμφάνιση στα αγαπημένα"
+
+#: ConfigGeneral.qml:372
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
 msgid "In a grid"
 msgstr "Σε πλέγμα"
 
-#: ConfigGeneral.qml:318
+#: ConfigGeneral.qml:380
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
 msgid "In a list"
 msgstr "Σε μια λίστα"
 
-#: ConfigGeneral.qml:327
+#: ConfigGeneral.qml:388
+msgctxt "@title:group prefix for radio button group"
+msgid "Show other applications:"
+msgstr "Άλλες εφαρμογές"
+
+#: ConfigGeneral.qml:389
 msgctxt ""
 "@option:radio Part of a sentence: 'Show other applications in a grid'"
 msgid "In a grid"
 msgstr "Σε πλέγμα"
 
-#: ConfigGeneral.qml:335
+#: ConfigGeneral.qml:397
 msgctxt ""
 "@option:radio Part of a sentence: 'Show other applications in a list'"
 msgid "In a list"
 msgstr "Σε μια λίστα"
 
-#: ConfigGeneral.qml:348
-msgctxt "@option:radio Show buttons for"
-msgid "Power"
-msgstr "Ισχύς"
-
-#: ConfigGeneral.qml:366
-msgctxt "@option:radio Show buttons for"
-msgid "Power and session"
-msgstr "Ισχύς και συνεδρία"
-
-#: ConfigGeneral.qml:357
-msgctxt "@option:radio Show buttons for"
-msgid "Session"
-msgstr "Περ."
-
-#: ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Left"
-msgstr "Αριστερά"
-
-#: ConfigGeneral.qml:293 ConfigGeneral.qml:301
-msgctxt "@option:radio sidebar position"
-msgid "Right"
-msgstr "Δεξιά"
-
-#: config.qml:13
-msgctxt "@title:group for configuration dialog page"
-msgid "General"
-msgstr "Γενικά:"
-
-#: ConfigGeneral.qml:347
+#: ConfigGeneral.qml:409
 msgctxt "@title:group prefix for radio button group"
 msgid "Show buttons for:"
 msgstr "Εμφάνιση κουμπιών για:"
 
-#: ConfigGeneral.qml:309
-msgctxt "@title:group prefix for radio button group"
-msgid "Show favorites:"
-msgstr "Εμφάνιση στα αγαπημένα"
-
-#: ConfigGeneral.qml:326
-msgctxt "@title:group prefix for radio button group"
-msgid "Show other applications:"
-msgstr "Άλλες εφαρμογές"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "More"
-msgstr "Περισσότερα"
-
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
+#: ConfigGeneral.qml:410
+msgctxt "@option:radio Show buttons for"
 msgid "Power"
 msgstr "Ισχύς"
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
+#: ConfigGeneral.qml:419
+msgctxt "@option:radio Show buttons for"
 msgid "Session"
 msgstr "Περ."
 
-#: LeaveButtons.qml:183
-msgctxt "@title:menu menubutton"
-msgid "Session and Power"
-msgstr "Συνεδρία και Εξουσία"
+#: ConfigGeneral.qml:428
+msgctxt "@option:radio Show buttons for"
+msgid "Power and session"
+msgstr "Ισχύς και συνεδρία"
 
-#: Footer.qml:269
+#: ConfigGeneral.qml:437
+msgctxt "@option:check"
+msgid "Show action button captions"
+msgstr "Εμφάνιση λεζάντων κουμπιών ενεργειών"
+
+#: Footer.qml:275
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: Footer.qml:285
+#: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
 msgstr "Σημεία"
 
-#: ConfigGeneral.qml:175
-msgctxt "General options"
-msgid "General:"
-msgstr "Γενικά:"
+#: FullRepresentation.qml:168 Win11StartMenu.qml:2774
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "Δεν υπάρχουν αντιστοιχίες"
+
+#: Header.qml:137
+msgctxt "@action:button icon-only, for tooltip/Accessible"
+msgid "Open user settings"
+msgstr "Άνοιγμα ρυθμίσεων χρήστη"
+
+#: Header.qml:351
+msgctxt ""
+"@action:button Pin widget open if it loses focus, icon-only button, for "
+"tooltip/Accessible"
+msgid "Keep Open"
+msgstr ""
+"ÎÎ¹Î±ÏÎ®ÏÎ·ÏÎ· ÏÎ¿Ï"
+" Î±Î½Î¿Î¹ÎºÏÎ¿Ï"
+
+#: KickoffGridDelegate.qml:69
+msgctxt "@label Newly-installed app, badge, keep short"
+msgid "New!"
+msgstr "Νέα!"
+
+#: KickoffGridDelegate.qml:74
+msgctxt "@label Accessible name for badge"
+msgid "Newly-installed application"
+msgstr "Νεοεγκατεστημένη εφαρμογή"
+
+#: KickoffGridView.qml:116
+msgctxt "@info:whatsthis Accessible description"
+msgid "Grid with %1 rows, %2 columns"
+msgstr "Πλέγμα με %1 γραμμές, %2 στήλες"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
 msgstr "Νέα!"
 
+#: KickoffListDelegate.qml:163
+msgid "There is a newly-installed application in this category"
+msgstr "Υπάρχει μια πρόσφατα εγκατεστημένη εφαρμογή σε αυτήν την κατηγορία"
+
+#: KickoffListDelegate.qml:164
+msgid "Newly-installed application"
+msgstr "Νεοεγκατεστημένη εφαρμογή"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session"
+msgstr "Περ."
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Power"
+msgstr "Ισχύς"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "More"
+msgstr "Περισσότερα"
+
+#: LeaveButtons.qml:190
+msgctxt "@title:menu menubutton"
+msgid "Session and Power"
+msgstr "Συνεδρία και Εξουσία"
+
+#: main.qml:506
+msgctxt "@action:inmenu launches kmenuedit"
+msgid "Edit Applications…"
+msgstr "Επεξεργασία αιτήσεων…"
+
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "Υπολογιστής"
-
-#: PlacesPage.qml:70
-msgctxt "category in Places sidebar"
-msgid "Frequently Used"
-msgstr "Συχνά χρησιμοποιούμενα"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "Ιστορικό"
 
-#: ConfigGeneral.qml:293
-msgctxt "option:radio sidebar position"
-msgid "Left"
-msgstr "Αριστερά"
+#: PlacesPage.qml:70
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "Συχνά χρησιμοποιούμενα"
 
-#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
-#~ msgid "Automatically disabled when in Touch Mode"
-#~ msgstr "Αυτόματη απενεργοποίηση όταν βρίσκεστε σε λειτουργία αφής"
+#: Win11StartMenu.qml:433
+msgctxt "@info:placeholder Search applications"
+msgid "Search apps, files and settings"
+msgstr "Αναζήτηση εφαρμογών, αρχείων και ρυθμίσεων"
+
+#: Win11StartMenu.qml:568
+msgctxt "@action:button"
+msgid "Open user settings"
+msgstr "Άνοιγμα ρυθμίσεων χρήστη"
+
+#: Win11StartMenu.qml:774
+msgctxt "@info:tooltip"
+msgid "More power options"
+msgstr "Περισσότερες επιλογές ισχύος"
+
+#: Win11StartMenu.qml:2249
+msgctxt "@title:section pinned applications"
+msgid "Pinned"
+msgstr "Καρφιτσωμένα"
+
+#: Win11StartMenu.qml:2283 Win11StartMenu.qml:2709
+msgctxt "@title:section all applications"
+msgid "All apps"
+msgstr "Όλες οι εφαρμογές"
+
+#: Win11StartMenu.qml:2701
+msgctxt "@action:button"
+msgid "Back"
+msgstr "Πίσω"
 
 msgctxt "@label:listbox"
 msgid "Animation speed:"
-msgstr ""
+msgstr "Ταχύτητα κίνησης:"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
-msgstr ""
+msgstr "Πολύ γρήγορη"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
-msgstr ""
+msgstr "Γρήγορη"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Normal"
-msgstr ""
+msgstr "Κανονική"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
-msgstr ""
+msgstr "Αργή"
 
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Slow"
-msgstr ""
+msgstr "Πολύ αργή"
 
 msgctxt "@label:group prefix for Win11 menu options"
 msgid "Recent:"
-msgstr ""
+msgstr "Πρόσφατα:"
 
 msgctxt "@option:check"
 msgid "Show recently used items above All apps"
-msgstr ""
+msgstr "Εμφάνιση πρόσφατων στοιχείων πάνω από τις Όλες οι εφαρμογές"
 
 msgctxt "@title:section recently used items"
 msgid "Recent"
-msgstr ""
+msgstr "Πρόσφατα"
 
 #: Win11StartMenu.qml:3217
 msgctxt "@info no recent items yet"
 msgid "No recent items"
-msgstr ""
+msgstr "Δεν υπάρχουν πρόσφατα στοιχεία"
+
+#~ msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+#~ msgid "Automatically disabled when in Touch Mode"
+#~ msgstr "Αυτόματη απενεργοποίηση όταν βρίσκεστε σε λειτουργία αφής"
