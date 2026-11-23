@@ -148,7 +148,7 @@ msgstr "अप्रसन्नता %1"
 #: qml/ToolTipInstance.qml:219
 msgctxt "@info:tooltip Close this window"
 msgid "Close window"
-msgstr "सञ्झ्यालम् अङ्गीकृतम्"
+msgstr "विण्डो वा समूहं वा पिधायति"
 
 #: qml/Task.qml:319
 msgctxt "@info:usagetip %1 application name"
@@ -271,7 +271,7 @@ msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
 "tasks'"
 msgid "Cycles through all tasks"
-msgstr "सर्वकार्येषु सर्वकार्येषु"
+msgstr "सर्वकार्येषु परिक्रमयति"
 
 #: qml/ConfigBehavior.qml:213
 msgctxt ""
@@ -667,7 +667,7 @@ msgstr "यदा कार्यप्रबन्धकः पूर्णः 
 #: qml/ContextMenu.qml:754
 msgctxt "@option:check inmenu"
 msgid "Allow this program to be grouped"
-msgstr "योजनानां समूहे योजनानां समूहे"
+msgstr "अस्य कार्यक्रमस्य समूहीकरणं अनुमन्यताम्"
 
 #: qml/ContextMenu.qml:266
 msgctxt "@option:check inmenu, no separate unmute action"
@@ -692,7 +692,7 @@ msgstr "पूर्वावलोकनानां उपरि भ्रम�
 #: qml/ConfigAppearance.qml:69
 msgctxt "@option:check section General"
 msgid "Hide other windows when hovering over tooltips"
-msgstr "अन्योन्यं विद्वांसो यदा विद्वांसो विद्वांसो वा"
+msgstr "संकेतानां उपरि भ्रमन् अन्यविण्डोः गोपयन्तु"
 
 #: qml/ConfigAppearance.qml:84
 msgctxt "@option:check section General"
@@ -702,7 +702,7 @@ msgstr "सङ्केतकस्य क्लिक्ककरणे यद�
 #: qml/ConfigAppearance.qml:74
 msgctxt "@option:check section General"
 msgid "Show an indicator when a task is playing audio"
-msgstr "कोई ध्वनि ध्वनि ध्वनि जब कोई ध्वनि"
+msgstr "कार्यं ध्वनिं वादयति चेत् सूचकं दर्शयतु"
 
 #: qml/ConfigAppearance.qml:92
 msgctxt "@option:check section General"
@@ -869,7 +869,7 @@ msgstr "वर्त्तमानस्य क्रियायां यो�
 #: qml/ContextMenu.qml:427
 msgctxt "action:inmenu"
 msgid "All Activities"
-msgstr "तमाम गतिविधियां"
+msgstr "सर्वाणि क्रियाकलापाः"
 
 #: qml/ContextMenu.qml:678
 msgctxt "action:inmenu"

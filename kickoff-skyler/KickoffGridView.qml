@@ -135,7 +135,9 @@ EmptyPage {
         focus: true
         interactive: height < contentHeight
         pixelAligned: true
-        reuseItems: true
+        // Ported from plasma-desktop b5560b0d: item reuse breaks when the
+        // view switches between the alphabetical and category models.
+        reuseItems: false
         boundsBehavior: Flickable.StopAtBounds
         // default keyboard navigation doesn't allow focus reasons to be used
         // and eats up/down key events when at the beginning or end of the list.

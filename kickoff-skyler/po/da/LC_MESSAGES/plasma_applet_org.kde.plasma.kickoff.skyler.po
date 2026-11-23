@@ -116,7 +116,7 @@ msgstr "Kun Navn"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "Kun beskrivelse@ item: inlistbox Format:"
+msgstr "Kun beskrivelse"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
@@ -126,7 +126,7 @@ msgstr "Navn"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "Beskrivelse (Navn) @ item: inlistbox Format:"
+msgstr "Beskrivelse (Navn)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -382,7 +382,7 @@ msgstr "Applikationer"
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
-msgstr "Stande"
+msgstr "Steder"
 
 #: FullRepresentation.qml:168 Win11StartMenu.qml:2774
 msgctxt "@info:status"

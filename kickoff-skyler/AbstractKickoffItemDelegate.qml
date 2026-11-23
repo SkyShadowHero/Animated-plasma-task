@@ -17,6 +17,7 @@ import QtQuick.Templates as T
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PC3
 import org.kde.kirigami as Kirigami
+import org.kde.plasma.extras as PlasmaExtras
 import "code/tools.js" as Tools
 import org.kde.plasma.plasmoid
 
@@ -74,7 +75,13 @@ T.ItemDelegate {
 
     property Item dragIconItem: null
 
-    down: mouseArea.pressed || dragHandler.active
+    // Ported from plasma-desktop 8ab2bca3: keep the pressed look while the
+    // item's action menu is open, but ignore non-left-button presses.
+    readonly property bool actionMenuOpen: ActionMenu.menu.status === PlasmaExtras.Menu.Open
+        && ActionMenu.menu.visualParent === root
+
+    down: (mouseArea.pressed && (mouseArea.pressedButtons & Qt.LeftButton))
+        || dragHandler.active || actionMenuOpen
 
     // WinUI press feedback. It is applied to the delegate itself so the state
     // layer, the glyph and the labels shrink together as one — scaling only the
@@ -322,7 +329,7 @@ T.ItemDelegate {
         // Fluent keeps a state layer on every item so hovering fades one in —
         // the theme only ever needs it on the current item. Separators draw
         // nothing at all, not even a hover layer.
-        active: !root.isSeparator && ((Plasmoid.configuration?.useFluentStyle ?? false) || current)
+        active: !root.isSeparator && ((Plasmoid.configuration?.useFluentStyle ?? false) || current || root.actionMenuOpen)
 
         sourceComponent: FluentHighlight {
             anchors.fill: parent
@@ -340,7 +347,7 @@ T.ItemDelegate {
 
             // Guarded: this Loader also runs for the measuring delegates in
             // KickoffSingleton, where `view` is still null.
-            active: (root.view?.activeFocus ?? false) ||
+            active: root.actionMenuOpen || (root.view?.activeFocus ?? false) ||
                     (kickoff.contentArea === root && (kickoff.searchField?.activeFocus ?? false))
         }
     }

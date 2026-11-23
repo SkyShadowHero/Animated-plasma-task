@@ -111,22 +111,22 @@ msgstr "ਐਪਲੀਕੇਸ਼ਨ ਇੰਝ ਵੇਖੋ:"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "ਨਾਂ ਹੀ@ item: inlistbox Format:"
+msgstr "ਸਿਰਫ਼ ਨਾਂ"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "ਵੇਰਵਾ ਹੀ@ item: inlistbox Format:"
+msgstr "ਸਿਰਫ਼ ਵੇਰਵਾ"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "ਨਾਂ ਵੇਰਵਾ@ item: inlistbox Format:"
+msgstr "ਨਾਂ (ਵੇਰਵਾ)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "ਵੇਰਵਾ (ਨਾਂ) @ item: inlistbox Format:"
+msgstr "ਵੇਰਵਾ (ਨਾਂ)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -305,7 +305,7 @@ msgstr "ਸਾਈਡਬਾਰ ਸਥਿਤੀ:"
 #: ConfigGeneral.qml:355 ConfigGeneral.qml:363
 msgctxt "@option:radio sidebar position"
 msgid "Right"
-msgstr "ਉਚਾਈ"
+msgstr "ਸੱਜਾ"
 
 #: ConfigGeneral.qml:355
 msgctxt "option:radio sidebar position"
@@ -357,7 +357,7 @@ msgstr "ਇਸ ਲਈ ਬਟਨ ਵੇਖੋ:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "ਸ਼ਕਤੀ"
+msgstr "ਪਾਵਰ"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -377,7 +377,7 @@ msgstr "ਐਕਸ਼ਨ ਬਟਨ ਸੁਰਖੀ ਵੇਖੋ"
 #: Footer.qml:275
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Applications"
-msgstr "ਕਾਰਜ"
+msgstr "ਐਪਲੀਕੇਸ਼ਨਾਂ"
 
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
@@ -437,7 +437,7 @@ msgstr "ਸੈਸ਼ਨ"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "ਸ਼ਕਤੀ"
+msgstr "ਪਾਵਰ"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

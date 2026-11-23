@@ -16,7 +16,7 @@ msgstr ""
 
 #: qml/ConfigAppearance.qml:263
 msgid "Animation"
-msgstr "Δημιουργία κινουμένων σχεδίων"
+msgstr "Εφέ κίνησης"
 
 #: qml/ConfigAppearance.qml:282
 msgid "Icon hover effect"
@@ -47,7 +47,7 @@ msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "%1k"
-msgstr "%1Ksignifies absence of data in list columns"
+msgstr "%1k"
 
 #: qml/TaskBadgeOverlay.qml:109
 msgctxt ""
@@ -449,7 +449,7 @@ msgstr "Δείκτης:"
 #: qml/ConfigAppearance.qml:208
 msgctxt "@label for checkbox"
 msgid "Mini Tooltip:"
-msgstr "Mini Tooltip:"
+msgstr "Μικρή συμβουλή:"
 
 #: qml/ConfigAppearance.qml:225
 msgctxt "@label for checkbox"
@@ -762,7 +762,7 @@ msgstr "Ενέργειες"
 #: qml/ContextMenu.qml:100
 msgctxt "@title:group for section of menu items"
 msgid "Places"
-msgstr "Σημεία"
+msgstr "Τοποθεσίες"
 
 #: qml/ContextMenu.qml:106
 msgctxt "@title:group for section of menu items"
@@ -854,7 +854,7 @@ msgstr "&Πλήρης οθόνη"
 #: qml/ContextMenu.qml:631
 msgctxt "action:inmenu"
 msgid "&Move"
-msgstr "&ÎÎµÏÎ±ÎºÎ¯Î½Î·ÏÎ·"
+msgstr "&Μετακίνηση"
 
 #: qml/ContextMenu.qml:373
 msgctxt "action:inmenu"
@@ -909,7 +909,7 @@ msgstr "&Στην τρέχουσα επιφάνεια εργασίας"
 #: qml/ContextMenu.qml:483
 msgctxt "action:inmenu"
 msgid "Move to %1"
-msgstr "ÎÎµÏÎ±ÎºÎ¯Î½Î·ÏÎ· ÏÏÎ¿%1"
+msgstr "Μετακίνηση στο %1"
 
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"

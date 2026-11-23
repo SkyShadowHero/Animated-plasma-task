@@ -759,7 +759,7 @@ msgstr "Ҷойҳо"
 #: qml/ContextMenu.qml:106
 msgctxt "@title:group for section of menu items"
 msgid "Recent Files"
-msgstr "Файлҳои нав"
+msgstr "Файлҳои охирин"
 
 #: qml/ToolTipInstance.qml:451
 msgctxt "Accessibility data on volume slider"

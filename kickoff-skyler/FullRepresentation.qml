@@ -63,7 +63,18 @@ EmptyPage {
     }
 
     Layout.minimumWidth: implicitWidth
-    Layout.minimumHeight: implicitHeight
+    // Ported from plasma-desktop caa448cf, with null guards for this fork's
+    // Win11/Fluent layouts where the classic page may not be instantiated.
+    Layout.minimumHeight: {
+        const stackView = normalPage?.contentItem as HorizontalStackView
+        const basePage = stackView?.currentItem as BasePage
+        const contentAreaItem = basePage?.contentAreaItem as Item
+        if (!basePage || !contentAreaItem) {
+            return implicitHeight
+        }
+        return root.calculateTotalHeightForContentHeight(
+            normalPage.calculateTotalHeightForContentHeight(contentAreaItem.implicitHeight))
+    }
 
     property alias normalPage: normalPage
     property bool blockingHoverFocus: true

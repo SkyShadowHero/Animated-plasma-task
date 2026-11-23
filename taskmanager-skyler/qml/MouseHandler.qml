@@ -12,7 +12,10 @@ import plasma.applet.org.kde.plasma.taskmanager.skyler as TaskManagerApplet
 
 DropArea {
     id: dropArea
-    signal urlsDropped(var urls)
+    // The position is the index of the task under the drop point, so the
+    // receiver can pin a dropped launcher there instead of at the end.
+    // Ported from plasma-desktop MR !4259 (Christoph Wolk, GPL-2.0-or-later).
+    signal urlsDropped(var urls, int position)
 
     property Item target
     property Item ignoredItem
@@ -114,7 +117,8 @@ DropArea {
         }
 
         if (event.hasUrls) {
-            urlsDropped(event.urls);
+            // -1 means the drop was over empty taskbar space; callers append.
+            urlsDropped(event.urls, hoveredItem ? hoveredItem.index : -1);
             return;
         }
     }

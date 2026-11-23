@@ -92,6 +92,9 @@ PlasmoidItem {
 //END TODO
 
     property Item dragSource
+    // Ported from plasma-desktop f579c260: remember the highlighted window set so
+    // a late hover-leave cannot cancel a newer hover's highlight.
+    property var hoveredWinIds
 
     signal requestLayout
 
@@ -105,6 +108,14 @@ PlasmoidItem {
         if (!Plasmoid.configuration.highlightWindows) {
             return;
         }
+        // Ported from plasma-desktop f579c260: if the leave event arrives after
+        // something else was already hovered, don't cancel the new highlight.
+        if (!hovered && !(winIds.every(winId => hoveredWinIds?.includes(winId) ?? false) &&
+                          (hoveredWinIds?.length ?? 0) === winIds.length)) {
+            return;
+        }
+        hoveredWinIds = winIds
+
         return DBus.SessionBus.asyncCall({service: "org.kde.KWin.HighlightWindow", path: "/org/kde/KWin/HighlightWindow", iface: "org.kde.KWin.HighlightWindow", member: "highlightWindows", arguments: [hovered ? winIds : []], signature: "(as)"});
     }
 
@@ -236,7 +247,11 @@ PlasmoidItem {
     }
 
     readonly property TaskManagerApplet.Backend backend: TaskManagerApplet.Backend {
-        id: backend
+        // Distinct id: reusing the property name as the object id makes the
+        // identifier ambiguous when passed to createObject() as an initial
+        // property, which then fails with "Could not set initial property
+        // backend" and leaves every context menu without a backend.
+        id: backendInstance
 
         onAddLauncher: url => {
             tasks.addLauncher(url);
@@ -405,12 +420,15 @@ PlasmoidItem {
 
             target: taskList
 
-            onUrlsDropped: urls => {
+            onUrlsDropped: (urls, position) => {
                 // If all dropped URLs point to application desktop files, we'll add a launcher for each of them.
                 const createLaunchers = urls.every(item => tasks.backend.isApplication(item));
 
                 if (createLaunchers) {
-                    urls.forEach(item => addLauncher(item));
+                    // Drop several files in a row, each after the previous one.
+                    // With no hovered task (-1) keep appending at the end.
+                    let i = 0;
+                    urls.forEach(item => addLauncher(item, position >= 0 ? position + i++ : -1));
                     return;
                 }
 
@@ -715,9 +733,26 @@ PlasmoidItem {
         return tasksModel.launcherPosition(url) !== -1;
     }
 
-    function addLauncher(url: url): void {
-        if (Plasmoid.immutability !== PlasmaCore.Types.SystemImmutable) {
-            tasksModel.requestAddLauncher(url);
+    // Ported from plasma-desktop MR !4259 (Christoph Wolk, GPL-2.0-or-later):
+    // when a launcher is dropped on the taskbar, pin it at the drop position.
+    function addLauncher(url: url, position = -1): void {
+        if (Plasmoid.immutability === PlasmaCore.Types.SystemImmutable) {
+            return;
+        }
+
+        const result = tasksModel.requestAddLauncher(url);
+        if (!result) {
+            return; // could not be added for some reason
+        }
+        if (position >= 0) {
+            let newLauncherPosition = tasksModel.launcherPosition(url);
+            if (newLauncherPosition === -1) {
+                // The URL may have been rewritten (symlinks), so it landed at
+                // the end instead. launcherList, not launcherCount!
+                newLauncherPosition = tasksModel.launcherList.length - 1;
+            }
+            tasksModel.move(newLauncherPosition, position);
+            tasksModel.syncLaunchers();
         }
     }
 
@@ -741,13 +776,20 @@ PlasmoidItem {
     }
 
     function createContextMenu(rootTask, modelIndex, args = {}) {
+        // `backend` is deliberately NOT passed as an initial property: doing
+        // so intermittently fails to apply ("Could not set initial property
+        // backend"), and because it is a required property that makes the
+        // whole createObject() return null. Assign it after creation instead.
         const initialArgs = Object.assign(args, {
             visualParent: rootTask,
             modelIndex,
             mpris2Source,
-            backend,
         });
-        return contextMenuComponent.createObject(rootTask, initialArgs);
+        const menu = contextMenuComponent.createObject(rootTask, initialArgs);
+        if (menu) {
+            menu.backend = backendInstance;
+        }
+        return menu;
     }
 
     function shouldBeMirrored(reverseMode, layoutDirection, vertical): bool {

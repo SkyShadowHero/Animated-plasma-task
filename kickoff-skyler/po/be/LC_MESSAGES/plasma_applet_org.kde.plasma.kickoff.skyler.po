@@ -47,7 +47,7 @@ msgstr "Асноўныя:"
 #: ConfigGeneral.qml:61
 msgctxt "@label prefix for icon-only button"
 msgid "Icon:"
-msgstr "@ label: listbox How to present applications in a KMenu- like menu"
+msgstr "Значок:"
 
 #: ConfigGeneral.qml:67
 msgctxt "@action:button"
@@ -121,7 +121,7 @@ msgstr "Толькі назва"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "@ item: inlistbox Format:"
+msgstr "Толькі апісанне"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
@@ -131,7 +131,7 @@ msgstr "Назва         Апісанне"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "@ item: inlistbox Format:"
+msgstr "Апісанне (назва)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"

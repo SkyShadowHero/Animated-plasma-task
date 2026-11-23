@@ -358,7 +358,7 @@ msgstr "Нишон додани тугмаҳо барои:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "Қувва"
+msgstr "Барқ"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -438,7 +438,7 @@ msgstr "Ҷаласа"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "Қувва"
+msgstr "Барқ"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

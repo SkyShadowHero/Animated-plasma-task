@@ -1,7 +1,7 @@
 # Maintainer: SkyShadowHero <a1233456333@163.com>
 pkgname=plasma6-applets-animated-taskmanager
 _pkgname=Animated-plasma-task
-pkgver=1.1.3
+pkgver=1.1.5
 pkgrel=1
 pkgdesc="Forked KDE Plasma 6 plasmoids with press / entry / minimize animations."
 arch=('x86_64')

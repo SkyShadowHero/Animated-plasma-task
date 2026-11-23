@@ -205,12 +205,12 @@ msgstr "Evidentiar"
 #: ConfigGeneral.qml:251
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr "Mau kopi hitam atau kopi susu"
+msgstr "Blanc"
 
 #: ConfigGeneral.qml:252
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
-msgstr "Saya mencari BH berwarna hitam"
+msgstr "Nigre"
 
 #: ConfigGeneral.qml:253
 msgctxt "@item:inlistbox highlight color follows the system color scheme"

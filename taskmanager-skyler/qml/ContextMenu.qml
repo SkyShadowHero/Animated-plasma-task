@@ -19,7 +19,10 @@ import plasma.applet.org.kde.plasma.taskmanager.skyler as TaskManagerApplet
 PlasmaExtras.Menu {
     id: menu
 
-    required property TaskManagerApplet.Backend backend
+    // Not `required`: the backend is assigned right after createObject()
+    // (see main.qml createContextMenu) because passing it as an initial
+    // property intermittently fails to apply.
+    property TaskManagerApplet.Backend backend
     required property Mpris.Mpris2Model mpris2Source
     required property /*QModelIndex*/var modelIndex
 
@@ -50,13 +53,19 @@ PlasmaExtras.Menu {
         }
     }
 
-    Component.onCompleted: {
-        // Cannot have "Connections" as child of PlasmaExtras.Menu.
-        backend.showAllPlaces.connect(showContextMenuWithAllPlaces);
+    // Cannot have "Connections" as child of PlasmaExtras.Menu. Connect as
+    // soon as the backend is assigned (it is set after creation), and guard
+    // so this stays safe if it is ever unset.
+    onBackendChanged: {
+        if (backend) {
+            backend.showAllPlaces.connect(showContextMenuWithAllPlaces);
+        }
     }
 
     Component.onDestruction: {
-        backend.showAllPlaces.disconnect(showContextMenuWithAllPlaces);
+        if (backend) {
+            backend.showAllPlaces.disconnect(showContextMenuWithAllPlaces);
+        }
     }
 
     function showContextMenuWithAllPlaces(): void {

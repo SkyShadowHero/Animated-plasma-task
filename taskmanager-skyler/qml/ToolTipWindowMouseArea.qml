@@ -30,9 +30,13 @@ MouseArea {
             tasks.cancelHighlightWindows();
             tasksModel.requestClose(modelIndex);
             break;
-        case Qt.RightButton:
-            tasks.createContextMenu(rootTask, modelIndex).show();
+        case Qt.RightButton: {
+            const menu = tasks.createContextMenu(rootTask, modelIndex);
+            if (menu) {
+                menu.show();
+            }
             break;
+        }
         }
     }
 

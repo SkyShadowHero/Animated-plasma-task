@@ -111,7 +111,7 @@ msgstr "Kuva rakendused kui:"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "Ainult nimi@ item: inlistbox Format:"
+msgstr "Ainult nimi"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
@@ -121,12 +121,12 @@ msgstr "Ainult kirjeldus"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "Nimi kirjeldus@ item: inlistbox Format:"
+msgstr "Nimi (kirjeldus)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "Kirjeldus (nimi) @ item: inlistbox Format:"
+msgstr "Kirjeldus (nimi)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -336,7 +336,7 @@ msgstr "Loendis"
 #: ConfigGeneral.qml:388
 msgctxt "@title:group prefix for radio button group"
 msgid "Show other applications:"
-msgstr "VEEL ERINEVAID KASUTUSALASID:"
+msgstr "Näita teisi rakendusi:"
 
 #: ConfigGeneral.qml:389
 msgctxt ""
@@ -378,7 +378,7 @@ msgstr "Kuva toimingunuppude pealkirjad"
 #: Footer.qml:275
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Applications"
-msgstr "Kasutusalad:"
+msgstr "Rakendused"
 
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
@@ -443,7 +443,7 @@ msgstr "Võimsus"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "More"
-msgstr "Quick Pro puuvill"
+msgstr "Rohkem"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

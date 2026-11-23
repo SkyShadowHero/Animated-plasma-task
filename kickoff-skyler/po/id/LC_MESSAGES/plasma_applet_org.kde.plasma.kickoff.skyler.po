@@ -359,7 +359,7 @@ msgstr "Tampilkan tombol untuk:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "Kuasa"
+msgstr "Daya"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -439,7 +439,7 @@ msgstr "Sesi"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "Kuasa"
+msgstr "Daya"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

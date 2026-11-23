@@ -42,7 +42,7 @@ msgstr "Ĝenerala:"
 #: ConfigGeneral.qml:61
 msgctxt "@label prefix for icon-only button"
 msgid "Icon:"
-msgstr "Icheon"
+msgstr "Piktogramo:"
 
 #: ConfigGeneral.qml:67
 msgctxt "@action:button"
@@ -111,22 +111,22 @@ msgstr "Ordigi aplikojn alfabete"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "Nur nomo@ item: inlistbox Format:"
+msgstr "Nur nomo"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "Nur priskribo@ item: inlistbox Format:"
+msgstr "Nur priskribo"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "Priskribo de nomo@ item: inlistbox Format:"
+msgstr "Nomo (priskribo)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "Priskribo (nomo) @ item: inlistbox Format:"
+msgstr "Priskribo (nomo)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -204,7 +204,7 @@ msgstr "Emfaziga koloro"
 #: ConfigGeneral.qml:251
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr "@ item: inlistbox Background color"
+msgstr "Blanka"
 
 #: ConfigGeneral.qml:252
 msgctxt "@item:inlistbox highlight color"
@@ -321,7 +321,7 @@ msgstr "Maldekstra"
 #: ConfigGeneral.qml:371
 msgctxt "@title:group prefix for radio button group"
 msgid "Show favorites:"
-msgstr "Montri en Favoritoj"
+msgstr "Montri plej ŝatatajn:"
 
 #: ConfigGeneral.qml:372
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
@@ -358,7 +358,7 @@ msgstr "Montri butonojn por:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "EnergioA button on a Remote Control"
+msgstr "Energio"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -438,7 +438,7 @@ msgstr "Seanco"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "EnergioA button on a Remote Control"
+msgstr "Energio"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

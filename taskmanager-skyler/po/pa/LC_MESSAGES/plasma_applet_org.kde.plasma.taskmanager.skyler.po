@@ -299,7 +299,7 @@ msgstr "ਸਧਾਰਨ"
 #: qml/ConfigAppearance.qml:275
 msgctxt "@item:inlistbox animation speed"
 msgid "Slow"
-msgstr "à¨¹à©à¨²à©"
+msgstr "ਹੌਲੀ"
 
 #: qml/ConfigAppearance.qml:272
 msgctxt "@item:inlistbox animation speed"

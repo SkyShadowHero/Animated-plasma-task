@@ -421,7 +421,7 @@ msgstr "Po aktivnosti"
 #: qml/ConfigBehavior.qml:146
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By desktop"
-msgstr "Putem računara"
+msgstr "Po radnoj površini"
 
 #: qml/ConfigBehavior.qml:154
 msgctxt "@item:inlistbox sort tasks in grouped task"

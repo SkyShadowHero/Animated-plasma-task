@@ -157,7 +157,7 @@ msgstr "Khởi chạy %1"
 #: qml/Task.qml:345
 msgctxt "@info:usagetip %1 task name"
 msgid "Activate %1"
-msgstr "Chuyển sang thẻ%1"
+msgstr "Kích hoạt %1"
 
 #: qml/Task.qml:341
 msgctxt "@info:usagetip %1 task name"
@@ -601,7 +601,7 @@ msgstr "Thu nhỏ nhiệm vụ"
 #: qml/ConfigBehavior.qml:277
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "On the bottom"
-msgstr "Đây rồi."
+msgstr "Ở dưới"
 
 #: qml/ConfigBehavior.qml:294
 msgctxt "@option:check completes sentence: New tasks appear"
@@ -641,7 +641,7 @@ msgstr "Từ màn hình hiện tại"
 #: qml/ConfigBehavior.qml:248
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
-msgstr "Điều đó được giảm thiểu"
+msgstr "Đã thu nhỏ"
 
 #: qml/ConfigBehavior.qml:165
 msgctxt "@option:check configure task sorting"
@@ -833,7 +833,7 @@ msgstr "Hiện có ở tất cả các Hoạt động"
 #: qml/ContextMenu.qml:345
 msgctxt "action:inmenu"
 msgid "&All Desktops"
-msgstr "&Mọi màn hình"
+msgstr "&Tất cả các bàn làm việc"
 
 #: qml/ContextMenu.qml:700
 msgctxt "action:inmenu"
@@ -893,7 +893,7 @@ msgstr "&Thu nhỏ"
 #: qml/ContextMenu.qml:323
 msgctxt "action:inmenu"
 msgid "Move &To Current Desktop"
-msgstr "&Tới màn hình hiện tại"
+msgstr "Di chu&yển đến bàn làm việc hiện tại"
 
 #: qml/ContextMenu.qml:483
 msgctxt "action:inmenu"
@@ -903,7 +903,7 @@ msgstr "Chuyển vào%1"
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"
 msgid "Move to &Desktop"
-msgstr "&Tới màn hình"
+msgstr "Di chuyển đến &bàn làm việc"
 
 #: qml/ContextMenu.qml:577
 msgctxt "action:inmenu"
@@ -918,12 +918,12 @@ msgstr "Về hoạt động hiện tại"
 #: qml/ContextMenu.qml:277
 msgctxt "action:inmenu"
 msgid "Open New Window"
-msgstr "Mở Window mưới"
+msgstr "Mở cửa sổ mới"
 
 #: qml/ContextMenu.qml:640
 msgctxt "action:inmenu"
 msgid "Re&size"
-msgstr "C&hi ̉ nh cơ ̃ la ̣ i"
+msgstr "Đổi &cỡ"
 
 #: qml/ContextMenu.qml:393
 msgctxt "action:inmenu"
@@ -948,7 +948,7 @@ msgstr "Bỏ tắt tiếng %1"
 #: qml/ContextMenu.qml:622
 msgctxt "item:inmenu opens submenu"
 msgid "More"
-msgstr "Chi tiết"
+msgstr "Thêm"
 
 #: qml/ToolTipInstance.qml:471
 msgctxt "only used for sizing, should be widest possible string"

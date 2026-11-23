@@ -59,7 +59,7 @@ msgstr "9k+"
 #: qml/AudioStream.qml:94
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "Hääletu"
+msgstr "Vaigista"
 
 #: qml/AudioStream.qml:94
 msgctxt "@action:button"
@@ -433,7 +433,7 @@ msgstr "Ei sorteerita"
 #: qml/ConfigBehavior.qml:138
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Manually"
-msgstr "Jaotage pesu"
+msgstr "Käsitsi"
 
 #: qml/ConfigAppearance.qml:214
 msgctxt "@label for checkbox"
@@ -671,7 +671,7 @@ msgstr "Luba seda rakendust grupeerida"
 #: qml/ContextMenu.qml:266
 msgctxt "@option:check inmenu, no separate unmute action"
 msgid "Mute"
-msgstr "Hääletu"
+msgstr "Vaigista"
 
 #: qml/ConfigBehavior.qml:222
 msgctxt "@option:check mouse wheel task cycling"
@@ -843,7 +843,7 @@ msgstr "&Täisekraan"
 #: qml/ContextMenu.qml:631
 msgctxt "action:inmenu"
 msgid "&Move"
-msgstr "&Käik"
+msgstr "&Liiguta"
 
 #: qml/ContextMenu.qml:373
 msgctxt "action:inmenu"
@@ -948,7 +948,7 @@ msgstr "Tühista vaigistus %1"
 #: qml/ContextMenu.qml:622
 msgctxt "item:inmenu opens submenu"
 msgid "More"
-msgstr "Quick Pro puuvill"
+msgstr "Rohkem"
 
 #: qml/ToolTipInstance.qml:471
 msgctxt "only used for sizing, should be widest possible string"
