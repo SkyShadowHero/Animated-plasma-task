@@ -148,7 +148,7 @@ msgstr "Malsilentigi %1"
 #: qml/ToolTipInstance.qml:219
 msgctxt "@info:tooltip Close this window"
 msgid "Close window"
-msgstr "Ornamaĵoj:"
+msgstr "Fermas fenestron aŭ grupon"
 
 #: qml/Task.qml:319
 msgctxt "@info:usagetip %1 application name"
@@ -319,7 +319,7 @@ msgstr "Nigro"
 #: qml/ConfigAppearance.qml:324
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr "@ item: inlistbox Background color"
+msgstr "Blanka"
 
 #: qml/ConfigAppearance.qml:326
 msgctxt "@item:inlistbox highlight color follows the system color scheme"
@@ -742,7 +742,7 @@ msgstr "Aspekto"
 #: qml/config.qml:18
 msgctxt "@title:group for configuration dialog page"
 msgid "Behavior"
-msgstr "Favorata:"
+msgstr "Konduto"
 
 #: qml/ContextMenu.qml:116
 msgctxt "@title:group for section of menu items"
@@ -904,7 +904,7 @@ msgstr "Movi al%1"
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"
 msgid "Move to &Desktop"
-msgstr "Al & tabulo"
+msgstr "Movi al &Labortablo"
 
 #: qml/ContextMenu.qml:577
 msgctxt "action:inmenu"

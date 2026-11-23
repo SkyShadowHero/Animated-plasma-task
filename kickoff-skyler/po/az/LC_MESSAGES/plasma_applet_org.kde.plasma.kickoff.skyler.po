@@ -37,7 +37,7 @@ msgstr "Seçilmişlərdə göstərmək"
 #: config.qml:13
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
-msgstr "Əsas:"
+msgstr "Ümumi"
 
 #: ConfigGeneral.qml:61
 msgctxt "@label prefix for icon-only button"
@@ -359,7 +359,7 @@ msgstr "Bunun üçün düymələri göstər:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "Dərəcə"
+msgstr "El. qidalanması"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -379,12 +379,12 @@ msgstr "Əməliyyat düyməsinin altyazılarını göstər"
 #: Footer.qml:275
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Applications"
-msgstr "Müraciətlər"
+msgstr "Tətbiqlər"
 
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
-msgstr "Dağıdım"
+msgstr "Giriş Nöqtələri"
 
 #: FullRepresentation.qml:168 Win11StartMenu.qml:2774
 msgctxt "@info:status"
@@ -439,7 +439,7 @@ msgstr "Sessiya"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "Dərəcə"
+msgstr "El. qidalanması"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

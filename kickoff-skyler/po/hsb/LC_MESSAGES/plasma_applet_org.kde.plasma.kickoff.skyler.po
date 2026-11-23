@@ -299,7 +299,7 @@ msgstr "Bóčne kategorije při podlěšenju přepinać"
 #: ConfigGeneral.qml:344
 msgctxt "@action:button opens plasmasearch kcm"
 msgid "Configure Search Plugins…"
-msgstr "Pytanske tykance konfigurować…"
+msgstr "Zaswěćene pytanske zašćěpki připrawić"
 
 #: ConfigGeneral.qml:354
 msgctxt "@label:group prefix for radio button group"
@@ -361,7 +361,7 @@ msgstr "Tłóčata pokazać za:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "Móc"
+msgstr "Milinu"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -441,7 +441,7 @@ msgstr "Sesija"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "Móc"
+msgstr "Milinu"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

@@ -148,7 +148,7 @@ msgstr "Slå lyden til på %1"
 #: qml/ToolTipInstance.qml:219
 msgctxt "@info:tooltip Close this window"
 msgid "Close window"
-msgstr "Luk browservinduet"
+msgstr "Luk vindue eller gruppe"
 
 #: qml/Task.qml:319
 msgctxt "@info:usagetip %1 application name"
@@ -752,7 +752,7 @@ msgstr "Handling"
 #: qml/ContextMenu.qml:100
 msgctxt "@title:group for section of menu items"
 msgid "Places"
-msgstr "Stande"
+msgstr "Steder"
 
 #: qml/ContextMenu.qml:106
 msgctxt "@title:group for section of menu items"

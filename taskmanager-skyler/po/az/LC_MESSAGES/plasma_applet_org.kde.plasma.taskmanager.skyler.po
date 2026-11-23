@@ -257,7 +257,7 @@ msgctxt ""
 "@item:inlistbox Part of a sentence: 'Middle-clicking any task toggles "
 "grouping'"
 msgid "Toggles grouping"
-msgstr "Ara keçidlərin qruplaşdırılması"
+msgstr "Qruplaşdırmanı dəyişdirir"
 
 #: qml/ConfigBehavior.qml:214
 msgctxt ""
@@ -271,7 +271,7 @@ msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
 "tasks'"
 msgid "Cycles through all tasks"
-msgstr "Bütün tapşırıqların öhdəsindən gəlmək üçün dövrələr"
+msgstr "Bütün tapşırıqlar arasında keçid edir"
 
 #: qml/ConfigBehavior.qml:213
 msgctxt ""
@@ -419,7 +419,7 @@ msgstr "Fəaliyyət üzrə"
 #: qml/ConfigBehavior.qml:146
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "By desktop"
-msgstr "Masaüstü kompüter vasitəsilə"
+msgstr "İş masasına görə"
 
 #: qml/ConfigBehavior.qml:154
 msgctxt "@item:inlistbox sort tasks in grouped task"
@@ -434,7 +434,7 @@ msgstr "Sıralamayın"
 #: qml/ConfigBehavior.qml:138
 msgctxt "@item:inlistbox sort tasks in grouped task"
 msgid "Manually"
-msgstr "Əlini% s geri qaytarın"
+msgstr "Əl ilə"
 
 #: qml/ConfigAppearance.qml:214
 msgctxt "@label for checkbox"
@@ -561,7 +561,7 @@ msgstr "Qrup:"
 #: qml/ConfigBehavior.qml:127
 msgctxt "@label:listbox sort tasks in grouped task"
 msgid "Sort:"
-msgstr "Ardıcıllıq"
+msgstr "Sıralama:"
 
 #: qml/ConfigAppearance.qml:332
 msgctxt "@label:spinbox"
@@ -643,7 +643,7 @@ msgstr "Cari ekrandan"
 #: qml/ConfigBehavior.qml:248
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
-msgstr "Bu, minimuma endirilib"
+msgstr "Yığılmış"
 
 #: qml/ConfigBehavior.qml:165
 msgctxt "@option:check configure task sorting"
@@ -743,7 +743,7 @@ msgstr "Xarici görünüş"
 #: qml/config.qml:18
 msgctxt "@title:group for configuration dialog page"
 msgid "Behavior"
-msgstr "Ad:"
+msgstr "Davranış"
 
 #: qml/ContextMenu.qml:116
 msgctxt "@title:group for section of menu items"
@@ -753,7 +753,7 @@ msgstr "Əməliyyatlar"
 #: qml/ContextMenu.qml:100
 msgctxt "@title:group for section of menu items"
 msgid "Places"
-msgstr "Dağıdım"
+msgstr "Giriş Nöqtələri"
 
 #: qml/ContextMenu.qml:106
 msgctxt "@title:group for section of menu items"
@@ -900,7 +900,7 @@ msgstr "&Cari iş masasına köçür"
 #: qml/ContextMenu.qml:483
 msgctxt "action:inmenu"
 msgid "Move to %1"
-msgstr "%1-ə keçin"
+msgstr "%1-ə köçürün"
 
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"
@@ -915,7 +915,7 @@ msgstr "Bütün İş otaqlarında"
 #: qml/ContextMenu.qml:583
 msgctxt "action:inmenu"
 msgid "On The Current Activity"
-msgstr "Cari fəaliyyət haqqında"
+msgstr "Cari iş otağında"
 
 #: qml/ContextMenu.qml:277
 msgctxt "action:inmenu"

@@ -292,7 +292,7 @@ msgstr[1] "%1 पिक्सेल्"
 #: ConfigGeneral.qml:338
 msgctxt "@option:check"
 msgid "Switch sidebar categories when hovering over them"
-msgstr "उपरि उपरि उपरि उपरि उपरि"
+msgstr "तेषां उपरि भ्रमन् पार्श्वपट्टिकावर्गान् परिवर्तयन्तु"
 
 #: ConfigGeneral.qml:344
 msgctxt "@action:button opens plasmasearch kcm"
@@ -307,7 +307,7 @@ msgstr "पार्श्वपट्टी स्थितिः"
 #: ConfigGeneral.qml:355 ConfigGeneral.qml:363
 msgctxt "@option:radio sidebar position"
 msgid "Right"
-msgstr "दाहिना"
+msgstr "दक्षिणः"
 
 #: ConfigGeneral.qml:355
 msgctxt "option:radio sidebar position"
@@ -327,7 +327,7 @@ msgstr "प्रियाः इत्यत्र दर्शयतु"
 #: ConfigGeneral.qml:372
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
 msgid "In a grid"
-msgstr "एका जनार्दनीं मध्ये"
+msgstr "रेखागणे"
 
 #: ConfigGeneral.qml:380
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
@@ -343,7 +343,7 @@ msgstr "अन्य अनुप्रयोगः"
 msgctxt ""
 "@option:radio Part of a sentence: 'Show other applications in a grid'"
 msgid "In a grid"
-msgstr "एका जनार्दनीं मध्ये"
+msgstr "रेखागणे"
 
 #: ConfigGeneral.qml:397
 msgctxt ""
@@ -354,7 +354,7 @@ msgstr "एकां सूचिं मध्ये"
 #: ConfigGeneral.qml:409
 msgctxt "@title:group prefix for radio button group"
 msgid "Show buttons for:"
-msgstr "बटन् प्रति निवर्त्यताम्:"
+msgstr "कृते गण्ड दर्शयतु:"
 
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"

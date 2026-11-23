@@ -289,7 +289,7 @@ msgstr "Tidak melakukan apa-apa"
 #: qml/ConfigAppearance.qml:273
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
-msgstr "Kirimi saya foto bobs Anda"
+msgstr "Cepat"
 
 #: qml/ConfigAppearance.qml:274
 msgctxt "@item:inlistbox animation speed"

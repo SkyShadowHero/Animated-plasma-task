@@ -42,7 +42,7 @@ msgstr "जनरल"
 #: ConfigGeneral.qml:61
 msgctxt "@label prefix for icon-only button"
 msgid "Icon:"
-msgstr "@ label: listbox How to present applications in a KMenu- like menu"
+msgstr "प्रतीक:"
 
 #: ConfigGeneral.qml:67
 msgctxt "@action:button"
@@ -111,22 +111,22 @@ msgstr "ऐप्लिकेशन इस रूप में दिखाए�
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "नाम सिर्फ@ item: inlistbox Format:"
+msgstr "सिर्फ़ नाम"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "वर्णन सिर्फ@ item: inlistbox Format:"
+msgstr "सिर्फ़ विवरण"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "नाम वर्णन@ item: inlistbox Format:"
+msgstr "नाम (विवरण)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "वर्णन नाम@ item: inlistbox Format:"
+msgstr "विवरण (नाम)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -204,7 +204,7 @@ msgstr "उभारने का रंग:"
 #: ConfigGeneral.qml:251
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr "नहीं, मैं रिश्ते में नहीं हूँ"
+msgstr "सफ़ेद"
 
 #: ConfigGeneral.qml:252
 msgctxt "@item:inlistbox highlight color"
@@ -357,16 +357,12 @@ msgstr "इसके लिए बटन दिखाएँ:"
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr ""
-"निष्ठा\n"
-"सम्मान\n"
-" प्रवृत्ति\n"
-"शक्ति"
+msgstr "पावर"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
 msgid "Session"
-msgstr "अंतिम फ़िल्टर बहाल करें (i)"
+msgstr "सत्र"
 
 #: ConfigGeneral.qml:428
 msgctxt "@option:radio Show buttons for"
@@ -436,16 +432,12 @@ msgstr "नया इंस्टॉल किया गया ऐप्लि�
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Session"
-msgstr "अंतिम फ़िल्टर बहाल करें (i)"
+msgstr "सत्र"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr ""
-"निष्ठा\n"
-"सम्मान\n"
-" प्रवृत्ति\n"
-"शक्ति"
+msgstr "पावर"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

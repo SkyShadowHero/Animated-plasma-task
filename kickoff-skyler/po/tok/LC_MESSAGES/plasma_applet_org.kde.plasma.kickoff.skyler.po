@@ -24,11 +24,11 @@ msgstr "o pana tawa lipu open"
 
 #: code/tools.js:60
 msgid "On All Activities"
-msgstr "On All Activities"
+msgstr "lon ma pali ale"
 
 #: code/tools.js:110
 msgid "On the Current Activity"
-msgstr "On the Current Activity"
+msgstr "lon ma pali ni"
 
 #: code/tools.js:124
 msgid "Show in Favorites"
@@ -37,194 +37,190 @@ msgstr "o pana tawa lipu open"
 #: config.qml:13
 msgctxt "@title:group for configuration dialog page"
 msgid "General"
-msgstr "General"
+msgstr "ale"
 
 #: ConfigGeneral.qml:61
 msgctxt "@label prefix for icon-only button"
 msgid "Icon:"
-msgstr "Icon:"
+msgstr "sitelen:"
 
 #: ConfigGeneral.qml:67
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
-msgstr "Change Application Launcher's icon"
+msgstr "o ante e sitelen pi ilo open"
 
 #: ConfigGeneral.qml:68
 msgctxt "@info:whatsthis"
 msgid ""
 "Current icon is %1. Click to open menu to change the current icon or reset "
 "to the default icon."
-msgstr ""
-"Current icon is %1. Click to open menu to change the current icon or reset "
-"to the default icon."
+msgstr "sitelen ni li %1. o luka e ni tawa open e ilo lukin pi ante sitelen anu pana e sitelen pi nasin open."
 
 #: ConfigGeneral.qml:72
 msgctxt "@info:tooltip"
 msgid "Icon name is \"%1\""
-msgstr "Icon name is \"%1\""
+msgstr "nimi pi sitelen ni li \"%1\""
 
 #: ConfigGeneral.qml:107
 msgctxt "@item:inmenu Open icon chooser dialog"
 msgid "Choose…"
-msgstr "Choose…"
+msgstr "o wile…"
 
 #: ConfigGeneral.qml:109
 msgctxt "@info:whatsthis"
 msgid "Choose an icon for Application Launcher"
-msgstr "Choose an icon for Application Launcher"
+msgstr "o wile e sitelen pi ilo open"
 
 #: ConfigGeneral.qml:113
 msgctxt "@item:inmenu Reset icon to default"
 msgid "Reset to default icon"
-msgstr "Reset to default icon"
+msgstr "o pana e sitelen pi nasin open"
 
 #: ConfigGeneral.qml:119
 msgctxt "@action:inmenu"
 msgid "Remove icon"
-msgstr "Remove icon"
+msgstr "o weka e sitelen"
 
 #: ConfigGeneral.qml:130
 msgctxt "@label:textbox"
 msgid "Text label:"
-msgstr "Text label:"
+msgstr "nimi:"
 
 #: ConfigGeneral.qml:132
 msgctxt "@info:placeholder"
 msgid "Type here to add a text label"
-msgstr "Type here to add a text label"
+msgstr "o sitelen e nimi lon ni"
 
 #: ConfigGeneral.qml:146
 msgctxt "@action:button"
 msgid "Reset menu label"
-msgstr "Reset menu label"
+msgstr "o pana e nimi pi ilo lukin"
 
 #: ConfigGeneral.qml:159
 msgctxt "@info"
 msgid "A text label cannot be set when the Panel is vertical."
-msgstr "A text label cannot be set when the Panel is vertical."
+msgstr "sina ken ala pana e nimi lon tenpo ni: ilo poka li lon noka."
 
 #: ConfigGeneral.qml:171
 msgctxt "@label:listbox"
 msgid "Show applications as:"
-msgstr "Show applications as:"
+msgstr "o sitelen e ilo kepeken ni:"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "Name only"
+msgstr "nimi taso"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "Description only"
+msgstr "sona taso"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "Name (Description)"
+msgstr "nimi (sona)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "Description (Name)"
+msgstr "sona (nimi)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
 msgid "General:"
-msgstr "General:"
+msgstr "ale:"
 
 #: ConfigGeneral.qml:185
 msgctxt "@option:check"
 msgid "Sort applications alphabetically"
-msgstr "Sort applications alphabetically"
+msgstr "o pana e ilo kepeken sitelen nimi"
 
 #: ConfigGeneral.qml:189
 msgctxt "@info:whatsthis"
 msgid ""
 "This doesn't affect how applications are sorted in either search results or "
 "the favorites page."
-msgstr ""
-"This doesn't affect how applications are sorted in either search results or "
-"the favorites page."
+msgstr "ni li ante ala e nasin pi ilo lon alasa anu lipu open."
 
 #: ConfigGeneral.qml:195
 msgctxt "@option:check"
 msgid "Use compact list item style"
-msgstr "Use compact list item style"
+msgstr "o kepeken nasin lili pi linja"
 
 #: ConfigGeneral.qml:201
 msgctxt "@option:check"
 msgid "Highlight newly-installed applications"
-msgstr "Highlight newly-installed applications"
+msgstr "o pana e kule tawa ilo sin"
 
 #: ConfigGeneral.qml:206
 msgid "Icon hover effect"
-msgstr "Icon hover effect"
+msgstr "pali pi luka sewi lon sitelen"
 
 #: ConfigGeneral.qml:216
 msgctxt "@option:check"
 msgid "Use KDE theme decorations"
-msgstr "Use KDE theme decorations"
+msgstr "o kepeken sitelen kon pi nasin KDE"
 
 #: ConfigGeneral.qml:222
 msgctxt "@option:check"
 msgid "Use custom launcher decorations"
-msgstr "Use custom launcher decorations"
+msgstr "o kepeken sitelen kon sina pi ilo open"
 
 #: ConfigGeneral.qml:228
 msgctxt "@option:check"
 msgid "Show highlight background on hover"
-msgstr "Show highlight background on hover"
+msgstr "o sitelen e kule lon monsi lon tenpo pi luka sewi"
 
 #: ConfigGeneral.qml:235
 msgctxt "@label:listbox"
 msgid "Highlight shape:"
-msgstr "Highlight shape:"
+msgstr "sitelen pi kule:"
 
 #: ConfigGeneral.qml:239
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rounded rectangle"
-msgstr "Rounded rectangle"
+msgstr "lipu pi kipisi sike"
 
 #: ConfigGeneral.qml:240
 msgctxt "@item:inlistbox highlight shape"
 msgid "Rectangle"
-msgstr "Rectangle"
+msgstr "lipu"
 
 #: ConfigGeneral.qml:241
 msgctxt "@item:inlistbox highlight shape"
 msgid "Circle"
-msgstr "Circle"
+msgstr "sike"
 
 #: ConfigGeneral.qml:247
 msgctxt "@label:listbox"
 msgid "Highlight color:"
-msgstr "Highlight color:"
+msgstr "kule:"
 
 #: ConfigGeneral.qml:251
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr "White"
+msgstr "walo"
 
 #: ConfigGeneral.qml:252
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
-msgstr "Black"
+msgstr "pimeja"
 
 #: ConfigGeneral.qml:253
 msgctxt "@item:inlistbox highlight color follows the system color scheme"
 msgid "Automatic (follow color scheme)"
-msgstr "Automatic (follow color scheme)"
+msgstr "tawa nasin (o kepeken nasin kule)"
 
 #: ConfigGeneral.qml:259
 msgctxt "@label:spinbox"
 msgid "Highlight size:"
-msgstr "Highlight size:"
+msgstr "suli pi kule:"
 
 #: ConfigGeneral.qml:276
 msgctxt "@option:check"
 msgid "Use Fluent (Windows 11) styling for the popup"
-msgstr "Use Fluent (Windows 11) styling for the popup"
+msgstr "o kepeken nasin Fluent (Windows 11) lon poki tomo"
 
 #: ConfigGeneral.qml:282
 msgctxt "@option:check"
@@ -290,32 +286,32 @@ msgstr[1] "%1 sitelen lili"
 #: ConfigGeneral.qml:338
 msgctxt "@option:check"
 msgid "Switch sidebar categories when hovering over them"
-msgstr "Switch sidebar categories when hovering over them"
+msgstr "o ante e kulupu pi ilo poka lon tenpo pi luka sewi"
 
 #: ConfigGeneral.qml:344
 msgctxt "@action:button opens plasmasearch kcm"
 msgid "Configure Search Plugins…"
-msgstr "Configure Search Plugins…"
+msgstr "o ante e ilo alasa…"
 
 #: ConfigGeneral.qml:354
 msgctxt "@label:group prefix for radio button group"
 msgid "Sidebar position:"
-msgstr "Sidebar position:"
+msgstr "lon pi ilo poka:"
 
 #: ConfigGeneral.qml:355 ConfigGeneral.qml:363
 msgctxt "@option:radio sidebar position"
 msgid "Right"
-msgstr "Right"
+msgstr "poka →"
 
 #: ConfigGeneral.qml:355
 msgctxt "option:radio sidebar position"
 msgid "Left"
-msgstr "Left"
+msgstr "poka ←"
 
 #: ConfigGeneral.qml:363
 msgctxt "@option:radio sidebar position"
 msgid "Left"
-msgstr "Left"
+msgstr "poka ←"
 
 #: ConfigGeneral.qml:371
 msgctxt "@title:group prefix for radio button group"
@@ -325,64 +321,64 @@ msgstr "o pana tawa lipu open"
 #: ConfigGeneral.qml:372
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a grid'"
 msgid "In a grid"
-msgstr "In a grid"
+msgstr "lon linja mute"
 
 #: ConfigGeneral.qml:380
 msgctxt "@option:radio Part of a sentence: 'Show favorites in a list'"
 msgid "In a list"
-msgstr "In a list"
+msgstr "lon linja"
 
 #: ConfigGeneral.qml:388
 msgctxt "@title:group prefix for radio button group"
 msgid "Show other applications:"
-msgstr "Show other applications:"
+msgstr "o sitelen e ilo ante:"
 
 #: ConfigGeneral.qml:389
 msgctxt ""
 "@option:radio Part of a sentence: 'Show other applications in a grid'"
 msgid "In a grid"
-msgstr "In a grid"
+msgstr "lon linja mute"
 
 #: ConfigGeneral.qml:397
 msgctxt ""
 "@option:radio Part of a sentence: 'Show other applications in a list'"
 msgid "In a list"
-msgstr "In a list"
+msgstr "lon linja"
 
 #: ConfigGeneral.qml:409
 msgctxt "@title:group prefix for radio button group"
 msgid "Show buttons for:"
-msgstr "Show buttons for:"
+msgstr "o sitelen e nena tawa:"
 
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "Power"
+msgstr "wawa"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
 msgid "Session"
-msgstr "Session"
+msgstr "tenpo open"
 
 #: ConfigGeneral.qml:428
 msgctxt "@option:radio Show buttons for"
 msgid "Power and session"
-msgstr "Power and session"
+msgstr "wawa en tenpo open"
 
 #: ConfigGeneral.qml:437
 msgctxt "@option:check"
 msgid "Show action button captions"
-msgstr "Show action button captions"
+msgstr "o sitelen e nimi lon nena pali"
 
 #: Footer.qml:275
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Applications"
-msgstr "Applications"
+msgstr "ilo"
 
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
-msgstr "Places"
+msgstr "ma"
 
 #: FullRepresentation.qml:168 Win11StartMenu.qml:2774
 msgctxt "@info:status"
@@ -399,60 +395,60 @@ msgctxt ""
 "@action:button Pin widget open if it loses focus, icon-only button, for "
 "tooltip/Accessible"
 msgid "Keep Open"
-msgstr "Keep Open"
+msgstr "o awen open"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
 msgid "New!"
-msgstr "New!"
+msgstr "sin!"
 
 #: KickoffGridDelegate.qml:74
 msgctxt "@label Accessible name for badge"
 msgid "Newly-installed application"
-msgstr "Newly-installed application"
+msgstr "ilo sin"
 
 #: KickoffGridView.qml:116
 msgctxt "@info:whatsthis Accessible description"
 msgid "Grid with %1 rows, %2 columns"
-msgstr "Grid with %1 rows, %2 columns"
+msgstr "sitelen linja kepeken linja %1 en linja %2"
 
 #: KickoffListDelegate.qml:157
 msgctxt "Newly-installed app, badge, keep short"
 msgid "New!"
-msgstr "New!"
+msgstr "sin!"
 
 #: KickoffListDelegate.qml:163
 msgid "There is a newly-installed application in this category"
-msgstr "There is a newly-installed application in this category"
+msgstr "ilo sin li lon kulupu ni"
 
 #: KickoffListDelegate.qml:164
 msgid "Newly-installed application"
-msgstr "Newly-installed application"
+msgstr "ilo sin"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Session"
-msgstr "Session"
+msgstr "tenpo open"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "Power"
+msgstr "wawa"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "More"
-msgstr "More"
+msgstr "ante"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Session and Power"
-msgstr "Session and Power"
+msgstr "tenpo open en wawa"
 
 #: main.qml:506
 msgctxt "@action:inmenu launches kmenuedit"
 msgid "Edit Applications…"
-msgstr "Edit Applications…"
+msgstr "o ante e ilo…"
 
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"

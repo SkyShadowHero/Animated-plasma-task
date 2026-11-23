@@ -106,7 +106,7 @@ msgstr "Với bảng dọc, không thể đặt nhãn cho chữ."
 #: ConfigGeneral.qml:171
 msgctxt "@label:listbox"
 msgid "Show applications as:"
-msgstr "Hiển thị các đơn đăng ký dưới dạng:"
+msgstr "Hiển thị ứng dụng dưới dạng:"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
@@ -441,7 +441,7 @@ msgstr "Nguồn điện"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "More"
-msgstr "Chi tiết"
+msgstr "Thêm"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

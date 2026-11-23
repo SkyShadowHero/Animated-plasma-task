@@ -447,7 +447,7 @@ msgstr "ديكورات مخصصة:"
 #: qml/ConfigAppearance.qml:240
 msgctxt "@label for checkbox"
 msgid "Indicator:"
-msgstr "<g id=\"Bold\">المؤشر:</g>"
+msgstr "المؤشر:"
 
 #: qml/ConfigAppearance.qml:208
 msgctxt "@label for checkbox"

@@ -296,7 +296,7 @@ msgstr "Нічога"
 #: qml/ConfigAppearance.qml:273
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
-msgstr "make a very small file, but take a long time saving"
+msgstr "Хутка"
 
 #: qml/ConfigAppearance.qml:274
 msgctxt "@item:inlistbox animation speed"
@@ -910,7 +910,7 @@ msgstr "&На бягучы працоўны стол"
 #: qml/ContextMenu.qml:483
 msgctxt "action:inmenu"
 msgid "Move to %1"
-msgstr "Перанесці на%1"
+msgstr "Перанесці ў %1"
 
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"
@@ -925,7 +925,7 @@ msgstr "Ва ўсіх пакоях"
 #: qml/ContextMenu.qml:583
 msgctxt "action:inmenu"
 msgid "On The Current Activity"
-msgstr "Аб бягучай дзейнасці"
+msgstr "У бягучай дзейнасці"
 
 #: qml/ContextMenu.qml:277
 msgctxt "action:inmenu"

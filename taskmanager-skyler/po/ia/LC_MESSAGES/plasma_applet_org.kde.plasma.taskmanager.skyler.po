@@ -289,7 +289,7 @@ msgstr "Il face nihil"
 #: qml/ConfigAppearance.qml:273
 msgctxt "@item:inlistbox animation speed"
 msgid "Fast"
-msgstr "Accesso rapide al sitos web."
+msgstr "Rapide"
 
 #: qml/ConfigAppearance.qml:274
 msgctxt "@item:inlistbox animation speed"
@@ -304,7 +304,7 @@ msgstr "Lente"
 #: qml/ConfigAppearance.qml:272
 msgctxt "@item:inlistbox animation speed"
 msgid "Very Fast"
-msgstr "Asia Timur sedang berkembang dengan cepat sekali"
+msgstr "Multo rapide"
 
 #: qml/ConfigAppearance.qml:276
 msgctxt "@item:inlistbox animation speed"
@@ -314,12 +314,12 @@ msgstr "Ia menjawab sangat singkat"
 #: qml/ConfigAppearance.qml:325
 msgctxt "@item:inlistbox highlight color"
 msgid "Black"
-msgstr "Saya mencari BH berwarna hitam"
+msgstr "Nigre"
 
 #: qml/ConfigAppearance.qml:324
 msgctxt "@item:inlistbox highlight color"
 msgid "White"
-msgstr "Mau kopi hitam atau kopi susu"
+msgstr "Blanc"
 
 #: qml/ConfigAppearance.qml:326
 msgctxt "@item:inlistbox highlight color follows the system color scheme"
@@ -518,7 +518,7 @@ msgstr "Evidentiar"
 #: qml/ConfigAppearance.qml:288
 msgctxt "@label:listbox"
 msgid "Hover direction:"
-msgstr "Le direction de traduction specificate non es supportate"
+msgstr "Direction del cursor:"
 
 #: qml/ConfigAppearance.qml:247
 msgctxt "@label:listbox"

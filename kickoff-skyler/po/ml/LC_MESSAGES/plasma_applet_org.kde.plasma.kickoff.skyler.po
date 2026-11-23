@@ -110,22 +110,22 @@ msgstr "അപ്ലിക്കേഷനുകൾ ഇനിപ്പറയു�
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "പേരു് മാത്രം@ item: inlistbox Format:"
+msgstr "പേര് മാത്രം"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "വിവരണം മാത്രം@ item: inlistbox Format:"
+msgstr "വിവരണം മാത്രം"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "പേരു് വിവരണം@ item: inlistbox Format:"
+msgstr "പേര് (വിവരണം)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "വിവരണം (പേരു്) @ item: inlistbox Format:"
+msgstr "വിവരണം (പേര്)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -358,7 +358,7 @@ msgstr "ഇതിനായി ബട്ടണുകൾ കാണിക്കു�
 #: ConfigGeneral.qml:410
 msgctxt "@option:radio Show buttons for"
 msgid "Power"
-msgstr "à´¶à´àµà´¤à´ ¿"
+msgstr "പവർ"
 
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
@@ -383,7 +383,7 @@ msgstr "പ്രയോഗങ്ങള്‍"
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
-msgstr "സ്ഥലങ്ങള്‍@ action: intoolbar Close right view"
+msgstr "സ്ഥലങ്ങൾ"
 
 #: FullRepresentation.qml:168 Win11StartMenu.qml:2774
 msgctxt "@info:status"
@@ -438,7 +438,7 @@ msgstr "പതിപ്പ്"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Power"
-msgstr "à´¶à´àµà´¤à´ ¿"
+msgstr "പവർ"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
@@ -458,7 +458,7 @@ msgstr "അപ്ലിക്കേഷനുകൾ എഡിറ്റുചെ�
 #: PlacesPage.qml:68
 msgctxt "category in Places sidebar"
 msgid "Computer"
-msgstr "കമ്പ്യൂട്ടര്‍@ item: inlistbox View:"
+msgstr "കമ്പ്യൂട്ടർ"
 
 #: PlacesPage.qml:69
 msgctxt "category in Places sidebar"

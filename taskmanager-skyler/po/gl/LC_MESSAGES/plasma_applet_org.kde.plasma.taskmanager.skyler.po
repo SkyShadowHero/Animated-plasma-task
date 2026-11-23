@@ -47,7 +47,7 @@ msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "%1k"
-msgstr "%1K"
+msgstr "%1k"
 
 #: qml/TaskBadgeOverlay.qml:109
 msgctxt ""

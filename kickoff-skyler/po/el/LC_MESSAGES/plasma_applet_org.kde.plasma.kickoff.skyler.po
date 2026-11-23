@@ -113,7 +113,7 @@ msgstr "Εμφάνιση εφαρμογών ως:"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "Μόνο όνομα@ item: inlistbox Format:"
+msgstr "Μόνο όνομα"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
@@ -123,12 +123,12 @@ msgstr "Μόνο περιγραφή"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "Όνομα περιγραφή@ item: inlistbox Format:"
+msgstr "Όνομα (περιγραφή)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "Περιγραφή (όνομα) @ item: inlistbox Format:"
+msgstr "Περιγραφή (όνομα)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -368,7 +368,7 @@ msgstr "Ισχύς"
 #: ConfigGeneral.qml:419
 msgctxt "@option:radio Show buttons for"
 msgid "Session"
-msgstr "Περ."
+msgstr "Συνεδρία"
 
 #: ConfigGeneral.qml:428
 msgctxt "@option:radio Show buttons for"
@@ -388,7 +388,7 @@ msgstr "Εφαρμογές"
 #: Footer.qml:291
 msgctxt "@title:tab kickoff sidebar tab"
 msgid "Places"
-msgstr "Σημεία"
+msgstr "Τοποθεσίες"
 
 #: FullRepresentation.qml:168 Win11StartMenu.qml:2774
 msgctxt "@info:status"
@@ -405,9 +405,7 @@ msgctxt ""
 "@action:button Pin widget open if it loses focus, icon-only button, for "
 "tooltip/Accessible"
 msgid "Keep Open"
-msgstr ""
-"ÎÎ¹Î±ÏÎ®ÏÎ·ÏÎ· ÏÎ¿Ï"
-" Î±Î½Î¿Î¹ÎºÏÎ¿Ï"
+msgstr "Διατήρηση ανοιχτού"
 
 #: KickoffGridDelegate.qml:69
 msgctxt "@label Newly-installed app, badge, keep short"
@@ -440,7 +438,7 @@ msgstr "Νεοεγκατεστημένη εφαρμογή"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Session"
-msgstr "Περ."
+msgstr "Συνεδρία"
 
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"

@@ -271,7 +271,7 @@ msgctxt ""
 "@item:inlistbox Part of a sentence: 'Scrolling behavior cycles through all "
 "tasks'"
 msgid "Cycles through all tasks"
-msgstr "La so carrera foi de la so carrera como actriz."
+msgstr "Ciclos al traviés de toles xeres"
 
 #: qml/ConfigBehavior.qml:213
 msgctxt ""
@@ -344,7 +344,7 @@ msgstr "Rectángulu redondu"
 #: qml/ConfigAppearance.qml:293
 msgctxt "@item:inlistbox hover direction"
 msgid "Down"
-msgstr "A button on a Remote Control"
+msgstr "Abaxo"
 
 #: qml/ConfigAppearance.qml:294
 msgctxt "@item:inlistbox hover direction"
@@ -359,7 +359,7 @@ msgstr "Derecha"
 #: qml/ConfigAppearance.qml:292
 msgctxt "@item:inlistbox hover direction"
 msgid "Up"
-msgstr "A button on a Remote Control"
+msgstr "Arriba"
 
 #: qml/ConfigBehavior.qml:71
 msgctxt "@item:inlistbox how to group tasks"
@@ -454,10 +454,7 @@ msgstr "Mini conseyu de ferramientes:"
 #: qml/ConfigAppearance.qml:225
 msgctxt "@label for checkbox"
 msgid "Theme Decorations:"
-msgstr ""
-"La so primer apaición foi nel estrenu de la cuarta temporada y la so "
-"estancia na serie enllargar hasta un total d' once episodios. [16] N' "
-"abandonando"
+msgstr "Decoraciones del tema:"
 
 #: qml/ConfigBehavior.qml:182
 msgctxt ""
@@ -615,9 +612,7 @@ msgstr "Na parte cimera"
 #: qml/ConfigBehavior.qml:283 qml/ConfigBehavior.qml:298
 msgctxt "@option:check completes sentence: New tasks appear"
 msgid "To the left"
-msgstr ""
-"- Apis Mellifica 15 CH: para tratar la urticaria y el edema, así como el "
-"picor"
+msgstr "A la izquierda"
 
 #: qml/ConfigBehavior.qml:281 qml/ConfigBehavior.qml:300
 msgctxt "@option:check completes sentence: New tasks appear"
@@ -647,7 +642,7 @@ msgstr "Dende la pantalla actual"
 #: qml/ConfigBehavior.qml:248
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
-msgstr "Esto ye de too menos serio."
+msgstr "Que tán minimizaes"
 
 #: qml/ConfigBehavior.qml:165
 msgctxt "@option:check configure task sorting"
@@ -782,10 +777,7 @@ msgstr "En%1"
 #: qml/ToolTipInstance.qml:490
 msgctxt "Comma-separated list of desktops"
 msgid "Pinned to all desktops"
-msgstr ""
-"La so primer apaición foi nel estrenu de la cuarta temporada y la so "
-"estancia na serie enllargar hasta un total d' once episodios. [16] N' "
-"abandonando la serie na cuarta temporada fixo un cameo"
+msgstr "Fijáu a tolos escritorios"
 
 #: qml/ContextMenu.qml:241
 msgctxt "Open or bring to the front window of media player app"
@@ -922,10 +914,7 @@ msgstr "En toles actividaes"
 #: qml/ContextMenu.qml:583
 msgctxt "action:inmenu"
 msgid "On The Current Activity"
-msgstr ""
-"La so primer apaición foi nel estrenu de la cuarta temporada y la so "
-"estancia na serie enllargar hasta un total d' once episodios. [16] N' "
-"abandonando"
+msgstr "Na actividá actual"
 
 #: qml/ContextMenu.qml:277
 msgctxt "action:inmenu"

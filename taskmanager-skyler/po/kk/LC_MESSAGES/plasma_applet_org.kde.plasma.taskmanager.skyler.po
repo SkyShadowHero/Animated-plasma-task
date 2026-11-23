@@ -47,7 +47,7 @@ msgctxt ""
 "'k' is a suffix for 'thousand'; keep to one character or else the badge "
 "could overflow!"
 msgid "%1k"
-msgstr "%1к"
+msgstr "%1k"
 
 #: qml/TaskBadgeOverlay.qml:109
 msgctxt ""
@@ -59,7 +59,7 @@ msgstr "9k+"
 #: qml/AudioStream.qml:94
 msgctxt "@action:button"
 msgid "Mute"
-msgstr "Дыбысын өшіруA button on a Remote Control"
+msgstr "Дыбысын өшіру"
 
 #: qml/AudioStream.qml:94
 msgctxt "@action:button"
@@ -626,7 +626,7 @@ msgstr "Терезе назар аударғысы келгенде өшіру"
 #: qml/ConfigBehavior.qml:238
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "From the current activity"
-msgstr "Ағымдағы қызметтен"
+msgstr "Ағымдағы белсенділіктен"
 
 #: qml/ConfigBehavior.qml:233
 msgctxt "@option:check completes sentence: show only tasks"
@@ -641,7 +641,7 @@ msgstr "Ағымдағы экраннан"
 #: qml/ConfigBehavior.qml:248
 msgctxt "@option:check completes sentence: show only tasks"
 msgid "That are minimized"
-msgstr "Бұл барынша азайтылды"
+msgstr "Түйілген"
 
 #: qml/ConfigBehavior.qml:165
 msgctxt "@option:check configure task sorting"
@@ -671,7 +671,7 @@ msgstr "Бағдарламаға топқа кіруге рұқсат ету"
 #: qml/ContextMenu.qml:266
 msgctxt "@option:check inmenu, no separate unmute action"
 msgid "Mute"
-msgstr "Дыбысын өшіруA button on a Remote Control"
+msgstr "Дыбысын өшіру"
 
 #: qml/ConfigBehavior.qml:222
 msgctxt "@option:check mouse wheel task cycling"
@@ -864,12 +864,12 @@ msgstr "&Жию"
 #: qml/ContextMenu.qml:417
 msgctxt "action:inmenu"
 msgid "Add To Current Activity"
-msgstr "Келесі белсенділік"
+msgstr "Ағымдағы белсенділікке қосу"
 
 #: qml/ContextMenu.qml:427
 msgctxt "action:inmenu"
 msgid "All Activities"
-msgstr "Барлық әрекеттер"
+msgstr "Барлық белсенділіктер"
 
 #: qml/ContextMenu.qml:678
 msgctxt "action:inmenu"
@@ -899,7 +899,7 @@ msgstr "&Ағымдағы жұмыс үстеліне жылжыту"
 #: qml/ContextMenu.qml:483
 msgctxt "action:inmenu"
 msgid "Move to %1"
-msgstr "%1 дегенге жылжыту"
+msgstr "%1 орнына жылжыту"
 
 #: qml/ContextMenu.qml:293
 msgctxt "action:inmenu"
@@ -909,7 +909,7 @@ msgstr "&Жұмыс үстеліне жылжыту"
 #: qml/ContextMenu.qml:577
 msgctxt "action:inmenu"
 msgid "On All Activities"
-msgstr "Барлық әрекеттер туралы"
+msgstr "Барлық белсенділіктерде"
 
 #: qml/ContextMenu.qml:583
 msgctxt "action:inmenu"
@@ -929,7 +929,7 @@ msgstr "&Өлшемін өзгерту"
 #: qml/ContextMenu.qml:393
 msgctxt "action:inmenu"
 msgid "Show in &Activities"
-msgstr "&Әрекеттерде көрсету"
+msgstr "&Белсенділіктерде көрсету"
 
 #: qml/ContextMenu.qml:607
 msgctxt "action:inmenu"

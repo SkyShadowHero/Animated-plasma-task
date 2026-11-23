@@ -32,7 +32,7 @@ msgstr "Na actividá actual"
 
 #: code/tools.js:124
 msgid "Show in Favorites"
-msgstr "El so nome ye' l de la ciudá de Nueva York."
+msgstr "Amosar en Favoritos"
 
 #: config.qml:13
 msgctxt "@title:group for configuration dialog page"
@@ -112,22 +112,22 @@ msgstr "Amosar aplicaciones como:"
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name only"
-msgstr "Namái nome@ item: inlistbox Format:"
+msgstr "Namái nome"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description only"
-msgstr "Namái descripción@ item: inlistbox Format:"
+msgstr "Namái descripción"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Name (Description)"
-msgstr "Descripción del nome@ item: inlistbox Format:"
+msgstr "Nome (descripción)"
 
 #: ConfigGeneral.qml:173
 msgctxt "@item:inlistbox"
 msgid "Description (Name)"
-msgstr "Descripción (nome) @ item: inlistbox Format:"
+msgstr "Descripción (nome)"
 
 #: ConfigGeneral.qml:181
 msgctxt "General options"
@@ -426,11 +426,7 @@ msgstr "Nuevu"
 
 #: KickoffListDelegate.qml:163
 msgid "There is a newly-installed application in this category"
-msgstr ""
-"La so primer apaición foi nel estrenu de la cuarta temporada y la so "
-"estancia na serie enllargar hasta un total d' once episodios. [16] N' "
-"abandonando la serie na cuarta temporada fixo un cameo nel final de la serie"
-" al revelase la identidá de la enigmática Gossip Girl"
+msgstr "Hai una aplicación recién instalada nesta categoría"
 
 #: KickoffListDelegate.qml:164
 msgid "Newly-installed application"
@@ -454,9 +450,7 @@ msgstr "Más"
 #: LeaveButtons.qml:190
 msgctxt "@title:menu menubutton"
 msgid "Session and Power"
-msgstr ""
-"La so primer apaición foi nel estrenu de la cuarta temporada y la so "
-"estancia na serie enllargar hasta un total d' once episodios. ["
+msgstr "Sesión y enerxía"
 
 #: main.qml:506
 msgctxt "@action:inmenu launches kmenuedit"
