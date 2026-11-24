@@ -15,6 +15,7 @@ import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.coreaddons as KCoreAddons
 import org.kde.config as KConfig
 import org.kde.kcmutils as KCM
+import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PC3
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.private.kicker as Kicker
@@ -2053,6 +2054,74 @@ T.Page {
         }
     }
 
+    // ── Dragging an entry out of the menu ───────────────────────────────
+    // The classic layout lets any app or file entry be dragged out of the
+    // launcher: AbstractKickoffItemDelegate hands its file URL (the .desktop
+    // file for an app) to the shared drag source as text/uri-list, so a drop
+    // on the desktop or in Dolphin creates a link/copy. The Win11 tiles, list
+    // rows and search results draw themselves instead of using that delegate,
+    // so they have to publish the very same drag themselves.
+    readonly property bool appDragEnabled: Plasmoid.immutability !== PlasmaCore.Types.SystemImmutable
+
+    function performAppDrag(handler): void {
+        if (!handler.active) {
+            // Only release a drag this handler started. A handler that has
+            // just gone away (page switch, model refresh) must not cancel a
+            // drag somebody else owns.
+            if (kickoff.dragSource.sourceItem === handler.dragSourceItem) {
+                kickoff.dragSource.Drag.active = false;
+                kickoff.dragSource.Drag.imageSource = "";
+                kickoff.dragSource.sourceItem = null;
+            }
+            return;
+        }
+
+        const iconItem = handler.dragIconItem;
+        if (!iconItem) {
+            return;
+        }
+
+        // Qt wants the drag pixmap before the drag starts; grabbing it is
+        // asynchronous, and the handler may already be inactive by the time
+        // the snapshot arrives (a quick flick away from the item).
+        iconItem.grabToImage(result => {
+            if (!handler.active) {
+                return;
+            }
+            kickoff.dragSource.sourceItem = handler.dragSourceItem;
+            kickoff.dragSource.Drag.imageSource = result.url;
+            kickoff.dragSource.Drag.mimeData = {
+                "text/uri-list": [handler.appUrl]
+            };
+            kickoff.dragSource.Drag.active = true;
+        });
+    }
+
+    // Shared by every app surface so they all use the same threshold and
+    // cleanup. `dragSourceItem` is the delegate root, which mirrors what the
+    // classic delegate puts in `kickoff.dragSource.sourceItem`.
+    component AppDragHandler : DragHandler {
+        id: appDragHandler
+        property Item dragIconItem: null
+        property Item dragSourceItem: null
+        property url appUrl
+        property bool dragAllowed: true
+        // The touch-specific instance disables the vertical axis so a swipe
+        // over the menu still scrolls instead of starting a drag.
+        property bool touchOnly: false
+
+        target: null
+        acceptedDevices: appDragHandler.touchOnly
+            ? PointerDevice.TouchScreen
+            : (PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus)
+        yAxis.enabled: !appDragHandler.touchOnly
+        enabled: root.appDragEnabled
+            && appDragHandler.dragAllowed
+            && appDragHandler.dragIconItem !== null
+            && appDragHandler.appUrl.toString().length > 0
+        onActiveChanged: root.performAppDrag(appDragHandler)
+    }
+
     // ── Pinned app tile ─────────────────────────────────────────────────
     // Kicker exposes three name flavours: `display` is formatted according to
     // appNameFormat and may be "Name (Comment)", `compactName` is the bare
@@ -2085,6 +2154,11 @@ T.Page {
         // out of ToolButton.icon.name avoids "QIcon to QString" and the
         // icon.height↔icon.width binding loop the icon group used to create.
         readonly property var appDecoration: tile.model?.decoration ?? ""
+        // What a drag out of the menu puts in the uri-list: the .desktop file
+        // for an app, the file itself for a Recent document/folder. The
+        // alphabetical card drawer rebuilds its delegates from a plain object,
+        // so that one carries the same `url` field (see rebuildSections).
+        readonly property url appUrl: tile.model?.url ?? ""
 
         // Two lines is the cap, but the card only grows as tall as the name
         // actually needs: a one-line label keeps a compact tile, a two-line
@@ -2172,6 +2246,7 @@ T.Page {
                     spacing: tile.contentSpacing
 
                     Kirigami.Icon {
+                        id: tileIcon
                         x: Math.round((contentBlock.width - width) / 2)
                         width: root.iconSize
                         height: root.iconSize
@@ -2233,6 +2308,23 @@ T.Page {
                 text: tile.appName
                 description: tile.appDescription
             }
+
+            // Dragging a tile out hands its file URL to the shared drag
+            // source, exactly like the classic grid delegate. A disabled entry
+            // cannot be launched either, so it cannot be dragged out.
+            AppDragHandler {
+                dragIconItem: tileIcon
+                dragSourceItem: tile
+                appUrl: tile.appUrl
+                dragAllowed: tile.model ? tile.model.disabled !== true : true
+            }
+            AppDragHandler {
+                dragIconItem: tileIcon
+                dragSourceItem: tile
+                appUrl: tile.appUrl
+                dragAllowed: tile.model ? tile.model.disabled !== true : true
+                touchOnly: true
+            }
         }
     }
 
@@ -2256,6 +2348,7 @@ T.Page {
             return d !== row.appName ? d : "";
         }
         readonly property var appDecoration: row.model?.decoration ?? ""
+        readonly property url appUrl: row.model?.url ?? ""
 
         // Tile metrics, expressed as a list cell: the horizontal inset puts
         // the icon on the same column the letter headings start on. No
@@ -2304,6 +2397,7 @@ T.Page {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: FluentStyle.spacingMedium
                     Kirigami.Icon {
+                        id: rowIcon
                         source: row.appDecoration
                         Layout.preferredWidth: Math.round(root.u * 1.3)
                         Layout.preferredHeight: Layout.preferredWidth
@@ -2354,6 +2448,20 @@ T.Page {
                     kickoff.expanded = false;
                 }
             }
+
+            AppDragHandler {
+                dragIconItem: rowIcon
+                dragSourceItem: row
+                appUrl: row.appUrl
+                dragAllowed: row.model ? row.model.disabled !== true : true
+            }
+            AppDragHandler {
+                dragIconItem: rowIcon
+                dragSourceItem: row
+                appUrl: row.appUrl
+                dragAllowed: row.model ? row.model.disabled !== true : true
+                touchOnly: true
+            }
         }
     }
 
@@ -2382,6 +2490,10 @@ T.Page {
             const detail = String(resultRow.model?.description ?? "").trim();
             return detail !== resultRow.resultName ? detail : "";
         }
+        // Runner results only carry a URL when the match is a real file or
+        // .desktop entry; web/calculator/etc. matches leave it empty and are
+        // simply not draggable.
+        readonly property url appUrl: resultRow.model?.url ?? ""
         readonly property int rowHeight: Math.round(root.u * 2.4)
 
         // The page's Return handler drives `currentItem.action.trigger()`, so
@@ -2452,6 +2564,7 @@ T.Page {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: FluentStyle.spacingMedium
                     Kirigami.Icon {
+                        id: resultIcon
                         source: resultRow.model?.decoration ?? ""
                         Layout.preferredWidth: Math.round(root.u * 1.3)
                         Layout.preferredHeight: Layout.preferredWidth
@@ -2487,6 +2600,20 @@ T.Page {
             }
 
             onClicked: resultRow.trigger()
+
+            AppDragHandler {
+                dragIconItem: resultIcon
+                dragSourceItem: resultRow
+                appUrl: resultRow.appUrl
+                dragAllowed: !resultRow.separator
+            }
+            AppDragHandler {
+                dragIconItem: resultIcon
+                dragSourceItem: resultRow
+                appUrl: resultRow.appUrl
+                dragAllowed: !resultRow.separator
+                touchOnly: true
+            }
         }
     }
 
@@ -2886,6 +3013,9 @@ T.Page {
                 // actions the delegate model would expose.
                 const favRole = m.KItemModels.KRoleNames.role("favoriteId");
                 const actionRole = m.KItemModels.KRoleNames.role("actionList");
+                // Same file URL the real delegate would receive; carried on
+                // the plain object so AppTile can start an out-of-menu drag.
+                const urlRole = m.KItemModels.KRoleNames.role("url");
                 const read = (row, role) => role >= 0 ? m.data(m.index(row, 0), role) : undefined;
 
                 const buckets = {};
@@ -2904,7 +3034,8 @@ T.Page {
                         description: String(read(row, descRole) ?? ""),
                         decoration: read(row, decoRole) ?? "",
                         favoriteId: read(row, favRole) ?? null,
-                        actionList: read(row, actionRole) ?? null
+                        actionList: read(row, actionRole) ?? null,
+                        url: read(row, urlRole) ?? ""
                     });
                 }
                 keys.sort();
