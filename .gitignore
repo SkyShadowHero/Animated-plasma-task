@@ -22,3 +22,14 @@ log_settings*.cpp
 *~
 .workbuddy/
 kickoff-skyler/po/.tmp
+
+# Packaging build trees (scripts in tools/ are tracked; their output is not)
+build-deb/
+build-arch/
+build-rpm/
+
+# Built packages and release tarballs
+*.deb
+*.rpm
+*.pkg.tar.zst
+*.tar.gz

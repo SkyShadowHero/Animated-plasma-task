@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(SkylerPlasmaTaskManager VERSION 1.1.3)
+project(SkylerPlasmaTaskManager VERSION 1.1.7)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -100,6 +100,27 @@ if(NOT TARGET uninstall)
     add_custom_target(uninstall
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
+
+# ── Debian package (CPack) ───────────────────────────
+# The CPack settings below are inert for a normal build on non-Debian systems;
+# they only take effect when `cpack -G DEB` is actually run. Required tools
+# (file, dpkg-shlibdeps) are checked by tools/build-deb.sh, NOT here — putting
+# a FATAL_ERROR here would break configure on Arch/Fedora, which have no dpkg.
+# Build the .deb inside the same distro it targets (Kubuntu 26.04).
+set(CPACK_GENERATOR "DEB")
+set(CPACK_PACKAGE_NAME "plasma6-applets-animated-taskmanager")
+set(CPACK_PACKAGE_VENDOR "SkyShadowHero")
+set(CPACK_PACKAGE_CONTACT "SkyShadowHero")
+set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/SkyShadowHero/Animated-plasma-task")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY
+    "Animated Plasma 6 task manager, icons-only task manager and Kickoff applets")
+set(CPACK_DEBIAN_PACKAGE_SECTION "kde")
+set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "${CPACK_PACKAGE_HOMEPAGE_URL}")
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "plasma-workspace")
+include(CPack)
 
 # ── Status ───────────────────────────────────────────
 message(STATUS "")
