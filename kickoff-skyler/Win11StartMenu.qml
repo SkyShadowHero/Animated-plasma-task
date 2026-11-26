@@ -662,12 +662,13 @@ T.Page {
     }
 
     // ── Power / session actions, Win11 style ────────────────────────────
-    // Win11 keeps exactly two actions on the Start menu — Shut down and
-    // Restart — and folds everything else into an overflow flyout. Kicker's
-    // SystemModel stays the single source of truth, but we read its rows into
-    // plain JS objects instead of filtering it with two proxy models. That
-    // removes the crash where filterRowCallback receives a null QModelIndex
-    // for top-level rows and index(row, 0, null) is rejected by Qt.
+    // The surface row shows three buttons in Plasma's power order — Suspend,
+    // Restart, Shut down — with everything else folded into an overflow
+    // flyout. Kicker's SystemModel stays the single source of truth, but we
+    // read its rows into plain JS objects instead of filtering it with two
+    // proxy models. That removes the crash where filterRowCallback receives a
+    // null QModelIndex for top-level rows and index(row, 0, null) is rejected
+    // by Qt.
     component Win11PowerCluster : Item {
         id: cluster
         readonly property int buttonSize: Math.round(root.u * 1.7)
@@ -676,7 +677,8 @@ T.Page {
 
         // favoriteId strings Kicker.SystemModel uses; ConfigGeneral's presets
         // use the same ones. Order matters: it is the button order on screen.
-        readonly property var surfaceActionIds: ["shutdown", "reboot", "logout"]
+        // Plasma's order: suspend, reboot, shutdown.
+        readonly property var surfaceActionIds: ["suspend", "reboot", "shutdown"]
 
         property var surfaceActions: []
         property var overflowActions: []

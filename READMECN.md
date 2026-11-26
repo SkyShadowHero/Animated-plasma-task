@@ -37,7 +37,58 @@
   - 悬停动画
   - 自定义装饰:高亮背景
 
-## 安装
+## 安装说明
+
+本项目包含需要编译的 C++ 组件（`.so`），因此**不能**通过 Plasma 的“获取新小部件”（KDE Store）安装。
+
+请用以下两种方式之一：从 [Releases 页面](https://github.com/SkyShadowHero/Animated-plasma-task/releases) 下载预编译包（`.deb` / `.rpm` / `.pkg.tar.zst`），或按下面的说明从源码编译。
+
+预编译 `.deb`（Ubuntu / Kubuntu 26.04+）：
+
+```bash
+sudo apt install ./plasma6-applets-animated-taskmanager-*.deb
+kquitapp6 plasmashell && plasmashell --replace
+```
+
+## 编译依赖
+
+编译需要 Qt 6 / KDE Frameworks 6 / Plasma 6 的开发文件。完整的 Plasma 6 桌面环境通常已经装好了大部分。
+
+**Arch Linux / CachyOS**
+
+```bash
+sudo pacman -S base-devel cmake extra-cmake-modules gettext \
+  qt6-base qt6-declarative \
+  ki18n knotifications kservice kwindowsystem kconfig kio kitemmodels \
+  libplasma plasma-activities plasma-activities-stats libksysguard \
+  plasma-workspace
+```
+
+**Ubuntu / Kubuntu 26.04+**
+
+```bash
+sudo apt install build-essential cmake extra-cmake-modules gettext \
+  qt6-base-dev qt6-declarative-dev \
+  libkf6i18n-dev libkf6notifications-dev libkf6service-dev \
+  libkf6windowsystem-dev libkf6config-dev libkf6kio-dev libkf6itemmodels-dev \
+  libplasma-dev libplasmaactivities-dev libplasmaactivitiesstats-dev \
+  libksysguard-dev plasma-workspace-dev
+```
+
+**Fedora 43+**
+
+```bash
+sudo dnf install gcc-c++ cmake extra-cmake-modules gettext \
+  qt6-qtbase-devel qt6-qtdeclarative-devel \
+  kf6-ki18n-devel kf6-knotifications-devel kf6-kservice-devel \
+  kf6-kwindowsystem-devel kf6-kconfig-devel kf6-kio-devel kf6-kitemmodels-devel \
+  libplasma-devel plasma-activities-devel plasma-activities-stats-devel \
+  libksysguard-devel plasma-workspace-devel
+```
+
+> 各发行版版本不同：源码针对 Plasma 6.6–6.8 / KF6 6.24+ 开发，更旧的 Plasma 6 版本可能编译失败。
+
+## 编译安装
 
 ```bash
 mkdir build && cd build
