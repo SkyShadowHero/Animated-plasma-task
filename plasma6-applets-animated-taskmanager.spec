@@ -1,13 +1,13 @@
 %global debug_package %{nil}
 
 Name:           plasma6-applets-animated-taskmanager
-Version:        1.1.7
+Version:        1.1.8
 Release:        1%{?dist}
 Summary:        Forked KDE Plasma 6 plasmoids with press / entry / minimize animations
 
 License:        GPL-2.0-or-later
 URL:            https://github.com/SkyShadowHero/Animated-plasma-task
-Source0:        https://github.com/SkyShadowHero/Animated-plasma-task/archive/refs/tags/1.1.7.tar.gz
+Source0:        https://github.com/SkyShadowHero/Animated-plasma-task/archive/refs/tags/1.1.8.tar.gz
 
 BuildArch:      x86_64
 
@@ -69,6 +69,9 @@ rm -f %{buildroot}%{_datadir}/locale/*.pot
 %{_datadir}/plasma/plasmoids/*
 
 %changelog
+* Thu Nov 26 2026 SkyShadowHero <a1233456333@163.com> - 1.1.8-1
+- Update to 1.1.8
+
 * Thu Nov 26 2026 SkyShadowHero <a1233456333@163.com> - 1.1.7-1
 - Update to 1.1.7
 
